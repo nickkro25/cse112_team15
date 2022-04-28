@@ -24,12 +24,16 @@ Working on features week
 
 ## Week 8
 Working on features week
+
 Try to wrap up features by the end of this week (before Monday 5/23)
+
 FEATURES CHECKPOINT
 
 ## Week 9 (Plan to be done)
 Finishing touches, testing, polish
+
 (Additional time slot for unfinished business)
+
 ONE LAST CHECKPOINT
 
 ## Week 10
