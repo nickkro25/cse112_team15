@@ -17,6 +17,7 @@ Currently halfway through Week 5
 
 ## Week 6
 Try to wrap up polishing by the end of this week (before Monday 5/9)
+
 POLISH CHECKPOINT
 
 ## Week 7
