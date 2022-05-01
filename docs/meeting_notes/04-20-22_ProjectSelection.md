@@ -2,9 +2,9 @@
 
 **Type of Meeting:** Decision Making
 
-**Present Members:** Mattew Jiang, Westley Lai, Allen Weng, Nick Krolikowski, Zhuoran Li, Edgar Flores, Han Nguyen,
+**Present Members:** Matthew Jiang, Westley Lai, Allen Weng, Nick Krolikowski, Zhuoran Li, Edgar Flores, Han Nguyen
 
-**Agenda of What was discussed:** Project Evals Review and choosing projects
+**Agenda of what was discussed:** Project Evals Review and choosing projects
 
 **Top 3 projects from project evals:**
 

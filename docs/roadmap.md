@@ -1,4 +1,3 @@
-1. Continuous Integration
 # Priorities for the project
 1. POLISH
     * Background timer bug
@@ -13,7 +12,7 @@
 
 
 # ROADMAP
-Currently halfway through Week 5
+Currently halfway through Week 5..
 
 ## Week 6
 Try to wrap up polishing by the end of this week (before Monday 5/9)
@@ -30,7 +29,7 @@ Try to wrap up features by the end of this week (before Monday 5/23)
 
 FEATURES CHECKPOINT
 
-## Week 9 (Plan to be done)
+## Week 9 (plan to be done)
 Finishing touches, testing, polish
 
 (Additional time slot for unfinished business)

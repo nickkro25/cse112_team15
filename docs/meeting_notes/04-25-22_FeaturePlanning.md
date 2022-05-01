@@ -1,7 +1,7 @@
-Attendance: Pablo Gratas, Allen Weng, George Davidson, Nick Krolikowski, Joseph Priyanto, Yizhou Wang, Edgar Flores, Westly Lai. Matthew Jiang
+**Attendance:** Pablo Gratas, Allen Weng, George Davidson, Nick Krolikowski, Joseph Priyanto, Yizhou Wang, Edgar Flores, Westly Lai, Matthew Jiang
 
 
-What we talked about today:
+**What we talked about today:**
 * Figuring out big picture of what we want to do to improve our selected project
 1. Improve developer experience (docs, comments, pipeline, workflow)
 2. Improve user experience (UI, speed, reliability, quality, better support for mobile)
@@ -18,5 +18,6 @@ What we talked about today:
 8. Tracking Procrastination
 9. Separate Homepage
 10. Shareable statistics
-For next time:
--Meet next Wednesday to continue talking about features
+
+**For next time:**
+- Meet next Wednesday to continue talking about features
