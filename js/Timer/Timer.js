@@ -1,6 +1,7 @@
 import {
   sessionStartName, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
+import { timeToString } from '../Misc/UtilityFunctions.js';
 /**
  * A class for the Timer object. Has functions to start the timer,
  * display the current mode of the timer and display the time remaining
@@ -65,6 +66,9 @@ class Timer extends HTMLElement {
       this.stateQueue.push(workOrder[i]);
     }
 
+    if (this.displayTime) {
+      this.displayTime.textContent = timeToString(workMode.duration * 60);
+    }
     this.addEventListeners();
   }
 
@@ -127,7 +131,7 @@ class Timer extends HTMLElement {
   endTimer() {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
-    this.displayTime.textContent = '25:00';
+    this.displayTime.textContent = timeToString(workMode.duration * 60);
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
@@ -146,14 +150,7 @@ class Timer extends HTMLElement {
    */
   countdown(duration) {
     if (this.end) return;
-    const minutes = Math.floor(duration / 60);
-    const seconds = duration % 60;
-    let displayString = '';
-    if (seconds < 10) {
-      displayString = `${minutes}:0${seconds}`;
-    } else {
-      displayString = `${minutes}:${seconds}`;
-    }
+    let displayString = timeToString(duration);
     this.displayTime.textContent = displayString;
     document.title = `${this.state} ${displayString}`;
     duration -= 1;
