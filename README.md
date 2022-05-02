@@ -9,7 +9,7 @@ Requires:
 First, clone and cd into the repo
 ```bash
 $ git clone <url>
-$ cd cse110-w21-group28
+$ cd cse112_team15
 ```
 Install all the dependencies
 ```bash
