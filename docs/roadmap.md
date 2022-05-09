@@ -12,15 +12,20 @@
 
 
 # ROADMAP
-Currently halfway through Week 5..
+~~Currently halfway through Week 5..~~
+Currently in Week 7..
 
 ## Week 6
-Try to wrap up polishing by the end of this week (before Monday 5/9)
+~~Try to wrap up polishing by the end of this week (before Monday 5/9)~~
 
-POLISH CHECKPOINT
+~~POLISH CHECKPOINT~~
+
+Working on Midterms
 
 ## Week 7
-Working on features week
+~~Working on features week~~
+
+Polishing + Implementing Features
 
 ## Week 8
 Working on features week
