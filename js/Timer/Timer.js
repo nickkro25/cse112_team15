@@ -160,8 +160,7 @@ class Timer extends HTMLElement {
     if (duration >= 0) {
       setTimeout(() => {
         this.countdown(duration);
-      }, 1000); //roll back happened and then update queue just freeze if change to setInterval
-                //setTimer is on low priority for inactive tabs, delaying the interval time
+      }, 1000);
     } else {
       this.onTimerComplete();
     }
