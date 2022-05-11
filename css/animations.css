@@ -49,6 +49,7 @@
   z-index: 50;
 }
 
+/* change the distration-animation scalr from 0-0.8 to 0-1 for better visuals*/
 @keyframes distraction-animation-in {
   from { opacity: 0; }
   to { opacity: 1; }
