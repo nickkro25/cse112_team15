@@ -150,7 +150,7 @@ class Timer extends HTMLElement {
    */
   countdown(duration) {
     if (this.end) return;
-    let displayString = timeToString(duration);
+    const displayString = timeToString(duration);
     this.displayTime.textContent = displayString;
     document.title = `${this.state} ${displayString}`;
     duration -= 1;
