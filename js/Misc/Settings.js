@@ -13,7 +13,7 @@ const settingsPopup = document.getElementById('settingsPopup');
 /**
  * @type {HTMLButtonElement}
  */
- const timeInputs = document.querySelectorAll('#customTimeGroup input');
+const timeInputs = document.querySelectorAll('#customTimeGroup input');
 /**
  * @type {HTMLInputElement}
  */
@@ -34,18 +34,30 @@ settingsButton.addEventListener('click', () => {
 });
 
 /**
- * Simple timer length validation. Only allow whole numbers 
+ * Simple timer length validation. Only allow whole numbers
  */
-for (let input of timeInputs) {
-  input.addEventListener('keypress', (event) => {
-    if (!(event.which >= 48 && event.which <= 57) && (event.which != 13)) {
+
+for (let i = 0; i < timeInputs.length; i += 1) {
+  timeInputs[i].addEventListener('keypress', (event) => {
+    if (!(event.which >= 48 && event.which <= 57) && (event.which !== 13)) {
       event.preventDefault();
     }
-    if (event.which == 48 && event.target.value == "") {
+    if (event.which === 48 && event.target.value === '') {
       event.preventDefault();
     }
   });
 }
+// for (const input of timeInputs) {
+//   input.addEventListener('keypress', (event) => {
+//     if (!(event.which >= 48 && event.which <= 57) && (event.which !== 13)) {
+//       event.preventDefault();
+//     }
+//     if (event.which === 48 && event.target.value === '') {
+//       event.preventDefault();
+//     }
+//   });
+// }
+
 /**
  * handle darkmode by changing root variables
  */

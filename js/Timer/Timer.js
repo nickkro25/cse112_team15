@@ -74,7 +74,6 @@ class Timer extends HTMLElement {
     this.sessionId = localStorage.getItem('pomoSessionId');
     this.sessionId = ((this.sessionId === null) ? 0 : parseInt(this.sessionId, 10) + 1);
 
-
     // this is the order for the timer. It will loop in this order.
     const workOrder = [workMode, shortBreakMode, workMode,
       shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
@@ -83,26 +82,26 @@ class Timer extends HTMLElement {
     // }
     this.stateQueue = workOrder;
 
-    //#6 get previous time durations from localStorage on refresh
-    if (localStorage.getItem("workModeTime") != null) {
-      //...
+    // #6 get previous time durations from localStorage on refresh
+    if (localStorage.getItem('workModeTime') !== null) {
+      // ...
       workMode.duration = localStorage.getItem('workModeTime');
     }
-    if (localStorage.getItem("shortBreakTime") != null) {
-      //...
+    if (localStorage.getItem('shortBreakTime') !== null) {
+      // ...
       shortBreakMode.duration = localStorage.getItem('shortBreakTime');
     }
-    if (localStorage.getItem("longBreakTime") != null) {
-      //...
+    if (localStorage.getItem('longBreakTime') !== null) {
+      // ...
       longBreakMode.duration = localStorage.getItem('longBreakTime');
     }
 
-    //#6 We can do this with "this" as shown above, just did it this way as a test
-    document.getElementById("focusTime").value = workMode.duration;
-    document.getElementById("shortBreakTime").value = shortBreakMode.duration;
-    document.getElementById("longBreakTime").value = longBreakMode.duration;
+    // #6 We can do this with "this" as shown above, just did it this way as a test
+    this.focusTime.value = workMode.duration;
+    this.shortBreakTime.value = shortBreakMode.duration;
+    this.longBreakTime.value = longBreakMode.duration;
 
-    this.timeDisplay.textContent = workMode.duration + ":00";
+    this.timeDisplay.textContent = `${workMode.duration}:00`;
     this.addEventListeners();
   }
 
@@ -145,8 +144,8 @@ class Timer extends HTMLElement {
   startTimer() {
     this.end = false;
 
-    //Edgar: StateQueue is set right after line 62, we get our timee duration 
-    //from TimerVariables.js, we want to change this to user set duration
+    // Edgar: StateQueue is set right after line 62, we get our timee duration
+    // from TimerVariables.js, we want to change this to user set duration
     const session = this.stateQueue[0];
     this.state = session.name;
     this.displayStatus.textContent = this.state;
@@ -168,8 +167,8 @@ class Timer extends HTMLElement {
   endTimer() {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
-    //#6: only works with whole numbers
-    this.timeDisplay.textContent = workMode.duration + ":00";
+    // #6: only works with whole numbers
+    this.timeDisplay.textContent = `${workMode.duration}:00`;
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
@@ -211,22 +210,20 @@ class Timer extends HTMLElement {
   /**
    * Change and save timer length when changed.
    */
-  //Issue #6: only works with whole numbers
+  // Issue #6: only works with whole numbers
   changeTime(e) {
-    //Does not allow user to input 0 or numbers over 99
-    if (e.target.value == 0) { e.target.value = 1; }
+    // Does not allow user to input 0 or numbers over 99
+    if (e.target.value === 0) { e.target.value = 1; }
     if (e.target.value > 99) { e.target.value = 99; }
-    if (e.target.id == "focusTime") {
-      timeDisplay.textContent = " " + e.target.value + ":00" + " ";
+    if (e.target.id === 'focusTime') {
+      this.timeDisplay.textContent = `${e.target.value}:00`;
       workMode.duration = e.target.value;
       localStorage.setItem('workModeTime', e.target.value);
-  
-    } else if (e.target.id == "shortBreakTime") {
-      //Issue #6: first lines commented out for now because we do not have an option to show rest times
+    } else if (e.target.id === 'shortBreakTime') {
       // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
       shortBreakMode.duration = e.target.value;
       localStorage.setItem('shortBreakTime', e.target.value);
-    } else if (e.target.id == "longBreakTime") {
+    } else if (e.target.id === 'longBreakTime') {
       // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
       longBreakMode.duration = e.target.value;
       localStorage.setItem('longBreakTime', e.target.value);
@@ -249,10 +246,9 @@ class Timer extends HTMLElement {
       }
     });
 
-    this.focusTime.addEventListener('change', this.changeTime);
-    this.shortBreakTime.addEventListener('change', this.changeTime);
-    this.longBreakTime.addEventListener('change', this.changeTime);
-
+    this.focusTime.addEventListener('change', (event) => { this.changeTime(event); });
+    this.shortBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
+    this.longBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
   }
 }
 

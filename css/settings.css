@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
+
   /* place-items: center; */
   column-gap: 10px;
   row-gap: 25px;
@@ -45,10 +46,6 @@
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-}
-
-#customTimeGroup input{
-  width: 3em;
 }
 
 #workSoundGroup {
@@ -96,6 +93,10 @@
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+#customTimeGroup input {
+  width: 3em;
 }
 
 /* The slider */
