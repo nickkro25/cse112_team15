@@ -11,6 +11,10 @@ const settingsButton = document.getElementById('settingsButton');
  */
 const settingsPopup = document.getElementById('settingsPopup');
 /**
+ * @type {HTMLButtonElement}
+ */
+ const timeInputs = document.querySelectorAll('#customTimeGroup input');
+/**
  * @type {HTMLInputElement}
  */
 const darkModeSwitch = document.getElementById('darkModeSwitch');
@@ -29,6 +33,19 @@ settingsButton.addEventListener('click', () => {
   }
 });
 
+/**
+ * 
+ */
+function validateTimeInput(event) {
+  return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 13;
+}
+for (let input of timeInputs) {
+  input.addEventListener('keypress', (event) => {
+    if (!(event.which >= 48 && event.which <= 57) && (event.which != 13)) {
+      event.preventDefault();
+    }
+  });
+}
 /**
  * handle darkmode by changing root variables
  */

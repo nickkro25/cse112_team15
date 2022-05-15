@@ -57,14 +57,36 @@ class Timer extends HTMLElement {
      */
     this.sessionId = localStorage.getItem('pomoSessionId');
     this.sessionId = ((this.sessionId === null) ? 0 : parseInt(this.sessionId, 10) + 1);
+ 
 
     // this is the order for the timer. It will loop in this order.
     const workOrder = [workMode, shortBreakMode, workMode,
       shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
-    for (let i = 0; i < workOrder.length; i += 1) {
-      this.stateQueue.push(workOrder[i]);
-    }
+    // for (let i = 0; i < workOrder.length; i += 1) {
+    //   this.stateQueue.push(workOrder[i]);
+    // }
+    this.stateQueue = workOrder;
 
+    //#6 get previous time durations from localStorage on refresh
+    if (localStorage.getItem("workModeTime") != null) {
+      //...
+      workMode.duration = localStorage.getItem('workModeTime');
+      //#6 We can do this with "this" as shown above, just did it this way as a test
+      document.getElementById("focusTime").value = workMode.duration;
+    } 
+
+    if (localStorage.getItem("shortBreakTime") != null) {
+      //...
+      shortBreakMode.duration = localStorage.getItem('shortBreakTime');
+      document.getElementById("shortRestTime").value = shortBreakMode.duration;
+     
+    }
+    if (localStorage.getItem("longBreakTime") != null) {
+      //...
+      longBreakMode.duration = localStorage.getItem('longBreakTime');
+      document.getElementById("longRestTime").value = longBreakMode.duration;
+    }
+    this.displayTime.textContent = workMode.duration + ":00"; 
     this.addEventListeners();
   }
 
@@ -106,6 +128,9 @@ class Timer extends HTMLElement {
    */
   startTimer() {
     this.end = false;
+
+    //Edgar: StateQueue is set right after line 62, we get our timee duration 
+    //from TimerVariables.js, we want to change this to user set duration
     const session = this.stateQueue[0];
     this.state = session.name;
     this.displayStatus.textContent = this.state;
@@ -127,7 +152,8 @@ class Timer extends HTMLElement {
   endTimer() {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
-    this.displayTime.textContent = '25:00';
+    //#6: only works with whole numbers
+    this.displayTime.textContent = workMode.duration + ":00";
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
@@ -185,3 +211,52 @@ class Timer extends HTMLElement {
 
 customElements.define('custom-timer', Timer);
 export { Timer };
+
+
+//Issue #6: only works with whole numbers
+//either need to limit user or expand code for decimal input
+function changeFocusTime(e) {
+
+  //Checks for input of 0, we should change this in each function
+  //to something else
+  if(e.target.value == 0)
+  {
+    alert("No 0!");
+  } else{
+    document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+  
+    workMode.duration = e.target.value;
+    localStorage.setItem('workModeTime', e.target.value);
+  }
+}
+
+//Issue #6: first lines commented out for now because we do not have an option to show rest times
+function changeSRestTime(e) {
+  // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+  
+  if(e.target.value == 0)
+  {
+    alert("No 0!");
+  } else{
+    shortBreakMode.duration = e.target.value;
+    localStorage.setItem('shortBreakTime', e.target.value);
+  }
+}
+
+function changeLRestTime(e) {
+  // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+  if(e.target.value == 0)
+  {
+    alert("No 0!");
+  } else{
+    longBreakMode.duration = e.target.value;
+    localStorage.setItem('longBreakTime', e.target.value);
+  }
+}
+
+/**
+ * Issue #6: add event listeners to change Time Menus
+ */
+ focusTime.addEventListener('change', changeFocusTime);
+ shortRestTime.addEventListener('change', changeSRestTime);
+ longRestTime.addEventListener('change', changeLRestTime);
