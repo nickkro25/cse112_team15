@@ -101,9 +101,11 @@ class Timer extends HTMLElement {
       this.focusTime.value = workMode.duration;
       this.shortBreakTime.value = shortBreakMode.duration;
       this.longBreakTime.value = longBreakMode.duration;
+    }
+    
+    if (this.timeDisplay !== null) {
       this.timeDisplay.textContent = `${workMode.duration}:00`;
     }
-
     this.addEventListeners();
   }
 
