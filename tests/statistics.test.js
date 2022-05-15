@@ -264,7 +264,7 @@ describe('Variables function correctly', () => {
 
   test('flushLocalStorage deletes all data older than a year', () => {
     Stats.history.push({ // a few days ago
-      date: new Date(2022, 3, 28, 10, 35),
+      date: new Date(2022, 4, 9, 10, 35),
       distractionCount: 1,
       timeSpent: 1,
     });
@@ -274,12 +274,12 @@ describe('Variables function correctly', () => {
       timeSpent: 1,
     });
     Stats.history.push({ // a few months ago (previous year)
-      date: new Date(2021, 3, 28, 10, 35),
+      date: new Date(2021, 10, 9, 10, 35),
       distractionCount: 1,
       timeSpent: 1,
     });
     Stats.history.push({ // more than a year ago (barely)
-      date: new Date(2021, 2, 1, 10, 35),
+      date: new Date(2021, 0, 1, 10, 35),
       distractionCount: 1,
       timeSpent: 1,
     });
