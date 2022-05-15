@@ -9,6 +9,9 @@ beforeEach(() => {
   + '  <p id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'
   + '<button id=start>Start</button>'
+  + '<input type="number" id="focusTime">'
+  + '<input type="number" id="shortBreakTime">'
+  + '<input type="number" id="longBreakTime">'
   + '</div>';
   jest.useFakeTimers();
   jest.clearAllTimers();
