@@ -109,7 +109,7 @@ class Timer extends HTMLElement {
       this.startTimer();
     } else {
       // check whether auto start break option is checked
-      if (this.autoStart.checked === false) {
+      if (this.autoStart != null && this.autoStart.checked === false) {
         // update the display if the option is not checked, but don't start the timer yet
         this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
         const session = this.stateQueue[0];
