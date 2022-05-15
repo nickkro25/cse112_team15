@@ -71,6 +71,7 @@ class Timer extends HTMLElement {
       this.stateQueue.push(workOrder[i]);
     }
 
+    // set the timer display based on TimerVariables
     if (this.displayTime) {
       this.displayTime.textContent = timeToString(workMode.duration * 60);
     }
