@@ -34,14 +34,14 @@ settingsButton.addEventListener('click', () => {
 });
 
 /**
- * 
+ * Simple timer length validation. Only allow whole numbers 
  */
-function validateTimeInput(event) {
-  return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 13;
-}
 for (let input of timeInputs) {
   input.addEventListener('keypress', (event) => {
     if (!(event.which >= 48 && event.which <= 57) && (event.which != 13)) {
+      event.preventDefault();
+    }
+    if (event.which == 48 && event.target.value == "") {
       event.preventDefault();
     }
   });
