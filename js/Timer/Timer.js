@@ -107,22 +107,20 @@ class Timer extends HTMLElement {
       this.sessionId += 1;
       localStorage.setItem('pomoSessionId', this.sessionId);
       this.startTimer();
-    } else {
+    } else if (this.autoStart != null && this.autoStart.checked === false) {
       // check whether auto start break option is checked
-      if (this.autoStart != null && this.autoStart.checked === false) {
-        // update the display if the option is not checked, but don't start the timer yet
-        this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
-        const session = this.stateQueue[0];
-        this.state = session.name;
-        this.displayStatus.textContent = this.state;
-        this.displayTime.textContent = timeToString(session.duration * 60);
-        document.title = session.name;
-        const event = new CustomEvent('timer-end');
-        this.dispatchEvent(event);
-      } else {
-        // start the timer automatically if option is checked
-        this.startTimer();
-      }
+      // update the display if the option is not checked, but don't start the timer yet
+      this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+      const session = this.stateQueue[0];
+      this.state = session.name;
+      this.displayStatus.textContent = this.state;
+      this.displayTime.textContent = timeToString(session.duration * 60);
+      document.title = session.name;
+      const distractionOffEvent = new CustomEvent('timer-end');
+      this.dispatchEvent(distractionOffEvent);
+    } else {
+      // start the timer automatically if option is checked
+      this.startTimer();
     }
   }
 
