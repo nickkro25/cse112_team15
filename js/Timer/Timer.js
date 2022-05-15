@@ -97,9 +97,11 @@ class Timer extends HTMLElement {
     }
 
     // #6 We can do this with "this" as shown above, just did it this way as a test
-    this.focusTime.value = workMode.duration;
-    this.shortBreakTime.value = shortBreakMode.duration;
-    this.longBreakTime.value = longBreakMode.duration;
+    if (this.focusTime !== null) {
+      this.focusTime.value = workMode.duration;
+      this.shortBreakTime.value = shortBreakMode.duration;
+      this.longBreakTime.value = longBreakMode.duration;
+    }
 
     this.timeDisplay.textContent = `${workMode.duration}:00`;
     this.addEventListeners();
