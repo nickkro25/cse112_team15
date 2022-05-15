@@ -102,7 +102,6 @@ class Timer extends HTMLElement {
       this.shortBreakTime.value = shortBreakMode.duration;
       this.longBreakTime.value = longBreakMode.duration;
     }
-    
     if (this.timeDisplay !== null) {
       this.timeDisplay.textContent = `${workMode.duration}:00`;
     }
