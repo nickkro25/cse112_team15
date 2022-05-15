@@ -52,6 +52,11 @@ class Timer extends HTMLElement {
      */
     this.end = false;
     /**
+     * auto start switch element
+     * @type {HTMLInputElement}
+     */
+    this.autoStart = document.getElementById('autoStartSwitch');
+    /**
      * The sessionId. Increments on each working session. Stored in
      * local storage to keep track of id on multiple sessions every day
      * @type {Number}
@@ -100,8 +105,24 @@ class Timer extends HTMLElement {
     if (!completedSession.isWork) {
       this.sessionId += 1;
       localStorage.setItem('pomoSessionId', this.sessionId);
+      this.startTimer();
+    } else {
+      // check whether auto start break option is checked
+      if (this.autoStart.checked === false) {
+        // update the display if the option is not checked, but don't start the timer yet
+        this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+        const session = this.stateQueue[0];
+        this.state = session.name;
+        this.displayStatus.textContent = this.state;
+        this.displayTime.textContent = timeToString(session.duration * 60);
+        document.title = session.name;
+        const event = new CustomEvent('timer-end');
+        this.dispatchEvent(event);
+      } else {
+        // start the timer automatically if option is checked
+        this.startTimer();
+      }
     }
-    this.startTimer();
   }
 
   /**
