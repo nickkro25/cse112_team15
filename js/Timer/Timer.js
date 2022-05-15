@@ -50,17 +50,17 @@ class Timer extends HTMLElement {
      * HTML tag for controlling the focus timer length
      * @type {HTMLElement}
      */
-    this.focusTime = focusTime;
+    this.focusTime = document.getElementById('focusTime');
     /**
      * HTML tag for controlling the short break timer length
      * @type {HTMLElement}
      */
-    this.shortBreakTime = shortBreakTime;
+    this.shortBreakTime = document.getElementById('shortBreakTime');
     /**
      * HTML tag for controlling the long break timer length
      * @type {HTMLElement}
      */
-    this.longBreakTime = longBreakTime;
+    this.longBreakTime = document.getElementById('longBreakTime');
     /**
      * Checks if session has ended
      * @type {Boolean}
@@ -104,7 +104,6 @@ class Timer extends HTMLElement {
 
     this.timeDisplay.textContent = workMode.duration + ":00";
     this.addEventListeners();
-    console.log(this.timeDisplay);
   }
 
   /**
