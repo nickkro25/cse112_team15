@@ -142,7 +142,8 @@ a.brand-logo li {
 
 /* timer styling */
 #timerContainer {
-  width: 400px;
+  width: 35%;
+  min-width: 650px;
 
   /* background-color: var(--timer-bg-color); */
   border-radius: 10px;
@@ -167,7 +168,7 @@ a.brand-logo li {
   font-size: 600%;
   margin: -20px;
   height: 300px;
-  left: -40px;
+  left: 0;
 }
 
 #currentTask {
@@ -236,7 +237,7 @@ html {
 #top-left-border span {
   position: absolute;
   top: 0;
-  left: -140px;
+  left: 0%;
   line-height: 0.3;
 }
 
@@ -249,8 +250,8 @@ html {
 
 #bottom-right-border span {
   position: absolute;
-  bottom: 20px;
-  right: -100px;
+  bottom: 0;
+  right: 0%;
   line-height: 0.3;
 }
 
