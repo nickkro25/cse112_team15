@@ -72,9 +72,7 @@ class Timer extends HTMLElement {
     }
 
     // set the timer display based on TimerVariables
-    if (this.displayTime) {
-      this.displayTime.textContent = timeToString(workMode.duration * 60);
-    }
+    this.displayTime.textContent = timeToString(workMode.duration * 60);
     this.addEventListeners();
   }
 
@@ -107,7 +105,7 @@ class Timer extends HTMLElement {
       this.sessionId += 1;
       localStorage.setItem('pomoSessionId', this.sessionId);
       this.startTimer();
-    } else if (this.autoStart != null && this.autoStart.checked === false) {
+    } else if (this.autoStart.checked === false) {
       // check whether auto start break option is checked
       // update the display if the option is not checked, but don't start the timer yet
       this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
