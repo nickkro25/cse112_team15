@@ -5,10 +5,9 @@
   position: relative;
   margin: 1% auto;
   height: 60vh;
-  width: 90%;
+  width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
-  margin-right: 0px;
 
 }
 
@@ -18,7 +17,6 @@ table {
   border-collapse: separate;
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
-  width: 90%;
   min-height: 45vh;
 
   /* max-width: 100%;     /* allows for word-wrap */
@@ -129,7 +127,6 @@ svg {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  width: 90%;
   background-color: var(--header-color);
   padding-top: 10px;
   padding-bottom: 10px;
