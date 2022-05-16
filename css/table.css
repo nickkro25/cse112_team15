@@ -251,3 +251,10 @@ button:disabled .focus-svg {
   }
 
 }
+
+@media screen and (max-width: 992px) {
+  #tasklist {
+    width: 80%;
+  }
+
+}
