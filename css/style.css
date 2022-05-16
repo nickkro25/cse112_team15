@@ -175,8 +175,6 @@ a.brand-logo li {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  width: 400px;
-  padding: 10px;
 }
 
 html {
