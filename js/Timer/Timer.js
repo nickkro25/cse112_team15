@@ -109,7 +109,7 @@ class Timer extends HTMLElement {
       this.longBreakTime.value = longBreakMode.duration;
     }
     if (this.timeDisplay !== null) {
-      this.timeDisplay.textContent = timeToString(workMode.duration * 60);;
+      this.timeDisplay.textContent = timeToString(workMode.duration * 60);
     }
     this.addEventListeners();
   }
@@ -186,7 +186,7 @@ class Timer extends HTMLElement {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
     // #6: only works with whole numbers
-    this.timeDisplay.textContent = timeToString(workMode.duration * 60);;
+    this.timeDisplay.textContent = timeToString(workMode.duration * 60);
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
