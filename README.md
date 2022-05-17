@@ -1,4 +1,4 @@
-#Pomo XV
+# Pomo XV
 [![CD](https://github.com/Anshul-Birla/cse110-w21-group28/actions/workflows/CD.yml/badge.svg)](https://github.com/Anshul-Birla/cse110-w21-group28/actions/workflows/CD.yml)
 
 Pomo XV is a web application dedicated to making the Pomodoro Technique as easy as possible. 
