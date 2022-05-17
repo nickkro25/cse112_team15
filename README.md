@@ -9,7 +9,7 @@ Requires:
 First, clone and cd into the repo
 ```bash
 $ git clone <url>
-$ cd cse110-w21-group28
+$ cd cse112_team15
 ```
 Install all the dependencies
 ```bash
@@ -25,4 +25,4 @@ To view the app, open the localhost url in Chrome.
 
 To view documentation for the app, visit [here]( https://anshul-birla.github.io/PomoDoc/) 
 
-To get started contributing, visit the [How to Contribute](https://github.com/Anshul-Birla/cse110-w21-group28/wiki/How-to-Contribute) in the wiki
+To get started contributing, visit the [How to Contribute]( https://github.com/nickkro25/cse112_team15/wiki/How-to-Contribute) in the wiki

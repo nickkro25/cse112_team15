@@ -1,6 +1,7 @@
 import {
   sessionStartName, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
+import { timeToString } from '../Misc/UtilityFunctions.js';
 /**
  * A class for the Timer object. Has functions to start the timer,
  * display the current mode of the timer and display the time remaining
@@ -67,6 +68,11 @@ class Timer extends HTMLElement {
      */
     this.end = false;
     /**
+     * auto start switch element
+     * @type {HTMLInputElement}
+     */
+    this.autoStart = document.getElementById('autoStartSwitch');
+    /**
      * The sessionId. Increments on each working session. Stored in
      * local storage to keep track of id on multiple sessions every day
      * @type {Number}
@@ -103,7 +109,7 @@ class Timer extends HTMLElement {
       this.longBreakTime.value = longBreakMode.duration;
     }
     if (this.timeDisplay !== null) {
-      this.timeDisplay.textContent = `${workMode.duration}:00`;
+      this.timeDisplay.textContent = timeToString(workMode.duration * 60);;
     }
     this.addEventListeners();
   }
@@ -137,7 +143,16 @@ class Timer extends HTMLElement {
       this.sessionId += 1;
       localStorage.setItem('pomoSessionId', this.sessionId);
     }
-    this.startTimer();
+
+    if (this.autoStart.checked === false) {
+      // check whether auto start break option is checked
+      // update the display if the option is not checked, but don't start the timer yet
+      this.state = this.stateQueue[0].name;
+      this.updateDisplay();
+    } else {
+      // start the timer automatically if option is checked
+      this.startTimer();
+    }
   }
 
   /**
@@ -171,7 +186,7 @@ class Timer extends HTMLElement {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
     // #6: only works with whole numbers
-    this.timeDisplay.textContent = `${workMode.duration}:00`;
+    this.timeDisplay.textContent = timeToString(workMode.duration * 60);;
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
@@ -190,14 +205,7 @@ class Timer extends HTMLElement {
    */
   countdown(duration) {
     if (this.end) return;
-    const minutes = Math.floor(duration / 60);
-    const seconds = duration % 60;
-    let displayString = '';
-    if (seconds < 10) {
-      displayString = `${minutes}:0${seconds}`;
-    } else {
-      displayString = `${minutes}:${seconds}`;
-    }
+    const displayString = timeToString(duration);
     this.timeDisplay.textContent = displayString;
     document.title = `${this.state} ${displayString}`;
     duration -= 1;
@@ -252,6 +260,20 @@ class Timer extends HTMLElement {
     this.focusTime.addEventListener('change', (event) => { this.changeTime(event); });
     this.shortBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
     this.longBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
+  }
+
+  /**
+   * Updates the text elements on screen based on
+   * this.state and stateQueue[0] when the timer pauses
+   */
+  updateDisplay() {
+    this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+    const session = this.stateQueue[0];
+    this.displayStatus.textContent = this.state;
+    this.displayTime.textContent = timeToString(session.duration * 60);
+    document.title = session.name;
+    const distractionOffEvent = new CustomEvent('timer-end');
+    this.dispatchEvent(distractionOffEvent);
   }
 }
 

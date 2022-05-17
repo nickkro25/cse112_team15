@@ -12,6 +12,7 @@ beforeEach(() => {
   + '<input type="number" id="focusTime">'
   + '<input type="number" id="shortBreakTime">'
   + '<input type="number" id="longBreakTime">'
+  + '<input type="checkbox" id="autoStartSwitch" checked="true">'
   + '</div>';
   jest.useFakeTimers();
   jest.clearAllTimers();
@@ -19,7 +20,8 @@ beforeEach(() => {
 
 test('Test Initial State is Nothing', () => {
   const button = document.getElementById('start');
-  const TimerObj = new Timer(button, null, null);
+  const displayTime = document.getElementById('displayTime');
+  const TimerObj = new Timer(button, displayTime, null);
   expect(TimerObj.state).toBe('');
   expect(TimerObj.sessionId).toBe(0);
 });
@@ -106,4 +108,20 @@ test('Test That Timer Resets Properly When End Day is Clicked', () => {
   TimerObj.resetPomoSessionId();
   expect(TimerObj.stateQueue[0]).toBe(workMode);
   expect(TimerObj.sessionId).toBe(0);
+});
+
+test('Test Timer Pauses After Work Session When Auto Start is Disabled', () => {
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  const autoStartSwitch = document.getElementById('autoStartSwitch');
+  jest.clearAllTimers();
+  button.click();
+  autoStartSwitch.checked = false;
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+  expect(TimerObj.displayStatus.textContent).toBe('Short Break');
+  expect(button.childNodes[0].nodeValue).toBe('Start');
+  expect(displayStatus.textContent).toBe('Short Break');
+  expect(document.title).toBe('Short Break');
 });

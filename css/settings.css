@@ -78,6 +78,11 @@
   grid-column: 2;
 }
 
+#autoStartGroup {
+  grid-row: 4;
+  grid-column: 1;
+}
+
 /* slider stuff from w3schools */
 
 /* The switch - the box around the slider */
