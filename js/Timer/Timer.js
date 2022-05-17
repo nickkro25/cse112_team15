@@ -104,18 +104,13 @@ class Timer extends HTMLElement {
     if (!completedSession.isWork) {
       this.sessionId += 1;
       localStorage.setItem('pomoSessionId', this.sessionId);
-      this.startTimer();
-    } else if (this.autoStart.checked === false) {
+    }
+    
+    if (this.autoStart.checked === false) {
       // check whether auto start break option is checked
       // update the display if the option is not checked, but don't start the timer yet
-      this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
-      const session = this.stateQueue[0];
-      this.state = session.name;
-      this.displayStatus.textContent = this.state;
-      this.displayTime.textContent = timeToString(session.duration * 60);
-      document.title = session.name;
-      const distractionOffEvent = new CustomEvent('timer-end');
-      this.dispatchEvent(distractionOffEvent);
+      this.state = this.stateQueue[0].name;
+      this.updateDisplay();
     } else {
       // start the timer automatically if option is checked
       this.startTimer();
@@ -195,6 +190,19 @@ class Timer extends HTMLElement {
         document.getElementsByTagName('body')[0].classList.remove('short-break');
       }
     });
+  }
+
+  /**
+   * Updates the text elements on screen based on this.state and stateQueue[0] when the timer pauses
+   */
+  updateDisplay() {
+      this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+      const session = this.stateQueue[0];
+      this.displayStatus.textContent = this.state;
+      this.displayTime.textContent = timeToString(session.duration * 60);
+      document.title = session.name;
+      const distractionOffEvent = new CustomEvent('timer-end');
+      this.dispatchEvent(distractionOffEvent);
   }
 }
 
