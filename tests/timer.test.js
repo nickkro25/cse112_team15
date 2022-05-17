@@ -151,21 +151,21 @@ test('changeTime', () => {
 
   const event = new Event('change');
 
-  const focusTime = TimerObj.focusTime;
-  focusTime.dispatchEvent(event);
+  const focus = TimerObj.focusTime;
+  focus.dispatchEvent(event);
   event.target.value = 33;
-  focusTime.dispatchEvent(event);
+  focus.dispatchEvent(event);
   expect(localStorage.workModeTime).toBe('33');
 
-  const shortBreakTime = TimerObj.shortBreakTime;
-  shortBreakTime.dispatchEvent(event);
+  const shortBreak = TimerObj.shortBreakTime;
+  shortBreak.dispatchEvent(event);
   event.target.value = 1;
-  shortBreakTime.dispatchEvent(event);
+  shortBreak.dispatchEvent(event);
   expect(localStorage.shortBreakTime).toBe('1');
 
-  const longBreakTime = TimerObj.longBreakTime;
-  longBreakTime.dispatchEvent(event);
+  const longBreak = TimerObj.longBreakTime;
+  longBreak.dispatchEvent(event);
   event.target.value = 9;
-  longBreakTime.dispatchEvent(event);
+  longBreak.dispatchEvent(event);
   expect(localStorage.longBreakTime).toBe('9');
 });
