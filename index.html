@@ -93,6 +93,13 @@
         <span class="slider round"></span>
         </label>
       </div>
+      <div id="autoStartGroup">
+        <label for="auto start">Start next session <br/> automatically:</label><br>
+        <label name="auto start" class="switch">
+        <input type="checkbox" id="autoStartSwitch" checked="true">
+        <span class="slider round"></span>
+        </label>
+      </div>
       
     </div>
   </section>
@@ -102,7 +109,7 @@
 		<div id="countdown">
 			<p id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</p>
 			<p id="top-left-border"> <span>┌</span> </p>
-			<p id="timeDisplay"> 25:00 </p>
+			<p id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start &nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
