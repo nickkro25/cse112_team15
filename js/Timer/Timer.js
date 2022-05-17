@@ -193,7 +193,8 @@ class Timer extends HTMLElement {
   }
 
   /**
-   * Updates the text elements on screen based on this.state and stateQueue[0] when the timer pauses
+   * Updates the text elements on screen based on 
+   * this.state and stateQueue[0] when the timer pauses
    */
   updateDisplay() {
       this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
