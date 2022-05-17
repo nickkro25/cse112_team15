@@ -125,3 +125,47 @@ test('Test Timer Pauses After Work Session When Auto Start is Disabled', () => {
   expect(displayStatus.textContent).toBe('Short Break');
   expect(document.title).toBe('Short Break');
 });
+
+test('get previous time durations from localStorage on refresh', () => {
+  localStorage.workModeTime = 26;
+  localStorage.shortBreakTime = 6;
+  localStorage.longBreakTime = 16;
+
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  expect(TimerObj.focusTime.value).toBe('26');
+  expect(TimerObj.shortBreakTime.value).toBe('6');
+  expect(TimerObj.longBreakTime.value).toBe('16');
+
+  localStorage.clear();
+});
+
+test('changeTime', () => {
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  const event = new Event('change');
+
+  const focusTime = TimerObj.focusTime;
+  focusTime.dispatchEvent(event);
+  event.target.value = 33;
+  focusTime.dispatchEvent(event);
+  expect(localStorage.workModeTime).toBe('33');
+
+  const shortBreakTime = TimerObj.shortBreakTime;
+  shortBreakTime.dispatchEvent(event);
+  event.target.value = 1;
+  shortBreakTime.dispatchEvent(event);
+  expect(localStorage.shortBreakTime).toBe('1');
+
+  const longBreakTime = TimerObj.longBreakTime;
+  longBreakTime.dispatchEvent(event);
+  event.target.value = 9;
+  longBreakTime.dispatchEvent(event);
+  expect(localStorage.longBreakTime).toBe('9');
+});
