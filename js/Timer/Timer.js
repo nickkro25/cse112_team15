@@ -270,7 +270,7 @@ class Timer extends HTMLElement {
     this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
     const session = this.stateQueue[0];
     this.displayStatus.textContent = this.state;
-    this.displayTime.textContent = timeToString(session.duration * 60);
+    this.timeDisplay.textContent = timeToString(session.duration * 60);
     document.title = session.name;
     const distractionOffEvent = new CustomEvent('timer-end');
     this.dispatchEvent(distractionOffEvent);
