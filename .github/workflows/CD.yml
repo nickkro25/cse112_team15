@@ -41,6 +41,9 @@ jobs:
          API_TOKEN_GITHUB: ${{secrets.GITHUB_TOKEN }}
         with:
          source-directory: 'autoDocs'
+         destination-github-username: 'nickkro25'
+         destination-repository-name: 'cse112_team15'
+         user-email: nkroliko@ucsd.edu
   release:
     runs-on: ubuntu-latest
     steps:
