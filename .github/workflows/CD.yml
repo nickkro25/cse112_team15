@@ -40,10 +40,7 @@ jobs:
         env:
          API_TOKEN_GITHUB: ${{secrets.GITHUB_TOKEN }}
         with:
-         source-directory: 'docs'
-         destination-github-username: 'Anshul-Birla'
-         destination-repository-name: 'PomoDoc'
-         user-email: anbirla@ucsd.edu
+         source-directory: 'autoDocs'
   release:
     runs-on: ubuntu-latest
     steps:
