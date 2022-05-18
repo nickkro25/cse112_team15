@@ -23,64 +23,25 @@
 
 <body>
   <script>
-    const breakNames = {
-      short: 'short-break',
-      long: 'long-break',
-    };
+    // update dark theme at the beginning to prevent transition
     const pageBGColor = {
       name: '--page-bg-color',
-      shortName: '--page-bg-color-short',
-      val: 'cadetblue',
-      shortVal: '#336b87',
       darkVal: '#363636',
     };
     const headerColor = {
       name: '--header-color',
-      shortName: '--header-color-short',
-      val: 'darkcyan',
-      shortVal: '#4990b4',
       darkVal: '2d2c2b',
-    };
-    const evenColor = {
-      name: '--even-color',
-      shortName: '--even-color-short',
-      val: 'rgba(149, 218, 229, 0.603)',
-      shortVal: '#98c7e9',
-      darkVal: 'lightslategray',
     };
     const toothpaste = {
       name: '--toothpaste',
-      val: 'rgb(2, 177, 177)',
       darkVal: '#2d2c2b',
-    };
-    const tableBG = {
-      name: '--table-bg=color-short',
-      val: '#60afcc',
-      darkVal: '#2d2c2b',
-    };
-    const modalBGColor = {
-      name: '--modal-bg-color',
-      val: '#f1f1f1',
-      darkVal: '#2d2c2b',
-    };
-    const modalFontColor = {
-      name: '--modal-font-color',
-      val: 'black',
-      darkVal: 'white',
     };
     if (localStorage.getItem('darkModeSwitch') === 'true') {
       document.querySelector('body').style.transitionDuration = '0s';
       const root = document.documentElement; 
       root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
-      root.style.setProperty(pageBGColor.shortName, pageBGColor.darkVal);
       root.style.setProperty(headerColor.name, headerColor.darkVal);
-      root.style.setProperty(headerColor.shortName, headerColor.darkVal);
-      root.style.setProperty(evenColor.name, evenColor.darkVal);
-      root.style.setProperty(evenColor.shortName, evenColor.darkVal);
       root.style.setProperty(toothpaste.name, toothpaste.darkVal);
-      root.style.setProperty(tableBG.name, tableBG.darkVal);
-      root.style.setProperty(modalBGColor.name, modalBGColor.darkVal);
-      root.style.setProperty(modalFontColor.name, modalFontColor.darkVal);
     }
   </script>
 	<noscript>
@@ -181,7 +142,7 @@
 	<!-- The audio cue -->
 	<audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
 	<!-- Container for current task -->
-	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > </section>
+	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
 	<!-- Container for task list -->
 	<section id='tasklist' class='section-container' id='todo' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
