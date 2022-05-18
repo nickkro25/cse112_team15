@@ -35,15 +35,13 @@ jobs:
         run: npm ci
       - name: Build Docs
         run: npm run doc
-      - name: Push directory to another repository
-        uses: cpina/github-action-push-to-another-repository@v1.2
-        env:
-         API_TOKEN_GITHUB: ${{secrets.GITHUB_TOKEN }}
-        with:
-         source-directory: 'autoDocs'
-         destination-github-username: 'nickkro25'
-         destination-repository-name: 'cse112_team15'
-         user-email: nkroliko@ucsd.edu
+      - name: Commit and push to repo
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add autoDocs/*
+          git commit -m "auto update docs"
+          git push origin
   release:
     runs-on: ubuntu-latest
     steps:
