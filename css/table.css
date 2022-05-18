@@ -17,7 +17,7 @@ table {
   border-collapse: separate;
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
-  /* min-height: 45vh; */
+  min-height: 45vh;
 
   /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
