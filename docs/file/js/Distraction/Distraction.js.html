@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/Distraction/Distraction.js | cse110-w21-group28</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse110-w21-group28"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Anshul-Birla/cse110-w21-group28"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/Distraction/Distraction.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Distraction object, displayed when distraction button is clicked
+ * allow user to input distractions. Hide when other area is clicked.
+ */
+class Distraction extends HTMLElement {
+  /**
+   * Constructor for the distraction element
+   * @param {HTMLButton} distractButton - button to click to log distraction
+   * @param {HTMLSection} distractPopUp - pop up that should show for distraction
+   * @param {HTMLButton} cancelButton - button to cancel inputting a distraction
+   * @param {HTMLFormElement} distractForm - form to input distraction
+   * @param {HTMLInputElement} description - where users input the distracton
+   * @param {HTMLDivElement} overlay  - overlay to darken background
+   */
+  constructor(distractButton, distractPopUp, cancelButton, distractForm, description, overlay) {
+    super();
+    /**
+     * The button where users click to submit their distractions
+     * @type {HTMLButtonElement}
+     */
+    this.distractButton = distractButton;
+
+    /**
+     * The section for displaying distraction form
+     * @type {HTMLSectionElement}
+     */
+    this.distractPopUp = distractPopUp;
+
+    /**
+     * The button where users click to cancel their distractions
+     * @type {HTMLButtonElement}
+     */
+    this.cancelButton = cancelButton;
+
+    /**
+     * The form where users input their distractions
+     * @type {HTMLFormElement}
+     */
+    this.distractForm = distractForm;
+
+    /**
+     * Input element for logging a distraction
+     * @type {HTMLInputElement}
+     */
+    this.description = description;
+
+    /**
+     * Overlay to darken popup backgrounds
+     * @type {HTMLDivElement}
+     */
+    this.overlay = overlay;
+
+    /**
+     * Array of distractions
+     * @type {array}
+     */
+    this.distractions = [];
+    this.setupEventListeners();
+  }
+
+  /**
+  * Sets up event listeners to make distraction appear, submit, etc.
+  */
+  setupEventListeners() {
+    // Distraction button makes distraction popup appear
+    this.distractButton.addEventListener(&apos;click&apos;, () =&gt; {
+      if (this.distractPopUp.style.display === &apos;block&apos;) {
+        this.resetPopUp();
+      } else {
+        this.distractPopUp.style.display = &apos;block&apos;;
+        this.distractPopUp.style.animationName = &apos;distraction-animation-in&apos;;
+        this.overlay.style.display = &apos;block&apos;;
+        this.overlay.style.animationName = &apos;overlay-animation-in&apos;;
+      }
+    });
+
+    // Cancel makes popup go away
+    this.cancelButton.addEventListener(&apos;click&apos;, () =&gt; {
+      this.resetPopUp();
+    });
+
+    // Submit button fires event that App.js will catch and log
+    this.distractForm.addEventListener(&apos;submit&apos;, (e) =&gt; {
+      e.preventDefault();
+      const event = new CustomEvent(&apos;distraction-created&apos;, {
+        detail: {
+          date: new Date(),
+          description: this.description.value,
+          pomoSessionId: null,
+        },
+      });
+      this.dispatchEvent(event);
+      this.resetPopUp();
+    });
+
+    /**
+    * These event listeners trigger when the animation is finished. It resets
+    * the popup animations and sets hides them when done.
+    */
+    this.distractPopUp.addEventListener(&apos;animationend&apos;, (e) =&gt; {
+      if (e.animationName === &apos;distraction-animation-out&apos;) {
+        this.distractPopUp.style.animationName = &apos;&apos;;
+        this.distractPopUp.style.display = &apos;none&apos;;
+      }
+    });
+
+    this.overlay.addEventListener(&apos;animationend&apos;, (e) =&gt; {
+      if (e.animationName === &apos;overlay-animation-out&apos;) {
+        this.overlay.style.animationName = &apos;&apos;;
+        this.overlay.style.display = &apos;none&apos;;
+      }
+    });
+
+    this.overlay.addEventListener(&apos;click&apos;, () =&gt; {
+      this.resetPopUp();
+    });
+  }
+
+  /**
+   * Makes popup disappear and clears input field
+   */
+  resetPopUp() {
+    this.distractPopUp.style.animationName = &apos;distraction-animation-out&apos;;
+    this.overlay.style.animationName = &apos;overlay-animation-out&apos;;
+    document.getElementById(&apos;description&apos;).value = &apos;&apos;;
+  }
+
+  /**
+   * Makes distraction button disappear (during breaks)
+   */
+  hideButton() {
+    this.distractButton.style.display = &apos;none&apos;;
+  }
+
+  /**
+   * Makes distraction button appear (during work sessions)
+   */
+  showButton() {
+    this.distractButton.style.display = &apos;block&apos;;
+  }
+}
+
+customElements.define(&apos;distraction-page&apos;, Distraction);
+export { Distraction };
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

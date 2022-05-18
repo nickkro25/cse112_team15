@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/Statistics/Statistics.js | cse110-w21-group28</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse110-w21-group28"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Anshul-Birla/cse110-w21-group28"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/Statistics/Statistics.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { classNames, storageItemNames } from &apos;./StatisticsVariables.js&apos;;
+
+/**
+ * A class for the Statistics object. Has functions for incrementing
+ * and decrementing expected and actual pomo sessions,
+ * total time and work time spent, and storing distractions.
+ * Also handles local storage elements for stats.
+ */
+class Statistics extends HTMLElement {
+  /**
+   * Constructor of Statistics object. Initializes all variables to zero,
+   * overwrites them from memory if available, updates DOM.
+   */
+  constructor() {
+    super();
+    /**
+     * @type {Object[]} Array that stores the distraction &amp; which pomo session it happened during
+     */
+    this.distractionList = [];
+    /**
+     * @type {Number} Total number of minutes spent
+     */
+    this.totalMins = 0;
+    /**
+    * @type {Number} Total number of minutes spent working
+    */
+    this.workMins = 0;
+    /**
+    * @type {Number} Total number of tasks completed
+    */
+    this.tasksCompleted = 0;
+    /**
+    * @type {Number} Sum of projected number of pomo sessions expected over all Tasks
+    */
+    this.expectedPomoSessions = 0;
+    /**
+    * @type {Number} Sum of actual number of pomo sessions spent on all Tasks
+    */
+    this.actualPomoSessions = 0;
+    /**
+    * @type {Date} Start date/time stamp of current work day
+    */
+    this.sessionStartDateTime = new Date();
+    this.addHTMLChildren();
+    this.addEventListeners();
+    this.loadFromLocalStorage();
+    this.flushHistory();
+  }
+
+  /**
+   *  Adds all child HTML elements to the statistics popup
+   */
+  addHTMLChildren() {
+    /**
+     * The div to which the page is appended
+     * @type {HTMLDivElement}
+     */
+    this.parentDiv = document.getElementById(&apos;stats-info&apos;);
+
+    // Tasks Completed
+    /**
+     * Number of tasks completed
+     * @type {HTMLParagraphElement}
+     */
+    this.tasksCompletedP = document.createElement(&apos;p&apos;);
+    this.tasksCompletedP.setAttribute(&apos;id&apos;, &apos;stats_tasksCompleted&apos;);
+    this.tasksCompletedP.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     *  Label for number of tasks completed
+     * @type {HTMLParagraphElement}
+     */
+    this.tasksCompletedPLabel = document.createElement(&apos;p&apos;);
+    this.tasksCompletedPLabel.setAttribute(&apos;id&apos;, &apos;stats_tasksCompletedLabel&apos;);
+    this.tasksCompletedPLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.tasksCompletedPLabel.textContent = &apos;Tasks Completed&apos;;
+    this.parentDiv.appendChild(this.tasksCompletedP);
+    this.parentDiv.appendChild(this.tasksCompletedPLabel);
+
+    // Total Time Spent
+    /**
+     * Total time spent
+     * @type {HTMLParagraphElement}
+     */
+    this.timeSpent = document.createElement(&apos;p&apos;);
+    this.timeSpent.setAttribute(&apos;id&apos;, &apos;stats_totalTime&apos;);
+    this.timeSpent.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     * Label for total time spent
+     * @type {HTMLParagraphElement}
+     */
+    this.timeSpentLabel = document.createElement(&apos;p&apos;);
+    this.timeSpentLabel.setAttribute(&apos;id&apos;, &apos;stats_timeSpentLabel&apos;);
+    this.timeSpentLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.timeSpentLabel.textContent = &apos;Total Minutes&apos;;
+    this.parentDiv.appendChild(this.timeSpent);
+    this.parentDiv.appendChild(this.timeSpentLabel);
+
+    // Time spent working
+    /**
+     *  Total time spent working
+     * @type {HTMLParagraphElement}
+     */
+    this.timeWorking = document.createElement(&apos;p&apos;);
+    this.timeWorking.setAttribute(&apos;id&apos;, &apos;stats_workTime&apos;);
+    this.timeWorking.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     * Label for total time spent working
+     * @type {HTMLParagraphElement}
+     */
+    this.timeWorkingLabel = document.createElement(&apos;p&apos;);
+    this.timeWorkingLabel.setAttribute(&apos;id&apos;, &apos;stats_timeWorkingLabel&apos;);
+    this.timeWorkingLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.timeWorkingLabel.textContent = &apos;Working Minutes&apos;;
+    this.parentDiv.appendChild(this.timeWorking);
+    this.parentDiv.appendChild(this.timeWorkingLabel);
+
+    // Average time per task
+    /**
+     *  Average time per task
+     * @type {HTMLParagraphElement}
+     */
+    this.timePerTask = document.createElement(&apos;p&apos;);
+    this.timePerTask.setAttribute(&apos;id&apos;, &apos;stats_timePerTask&apos;);
+    this.timePerTask.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     * Label for avg time per task
+     * @type {HTMLParagraphElement}
+     */
+    this.timePerTaskLabel = document.createElement(&apos;p&apos;);
+    this.timePerTaskLabel.setAttribute(&apos;id&apos;, &apos;stats_timePerTaskLabel&apos;);
+    this.timePerTaskLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.timePerTaskLabel.textContent = &apos;Minutes per Task&apos;;
+    this.parentDiv.appendChild(this.timePerTask);
+    this.parentDiv.appendChild(this.timePerTaskLabel);
+
+    /* Adding things to Distraction Tab */
+
+    // Number of Broken Session
+    /**
+     * Total number of unique broken sessions
+     * @type {HTMLParagraphElement}
+     */
+    this.brokenSessions = document.createElement(&apos;p&apos;);
+    this.brokenSessions.setAttribute(&apos;id&apos;, &apos;stats_numBrokenSessions&apos;);
+    this.brokenSessions.setAttribute(&apos;class&apos;, classNames.distNumberClass);
+    /**
+     * Label for total number of unique broken sessions
+     * @type {HTMLParagraphElement}
+     */
+    this.brokenSessionsLabel = document.createElement(&apos;p&apos;);
+    this.brokenSessionsLabel.setAttribute(&apos;id&apos;, &apos;stats_brokenSessionsLabel&apos;);
+    this.brokenSessionsLabel.setAttribute(&apos;class&apos;, classNames.distLabelClass);
+    this.brokenSessionsLabel.textContent = &apos;Broken Sessions&apos;;
+    this.parentDiv.appendChild(this.brokenSessions);
+    this.parentDiv.appendChild(this.brokenSessionsLabel);
+
+    // Number of Expected Pomo Sessions;
+    /**
+     * Total projected number of pomo sessions
+     * @type {HTMLParagraphElement}
+     */
+    this.expectedPomoSessionsData = document.createElement(&apos;p&apos;);
+    this.expectedPomoSessionsData.setAttribute(&apos;id&apos;, &apos;stats_expectedPomoSesh&apos;);
+    this.expectedPomoSessionsData.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     * Label for projected number of pomo sessions
+     * @type {HTMLParagraphElement}
+     */
+    this.expectedPomoSessionsLabel = document.createElement(&apos;p&apos;);
+    this.expectedPomoSessionsLabel.setAttribute(&apos;id&apos;, &apos;stats_expectedPomoSesLabel&apos;);
+    this.expectedPomoSessionsLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.expectedPomoSessionsLabel.textContent = &apos;Expected Pomo Sessions&apos;;
+    this.parentDiv.appendChild(this.expectedPomoSessionsData);
+    this.parentDiv.appendChild(this.expectedPomoSessionsLabel);
+
+    // Number of Actual Pomo Sessions
+    /**
+     * Total number of working pomo sessions
+     * @type {HTMLParagraphElement}
+     */
+    this.actualPomoSessionsData = document.createElement(&apos;p&apos;);
+    this.actualPomoSessionsData.setAttribute(&apos;id&apos;, &apos;stats_actualPomo&apos;);
+    this.actualPomoSessionsData.setAttribute(&apos;class&apos;, classNames.statsNumberClass);
+    /**
+     * Label for total number of working pomo sessions
+     * @type {HTMLParagraphElement} L
+     */
+    this.actualPomoSessionsLabel = document.createElement(&apos;p&apos;);
+    this.actualPomoSessionsLabel.setAttribute(&apos;id&apos;, &apos;stats_actualPomoSesLabel&apos;);
+    this.actualPomoSessionsLabel.setAttribute(&apos;class&apos;, classNames.statsLabelClass);
+    this.actualPomoSessionsLabel.textContent = &apos;Actual Pomo Sessions&apos;;
+    this.parentDiv.appendChild(this.actualPomoSessionsData);
+    this.parentDiv.appendChild(this.actualPomoSessionsLabel);
+
+    // Average Number of Distractions Per Task
+    /**
+     * Average number of distractions per task
+     * @type {HTMLParagraphElement}
+     */
+    this.avgDistractions = document.createElement(&apos;p&apos;);
+    this.avgDistractions.setAttribute(&apos;id&apos;, &apos;dist_avgDistractions&apos;);
+    this.avgDistractions.setAttribute(&apos;class&apos;, classNames.distNumberClass);
+    /**
+     * Label for average distractions per task
+     * @type {HTMLParagraphElement}
+     */
+    this.avgDistractionsLabel = document.createElement(&apos;p&apos;);
+    this.avgDistractionsLabel.setAttribute(&apos;id&apos;, &apos;dist_avgDistractionLabel&apos;);
+    this.avgDistractionsLabel.setAttribute(&apos;class&apos;, classNames.distLabelClass);
+    this.avgDistractionsLabel.textContent = &apos;Average Distractions Per Task&apos;;
+    this.parentDiv.appendChild(this.avgDistractions);
+    this.parentDiv.appendChild(this.avgDistractionsLabel);
+
+    // Distraction List
+    /**
+     * List of distractions
+     * @type {HTMLUListElement}
+     */
+    this.distList = document.createElement(&apos;ul&apos;);
+    this.distList.setAttribute(&apos;class&apos;, &apos;dist-list&apos;);
+    this.parentDiv.appendChild(this.distList);
+    /**
+     * @type {HTMLParagraphElement} Label for list of distractions
+     */
+    this.distListLabel = document.createElement(&apos;p&apos;);
+    this.distListLabel.setAttribute(&apos;id&apos;, &apos;dist_listLabel&apos;);
+    this.distListLabel.setAttribute(&apos;class&apos;, classNames.distLabelClass);
+    this.distListLabel.textContent = &apos;Distraction List&apos;;
+    this.parentDiv.appendChild(this.distListLabel);
+  }
+
+  /**
+   *  Creates a list item for each logged distraction
+   */
+  updateDistractionList() {
+    const content = document.getElementsByClassName(&apos;distItem&apos;);
+    let i;
+    if (content.length === 0) {
+      i = 0;
+    } else {
+      i = content.length;
+    }
+    while (i &lt; this.distractionList.length) {
+      /**
+       * @type {HTMLLIElement} Row for distraction
+       */
+      this.listElement = document.createElement(&apos;li&apos;);
+      this.listElement.setAttribute(&apos;class&apos;, &apos;distItem&apos;);
+      this.listElement.textContent = this.distractionList[i].description;
+      this.distList.appendChild(this.listElement);
+      i += 1;
+    }
+  }
+
+  /**
+   *  Creates event listeners for toggling tabs within the stats popup
+   */
+  addEventListeners() {
+    const statsDistractBtn = document.getElementById(&apos;distraction&apos;);
+    const statsTabBtn = document.getElementById(&apos;data&apos;);
+
+    /*
+    Clicking the Distraction button on the Statistics popup generates the
+    distraction views and hides the data information
+    */
+    statsDistractBtn.addEventListener(&apos;click&apos;, () =&gt; {
+      statsTabBtn.className = classNames.nonActiveTabClass;
+      let content = document.getElementsByClassName(classNames.statsNumberClass);
+      let contentlabel = document.getElementsByClassName(classNames.statsLabelClass);
+      for (let i = 0; i &lt; content.length; i += 1) {
+        content[i].style.display = &apos;none&apos;;
+        contentlabel[i].style.display = &apos;none&apos;;
+      }
+      content = document.getElementsByClassName(classNames.distNumberClass);
+      contentlabel = document.getElementsByClassName(classNames.distLabelClass);
+      document.getElementsByClassName(&apos;dist-list&apos;)[0].style.display = &apos;block&apos;;
+      for (let i = 0; i &lt; content.length; i += 1) {
+        content[i].style.display = &apos;block&apos;;
+      }
+      for (let i = 0; i &lt; contentlabel.length; i += 1) {
+        contentlabel[i].style.display = &apos;block&apos;;
+      }
+      statsDistractBtn.className = classNames.activeTabClass;
+    });
+
+    /*
+      Clicking on Data button within the Statistics popup generates
+      the data views and hides distraction data
+    */
+    statsTabBtn.addEventListener(&apos;click&apos;, () =&gt; {
+      statsDistractBtn.className = classNames.nonActiveTabClass;
+      let content = document.getElementsByClassName(classNames.distNumberClass);
+      let contentlabel = document.getElementsByClassName(classNames.distLabelClass);
+      for (let i = 0; i &lt; content.length; i += 1) {
+        content[i].style.display = &apos;none&apos;;
+      }
+      for (let i = 0; i &lt; contentlabel.length; i += 1) {
+        contentlabel[i].style.display = &apos;none&apos;;
+      }
+      document.getElementsByClassName(&apos;dist-list&apos;)[0].style.display = &apos;none&apos;;
+      content = document.getElementsByClassName(classNames.statsNumberClass);
+      contentlabel = document.getElementsByClassName(classNames.statsLabelClass);
+      for (let i = 0; i &lt; content.length; i += 1) {
+        content[i].style.display = &apos;block&apos;;
+        contentlabel[i].style.display = &apos;block&apos;;
+      }
+      statsTabBtn.className = classNames.activeTabClass;
+    });
+
+    // Clicking outside of the popup closes the popup
+    document.getElementById(&apos;overlay&apos;).addEventListener(&apos;click&apos;, () =&gt; {
+      document.getElementById(&apos;close-stats-button&apos;).click();
+      document.getElementById(&apos;overlay&apos;).style.animation = &apos;&apos;;
+    });
+  }
+
+  /**
+   *  Updates the HTML elements to display values of local variables.
+   * Called when stats button is called.
+   */
+  updateDom() {
+    this.timePerTask.textContent = this.getAverageTimePerTask();
+    this.tasksCompletedP.textContent = this.tasksCompleted;
+    this.timeWorking.textContent = this.workMins;
+    this.timeSpent.textContent = this.totalMins;
+    this.brokenSessions.textContent = this.getNumUniqueDistractions();
+    this.avgDistractions.textContent = this.getAvgDistractionsPerTask();
+    this.expectedPomoSessionsData.textContent = this.expectedPomoSessions;
+    this.actualPomoSessionsData.textContent = this.actualPomoSessions;
+    this.updateDistractionList();
+  }
+
+  /**
+   *  Increments by one every time a task is marked as completed
+   */
+  incrementTasksCompleted() {
+    this.tasksCompleted += 1;
+    this.updateMinorLocalStorage();
+  }
+
+  /**
+   *  Decrements by one every time a task is marked as not-completed given that
+   * there are tasks that can be uncompleted. Updates local storage when called.
+   */
+  decrementTasksCompleted() {
+    if (this.tasksCompleted &gt; 0) {
+      this.tasksCompleted -= 1;
+      this.updateMinorLocalStorage();
+    } // else I&apos;m interested to see how you got there
+  }
+
+  /**
+   * Adds a distraction (represented by a JSON object) to the list of distractions.
+   * Updates local storage when called.
+   * @param {JSON Object} distraction Distraction to be added
+   */
+  addDistraction(distraction) {
+    this.distractionList.push(distraction);
+    this.updateMinorLocalStorage();
+  }
+
+  /**
+   *  Gets the number of broken work sessions. If multiple distractions
+   * during one work session occurred, only counts as one unique broken pomo session.
+   * @returns {Number} Number of disrupted work sessions
+   */
+  getNumUniqueDistractions() {
+    const uniqueDistractionId = new Set(this.distractionList.map((item) =&gt; item.pomoSessionId));
+    return uniqueDistractionId.size;
+  }
+
+  /**
+   *  Counts average number of distractions per task
+   * @returns {Number} Average number of distractions per task rounded to the nearest tenth
+   */
+  getAvgDistractionsPerTask() {
+    if (this.tasksCompleted === 0) {
+      return 0;
+    }
+    const rawNumber = this.distractionList.length / this.tasksCompleted;
+    return Math.round(rawNumber * 10) / 10;
+  }
+
+  /**
+   *  Increments the total time spent. Updates local storage when called.
+   * @param {Number} numMins Number of minutes to increment count by
+   */
+  addTimeSpent(numMins) {
+    this.totalMins += (numMins * 1);
+    this.updateMinorLocalStorage();
+  }
+
+  /**
+   *  Increments the work time spent. When work time incremented, so is total time spent
+   * (runs as separate method call to addTimeSpent())
+   * @param {Number} numMins Number of minutes to increment work count by
+   */
+  addWorkTime(numMins) {
+    this.workMins += (numMins * 1);
+    this.addTimeSpent(numMins);
+  }
+
+  /**
+   *  Increments the planned number of pomo sessions for the work day.
+   * Should be called each time a task is added.
+   * @param {Number} numSessions Number of sessions to increment count by
+   */
+  addExpectedPomoSessions(numSessions) {
+    this.expectedPomoSessions += numSessions;
+    this.updateMinorLocalStorage();
+  }
+
+  /**
+   *  Decrements the planned number of pomo sessions for the work day.
+   * Should be called each time a task is deleted. Only decrements if new tasks
+   * were added during the current work day.
+   * @param {Number} numSessions Number of sessions to decrement count by
+   */
+  deleteExpectedPomoSessions(numSessions) {
+    if (this.expectedPomoSessions &gt;= numSessions) {
+      this.expectedPomoSessions -= numSessions;
+      this.updateMinorLocalStorage();
+    } // else I&apos;m interested how you got here
+  }
+
+  /**
+   * Increments the number of completed pomo sessions for the work day.
+   * Should be called each time the timer finishes a work session.
+   * Updates local storage when called
+   */
+  incrementActualPomoSessions() {
+    this.actualPomoSessions += 1;
+    this.updateMinorLocalStorage();
+  }
+
+  /**
+   * @returns {Number} Average work minutes per completed task rounded to the nearest whole minute
+   */
+  getAverageTimePerTask() {
+    if (this.tasksCompleted &gt; 0) {
+      return Math.round(this.workMins / this.tasksCompleted);
+    }
+    return 0;
+  }
+
+  /**
+   *  Loads all variables from local storage or sets them to zero if not found
+   */
+  loadFromLocalStorage() {
+    /**
+     * @type {Object[]} Loading variables as strings from local storage
+     */
+    this.history = JSON.parse(localStorage.getItem(&apos;statsHistory&apos;));
+    if (this.history === null) {
+      this.history = [];
+    }
+    this.totalMins = localStorage.getItem(storageItemNames.totalMins);
+    this.workMins = localStorage.getItem(storageItemNames.workMins);
+    this.tasksCompleted = localStorage.getItem(storageItemNames.tasksCompleted);
+    this.expectedPomoSessions = localStorage.getItem(storageItemNames.expectedPomoSessions);
+    this.actualPomoSessions = localStorage.getItem(storageItemNames.actualPomoSessions);
+    this.distractionList = localStorage.getItem(storageItemNames.currDistractionList);
+    this.sessionStartDateTime = localStorage.getItem(storageItemNames.startDateTime);
+
+    /*
+    If string was not found, set to zero/empty value.
+    If string was found, parse the string for it&apos;s value
+    */
+    this.totalMins = ((this.totalMins !== null) ? parseInt(this.totalMins, 10) : 0);
+    this.workMins = ((this.workMins !== null) ? parseInt(this.workMins, 10) : 0);
+    this.tasksCompleted = ((this.tasksCompleted !== null) ? parseInt(this.tasksCompleted, 10) : 0);
+    this.expectedPomoSessions = ((this.expectedPomoSessions !== null)
+      ? parseInt(this.expectedPomoSessions, 10) : 0);
+    this.actualPomoSessions = ((this.actualPomoSessions !== null)
+      ? parseInt(this.actualPomoSessions, 10) : 0);
+    this.tasksCompleted = ((this.tasksCompleted !== null)
+      ? parseInt(this.tasksCompleted, 10) : 0);
+    this.sessionStartDateTime = ((this.sessionStartDateTime !== null)
+      ? new Date(this.sessionStartDateTime) : new Date());
+
+    /*
+    Split the list of distractions from the string into individual distractions
+    and turn date strings into date objects
+    */
+    if (this.distractionList !== null) {
+      this.distractionList = JSON.parse(this.distractionList);
+      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      for (let i = 0; i &lt; this.distractionList.length; i += 1) {
+        // let temp = this.distractionList[i];
+        this.distractionList[i].date = new Date(this.distractionList[i].date);
+      }
+    } else {
+      this.distractionList = [];
+    }
+  }
+
+  /**
+   *  Writes all class variables to local storage
+   */
+  updateMinorLocalStorage() {
+    localStorage.setItem(storageItemNames.totalMins, this.totalMins);
+    localStorage.setItem(storageItemNames.workMins, this.workMins);
+    localStorage.setItem(storageItemNames.tasksCompleted, this.tasksCompleted);
+    localStorage.setItem(storageItemNames.expectedPomoSessions, this.expectedPomoSessions);
+    localStorage.setItem(storageItemNames.actualPomoSessions, this.actualPomoSessions);
+    localStorage.setItem(storageItemNames.currDistractionList,
+      JSON.stringify(this.distractionList));
+    localStorage.setItem(storageItemNames.startDateTime, this.sessionStartDateTime);
+  }
+
+  /**
+   *  Deletes all history records that are older than one year. To be used with
+   *  year-to-date information. Updates local storage only for history record when called.
+   */
+  flushHistory() {
+    const currDate = new Date();
+    for (let i = 0; i &lt; this.history.length; i += 1) {
+      const diff = (currDate - new Date(this.history[i].date));
+      if (diff / (1000 * 3600 * 24 * 365) &gt; 1) {
+        this.history.splice(i, 1);
+      }
+    }
+    localStorage.setItem(&apos;statsHistory&apos;, JSON.stringify(this.history));
+  }
+
+  /**
+   *  Sees if the last time that a day was started was earlier than 3 a.m. today.
+   * If the work day was started at 3 a.m. or later, do not clear data,
+   * treat everything as a single work day.
+   * Otherwise, would compress data into history and clear variables.
+   * @returns {Boolean} False if session started on or after 3 a.m. today. Else True.
+   */
+  dataToCompressExists() {
+    const currDate = new Date();
+    if (this.sessionStartDateTime.getFullYear() &lt; currDate.getFullYear()) {
+      return true;
+    } if (this.sessionStartDateTime.getMonth() &lt; currDate.getMonth()) {
+      return true;
+    } if (this.sessionStartDateTime.getDate() &lt; currDate.getDate()) {
+      return true;
+    } if (this.sessionStartDateTime.getHours() &lt;= 2) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Compresses necessary local variables to a history record and
+   * pushes the record to local storage.
+   * Should run when the End Day button is hit or when page loads and
+   * dataToCompressExists() true. Dispatches reset-timer event to reset timer PomoSessionId to 0.
+   */
+  compressStats() {
+    if (this.totalMins &gt; 0) {
+      this.history.push({
+        date: this.sessionStartDateTime,
+        distractionCount: this.distractionList.length,
+        timeSpent: this.totalMins,
+      });
+      localStorage.setItem(&apos;statsHistory&apos;, JSON.stringify(this.history));
+    }
+
+    const event = new CustomEvent(&apos;reset-timer&apos;, {
+    });
+    this.dispatchEvent(event);
+  }
+
+  /**
+   *  Resets all variables back to zeroed/empty values
+   */
+  clearData() {
+    this.totalMins = 0;
+    this.workMins = 0;
+    this.tasksCompleted = 0;
+    this.expectedPomoSessions = 0;
+    this.actualPomoSessions = 0;
+    this.distractionList = [];
+    this.sessionStartDateTime = new Date();
+    this.updateMinorLocalStorage();
+  }
+}
+
+customElements.define(&apos;stats-block&apos;, Statistics);
+export { Statistics };
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

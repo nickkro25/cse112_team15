@@ -193,7 +193,7 @@ test('Adding first task should not disable the checkbox', () => {
   localStorage.clear();
 });
 
-test('Adding two tasks should disable the checkbox for second task', () => {
+test('Adding two tasks should not disable the checkbox for second task', () => {
   formLocation.children[0].setAttribute('value', 'Task1');
   formLocation.children[1].value = 2;
   formLocation.submit();
@@ -202,7 +202,7 @@ test('Adding two tasks should disable the checkbox for second task', () => {
   formLocation.submit();
 
   expect(tableLocation.children[1].checkBox.disabled).toBe(false);
-  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
   localStorage.clear();
 });
 
@@ -219,7 +219,7 @@ test('Focusing on a task updates checkboxes accordingly', () => {
 
   expect(tableLocation.children[1].checkBox.disabled).toBe(false);
   expect(tableLocation.children[1].taskText.textContent).toBe('Task2');
-  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
   localStorage.clear();
 });
 

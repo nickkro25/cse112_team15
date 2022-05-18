@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/ToDoList/TodoListDom.js | cse110-w21-group28</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse110-w21-group28"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Anshul-Birla/cse110-w21-group28"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/ToDoList/TodoListDom.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { ToDoList } from &apos;./ToDoList.js&apos;;
+import { HTMLAttributes, TaskStorage } from &apos;./TodoListDomVariables.js&apos;;
+// import { Task } from &apos;./Task.js&apos;;
+
+/**
+ * Class responsible for providing changes to the DOM for the TodoList
+ * Encapsulates the TodoList class
+ * Done so their is a clear abstraction from DOM Manipulation and Data Manipulation
+ */
+class TodoListDom {
+  /**
+   * Initializes the TodoListDom object with its correct member variables
+   * @param {HTMLTableElement} HTMLTable - Table where tasks will be stored
+   * @param {HTMLFormElement} HTMLForm - Form to add the task
+   * @param {HTMLButtonElement} submitBtn - Button to submit the entered tasks
+   * @param {HTMLButtonElement} deleteAllBtn - Delete all tasks button
+   */
+  constructor(HTMLTable, HTMLForm, submitBtn, deleteAllBtn, currentTaskDiv) {
+    /**
+     * Holds the TodoList so the Dom Manager can acess it
+     * @type {ToDoList}
+     */
+    this.todoList = new ToDoList();
+    /**
+     * The form where users input their task
+     * @type {HTMLFormElement}
+     */
+    this.form = HTMLForm;
+    /**
+     * The button where users click to submit their todo&apos;s
+     * @type {HTMLButtonElement}
+     */
+    this.submitBtn = submitBtn;
+    /**
+     * The button where users click to delete their todo&apos;s
+     * @type {HTMLButtonElement}
+     */
+    this.deleteAllBtn = deleteAllBtn;
+    /**
+     * The table where the todolist is displayed
+     * @type {HTMLTableElement}
+     */
+    this.table = HTMLTable;
+
+    /**
+     * The current task the user should be working on
+     * @type {Task}
+     */
+    this.currentTask = null;
+
+    /**
+     * The current task to be displayed
+     * @type {HTMLDiv}
+     */
+    this.currentTaskDiv = currentTaskDiv;
+    this.setupEventListeners();
+    this.renderLocalStorage();
+  }
+
+  /**
+ * Fetch local storage, and store them into window.localData
+ * Iterate each local tasks and render them
+ */
+  renderLocalStorage() {
+    window.localData = [];
+    const completedTaskIndex = [];
+    // re-indexing all tasks as 0,1,2,3...
+    if (localStorage.getItem(&apos;tasks&apos;) !== null) {
+      window.localData = JSON.parse(localStorage.getItem(&apos;tasks&apos;));
+      for (let i = 0; i &lt; window.localData.length; i += 1) {
+        window.localData[i][0] = String(i);
+      }
+      localStorage.setItem(&apos;tasks&apos;, JSON.stringify(window.localData));
+    }
+
+    for (let i = 0; i &lt; window.localData.length; i += 1) {
+      // get local storage data
+      const completed = window.localData[i][TaskStorage.checkedIndex];
+
+      if (!completed) {
+        const name = window.localData[i][TaskStorage.nameIndex];
+        const totalSession = window.localData[i][TaskStorage.totalSessionIndex];
+        const currentSession = window.localData[i][TaskStorage.currentSessionIndex];
+        const task = this.todoList.addTask(name, totalSession, currentSession, completed, true);
+        this.displayTask(task);
+      } else {
+        /*
+           push index because addTask takes in each indiv. param instead of a task.
+           Need to use addTask() because that is the only way to increment the counter
+           in the todolist class (used for id&apos;s)
+        */
+        completedTaskIndex.push(i);
+      }
+    }
+    // this is so that the completed tasks go to the end of the todolist during rendering
+    for (let x = 0; x &lt; completedTaskIndex.length; x += 1) {
+      const i = completedTaskIndex[x];
+      const name = window.localData[i][TaskStorage.nameIndex];
+      const totalSession = window.localData[i][TaskStorage.totalSessionIndex];
+      const currentSession = window.localData[i][TaskStorage.currentSessionIndex];
+      const completed = window.localData[i][TaskStorage.checkedIndex];
+      const task = this.todoList.addTask(name, totalSession, currentSession, completed, true);
+      task.addEventListener(&apos;task-checked-off&apos;, () =&gt; {
+        const event = new CustomEvent(&apos;task-checked-off&apos;, {
+        });
+        this.todoList.dispatchEvent(event);
+      });
+      task.addEventListener(&apos;task-unchecked&apos;, () =&gt; {
+        const event = new CustomEvent(&apos;task-unchecked&apos;, {
+        });
+        this.todoList.dispatchEvent(event);
+      });
+      // task.updatePomoSessions();
+      this.displayTask(task);
+    }
+
+    this.updateCurrentTask();
+  }
+
+  /**
+   * Sets up the form dissapearing and submit event listeners
+   */
+  setupEventListeners() {
+    // event listener for form submit
+    this.form.addEventListener(&apos;submit&apos;, (e) =&gt; {
+      e.preventDefault();
+      const data = new FormData(this.form);
+      const name = data.get(HTMLAttributes.taskNameId);
+      const sessions = parseInt(data.get(HTMLAttributes.taskPomoSessions), 10);
+      try {
+        const task = this.todoList.addTask(name, sessions);
+        this.updateCurrentTask();
+        const insertAtIndex = this.getFirstCompletedTaskIndex();
+        this.displayTask(task, insertAtIndex);
+        this.form.reset();
+      } catch (error) {
+        // eslint-disable-next-line no-alert
+        alert(&apos;Invalid input. Please try again&apos;);
+        console.log(error);
+      }
+    });
+
+    this.deleteAllBtn.addEventListener(&apos;click&apos;, () =&gt; {
+      const list = this.todoList.taskList;
+      while (list[0] !== undefined) {
+        list[0].deleteButton.click();
+      }
+    });
+  }
+
+  /**
+   * Adds a task to the bottom of the table OR adds it before the specified index
+   * @param {HTMLTableRowElement} newTask - task you want added
+   * @param {HTMLTableRowElement} [index = -1] - index you want to insert the task before
+   */
+  displayTask(newTask, index = -1) {
+    if (index === -1) {
+      this.table.appendChild(newTask);
+    } else {
+      this.table.insertBefore(newTask, this.table.childNodes[index]);
+    }
+  }
+
+  /**
+   * This function runs when the timer is done with its working session
+   */
+  onSessionComplete() {
+    const currTask = this.todoList.getCurrentTask();
+    if (currTask != null) {
+      currTask.incrementSession();
+    }
+    this.currentTask = currTask;
+  }
+
+  /**
+   * This function runs when someone checks off a task. Removes the task from the
+   * table and appends it to the bottom. Removes the task from the todolist
+   * data structure and appends it to the bottom there
+   */
+  onCompletedTask() {
+    /*
+    When this function is called, currentTask has NOT been updated to
+    reflect the checking off. Thus, this is the task that was just
+    checked off, not the new current task. Only works if the user
+    can only check off the current task
+    */
+    const temp = this.currentTask;
+    temp.onDelete();
+    this.displayTask(temp);
+    this.todoList.addTaskToEnd(temp);
+  }
+
+  /**
+    * This function returns the index of the first completed task,
+    * used when new tasks/ unchecked tasks are added.
+    */
+  getFirstCompletedTaskIndex() {
+    let firstCompletedTaskIndex = -1;
+    for (let i = 2; i &lt; this.table.childNodes.length &amp;&amp; firstCompletedTaskIndex === -1; i += 1) {
+      if (this.table.childNodes[i].checked === true) firstCompletedTaskIndex = i;
+    }
+
+    return firstCompletedTaskIndex;
+  }
+
+  /**
+   * Called when someone unchecks a task. Removes the task from the table
+   * and appends it become the last unchecked task in the table. Does the same
+   * within the todolist data structure
+   * @param {Number} id - id of the task you would like to uncheck
+   */
+  onUncheckedTask(id) {
+    const uncheckedTask = this.todoList.getTaskById(id);
+    const firstCompletedTaskIndex = this.getFirstCompletedTaskIndex();
+    uncheckedTask.onDelete();
+    this.todoList.addTaskToEnd(uncheckedTask);
+    this.displayTask(uncheckedTask, firstCompletedTaskIndex);
+  }
+
+  /**
+   * Updates the current task and changes its checkbox property accordingly
+   */
+  updateCurrentTask() {
+    const nextTask = this.todoList.getCurrentTask();
+    if (this.currentTask !== null &amp;&amp; !this.currentTask.checked) {
+      this.currentTask.children[3].children[0].children[1].children[1].style.display = &apos;inline-block&apos;;
+    }
+    if (nextTask !== null) {
+      nextTask.children[3].children[0].children[1].children[1].style.display = &apos;none&apos;;
+    }
+    if (this.currentTask === null &amp;&amp; nextTask === null) {
+      // no currentTask, nothing in table
+      this.currentTaskDiv.textContent = &apos;No current task&apos;;
+    } else if (this.currentTask === null &amp;&amp; nextTask !== null) {
+      // no currentTask, something in table
+      this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+    } else if (this.currentTask !== null &amp;&amp; nextTask === null) { // last task completed
+      this.currentTaskDiv.textContent = &apos;No current task&apos;;
+    } else if (this.currentTask !== nextTask) {
+      this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+    }
+    this.currentTask = nextTask;
+    if (this.currentTask != null) this.currentTask.checkBox.disabled = false;
+  }
+
+  /**
+   * Function that puts the task with the given id to the top
+   * of the table
+   * @param {String} id - id of task to focus on
+   */
+  onFocusTask(id) {
+    const rows = this.table.childNodes;
+    let currentTaskIndex = -1;
+    // find index of the current task
+    for (let i = 2; i &lt; rows.length; i += 1) {
+      if (rows[i].checked === false &amp;&amp; currentTaskIndex === -1) {
+        currentTaskIndex = i;
+      }
+    }
+
+    const clickedTask = this.todoList.getTaskById(id);
+    // disable the old tasks checkbox because it has not been clicked yet
+    clickedTask.onDelete();
+    this.currentTask.checkBox.disabled = false;
+    this.displayTask(clickedTask, currentTaskIndex);
+
+    // remove the task and add it back to the top
+    this.todoList.addTaskToTop(clickedTask);
+  }
+}
+
+export { TodoListDom };
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
