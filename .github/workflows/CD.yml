@@ -45,6 +45,7 @@ jobs:
         with:
           github_token: ${{secrets.NICK_TOKEN }}
           branch: 'main'
+          force: true
   release:
     runs-on: ubuntu-latest
     steps:
