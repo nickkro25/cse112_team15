@@ -43,7 +43,7 @@ jobs:
       - name: Commit and push docs to repo
         uses: actions-js/push@v1.2
         with:
-          github_token: ${{secrets.GITHUB_TOKEN }}
+          github_token: ${{secrets.NICK_TOKEN }}
           branch: 'main'
   release:
     runs-on: ubuntu-latest
