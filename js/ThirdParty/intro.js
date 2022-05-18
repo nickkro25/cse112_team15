@@ -2361,7 +2361,7 @@
     // width away from both sides
 
 
-    if (offsetLeft < halfTooltipWidth || winWidth - offsetLeft < halfTooltipWidth) {
+    if (offsetLeft < halfTooltipWidth || winWidth - offsetLeft < halfTooltipWidth || offsetLeft + tooltipWidth > winWidth) {
       removeEntry(possibleAlignments, "-middle-aligned");
     } // valid right must be at least a tooltipWidth
     // width away from left side
@@ -2381,9 +2381,9 @@
       }
     } else {
       // if screen width is too small
-      // for ANY alignment, middle is
+      // for ANY alignment, right is
       // probably the best for visibility
-      calculatedAlignment = "-middle-aligned";
+      calculatedAlignment = "-right-aligned";
     }
 
     return calculatedAlignment;

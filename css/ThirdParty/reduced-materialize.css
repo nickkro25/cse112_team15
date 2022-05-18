@@ -230,6 +230,12 @@ i.right {
   margin-left: 15px;
 }
 
+@media only screen and (max-width: 992px) {
+  i.right {
+    margin-left: 0px;
+  }
+}
+
 i.large {
   font-size: 6rem;
 }
@@ -243,8 +249,11 @@ i.large {
 **********************/
 
 @media only screen and (max-width: 992px) {
-  .hide-on-med-and-down {
-    display: none !important;
+  #faqButton,
+  #statsButton,
+  #settingsButton,
+  #onboardingButton{
+    font-size: 0;
   }
 }
 
@@ -401,27 +410,14 @@ nav .brand-logo {
   padding: 0;
 }
 
-@media only screen and (max-width: 992px) {
-  nav .brand-logo {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+@media only screen and (max-width: 600px) {
+
+  .brand-logo li{
+    display: none;
   }
 
-  nav .brand-logo.left,
-  nav .brand-logo.right {
-    padding: 0;
-    -webkit-transform: none;
-    transform: none;
-  }
-
-  nav .brand-logo.left {
-    left: 0.5rem;
-  }
-
-  nav .brand-logo.right {
-    right: 0.5rem;
-    left: auto;
+  .brand-logo img{
+    height: 50px;
   }
 }
 
@@ -472,6 +468,19 @@ nav ul a.btn-floating {
   margin-top: -2px;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+@media only screen and (max-width: 993px) {
+  nav ul a.btn,
+  nav ul a.btn-large,
+  nav ul a.btn-large,
+  nav ul a.btn-floating {
+    margin-top: -2px;
+    margin-left: 0px;
+    margin-right: 15px;
+    padding: 0 8px;
+    letter-spacing: 0;
+  }
 }
 
 nav ul a.btn > .material-icons,
