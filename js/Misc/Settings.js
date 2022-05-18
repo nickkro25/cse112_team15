@@ -81,17 +81,23 @@ function updateDarkMode() {
 }
 
 /**
- * handle darkmode by changing root variables
+ * handle darkmode by changing root variables and update localStorage
  */
 darkModeSwitch.addEventListener('change', () => {
   localStorage.setItem('darkModeSwitch', darkModeSwitch.checked);
   updateDarkMode();
 });
 
+/**
+ * Update localStorage whenever settings are changed
+ */
 autoStartSwitch.addEventListener('change', () => {
   localStorage.setItem('autoStartSwitch', autoStartSwitch.checked);
 });
 
+/**
+ * Update localStorage whenever settings are changed
+ */
 muteSwitch.addEventListener('change', () => {
   localStorage.setItem('muteSwitch', muteSwitch.checked);
 });

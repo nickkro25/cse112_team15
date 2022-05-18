@@ -85,7 +85,8 @@ export function breakModeSound() {
 
 /**
  * Handles the changing of the sounds in settings.
- * @param {Event} e
+ * @param {HTMLSelectElement} soundSelector - the sound selector element in settings
+ * @param {Boolean} playSound - whether to play sound when settings is changed
  */
 export function changeSound(soundSelector, playSound) {
   let path;
@@ -124,7 +125,7 @@ export function changeSound(soundSelector, playSound) {
 }
 
 /**
- * add event listeners to the select menus
+ * add event listeners to the select menus and update localStorage accordingly
  */
 workSoundSelector.addEventListener('change', () => {
   changeSound(workSoundSelector, !muteSwitch.checked);
