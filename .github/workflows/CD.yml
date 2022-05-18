@@ -35,7 +35,7 @@ jobs:
         run: npm ci
       - name: Build Docs
         run: npm run doc
-      - name: Push directory to another repository
+      - name: Commit and push to repo
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
