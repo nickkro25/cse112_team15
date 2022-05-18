@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anshul-Birla/cse110-w21-group28.git"
+    "url": "git+https://github.com/nickkro25/cse112_team15.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Anshul-Birla/cse110-w21-group28/issues"
+    "url": "https://github.com/nickkro25/cse112_team15/issues"
   },
-  "homepage": "https://github.com/Anshul-Birla/cse110-w21-group28#readme",
+  "homepage": "https://github.com/nickkro25/cse112_team15",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.12.13",
     "@semantic-release/commit-analyzer": "^8.0.1",
