@@ -35,11 +35,13 @@ jobs:
         run: npm ci
       - name: Build Docs
         run: npm run doc
-      - name: Commit and push to repo
+      - name: Configure git user
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          git add autoDocs/*
+      - name: Commit and push to repo
+        run: |
+          git add dev-docs/*
           git commit -m "auto update docs"
           git push origin
   release:
