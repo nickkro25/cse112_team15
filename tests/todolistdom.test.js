@@ -202,7 +202,7 @@ test('Adding two tasks should disable the checkbox for second task', () => {
   formLocation.submit();
 
   expect(tableLocation.children[1].checkBox.disabled).toBe(false);
-  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
   localStorage.clear();
 });
 
@@ -219,7 +219,7 @@ test('Focusing on a task updates checkboxes accordingly', () => {
 
   expect(tableLocation.children[1].checkBox.disabled).toBe(false);
   expect(tableLocation.children[1].taskText.textContent).toBe('Task2');
-  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
   localStorage.clear();
 });
 
