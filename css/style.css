@@ -271,12 +271,12 @@ a {
 @media screen and (max-width: 600px) {
 
   #top-left-border span{
-    left: -10%;
+    left: 0%;
     font-size: 50px;
   }
   
   #bottom-right-border span{
-    right: -10%;
+    right: 0%;
     font-size: 50px;
   }
 
