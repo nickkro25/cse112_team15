@@ -13,10 +13,10 @@ class Timer extends HTMLElement {
    * you want the time and the status of the timer to be implemented.
    * HTML Elements must have the 'textElement' attribute.
    * @param {HTMLButtonElement} startButton - button that starts the button
-   * @param {HTMLParagraphElement} displayTime - area to display the time remaining
+   * @param {HTMLParagraphElement} timeDisplay - area to display the time remaining
    * @param {HTMLParagraphElement} displayStatus - area to display the status of the timer
    */
-  constructor(startButton, displayTime, displayStatus) {
+  constructor(startButton, timeDisplay, displayStatus) {
     super();
     /**
      * State of the timer (the current mode)
@@ -40,12 +40,28 @@ class Timer extends HTMLElement {
      * HTML Tag that is reponsible for displaying the time remaining
      * @type {HTMLElement}
      */
-    this.displayTime = displayTime;
+    this.timeDisplay = timeDisplay;
     /**
      * HTML Tag that is reponsible for displaying the mode of the timer
      * @type {HTMLElement}
      */
     this.displayStatus = displayStatus;
+
+    /**
+     * HTML tag for controlling the focus timer length
+     * @type {HTMLElement}
+     */
+    this.focusTime = document.getElementById('focusTime');
+    /**
+     * HTML tag for controlling the short break timer length
+     * @type {HTMLElement}
+     */
+    this.shortBreakTime = document.getElementById('shortBreakTime');
+    /**
+     * HTML tag for controlling the long break timer length
+     * @type {HTMLElement}
+     */
+    this.longBreakTime = document.getElementById('longBreakTime');
     /**
      * Checks if session has ended
      * @type {Boolean}
@@ -67,12 +83,34 @@ class Timer extends HTMLElement {
     // this is the order for the timer. It will loop in this order.
     const workOrder = [workMode, shortBreakMode, workMode,
       shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
-    for (let i = 0; i < workOrder.length; i += 1) {
-      this.stateQueue.push(workOrder[i]);
+    // for (let i = 0; i < workOrder.length; i += 1) {
+    //   this.stateQueue.push(workOrder[i]);
+    // }
+    this.stateQueue = workOrder;
+
+    // #6 get previous time durations from localStorage on refresh
+    if (localStorage.getItem('workModeTime') !== null) {
+      // ...
+      workMode.duration = localStorage.getItem('workModeTime');
+    }
+    if (localStorage.getItem('shortBreakTime') !== null) {
+      // ...
+      shortBreakMode.duration = localStorage.getItem('shortBreakTime');
+    }
+    if (localStorage.getItem('longBreakTime') !== null) {
+      // ...
+      longBreakMode.duration = localStorage.getItem('longBreakTime');
     }
 
-    // set the timer display based on TimerVariables
-    this.displayTime.textContent = timeToString(workMode.duration * 60);
+    // #6 We can do this with "this" as shown above, just did it this way as a test
+    if (this.focusTime !== null) {
+      this.focusTime.value = workMode.duration;
+      this.shortBreakTime.value = shortBreakMode.duration;
+      this.longBreakTime.value = longBreakMode.duration;
+    }
+    if (this.timeDisplay !== null) {
+      this.timeDisplay.textContent = timeToString(workMode.duration * 60);
+    }
     this.addEventListeners();
   }
 
@@ -123,6 +161,9 @@ class Timer extends HTMLElement {
    */
   startTimer() {
     this.end = false;
+
+    // Edgar: StateQueue is set right after line 62, we get our timee duration
+    // from TimerVariables.js, we want to change this to user set duration
     const session = this.stateQueue[0];
     this.state = session.name;
     this.displayStatus.textContent = this.state;
@@ -144,7 +185,8 @@ class Timer extends HTMLElement {
   endTimer() {
     this.end = true;
     this.displayStatus.textContent = sessionStartName;
-    this.displayTime.textContent = timeToString(workMode.duration * 60);
+    // #6: only works with whole numbers
+    this.timeDisplay.textContent = timeToString(workMode.duration * 60);
     document.title = 'Pomodoro';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
@@ -164,7 +206,7 @@ class Timer extends HTMLElement {
   countdown(duration) {
     if (this.end) return;
     const displayString = timeToString(duration);
-    this.displayTime.textContent = displayString;
+    this.timeDisplay.textContent = displayString;
     document.title = `${this.state} ${displayString}`;
     duration -= 1;
     if (duration >= 0) {
@@ -177,7 +219,31 @@ class Timer extends HTMLElement {
   }
 
   /**
+   * Change and save timer length when changed.
+   */
+  // Issue #6: only works with whole numbers
+  changeTime(e) {
+    // Does not allow user to input 0 or numbers over 99
+    if (e.target.value === 0) { e.target.value = 1; }
+    if (e.target.value > 99) { e.target.value = 99; }
+    if (e.target.id === 'focusTime') {
+      this.timeDisplay.textContent = `${e.target.value}:00`;
+      workMode.duration = e.target.value;
+      localStorage.setItem('workModeTime', e.target.value);
+    } else if (e.target.id === 'shortBreakTime') {
+      // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+      shortBreakMode.duration = e.target.value;
+      localStorage.setItem('shortBreakTime', e.target.value);
+    } else if (e.target.id === 'longBreakTime') {
+      // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+      longBreakMode.duration = e.target.value;
+      localStorage.setItem('longBreakTime', e.target.value);
+    }
+  }
+
+  /**
    * Adds event listener to the start button that was added
+   * Add event listeners to change timer length
    */
   addEventListeners() {
     this.startButton.addEventListener('click', () => {
@@ -190,6 +256,10 @@ class Timer extends HTMLElement {
         document.getElementsByTagName('body')[0].classList.remove('short-break');
       }
     });
+
+    this.focusTime.addEventListener('change', (event) => { this.changeTime(event); });
+    this.shortBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
+    this.longBreakTime.addEventListener('change', (event) => { this.changeTime(event); });
   }
 
   /**
@@ -200,7 +270,7 @@ class Timer extends HTMLElement {
     this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
     const session = this.stateQueue[0];
     this.displayStatus.textContent = this.state;
-    this.displayTime.textContent = timeToString(session.duration * 60);
+    this.timeDisplay.textContent = timeToString(session.duration * 60);
     document.title = session.name;
     const distractionOffEvent = new CustomEvent('timer-end');
     this.dispatchEvent(distractionOffEvent);

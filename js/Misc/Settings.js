@@ -15,6 +15,10 @@ const settingsButton = document.getElementById('settingsButton');
  */
 const settingsPopup = document.getElementById('settingsPopup');
 /**
+ * @type {HTMLButtonElement}
+ */
+const timeInputs = document.querySelectorAll('#customTimeGroup input');
+/**
  * @type {HTMLInputElement}
  */
 const darkModeSwitch = document.getElementById('darkModeSwitch');
@@ -50,6 +54,20 @@ settingsButton.addEventListener('click', () => {
     settingsPopup.style.display = 'block';
   }
 });
+
+/**
+ * Simple timer length validation. Only allow whole numbers
+ */
+for (let i = 0; i < timeInputs.length; i += 1) {
+  timeInputs[i].addEventListener('keypress', (event) => {
+    if (!(event.which >= 48 && event.which <= 57) && (event.which !== 13)) {
+      event.preventDefault();
+    }
+    if (event.which === 48 && event.target.value === '') {
+      event.preventDefault();
+    }
+  });
+}
 
 /**
  * Update the theme of the page based on darkModeSwitch
