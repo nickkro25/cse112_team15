@@ -2,6 +2,10 @@ import {
   pageBGColor, headerColor, evenColor, toothpaste,
   tableBG, modalBGColor, modalFontColor,
 } from './MiscVariables.js';
+
+import {
+  changeSound,
+} from './Sounds.js';
 /**
  * @type {HTMLButtonElement}
  */
@@ -14,6 +18,24 @@ const settingsPopup = document.getElementById('settingsPopup');
  * @type {HTMLInputElement}
  */
 const darkModeSwitch = document.getElementById('darkModeSwitch');
+/**
+ * @type {HTMLInputElement}
+ */
+const autoStartSwitch = document.getElementById('autoStartSwitch');
+/**
+ * @type {HTMLInputElement}
+ */
+const muteSwitch = document.getElementById('muteSwitch');
+/**
+ * the selector for work sound
+ * @type {HTMLSelectElement}
+ */
+const workSoundSelector = document.getElementById('workSoundSelector');
+/**
+ * the selector for break sound
+ * @type {HTMLSelectElement}
+ */
+const breakSoundSelector = document.getElementById('breakSoundSelector');
 /**
  * @type {HTMLElement}
  */
@@ -30,9 +52,9 @@ settingsButton.addEventListener('click', () => {
 });
 
 /**
- * handle darkmode by changing root variables
+ * Update the theme of the page based on darkModeSwitch
  */
-darkModeSwitch.addEventListener('change', () => {
+function updateDarkMode() {
   if (darkModeSwitch.checked) {
     root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.darkVal);
@@ -56,4 +78,36 @@ darkModeSwitch.addEventListener('change', () => {
     root.style.setProperty(modalBGColor.name, modalBGColor.val);
     root.style.setProperty(modalFontColor.name, modalFontColor.val);
   }
+}
+
+/**
+ * handle darkmode by changing root variables and update localStorage
+ */
+darkModeSwitch.addEventListener('change', () => {
+  localStorage.setItem('darkModeSwitch', darkModeSwitch.checked);
+  updateDarkMode();
 });
+
+/**
+ * Update localStorage whenever settings are changed
+ */
+autoStartSwitch.addEventListener('change', () => {
+  localStorage.setItem('autoStartSwitch', autoStartSwitch.checked);
+});
+
+/**
+ * Update localStorage whenever settings are changed
+ */
+muteSwitch.addEventListener('change', () => {
+  localStorage.setItem('muteSwitch', muteSwitch.checked);
+});
+
+// set values from localStorage
+darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
+autoStartSwitch.checked = localStorage.getItem('autoStartSwitch') == null ? true : localStorage.getItem('autoStartSwitch') === 'true';
+muteSwitch.checked = localStorage.getItem('muteSwitch') == null ? false : localStorage.getItem('muteSwitch') === 'true';
+workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'horn' : localStorage.getItem('workSoundSelector');
+breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'celebration' : localStorage.getItem('breakSoundSelector');
+changeSound(workSoundSelector, false);
+changeSound(breakSoundSelector, false);
+updateDarkMode();

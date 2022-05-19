@@ -85,11 +85,12 @@ export function breakModeSound() {
 
 /**
  * Handles the changing of the sounds in settings.
- * @param {Event} e
+ * @param {HTMLSelectElement} soundSelector - the sound selector element in settings
+ * @param {Boolean} playSound - whether to play sound when settings is changed
  */
-function changeSound(e) {
+export function changeSound(soundSelector, playSound) {
   let path;
-  switch (e.target.value) {
+  switch (soundSelector.value) {
     case 'horn':
       path = airHorn;
       break;
@@ -112,11 +113,11 @@ function changeSound(e) {
       path = airHorn;
       break;
   }
-  if (muteSwitch.checked === false) {
+  if (playSound) {
     horn.setAttribute('src', path);
     horn.play();
   }
-  if (e.target.id === 'workSoundSelector') {
+  if (soundSelector.id === 'workSoundSelector') {
     workModeSoundPath = path;
   } else {
     breakModeSoundPath = path;
@@ -124,7 +125,13 @@ function changeSound(e) {
 }
 
 /**
- * add event listeners to the select menus
+ * add event listeners to the select menus and update localStorage accordingly
  */
-workSoundSelector.addEventListener('change', changeSound);
-breakSoundSelector.addEventListener('change', changeSound);
+workSoundSelector.addEventListener('change', () => {
+  changeSound(workSoundSelector, !muteSwitch.checked);
+  localStorage.setItem('workSoundSelector', workSoundSelector.value);
+});
+breakSoundSelector.addEventListener('change', () => {
+  changeSound(breakSoundSelector, !muteSwitch.checked);
+  localStorage.setItem('breakSoundSelector', breakSoundSelector.value);
+});
