@@ -87,3 +87,16 @@ test('click overlay to close', () => {
     expect(DistractionPage.distractPopUp.style.display).toBe('none');
   }, 3000);
 });
+
+test('trigger when the animation is finished', () => {
+  const event = new Event('animationend');
+  event.animationName = 'distraction-animation-out';
+  DistractionPage.distractPopUp.dispatchEvent(event);
+  expect(DistractionPage.distractPopUp.style.animationName).toBe('');
+  expect(DistractionPage.distractPopUp.style.display).toBe('none');
+
+  event.animationName = 'overlay-animation-out';
+  DistractionPage.overlay.dispatchEvent(event);
+  expect(DistractionPage.overlay.style.animationName).toBe('');
+  expect(DistractionPage.overlay.style.display).toBe('none');
+});

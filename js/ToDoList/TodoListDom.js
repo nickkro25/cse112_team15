@@ -136,7 +136,6 @@ class TodoListDom {
       } catch (error) {
         // eslint-disable-next-line no-alert
         alert('Invalid input. Please try again');
-        console.log(error);
       }
     });
 

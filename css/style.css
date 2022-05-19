@@ -142,7 +142,8 @@ a.brand-logo li {
 
 /* timer styling */
 #timerContainer {
-  width: 400px;
+  /*width: 35%;
+  min-width: 650px;*/
 
   /* background-color: var(--timer-bg-color); */
   border-radius: 10px;
@@ -165,9 +166,10 @@ a.brand-logo li {
   top: 0;
   bottom: 100px;
   font-size: 600%;
-  margin: -20px;
+  margin: -20px auto;
   height: 300px;
-  left: -40px;
+  left: 0;
+  width: 100%;
 }
 
 #currentTask {
@@ -175,7 +177,6 @@ a.brand-logo li {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  width: 400px;
   padding: 10px;
 }
 
@@ -208,7 +209,7 @@ html {
   }
 }
 
-@media screen and (max-width: 500px), (max-height: 550px) {
+@media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
     font-size: 35%;
   }
@@ -236,7 +237,7 @@ html {
 #top-left-border span {
   position: absolute;
   top: 0;
-  left: -140px;
+  left: 26%;
   line-height: 0.3;
 }
 
@@ -249,8 +250,8 @@ html {
 
 #bottom-right-border span {
   position: absolute;
-  bottom: 20px;
-  right: -100px;
+  bottom: 0;
+  right: 26%;
   line-height: 0.3;
 }
 
@@ -267,4 +268,63 @@ a {
   color: white;
   background-color: transparent;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+  #top-left-border span {
+    left: 20%;
+  }
+  
+  #bottom-right-border span {
+    right: 20%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  
+  #top-left-border span {
+    left: 4%;
+  }
+  
+  #bottom-right-border span {
+    right: 4%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  #timerContainer {
+    width: 90vw;
+  }
+
+  #top-left-border span{
+    left: 10%;
+    font-size: 50px;
+  }
+  
+  #bottom-right-border span{
+    right: 10%;
+    font-size: 50px;
+  }
+
+  #startTimer {
+    font-size: 50%;
+    padding: 0 5px;
+  }
+
+  #distractionButton {
+    padding: 0 5px;
+  }
+
+  #timeDisplay {
+    position: relative;
+    top: 0;
+    bottom: 100px;
+    margin: 0px auto;
+    height: 130px;
+    left: 0px;
+    font-size: 240%;
+  }
+  
 }
