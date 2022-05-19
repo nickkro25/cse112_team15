@@ -59,6 +59,17 @@
   grid-column: 2;
 }
 
+#focusTime {
+  color: black;
+}
+
+#shortBreakTime {
+  color: black;
+}
+
+#longBreakTime {
+  color: black;
+}
 /* #workSoundSelector {
   grid-row: 1;
   grid-column: 1;
