@@ -166,7 +166,7 @@ a.brand-logo li {
   top: 0;
   bottom: 100px;
   font-size: 600%;
-  margin: -20px;
+  margin: -20px auto;
   height: 300px;
   left: 0;
   width: 100%;
@@ -321,7 +321,7 @@ a {
     position: relative;
     top: 0;
     bottom: 100px;
-    margin: 0px;
+    margin: 0px auto;
     height: 130px;
     left: 0px;
     font-size: 240%;
