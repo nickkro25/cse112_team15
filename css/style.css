@@ -236,7 +236,7 @@ html {
 #top-left-border span {
   position: absolute;
   top: 0;
-  left: 0%;
+  left: 20%;
   line-height: 0.3;
 }
 
@@ -250,7 +250,7 @@ html {
 #bottom-right-border span {
   position: absolute;
   bottom: 0;
-  right: 0%;
+  right: 20%;
   line-height: 0.3;
 }
 
@@ -269,15 +269,31 @@ a {
   text-decoration: underline;
 }
 
+@media only screen and (max-width: 992px) {
+  
+  #top-left-border span {
+    left: 4%;
+  }
+  
+  #bottom-right-border span {
+    right: 4%;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
 
+  #timerContainer {
+    width: 90vw;
+  }
+
   #top-left-border span{
-    left: 5%;
+    left: 10%;
     font-size: 50px;
   }
   
   #bottom-right-border span{
-    right: 5%;
+    right: 10%;
     font-size: 50px;
   }
 
