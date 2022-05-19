@@ -142,8 +142,8 @@ a.brand-logo li {
 
 /* timer styling */
 #timerContainer {
-  width: 35%;
-  min-width: 650px;
+  /*width: 35%;
+  min-width: 650px;*/
 
   /* background-color: var(--timer-bg-color); */
   border-radius: 10px;
