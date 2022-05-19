@@ -208,7 +208,7 @@ html {
   }
 }
 
-@media screen and (max-width: 500px), (max-height: 550px) {
+@media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
     font-size: 35%;
   }
