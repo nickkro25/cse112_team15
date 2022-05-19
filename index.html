@@ -20,7 +20,29 @@
 </head>
 
 <body>
-  <noscript>
+  <script>
+    // update dark theme at the beginning to prevent transition
+    const pageBGColor = {
+      name: '--page-bg-color',
+      darkVal: '#363636',
+    };
+    const headerColor = {
+      name: '--header-color',
+      darkVal: '2d2c2b',
+    };
+    const toothpaste = {
+      name: '--toothpaste',
+      darkVal: '#2d2c2b',
+    };
+    if (localStorage.getItem('darkModeSwitch') === 'true') {
+      document.querySelector('body').style.transitionDuration = '0s';
+      const root = document.documentElement; 
+      root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
+      root.style.setProperty(headerColor.name, headerColor.darkVal);
+      root.style.setProperty(toothpaste.name, toothpaste.darkVal);
+    }
+  </script>
+	<noscript>
     <style type="text/css">
       .main-page {
         display: none;
@@ -147,38 +169,30 @@
 	</section>
 	<br>
 
-    <!-- The audio cue -->
-    <audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
-    <!-- Container for current task -->
-    <section id="currentTask" class="section-container" data-title="Tasks"
-      data-intro="The task you should currently be working on should be displayed here" data-step='8'> </section>
-    <!-- Container for task list -->
-    <section id='tasklist' class='section-container' id='todo' data-title="Tasks"
-      data-intro="Your tasks live in this table" data-step='5'>
-      <table id='todo'>
-        <tr>
-          <th class='col1-checkbox'></th>
-          <th class='col2-task'>TASKS</th>
-          <th class='col3-pomos'>#</th>
-          <th class='col4-delete'>
-            <button data-title="Tasks"
-              data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9'
-              id="delete-all-button" type='submit' class="btn-floating btn-small"><i
-                class="material-icons">delete_forever</i></button>
-          </th>
-        </tr>
-      </table>
-      <div id='form-container'>
-        <form id='add-todo' overflow data-title="Tasks"
-          data-intro="Here you can enter the name as well as the amount of 25 minute pomo-sessions your task will take"
-          data-step='7'>
-          <input type='text' name='task-name' placeholder='Enter task' class='task-name' required>
-          <input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
-          <button id="add-button" type='submit' class="btn-floating btn-small"><i
-              class="material-icons">add</i></button>
-        </form>
-      </div>
-    </section>
+	<!-- The audio cue -->
+	<audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
+	<!-- Container for current task -->
+	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
+	<!-- Container for task list -->
+	<section id='tasklist' class='section-container' id='todo' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
+		<table id='todo'>
+			<tr>
+				<th class='col1-checkbox'></th>
+				<th class='col2-task'>TASKS</th>
+				<th class='col3-pomos'>#</th>
+				<th class='col4-delete'>
+					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
+				</th>
+			</tr>
+		</table>
+		<div id='form-container'>
+			<form id='add-todo' overflow data-title="Tasks" data-intro="Here you can enter the name as well as the amount of 25 minute pomo-sessions your task will take" data-step='7'>
+				<input type='text' name='task-name' placeholder='Enter task' class='task-name' required>
+				<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
+				<button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
+			</form>
+		</div>
+	</section>
 
     <!-- Distraction Box-->
     <section class="form-popup" id="distract-popup">
@@ -235,13 +249,17 @@
         </div>
       </div>
 
-    </section>
-    <script type="module" src="./js/App.js"></script>
-    <script type="module" src="./js/Distraction/Distraction.js"></script>
-    <script type="module" src="./js/Misc/Settings.js"></script>
-    <script type="module" src="./js/FAQ/FAQ.js"></script>
-    <script src="./js/ThirdParty/intro.js"></script>
-  </div>
+</section>
+<script type="module" src="./js/App.js"></script>
+<script type="module" src="./js/Distraction/Distraction.js"></script>
+<script type="module" src="./js/Misc/Settings.js"></script>
+<script type="module" src="./js/FAQ/FAQ.js"></script>
+<script src="./js/ThirdParty/intro.js"></script>
+</div>
+<script>
+  // set the transition back to 2s after dark theme is painted
+  document.querySelector('body').style.transitionDuration = '2s';
+</script>
 </body>
 
 </html>

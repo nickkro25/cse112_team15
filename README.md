@@ -1,7 +1,7 @@
-# Go Go Pomo
-[![CD](https://github.com/Anshul-Birla/cse110-w21-group28/actions/workflows/CD.yml/badge.svg)](https://github.com/Anshul-Birla/cse110-w21-group28/actions/workflows/CD.yml)
+# Pomo XV
+[![CD](https://github.com/nickkro25/cse112_team15/actions/workflows/CD.yml/badge.svg)](https://github.com/nickkro25/cse112_team15/actions/workflows/CD.yml)
 
-Go Go Pomo is a web application dedicated to making the Pomodoro Technique as easy as possible. 
+Pomo XV is a web application dedicated to making the Pomodoro Technique as easy as possible. 
 ## Setup 
 Requires:
 - NodeJS + NPM

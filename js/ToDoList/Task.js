@@ -283,8 +283,7 @@ class Task extends HTMLTableRowElement {
    * This updates the pomo sessions when a session is complete
    */
   updatePomoSessions() {
-    this.children[2].textContent = `${this.currentSessionNum}/\
-      ${this.totalSessions}`;
+    this.children[2].textContent = `${this.currentSessionNum}/${this.totalSessions}`;
   }
 
   /**
