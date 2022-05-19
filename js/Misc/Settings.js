@@ -47,18 +47,16 @@ const root = document.querySelector(':root');
 /**
  * handle the settings popup display
  */
- document.addEventListener('click', function closeSettings(event){
-  const settingsPopup = document.getElementById('settingsPopup');
-
-  if (settingsPopup.style.display === 'block'){
+document.addEventListener('click', (event) => {
+  if (settingsPopup.style.display === 'block') {
     if (event.target.id === "settingsButton") {
-    } else if(!settingsPopup.contains(event.target)){
+    } else if (!settingsPopup.contains(event.target)) {
       settingsPopup.style.display = 'none';
     }
   }
 })
 
- settingsButton.addEventListener('click', () => {
+settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
   } else {
