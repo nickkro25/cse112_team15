@@ -47,13 +47,25 @@ const root = document.querySelector(':root');
 /**
  * handle the settings popup display
  */
-settingsButton.addEventListener('click', () => {
+ document.addEventListener('click', function closeSettings(event){
+  const settingsPopup = document.getElementById('settingsPopup');
+
+  if (settingsPopup.style.display === 'block'){
+    if (event.target.id === "settingsButton") {
+    } else if(!settingsPopup.contains(event.target)){
+      settingsPopup.style.display = 'none';
+    }
+  }
+})
+
+ settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
   } else {
     settingsPopup.style.display = 'block';
   }
 });
+
 
 /**
  * Simple timer length validation. Only allow whole numbers
