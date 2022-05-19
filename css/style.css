@@ -236,7 +236,7 @@ html {
 #top-left-border span {
   position: absolute;
   top: 0;
-  left: 20%;
+  left: 26%;
   line-height: 0.3;
 }
 
@@ -250,7 +250,7 @@ html {
 #bottom-right-border span {
   position: absolute;
   bottom: 0;
-  right: 20%;
+  right: 26%;
   line-height: 0.3;
 }
 
@@ -267,6 +267,16 @@ a {
   color: white;
   background-color: transparent;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+  #top-left-border span {
+    left: 20%;
+  }
+  
+  #bottom-right-border span {
+    right: 20%;
+  }
 }
 
 @media only screen and (max-width: 992px) {
