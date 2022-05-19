@@ -217,6 +217,7 @@
 
   #parentDiv {
     width: 70%;
+    min-width: 0;
   }
   
 }
