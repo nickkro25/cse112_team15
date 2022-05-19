@@ -38,6 +38,18 @@
   color: black;
 }
 
+#focusTime {
+  color: black;
+}
+
+#shortBreakTime {
+  color: black;
+}
+
+#longBreakTime {
+  color: black;
+}
+
 /* #settingsContent select * {
   color: black;
 } */
@@ -57,18 +69,6 @@
 #breakSoundGroup {
   grid-row: 2;
   grid-column: 2;
-}
-
-#focusTime {
-  color: black;
-}
-
-#shortBreakTime {
-  color: black;
-}
-
-#longBreakTime {
-  color: black;
 }
 /* #workSoundSelector {
   grid-row: 1;
