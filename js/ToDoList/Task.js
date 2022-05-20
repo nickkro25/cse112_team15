@@ -96,8 +96,8 @@ class Task extends HTMLTableRowElement {
     checkBox.setAttribute('class', 'custom_checkbox');
     firstCol.appendChild(checkBox);
     this.appendChild(firstCol);
-    // disable the checkbox by default (updated by the todolistdom class)
-    checkBox.disabled = true;
+    // undisable the checkbox by default (updated by the todolistdom class)
+    checkBox.disabled = false;
 
     if (this.checked) {
       this.setAttribute('class', classNames.completedTaskClassName);
@@ -336,7 +336,7 @@ class Task extends HTMLTableRowElement {
     this.checked = false;
     this.setAttribute('class', classNames.uncheckedTaskClassName);
     this.focusButton.parentElement.style.display = 'inline-block';
-    this.checkBox.disabled = true;
+    this.checkBox.disabled = false;
     this.updateLocalStorage();
   }
 
