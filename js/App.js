@@ -364,15 +364,3 @@ if (after3amToday() && StatsPage.dataToCompressExists()) {
  * Makes the Data tab default when Statistics popup appears
  */
 statsTabBtn.click();
-
-const mouseTrack = function(event) {
-  console.log(event.clientX + ' ' + event.clientY);
-}
-
-document.onmousemove = mouseTrack;
-
-document.addEventListener('keydown', logKey);
-
-function logKey(e) {
-  console.log(` ${e.code}`);
-}

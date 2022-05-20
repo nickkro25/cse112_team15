@@ -328,3 +328,17 @@ a {
   }
   
 }
+
+/* .cursor {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  background-color: white;
+  z-index: 10000;
+  border: 5px solid red;
+  height: 50px;
+  width: 50px;
+  transition: all 100ms ease-out;
+} */
