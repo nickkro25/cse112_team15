@@ -84,6 +84,11 @@
   grid-column: 1;
 }
 
+#deviceNotUsedGroup {
+  grid-row: 4;
+  grid-column: 2;
+}
+
 /* slider stuff from w3schools */
 
 /* The switch - the box around the slider */

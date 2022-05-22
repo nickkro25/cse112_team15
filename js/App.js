@@ -5,6 +5,7 @@ import { Distraction } from './Distraction/Distraction.js';
 import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
+import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
 
 /**
  * Used to see if data needs to be cleared or not (if timer is started after 3 a.m. or not)
@@ -153,6 +154,8 @@ const TimerObj = new Timer(startTimerButton, timeDisplay, modeDisplay);
  */
 const DistractionPage = new Distraction(distractButton, distractPopUp,
   cancelButton, distractForm, description, overlay);
+const noDeviceSwitch = document.getElementById('noDeviceSwitch');
+const distractedByDevice = new DistractedByDevice(noDeviceSwitch);
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
@@ -181,6 +184,7 @@ tourButton.addEventListener('click', () => {
  */
 TimerObj.addEventListener('timer-complete', (e) => {
   if (e.detail.sessionIsWork) { // if it was a work mode
+    distractedByDevice.endPomoTime();
     TDLDom.onSessionComplete();
     StatsPage.addWorkTime(e.detail.duration);
     StatsPage.incrementActualPomoSessions();
@@ -220,6 +224,7 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    distractedByDevice.startPomoTime();
   } else {
     distractButton.disabled = true;
   }
@@ -230,6 +235,7 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+  distractedByDevice.endPomoTime();
 });
 
 /**

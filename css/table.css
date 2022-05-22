@@ -8,7 +8,6 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
-
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -28,7 +27,8 @@ th,
 td {
   padding: 15px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-  /*max-width: 20vw;      /* allows for word-wrap */
+
+  /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
@@ -249,12 +249,10 @@ button:disabled .focus-svg {
     height: 60vh;
     overflow-y: auto;
   }
-
 }
 
 @media screen and (max-width: 992px) {
   #tasklist {
     width: 80%;
   }
-
 }

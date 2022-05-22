@@ -140,54 +140,5 @@ class Distraction extends HTMLElement {
   }
 }
 
-let lockHeld = 0;
-const root = document.documentElement;
-setInterval(LockDecre, 10);
-
-function LockDecre() {
-  // console.log(lockHeld);
-  if (lockHeld > 0) {
-    lockHeld--;
-  } else {
-    root.style.setProperty('--page-bg-color', 'cadetblue');
-  }
-}
-
-const mouseTrack = function(event) {
-  // console.log(event.clientX + ' ' + event.clientY);
-  // userDistracted();
-  lockHeld = 300;
-  root.style.setProperty('--page-bg-color', '#f54263');
-}
-
-function userDistracted() {
-  root.style.setProperty('--page-bg-color', '#f54263');
-  setTimeout(() => {
-    root.style.setProperty('--page-bg-color', 'cadetblue');
-  }, 3000);
-}
-
-document.onmousemove = mouseTrack;
-
-document.addEventListener('keydown', logKey);
-
-document.onmouseleave = mouseLeft;
-
-function mouseLeft() {
-  console.log('mouse left screen');
-}
-
-function logKey(e) {
-  // console.log(` ${e.code}`);
-  userDistracted();
-}
-
-// var cursor = document.getElementById("cursor");
-// document.body.addEventListener("mousemove", function(e) {
-//   cursor.style.left = e.clientX + "px",
-//   cursor.style.top = e.clientY + "px";
-// });
-
-
 customElements.define('distraction-page', Distraction);
 export { Distraction };

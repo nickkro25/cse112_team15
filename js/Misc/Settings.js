@@ -72,7 +72,7 @@ for (let i = 0; i < timeInputs.length; i += 1) {
 /**
  * Update the theme of the page based on darkModeSwitch
  */
-function updateDarkMode() {
+export function updateDarkMode() {
   if (darkModeSwitch.checked) {
     root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.darkVal);
