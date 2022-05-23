@@ -94,7 +94,6 @@ function updateDarkMode() {
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
-
   } else {
     root.style.setProperty(pageBGColor.name, pageBGColor.val);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.val);
