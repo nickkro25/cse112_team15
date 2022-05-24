@@ -27,6 +27,7 @@
   --page-bg-color-long: #66b4db;
   --header-color-long: #49a6d4;
   --table-bg-color-long: #5aaed8;
+
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
   --tr-hover-color: #f2f2f279;
@@ -143,7 +144,10 @@ a.brand-logo li {
 
 /* timer styling */
 #timerContainer {
-  width: 400px;
+  /*width: 35%;
+  min-width: 650px;*/
+
+  /* background-color: var(--timer-bg-color); */
   border-radius: 10px;
 }
 
@@ -272,33 +276,36 @@ a {
   #top-left-border span {
     left: 20%;
   }
-
+  
   #bottom-right-border span {
     right: 20%;
   }
 }
 
 @media only screen and (max-width: 992px) {
+  
   #top-left-border span {
     left: 4%;
   }
-
+  
   #bottom-right-border span {
     right: 4%;
   }
+
 }
 
 @media screen and (max-width: 600px) {
+
   #timerContainer {
     width: 90vw;
   }
 
-  #top-left-border span {
+  #top-left-border span{
     left: 10%;
     font-size: 50px;
   }
-
-  #bottom-right-border span {
+  
+  #bottom-right-border span{
     right: 10%;
     font-size: 50px;
   }
@@ -316,9 +323,10 @@ a {
     position: relative;
     top: 0;
     bottom: 100px;
-    margin: 0 auto;
+    margin: 0px auto;
     height: 130px;
-    left: 0;
+    left: 0px;
     font-size: 240%;
   }
+  
 }

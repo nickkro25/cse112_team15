@@ -13,9 +13,7 @@ const breakNames = {
  */
 const pageBGColor = {
   name: '--page-bg-color',
-  shortName: '--page-bg-color-short',
-  val: 'cadetblue',
-  shortVal: '#336b87',
+  val: '#d9645f',
   darkVal: '#363636',
 };
 
@@ -25,9 +23,7 @@ const pageBGColor = {
  */
 const headerColor = {
   name: '--header-color',
-  shortName: '--header-color-short',
-  val: 'darkcyan',
-  shortVal: '#4990b4',
+  val: '#d44e49',
   darkVal: '2d2c2b',
 };
 

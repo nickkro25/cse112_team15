@@ -24,7 +24,7 @@
     // update dark theme at the beginning to prevent transition
     const pageBGColor = {
       name: '--page-bg-color',
-      darkVal: '#363636',
+      darkVal: '#d9645f',
     };
     const headerColor = {
       name: '--header-color',
@@ -147,36 +147,32 @@
         <div id="autoStartGroup">
           <label for="auto start">Auto-start next timer:</label><br>
           <label name="auto start" class="switch">
-          <input type="checkbox" id="autoStartSwitch" checked="true">
-          <span class="slider round"></span>
+            <input type="checkbox" id="autoStartSwitch" checked="true">
+            <span class="slider round"></span>
           </label>
         </div>
       </div>
-    </div>
-    <p id="colorChangeHeader">Color Theme</p>
-    <div id="colorPickerContent">
-      <div id="colorSelectorDiv">
-        <label for="workColor">Work</label><br>
+      <p id="colorChangeHeader">Color Theme</p>
+      <div id="colorPickerContent">
+        <div id="colorSelectorDiv">
+          <label for="workColor">Work</label><br>
           <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
-        <span></span>
-        </label>
-      </div>
-      <br>
-      <div id="colorSelectorDiv">
-        <label for="workColor">Short Break</label><br>
+          <span></span>
+        </div>
+        <br>
+        <div id="colorSelectorDiv">
+          <label for="workColor">Short Break</label><br>
           <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
-        <span></span>
-        </label>
-      </div>
-      <br>
-      <div id="colorSelectorDiv">
-        <label for="workColor">Long Break</label><br>
+          <span></span>
+        </div>
+        <br>
+        <div id="colorSelectorDiv">
+          <label for="workColor">Long Break</label><br>
           <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
-        <span></span>
-        </label>
+          <span></span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- Container for timer, timer buttons, and distraction button + prompt -->
 	<section id="timerContainer" class="section-container">
