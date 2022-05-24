@@ -47,6 +47,14 @@ const root = document.querySelector(':root');
 /**
  * handle the settings popup display
  */
+document.addEventListener('click', (event) => {
+  if (settingsPopup.style.display === 'block') {
+    if (!settingsPopup.contains(event.target) && event.target.id !== 'settingsButton') {
+      settingsPopup.style.display = 'none';
+    }
+  }
+});
+
 settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
