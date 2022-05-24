@@ -71,16 +71,16 @@ class Timer extends HTMLElement {
      * Web worker responsible for count down timer
      * @type {Worker}
      */
-    this.timerWorker = new Worker('/js/Timer/TimerWorker.js', {type: 'module'});
+    this.timerWorker = new Worker('/js/Timer/TimerWorker.js', { type: 'module' });
     // Recieve message from web worker and update display
     this.timerWorker.onmessage = (e) => {
-      if(e.data != -1) {
+      if (e.data !== -1) {
         this.timeDisplay.textContent = e.data;
         document.title = `${e.data} ${this.state}`;
       } else {
         this.onTimerComplete();
       }
-    }
+    };
     /**
      * The sessionId. Increments on each working session. Stored in
      * local storage to keep track of id on multiple sessions every day

@@ -1,7 +1,7 @@
 import { timeToString } from '../Misc/UtilityFunctions.js';
 
 /**
- * Local timer class 
+ * Local timer class
  */
 class Timer {
   constructor() {
@@ -36,15 +36,15 @@ class Timer {
   }
 }
 
-var timer = new Timer();
+const timer = new Timer();
 // Recieve message from Timer.js
 onmessage = (e) => {
   // If message is -1 then end timer
-  if(e.data != -1) {
+  if (e.data !== -1) {
     timer.duration = e.data;
     timer.end = false;
     timer.countdown();
   } else {
     timer.end = true;
   }
-}
+};

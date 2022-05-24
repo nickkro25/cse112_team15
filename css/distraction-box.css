@@ -83,9 +83,7 @@ b {
 }
 
 @media screen and (max-width: 600px) {
-
   #distract-form {
     width: 80vw;
   }
-  
 }
