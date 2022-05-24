@@ -9,6 +9,10 @@ beforeEach(() => {
   + '  <p id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'
   + '<button id=start>Start</button>'
+  + '<input type="number" id="focusTime">'
+  + '<input type="number" id="shortBreakTime">'
+  + '<input type="number" id="longBreakTime">'
+  + '<input type="checkbox" id="autoStartSwitch" checked="true">'
   + '</div>';
   jest.useFakeTimers();
   jest.clearAllTimers();
@@ -16,7 +20,8 @@ beforeEach(() => {
 
 test('Test Initial State is Nothing', () => {
   const button = document.getElementById('start');
-  const TimerObj = new Timer(button, null, null);
+  const displayTime = document.getElementById('displayTime');
+  const TimerObj = new Timer(button, displayTime, null);
   expect(TimerObj.state).toBe('');
   expect(TimerObj.sessionId).toBe(0);
 });
@@ -103,4 +108,64 @@ test('Test That Timer Resets Properly When End Day is Clicked', () => {
   TimerObj.resetPomoSessionId();
   expect(TimerObj.stateQueue[0]).toBe(workMode);
   expect(TimerObj.sessionId).toBe(0);
+});
+
+test('Test Timer Pauses After Work Session When Auto Start is Disabled', () => {
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  const autoStartSwitch = document.getElementById('autoStartSwitch');
+  jest.clearAllTimers();
+  button.click();
+  autoStartSwitch.checked = false;
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+  expect(TimerObj.displayStatus.textContent).toBe('Short Break');
+  expect(button.childNodes[0].nodeValue).toBe('Start');
+  expect(displayStatus.textContent).toBe('Short Break');
+  expect(document.title).toBe('Short Break');
+});
+
+test('get previous time durations from localStorage on refresh', () => {
+  localStorage.workModeTime = 26;
+  localStorage.shortBreakTime = 6;
+  localStorage.longBreakTime = 16;
+
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  expect(TimerObj.focusTime.value).toBe('26');
+  expect(TimerObj.shortBreakTime.value).toBe('6');
+  expect(TimerObj.longBreakTime.value).toBe('16');
+
+  localStorage.clear();
+});
+
+test('changeTime', () => {
+  const displayTime = document.getElementById('displayTime');
+  const displayStatus = document.getElementById('displayStatus');
+  const button = document.getElementById('start');
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  const event = new Event('change');
+
+  const focus = TimerObj.focusTime;
+  focus.dispatchEvent(event);
+  event.target.value = 33;
+  focus.dispatchEvent(event);
+  expect(localStorage.workModeTime).toBe('33');
+
+  const shortBreak = TimerObj.shortBreakTime;
+  shortBreak.dispatchEvent(event);
+  event.target.value = 1;
+  shortBreak.dispatchEvent(event);
+  expect(localStorage.shortBreakTime).toBe('1');
+
+  const longBreak = TimerObj.longBreakTime;
+  longBreak.dispatchEvent(event);
+  event.target.value = 9;
+  longBreak.dispatchEvent(event);
+  expect(localStorage.longBreakTime).toBe('9');
 });

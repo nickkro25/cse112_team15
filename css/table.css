@@ -3,13 +3,12 @@
 /* container for table */
 #tasklist {
   position: relative;
-  margin: auto;
-  margin-top: 1%;
-  height: 60vh;
-  width: 50vw;
+  margin: 1% auto;
+  height: 45vh;
+  width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
-  padding-right: 20px;
+
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -18,9 +17,7 @@ table {
   border-collapse: separate;
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
-  width: 100%;
   min-height: 45vh;
-  min-width: 500px;
 
   /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
@@ -32,7 +29,7 @@ th,
 td {
   padding: 15px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-  max-width: 20vw;      /* allows for word-wrap */
+  /*max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
@@ -40,7 +37,7 @@ th {
   color: var(--font-color);
   text-align: left;
   padding: 20px 10px;
-  font-size: 200%;
+  font-size: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -48,7 +45,6 @@ th {
 }
 
 td {
-  min-width: 50px;
   transition-duration: 0s;
 }
 
@@ -132,11 +128,9 @@ svg {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  width: 100%;
   background-color: var(--header-color);
   padding-top: 10px;
   padding-bottom: 10px;
-  min-width: 500px;
   border-bottom-left-radius: var(--td-border-radius);
   border-bottom-right-radius: var(--td-border-radius);
   transition-duration: 2s;
@@ -145,7 +139,7 @@ svg {
 /* checkbox and delete button styling */
 .task-name,
 .task-length {
-  font-size: 1em;
+  font-size: 100%;
   background-color: white;
   border-style: none;
   border-radius: 60vh;
@@ -158,8 +152,7 @@ svg {
 }
 
 .task-name {
-  /* width: calc(40% - 60px); */
-  width: 58%;
+  width: 40%;
   margin-left: 10%;
 }
 
@@ -247,12 +240,22 @@ button:disabled .focus-svg {
   cursor: pointer;
 }
 
+#add-button {
+  float: right;
+  margin-right: 4%;
+}
+
 @media screen and (min-width: 1300px) {
   #tasklist {
     height: 60vh;
-    width: 40vw;
     overflow-y: auto;
-    margin-top: 1%;
-    padding-right: 20px;
   }
+
+}
+
+@media screen and (max-width: 992px) {
+  #tasklist {
+    width: 80%;
+  }
+
 }

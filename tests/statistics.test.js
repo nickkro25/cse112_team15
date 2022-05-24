@@ -4,6 +4,8 @@ import { buttonText } from '../js/Timer/TimerVariables.js';
 /** @Test {ToDoList} */
 
 document.body.innerHTML += "<div id='overlay'></div>"
++ "<span class='close-stats-button' id='close-stats-button'>&times;</span>"
++ "<h2 class='statslabel'>Your Stats</h2>"
 + "<div class ='tab'>"
 + "<button class='tab-btn' id='data' > Data </button>"
 + "<button class='tab-btn' id='distraction'> Distraction </button>"
@@ -304,6 +306,15 @@ describe('Variables function correctly', () => {
     localStorage.setItem('startDateTime', new Date(today.getFullYear(), today.getMonth(), today.getDate(), 1, 0, 0));
     Stats = new Statistics();
     expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem('startDateTime', new Date(today.getFullYear(), today.getMonth() - 1, today.getDate(), 1, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem('startDateTime', new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1, 1, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem('startDateTime', new Date(today.getFullYear() + 1, today.getMonth() + 1, today.getDate() + 1, 3, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeFalsy();
   });
 
   test('clearData resets all values', () => {
@@ -402,4 +413,14 @@ test('Distraction Tab Button Pressed, all Data tab items hidden', () => {
     expect(content[i].style.display).toBe('none');
     expect(contentlabel[i].style.display).toBe('none');
   }
+});
+
+test('Clicking outside of the popup closes the popup', () => {
+  Stats = new Statistics();
+  const overlay = document.getElementById('overlay');
+  const event = new Event('click');
+  overlay.dispatchEvent(event);
+  const btn = document.getElementById('close-stats-button');
+  btn.click();
+  expect(overlay.style.animation).toBe('');
 });

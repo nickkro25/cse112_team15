@@ -136,7 +136,6 @@ class TodoListDom {
       } catch (error) {
         // eslint-disable-next-line no-alert
         alert('Invalid input. Please try again');
-        console.log(error);
       }
     });
 
@@ -261,7 +260,7 @@ class TodoListDom {
     const clickedTask = this.todoList.getTaskById(id);
     // disable the old tasks checkbox because it has not been clicked yet
     clickedTask.onDelete();
-    this.currentTask.checkBox.disabled = true;
+    this.currentTask.checkBox.disabled = false;
     this.displayTask(clickedTask, currentTaskIndex);
 
     // remove the task and add it back to the top
