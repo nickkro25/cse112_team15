@@ -12,23 +12,25 @@
   --button-color-short: #763626;
 
   /* default page colors */
-  --page-bg-color: cadetblue;
+  --page-bg-color: #d9645f;
+  --header-color: #d44e49;
+  --table-bg-color: #d85e5a;
   --font-color: white;
-  --timer-bg-color: darkcyan;
-
 
   /* short break page colors */
-  --page-bg-color-short: #336b87;
-  --timer-bg-color-short: #90afc5;
+  --page-bg-color-short: #76a662;
+  --header-color-short: #649051;
+  --table-bg-color-short: #6d9d58;
 
-  /* toothpaste table theme */
-  --header-color: darkcyan;
+
+  /* long break page colors */
+  --page-bg-color-long: #66b4db;
+  --header-color-long: #49a6d4;
+  --table-bg-color-long: #5aaed8;
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
-  --toothpaste: rgb(2, 177, 177);
   --tr-hover-color: #f2f2f279;
   --completed-task-color: rgb(131, 156, 170);
-  --table-bg-color: var(--toothpaste);
   --scroll-color: var(--even-color);
 
   /* table row spacing */
@@ -39,10 +41,8 @@
   /* shortbreak table theme */
   --even-color-short: #98c7e9;
   --odd-color-short: var(--even-color-short);
-  --header-color-short: #4990b4;
   --tr-hover-color-short: #bdd3df;
   --scroll-color-short: var(--even-color-short);
-  --table-bg-color-short: #60afcc;
 
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
@@ -58,6 +58,7 @@ header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
+  transition-duration: 2s;
 }
 
 ul {
@@ -143,8 +144,6 @@ a.brand-logo li {
 /* timer styling */
 #timerContainer {
   width: 400px;
-
-  /* background-color: var(--timer-bg-color); */
   border-radius: 10px;
 }
 

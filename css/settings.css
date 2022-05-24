@@ -27,6 +27,32 @@
   text-align: center;
 }
 
+#colorPickerContent {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 1rem;
+}
+
+#colorChangeHeader {
+  margin-top: 1.8em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#colorSelectorDiv {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.colorPicker {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #settingsContent div {
   display: inline-block;
 }

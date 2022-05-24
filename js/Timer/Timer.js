@@ -1,6 +1,8 @@
 import {
   sessionStartName, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
+import { workModeColors } from '../Misc/ChangeColors.js';
+
 /**
  * A class for the Timer object. Has functions to start the timer,
  * display the current mode of the timer and display the time remaining
@@ -89,6 +91,7 @@ class Timer extends HTMLElement {
         duration: completedSession.duration,
         sessionIsWork: completedSession.isWork,
         sessionId: this.sessionId,
+        nextSessionName: this.stateQueue[0].name,
       },
     });
 
@@ -177,7 +180,7 @@ class Timer extends HTMLElement {
       } else {
         this.endTimer();
         this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
-        document.getElementsByTagName('body')[0].classList.remove('short-break');
+        workModeColors();
       }
     });
   }

@@ -4,12 +4,19 @@
   transition-duration: 2s;
 }
 
-.short-break th {
+.short-break nav {
   background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
 .short-break table {
   background-color: var(--table-bg-color-short);
+  transition-duration: 2s;
+}
+
+.short-break th {
+  background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
 .short-break tr:hover td {
@@ -27,10 +34,27 @@
 
 .short-break #add-todo {
   background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
-.short-break #form-container {
-  background-color: var(--page-bg-color-short);
+/* long break color modes */
+.long-break {
+  background-color: var(--page-bg-color-long);
+  transition-duration: 2s;
+}
+
+.long-break nav {
+  background-color: var(--header-color-long);
+  transition-duration: 2s;
+}
+
+.long-break table {
+  background-color: var(--table-bg-color-long);
+  transition-duration: 2s;
+}
+
+.long-break th {
+  background-color: var(--header-color-long);
   transition-duration: 2s;
 }
 
@@ -49,7 +73,7 @@
   z-index: 50;
 }
 
-/* change the distration-animation scalr from 0-0.8 to 0-1 for better visuals*/
+/* change the distration-animation scalr from 0-0.8 to 0-1 for better visuals */
 @keyframes distraction-animation-in {
   from { opacity: 0; }
   to { opacity: 1; }
