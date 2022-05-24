@@ -27,7 +27,7 @@ class Timer {
     this.duration -= 1;
     if (this.duration >= 0) {
       setTimeout(() => {
-        this.countdown(this.duration);
+        this.countdown();
       }, 1000);
     } else {
       // Post -1 if count down is complete
