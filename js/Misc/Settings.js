@@ -60,7 +60,7 @@ settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
   } else {
-    settingsPopup.style.display = 'block';  
+    settingsPopup.style.display = 'block';
   }
 });
 
