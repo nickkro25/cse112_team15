@@ -38,6 +38,19 @@
   color: black;
 }
 
+#focusTime {
+  color: black;
+}
+
+#shortBreakTime {
+  color: black;
+}
+
+#longBreakTime {
+  color: black;
+}
+
+
 /* #settingsContent select * {
   color: black;
 } */
