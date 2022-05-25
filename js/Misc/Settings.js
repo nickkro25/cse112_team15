@@ -83,7 +83,7 @@ for (let i = 0; i < timeInputs.length; i += 1) {
  * col = input color you want to change in #RRGGBB format
  * amt = percentage amount you want to shade (-ve is darker)
  */
- const colorShade = (col, amt) => {
+const colorShade = (col, amt) => {
   col = col.replace(/^#/, '');
   if (col.length === 3) col = col[0] + col[0] + col[1] + col[1] + col[2] + col[2];
 
@@ -101,32 +101,35 @@ for (let i = 0; i < timeInputs.length; i += 1) {
   return `#${rr}${gg}${bb}`;
 };
 
-if (localStorage.getItem('--page-bg-color') === null){
+if (localStorage.getItem('--page-bg-color') === null) {
   localStorage.setItem('--page-bg-color', '#d9645f');
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
 }
+
 root.style.setProperty('--page-bg-color', localStorage.getItem('--page-bg-color'));
 root.style.setProperty('--header-color', localStorage.getItem('--header-color'));
 root.style.setProperty('--table-bg-color', colorShade(localStorage.getItem('--page-bg-color'), -10));
 root.style.setProperty('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
 workColorPicker.value = localStorage.getItem('--page-bg-color');
 
-if (localStorage.getItem('--page-bg-color-short') === null){
+if (localStorage.getItem('--page-bg-color-short') === null) {
   localStorage.setItem('--page-bg-color-short', '#76a662');
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
 }
+
 root.style.setProperty('--page-bg-color-short', localStorage.getItem('--page-bg-color-short'));
 root.style.setProperty('--header-color-short', localStorage.getItem('--header-color-short'));
 root.style.setProperty('--table-bg-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -10));
 root.style.setProperty('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
 shortColorPicker.value = localStorage.getItem('--page-bg-color-short');
 
-if (localStorage.getItem('--page-bg-color-long') === null){
+if (localStorage.getItem('--page-bg-color-long') === null) {
   localStorage.setItem('--page-bg-color-long', '#66b4db');
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
 }
+
 root.style.setProperty('--page-bg-color-long', localStorage.getItem('--page-bg-color-long'));
 root.style.setProperty('--header-color-long', localStorage.getItem('--header-color-long'));
 root.style.setProperty('--table-bg-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -10));
