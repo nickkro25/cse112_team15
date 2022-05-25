@@ -2,9 +2,11 @@ import { Timer } from '../js/Timer/Timer';
 import {
   workMode, shortBreakMode, longBreakMode, buttonText,
 } from '../js/Timer/TimerVariables';
+import Worker from './mockWorker.js';
 
 beforeEach(() => {
   window.localData = [];
+  window.Worker = Worker;
   document.body.innerHTML = '<div>'
   + '  <p id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'

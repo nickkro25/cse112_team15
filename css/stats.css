@@ -205,19 +205,15 @@
 }
 
 @media only screen and (max-width: 992px) {
-  
-  #parentDiv {  
+  #parentDiv {
     width: 25%;
     min-width: 350px;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-
   #parentDiv {
     width: 70%;
     min-width: 0;
   }
-  
 }
