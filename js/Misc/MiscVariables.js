@@ -13,7 +13,7 @@ const breakNames = {
  */
 const pageBGColor = {
   name: '--page-bg-color',
-  val: '#d9645f',
+  val: localStorage.getItem('--page-bg-color'),
   darkVal: '#363636',
 };
 
@@ -23,7 +23,7 @@ const pageBGColor = {
  */
 const headerColor = {
   name: '--header-color',
-  val: '#d44e49',
+  val: localStorage.getItem('--header-color'),
   darkVal: '2d2c2b',
 };
 
