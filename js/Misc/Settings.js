@@ -79,6 +79,61 @@ for (let i = 0; i < timeInputs.length; i += 1) {
 }
 
 /**
+ * Anon function that shades a color.
+ * col = input color you want to change in #RRGGBB format
+ * amt = percentage amount you want to shade (-ve is darker)
+ */
+ const colorShade = (col, amt) => {
+  col = col.replace(/^#/, '');
+  if (col.length === 3) col = col[0] + col[0] + col[1] + col[1] + col[2] + col[2];
+
+  let [r, g, b] = col.match(/.{2}/g);
+  ([r, g, b] = [parseInt(r, 16) + amt, parseInt(g, 16) + amt, parseInt(b, 16) + amt]);
+
+  r = Math.max(Math.min(255, r), 0).toString(16);
+  g = Math.max(Math.min(255, g), 0).toString(16);
+  b = Math.max(Math.min(255, b), 0).toString(16);
+
+  const rr = (r.length < 2 ? '0' : '') + r;
+  const gg = (g.length < 2 ? '0' : '') + g;
+  const bb = (b.length < 2 ? '0' : '') + b;
+
+  return `#${rr}${gg}${bb}`;
+};
+
+if (localStorage.getItem('--page-bg-color') === null){
+  localStorage.setItem('--page-bg-color', '#d9645f');
+  localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
+  pageBGColor.val = localStorage.getItem('--page-bg-color');
+  headerColor.val = localStorage.getItem('--header-color');
+}
+root.style.setProperty('--page-bg-color', localStorage.getItem('--page-bg-color'));
+root.style.setProperty('--header-color', localStorage.getItem('--header-color'));
+root.style.setProperty('--table-bg-color', colorShade(localStorage.getItem('--page-bg-color'), -10));
+root.style.setProperty('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+workColorPicker.value = localStorage.getItem('--page-bg-color');
+
+if (localStorage.getItem('--page-bg-color-short') === null){
+  localStorage.setItem('--page-bg-color-short', '#76a662');
+  localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
+}
+root.style.setProperty('--page-bg-color-short', localStorage.getItem('--page-bg-color-short'));
+root.style.setProperty('--header-color-short', localStorage.getItem('--header-color-short'));
+root.style.setProperty('--table-bg-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -10));
+root.style.setProperty('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+shortColorPicker.value = localStorage.getItem('--page-bg-color-short');
+
+if (localStorage.getItem('--page-bg-color-long') === null){
+  localStorage.setItem('--page-bg-color-long', '#66b4db');
+  localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
+}
+root.style.setProperty('--page-bg-color-long', localStorage.getItem('--page-bg-color-long'));
+root.style.setProperty('--header-color-long', localStorage.getItem('--header-color-long'));
+root.style.setProperty('--table-bg-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -10));
+root.style.setProperty('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+longColorPicker.value = localStorage.getItem('--page-bg-color-long');
+
+/**
  * Update the theme of the page based on darkModeSwitch
  */
 function updateDarkMode() {
@@ -130,35 +185,15 @@ muteSwitch.addEventListener('change', () => {
 });
 
 /**
- * Anon function that shades a color.
- * col = input color you want to change in #RRGGBB format
- * amt = percentage amount you want to shade (-ve is darker)
- */
-const colorShade = (col, amt) => {
-  col = col.replace(/^#/, '');
-  if (col.length === 3) col = col[0] + col[0] + col[1] + col[1] + col[2] + col[2];
-
-  let [r, g, b] = col.match(/.{2}/g);
-  ([r, g, b] = [parseInt(r, 16) + amt, parseInt(g, 16) + amt, parseInt(b, 16) + amt]);
-
-  r = Math.max(Math.min(255, r), 0).toString(16);
-  g = Math.max(Math.min(255, g), 0).toString(16);
-  b = Math.max(Math.min(255, b), 0).toString(16);
-
-  const rr = (r.length < 2 ? '0' : '') + r;
-  const gg = (g.length < 2 ? '0' : '') + g;
-  const bb = (b.length < 2 ? '0' : '') + b;
-
-  return `#${rr}${gg}${bb}`;
-};
-
-/**
  * handle color picker for work color
  */
 workColorPicker.addEventListener('change', () => {
   root.style.setProperty('--page-bg-color', workColorPicker.value);
   root.style.setProperty('--header-color', colorShade(workColorPicker.value, -60));
   root.style.setProperty('--table-bg-color', colorShade(workColorPicker.value, -10));
+  root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
+  localStorage.setItem('--page-bg-color', workColorPicker.value);
+  localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
 });
 
 /**
@@ -168,6 +203,9 @@ shortColorPicker.addEventListener('change', () => {
   root.style.setProperty('--page-bg-color-short', shortColorPicker.value);
   root.style.setProperty('--header-color-short', colorShade(shortColorPicker.value, -60));
   root.style.setProperty('--table-bg-color-short', colorShade(shortColorPicker.value, -10));
+  root.style.setProperty('--btn-icon-color-short', colorShade(shortColorPicker.value, 30));
+  localStorage.setItem('--page-bg-color-short', shortColorPicker.value);
+  localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
 });
 
 /**
@@ -175,8 +213,11 @@ shortColorPicker.addEventListener('change', () => {
  */
 longColorPicker.addEventListener('change', () => {
   root.style.setProperty('--page-bg-color-long', longColorPicker.value);
-  root.style.setProperty('--table', colorShade(longColorPicker.value, -60));
+  root.style.setProperty('--header-color-long', colorShade(longColorPicker.value, -60));
   root.style.setProperty('--table-bg-color-long', colorShade(longColorPicker.value, -10));
+  root.style.setProperty('--btn-icon-color-long', colorShade(longColorPicker.value, 30));
+  localStorage.setItem('--page-bg-color-long', longColorPicker.value);
+  localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
 });
 // set values from localStorage
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
