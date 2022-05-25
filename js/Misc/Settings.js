@@ -47,9 +47,10 @@ const root = document.querySelector(':root');
 /**
  * handle the settings popup display
  */
+
 document.addEventListener('click', (event) => {
   if (settingsPopup.style.display === 'block') {
-    if (!settingsPopup.contains(event.target) && event.target.id !== 'settingsButton') {
+    if (!settingsPopup.contains(event.target) && (event.target.id !== 'settingsButton' && event.target.id !== 'settingsButtonIcon')) {
       settingsPopup.style.display = 'none';
     }
   }
@@ -59,7 +60,7 @@ settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
   } else {
-    settingsPopup.style.display = 'block';
+    settingsPopup.style.display = 'block';  
   }
 });
 
