@@ -37,6 +37,29 @@
   transition-duration: 2s;
 }
 
+.short-break .btn, .short-break .btn-large, .short-break .btn-floating {
+  background-color: var(--btn-icon-color-short);
+  transition-duration: 2s;
+}
+
+.short-break .modal-content {
+  background-color: var(--page-bg-color-short);
+  border: 3px solid var(--header-color-short);
+  box-shadow: 0 4px 8px 0 var(--header-color-short), 0 6px 20px 0 var(--header-color-short);
+}
+
+.short-break .modal-header, .short-break .modal-footer {
+  background-color: var(--header-color-short);
+}
+
+.short-break .statslabel, .short-break .tab-btn-active, .short-break .tab-btn, .short-break .stats-info {
+  color: var(--page-bg-color-short);
+}
+
+.short-break button:focus{
+  background-color: var(--btn-icon-color-short);
+}
+
 /* long break color modes */
 .long-break {
   background-color: var(--page-bg-color-long);
@@ -56,6 +79,47 @@
 .long-break th {
   background-color: var(--header-color-long);
   transition-duration: 2s;
+}
+
+.long-break tr:hover td {
+  background-image: linear-gradient(transparent, var(--tr-hover-color-long));
+  transition-duration: 0;
+}
+
+.long-break tr:nth-child(even):not(.completedTask) td {
+  background-color: var(--even-color-long);
+}
+
+.long-break tr:nth-child(odd):not(.completedTask) td {
+  background-color: var(--odd-color-long);
+}
+
+.long-break #add-todo {
+  background-color: var(--header-color-long);
+  transition-duration: 2s;
+}
+
+.long-break .btn, .long-break .btn-large, .long-break .btn-floating {
+  background-color: var(--btn-icon-color-long);
+  transition-duration: 2s;
+}
+
+.long-break .modal-content {
+  background-color: var(--page-bg-color-long);
+  border: 3px solid var(--header-color-long);
+  box-shadow: 0 4px 8px 0 var(--header-color-long), 0 6px 20px 0 var(--header-color-long);
+}
+
+.long-break .modal-header, .long-break .modal-footer {
+  background-color: var(--header-color-long);
+}
+
+.long-break .statslabel, .long-break .tab-btn-active, .long-break .tab-btn, .long-break .stats-info {
+  color: var(--page-bg-color-long);
+}
+
+.long-break button:focus{
+  background-color: var(--btn-icon-color-long);
 }
 
 /* distraction popup animations */
