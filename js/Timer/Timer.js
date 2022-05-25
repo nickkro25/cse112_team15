@@ -71,7 +71,7 @@ class Timer extends HTMLElement {
      * Web worker responsible for count down timer
      * @type {Worker}
      */
-    this.timerWorker = new Worker('/js/Timer/TimerWorker.js', { type: 'module' });
+    this.timerWorker = new Worker('./js/Timer/TimerWorker.js', { type: 'module' });
     // Recieve message from web worker and update display
     this.timerWorker.onmessage = (e) => {
       if (e.data !== -1) {
