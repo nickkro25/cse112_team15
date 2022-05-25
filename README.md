@@ -23,6 +23,8 @@ To view the app, open the localhost url in Chrome.
 
 ## Next Steps
 
-To view documentation for the app, visit [here]( https://anshul-birla.github.io/PomoDoc/) 
+To view the code documentation for the app, visit [here]( https://anshul-birla.github.io/PomoDoc/) 
+
+To view the standard documentation for the app (meeting notes, ADRS, etc), visit [here]( https://github.com/nickkro25/cse112_team15_docs)
 
 To get started contributing, visit the [How to Contribute]( https://github.com/nickkro25/cse112_team15/wiki/How-to-Contribute) in the wiki
