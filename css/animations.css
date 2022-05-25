@@ -52,7 +52,8 @@
   background-color: var(--header-color-short);
 }
 
-.short-break .statslabel, .short-break .tab-btn-active, .short-break .tab-btn, .short-break .stats-info {
+.short-break .statslabel, .short-break .tab-btn-active, .short-break .tab-btn, .short-break .stats-info, .short-break .distractFormButton,
+.short-break .distractFormButton:hover, .short-break .distractFormButton:focus {
   color: var(--page-bg-color-short);
 }
 
@@ -114,7 +115,8 @@
   background-color: var(--header-color-long);
 }
 
-.long-break .statslabel, .long-break .tab-btn-active, .long-break .tab-btn, .long-break .stats-info {
+.long-break .statslabel, .long-break .tab-btn-active, .long-break .tab-btn, .long-break .stats-info, .long-break .distractFormButton,
+.long-break .distractFormButton:hover, .long-break .distractFormButton:focus {
   color: var(--page-bg-color-long);
 }
 
