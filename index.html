@@ -24,11 +24,11 @@
     // update dark theme at the beginning to prevent transition
     const pageBGColor = {
       name: '--page-bg-color',
-      darkVal: '#d9645f',
+      darkVal: localStorage.getItem('--page-bg-color'),
     };
     const headerColor = {
       name: '--header-color',
-      darkVal: '2d2c2b',
+      darkVal: localStorage.getItem('--header-color'),
     };
     const toothpaste = {
       name: '--toothpaste',
@@ -159,13 +159,11 @@
           <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
           <span></span>
         </div>
-        <br>
         <div id="colorSelectorDiv">
           <label for="workColor">Short Break</label><br>
           <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
           <span></span>
         </div>
-        <br>
         <div id="colorSelectorDiv">
           <label for="workColor">Long Break</label><br>
           <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
