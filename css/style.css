@@ -13,20 +13,22 @@
 
   /* default page colors */
   --page-bg-color: #d9645f;
-  --header-color: #d44e49;
-  --table-bg-color: #d85e5a;
+  --header-color: colorShade(var(--page-bg-color), -60);
+  --table-bg-color: colorShade(var(--page-bg-color), -10);
   --font-color: white;
+  --btn-icon-color: colorShade(var(--page-bg-color), 30);
 
   /* short break page colors */
   --page-bg-color-short: #76a662;
-  --header-color-short: #649051;
-  --table-bg-color-short: #6d9d58;
-
+  --header-color-short: colorShade(var(--page-bg-color-short), -60);
+  --table-bg-color-short: colorShade(var(--page-bg-color-short), -10);
+  --btn-icon-color-short: colorShade(var(--page-bg-color-short), 30);
 
   /* long break page colors */
   --page-bg-color-long: #66b4db;
-  --header-color-long: #49a6d4;
-  --table-bg-color-long: #5aaed8;
+  --header-color-long: colorShade(var(--page-bg-color-long), -60);
+  --table-bg-color-long: colorShade(var(--page-bg-color-long), -10);
+  --btn-icon-color-long: colorShade(var(--page-bg-color-long), 30);
 
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
