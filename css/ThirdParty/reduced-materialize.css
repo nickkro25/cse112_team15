@@ -600,14 +600,14 @@ html {
 .btn:focus,
 .btn-large:focus,
 .btn-floating:focus {
-  background-color: #1d7d74;
+  background-color: colorShade(var(--btn-icon-color), 20);
 }
 
 .btn,
 .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: var(--btn-icon-color);
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transition: background-color 0.2s ease-out;
@@ -617,7 +617,7 @@ html {
 
 .btn:hover,
 .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: colorShade(var(--btn-icon-color), -20);
 }
 
 .btn-floating {
@@ -630,7 +630,7 @@ html {
   height: 40px;
   line-height: 40px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: var(--btn-icon-color);
   border-radius: 50%;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -639,7 +639,7 @@ html {
 }
 
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: var(--btn-icon-color);
 }
 
 .btn-floating::before {
@@ -735,12 +735,12 @@ button.btn-floating {
 /* Firefox Bug: link not triggered */
 
 select:focus {
-  outline: 1px solid #c9f3ef;
+  outline: 1px solid colorShade(var(--page-bg-color), 100);
 }
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
+  background-color: var(--btn-icon-color);
 }
 
 
