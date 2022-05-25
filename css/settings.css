@@ -33,6 +33,7 @@
 #colorPickerContent {
   display: grid;
   grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
   row-gap: 1rem;
 }
 
@@ -43,14 +44,13 @@
 }
 
 #colorSelectorDiv {
-  font-size: 1.2rem;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 1rem;
 }
 
 .colorPicker {
   text-align: center;
-  width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
