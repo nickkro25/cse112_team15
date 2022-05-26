@@ -38,6 +38,18 @@
   color: black;
 }
 
+#focusTime {
+  color: black;
+}
+
+#shortBreakTime {
+  color: black;
+}
+
+#longBreakTime {
+  color: black;
+}
+
 #customTimeGroup {
   grid-row: 1;
   grid-column: 1 / -1;
