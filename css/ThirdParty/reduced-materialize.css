@@ -617,7 +617,7 @@ html {
 
 .btn:hover,
 .btn-large:hover {
-  background-color: colorShade(var(--btn-icon-color), -20);
+  background-color: var(--btn-icon-color);
 }
 
 .btn-floating {
