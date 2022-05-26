@@ -20,32 +20,23 @@
 }
 
 #settingsPopup * {
-  color: var(--modal-font-color);
   transition-duration: 1.5s;
 }
 
-#workSoundSelector *,
-#breakSoundSelector * {
-  color: black;
-}
-
 #settingsHeader {
+  color: var(--modal-font-color);
   margin-top: 10px;
   font-size: 2em;
   text-align: center;
 }
 
-/* #settingsContent div {
-  display: inline-block;
-} */
+#settingsContent label {
+  color: var(--modal-font-color);
+}
 
 #settingsContent select {
   color: black;
 }
-
-/* #settingsContent select * {
-  color: black;
-} */
 
 #customTimeGroup {
   grid-row: 1;
