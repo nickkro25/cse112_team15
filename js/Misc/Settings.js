@@ -152,8 +152,8 @@ muteSwitch.addEventListener('change', () => {
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
 autoStartSwitch.checked = localStorage.getItem('autoStartSwitch') == null ? true : localStorage.getItem('autoStartSwitch') === 'true';
 muteSwitch.checked = localStorage.getItem('muteSwitch') == null ? false : localStorage.getItem('muteSwitch') === 'true';
-workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'horn' : localStorage.getItem('workSoundSelector');
-breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'celebration' : localStorage.getItem('breakSoundSelector');
+workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'marimba' : localStorage.getItem('workSoundSelector');
+breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'marimba' : localStorage.getItem('breakSoundSelector');
 changeSound(workSoundSelector, false);
 changeSound(breakSoundSelector, false);
 updateDarkMode();

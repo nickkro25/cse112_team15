@@ -2,7 +2,9 @@
  * audio element for alert
  * @type {HTMLAudioElement}
  */
-const horn = document.getElementById('alert-sound');
+const alert = document.getElementById('alert-sound');
+
+alert.volume = 0.3;
 /**
  * the selector for work sound
  * @type {HTMLSelectElement}
@@ -14,35 +16,35 @@ const workSoundSelector = document.getElementById('workSoundSelector');
  */
 const breakSoundSelector = document.getElementById('breakSoundSelector');
 /**
- * string constant for air horn path
+ * string constant for marimba alarm path
  * @type {String}
  */
-const airHorn = './assets/audio/air-horn.mp3';
+const marimba = './assets/audio/marimba.mp3';
 /**
- * string constant for celebration path
+ * string constant for microwave alarm path
  * @type {String}
  */
-const celebration = './assets/audio/celebration.mp3';
+const microwave = './assets/audio/microwave.mp3';
 /**
- * string constant for error path
+ * string constant for kitchen alarm path
  * @type {String}
  */
-const error = './assets/audio/error.mp3';
+const kitchen = './assets/audio/kitchen.mp3';
 /**
- * string constant for noot path
+ * string constant for kitchen alarm path
  * @type {String}
  */
-const noot = './assets/audio/noot.mp3';
+const fire = './assets/audio/fire-alarm.mp3';
 /**
- * string constant for ping path
- * @type {String}
- */
-const ping = './assets/audio/ping.mp3';
+* string constant for kitchen alarm path
+* @type {String}
+*/
+const item = './assets/audio/item.mp3';
 /**
- * string constant for siren path
- * @type {String}
- */
-const siren = './assets/audio/siren.mp3';
+* string constant for kitchen alarm path
+* @type {String}
+*/
+const ringtone = './assets/audio/ringtone.mp3';
 /**
  * mute switch element
  * @type {HTMLInputElement}
@@ -52,12 +54,12 @@ const muteSwitch = document.getElementById('muteSwitch');
  * global to hold current selected path
  * @type {String}
  */
-let workModeSoundPath = airHorn;
+let workModeSoundPath = marimba;
 /**
  * global to hold current selected path
  * @type {String}
  */
-let breakModeSoundPath = celebration;
+let breakModeSoundPath = marimba;
 
 /**
  * Function that handles the logic for playing the sound
@@ -67,8 +69,8 @@ export function workModeSound() {
   if (muteSwitch.checked === true) {
     return;
   }
-  horn.setAttribute('src', workModeSoundPath);
-  horn.play();
+  alert.setAttribute('src', workModeSoundPath);
+  alert.play();
 }
 
 /**
@@ -79,8 +81,8 @@ export function breakModeSound() {
   if (muteSwitch.checked === true) {
     return;
   }
-  horn.setAttribute('src', breakModeSoundPath);
-  horn.play();
+  alert.setAttribute('src', breakModeSoundPath);
+  alert.play();
 }
 
 /**
@@ -91,7 +93,7 @@ export function breakModeSound() {
 export function changeSound(soundSelector, playSound) {
   let path;
   switch (soundSelector.value) {
-    case 'horn':
+    /* case 'horn':
       path = airHorn;
       break;
     case 'celebration':
@@ -99,23 +101,32 @@ export function changeSound(soundSelector, playSound) {
       break;
     case 'error':
       path = error;
+      break; */
+    case 'item':
+      path = item;
       break;
-    case 'noot':
-      path = noot;
+    case 'ringtone':
+      path = ringtone;
       break;
-    case 'ping':
-      path = ping;
+    case 'marimba':
+      path = marimba;
       break;
-    case 'siren':
-      path = siren;
+    case 'kitchen':
+      path = kitchen;
+      break;
+    case 'microwave':
+      path = microwave;
+      break;
+    case 'fire':
+      path = fire;
       break;
     default:
-      path = airHorn;
+      path = marimba;
       break;
   }
   if (playSound) {
-    horn.setAttribute('src', path);
-    horn.play();
+    alert.setAttribute('src', path);
+    alert.play();
   }
   if (soundSelector.id === 'workSoundSelector') {
     workModeSoundPath = path;
