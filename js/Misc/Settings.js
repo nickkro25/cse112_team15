@@ -191,8 +191,8 @@ muteSwitch.addEventListener('change', () => {
  * handle color picker for work color
  */
 workColorPicker.addEventListener('change', () => {
-  root.style.setProperty('--page-bg-color', workColorPicker.value);
-  root.style.setProperty('--header-color', colorShade(workColorPicker.value, -60));
+  //root.style.setProperty('--page-bg-color', workColorPicker.value);
+  //root.style.setProperty('--header-color', colorShade(workColorPicker.value, -60));
   root.style.setProperty('--table-bg-color', colorShade(workColorPicker.value, -10));
   root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
   localStorage.setItem('--page-bg-color', workColorPicker.value);
