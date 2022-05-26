@@ -76,6 +76,10 @@
   color: var(--page-bg-color-short);
 }
 
+.short-break #parentDiv::-webkit-scrollbar-thumb {
+  background-color: var(--page-bg-color-short);
+}
+
 .short-break button:focus {
   background-color: var(--btn-icon-color-short);
 }
@@ -140,6 +144,10 @@
 .long-break .distractFormButton:hover,
 .long-break .distractFormButton:focus {
   color: var(--page-bg-color-long);
+}
+
+.long-break #parentDiv::-webkit-scrollbar-thumb {
+  background-color: var(--page-bg-color-long);
 }
 
 .long-break button:focus {
