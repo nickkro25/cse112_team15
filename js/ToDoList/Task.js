@@ -80,8 +80,14 @@ class Task extends HTMLTableRowElement {
      */
     this.focusButton = this.setupFocusButton();
 
+    this.taskUpButton = this.setupTaskUpButton();
+    this.taskDownButton = this.setupTaskDownButton();
+
     this.setupLastColumnToggle(this.threeDotsButton,
-      this.deleteButton.parentElement, this.focusButton.parentElement);
+      this.deleteButton.parentElement,
+      this.focusButton.parentElement,
+      this.taskUpButton.parentElement,
+      this.taskDownButton.parentElement);
   }
 
   /**
@@ -156,12 +162,10 @@ class Task extends HTMLTableRowElement {
    */
   setupDeleteButton() {
     const deleteBtn = document.createElement('button');
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttributeNS(null, 'd', svg.trashcan);
-    const svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgTag.appendChild(path);
-    svgTag.setAttribute('class', classNames.deleteSvg);
-    deleteBtn.appendChild(svgTag);
+    const deleteIcon = document.createElement('i');
+    deleteIcon.className = 'material-icons delete-single';
+    deleteIcon.textContent = 'delete';
+    deleteBtn.appendChild(deleteIcon);
     const inlineDiv = document.createElement('div');
     inlineDiv.className = classNames.inlineDiv;
     inlineDiv.appendChild(deleteBtn);
@@ -178,12 +182,10 @@ class Task extends HTMLTableRowElement {
    */
   setupFocusButton() {
     const focusBtn = document.createElement('button');
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttributeNS(null, 'd', svg.star);
-    const svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgTag.setAttribute('class', classNames.focusSvg);
-    svgTag.appendChild(path);
-    focusBtn.appendChild(svgTag);
+    const focusIcon = document.createElement('i');
+    focusIcon.className = 'material-icons focus';
+    focusIcon.textContent = 'keyboard_double_arrow_up';
+    focusBtn.appendChild(focusIcon);
     const inlineDiv = document.createElement('div');
     inlineDiv.className = classNames.inlineDiv;
     inlineDiv.appendChild(focusBtn);
@@ -207,6 +209,56 @@ class Task extends HTMLTableRowElement {
     });
 
     return focusBtn;
+  }
+
+  setupTaskUpButton() {
+    const taskUpBtn = document.createElement('button');
+    const upIcon = document.createElement('i');
+    upIcon.className = 'material-icons task-up';
+    upIcon.textContent = 'keyboard_arrow_up';
+    taskUpBtn.appendChild(upIcon);
+    const inlineDiv = document.createElement('div');
+    inlineDiv.className = classNames.inlineDiv;
+    inlineDiv.appendChild(taskUpBtn);
+
+    taskUpBtn.addEventListener('click', () => {
+      this.threeDotsButton.parentElement.style.display = 'block';
+      taskUpBtn.parentElement.parentElement.style.display = 'none';
+      const event = new CustomEvent('task-up', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          taskID: this.id,
+        },
+      });
+      document.body.dispatchEvent(event);
+    });
+    return taskUpBtn;
+  }
+
+  setupTaskDownButton() {
+    const taskDownBtn = document.createElement('button');
+    const downIcon = document.createElement('i');
+    downIcon.className = 'material-icons task-down';
+    downIcon.textContent = 'keyboard_arrow_down';
+    taskDownBtn.appendChild(downIcon);
+    const inlineDiv = document.createElement('div');
+    inlineDiv.className = classNames.inlineDiv;
+    inlineDiv.appendChild(taskDownBtn);
+
+    taskDownBtn.addEventListener('click', () => {
+      this.threeDotsButton.parentElement.style.display = 'block';
+      taskDownBtn.parentElement.parentElement.style.display = 'none';
+      const event = new CustomEvent('task-down', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          taskID: this.id,
+        },
+      });
+      document.body.dispatchEvent(event);
+    });
+    return taskDownBtn;
   }
 
   /**
@@ -237,25 +289,27 @@ class Task extends HTMLTableRowElement {
    * @param {HTMLDivElement} focusDiv - div where the focus button is located
    */
   setupLastColumnToggle(threeDotsButton, deleteDiv,
-    focusDiv) {
+    focusDiv, taskUpDiv, taskDownDiv) {
     const lastCol = document.createElement('td');
     const lastColDiv = document.createElement('div');
     const threeDotsDiv = document.createElement('div');
-    const deleteFocusDiv = document.createElement('div');
+    const ButtonsDiv = document.createElement('div');
 
     // wrap the delete and focus buttons in a div
-    deleteFocusDiv.className = classNames.doubleButtons;
-    deleteFocusDiv.appendChild(deleteDiv);
-    deleteFocusDiv.appendChild(focusDiv);
+    ButtonsDiv.className = classNames.doubleButtons;
+    ButtonsDiv.appendChild(deleteDiv);
+    ButtonsDiv.appendChild(focusDiv);
+    ButtonsDiv.appendChild(taskUpDiv);
+    ButtonsDiv.appendChild(taskDownDiv);
     // wrap the three dots button in a div
     threeDotsDiv.appendChild(threeDotsButton);
     threeDotsDiv.className = classNames.threeDotsWrapper;
 
     // make sure the delete and focus buttons are hidden
-    deleteFocusDiv.style.display = 'none';
+    ButtonsDiv.style.display = 'none';
     lastColDiv.appendChild(threeDotsDiv);
     lastColDiv.className = classNames.lastCol;
-    lastColDiv.appendChild(deleteFocusDiv);
+    lastColDiv.appendChild(ButtonsDiv);
     lastCol.appendChild(lastColDiv);
     this.appendChild(lastCol);
   }

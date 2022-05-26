@@ -266,6 +266,57 @@ class TodoListDom {
     // remove the task and add it back to the top
     this.todoList.addTaskToTop(clickedTask);
   }
+
+  moveTaskUp(id) {
+    const rows = this.table.childNodes;
+    let currentTaskIndex = -1;
+    // find index of the current task
+    for (let i = 2; i < rows.length; i += 1) {
+      if (rows[i].id === id && currentTaskIndex === -1) {
+        currentTaskIndex = i;
+        break;
+      }
+    }
+
+    // don't do anything if it's the first task in the list
+    if (currentTaskIndex === 2) {
+      return;
+    }
+
+    const clickedTask = this.todoList.getTaskById(id);
+    // disable the old tasks checkbox because it has not been clicked yet
+    clickedTask.onDelete();
+    this.currentTask.checkBox.disabled = false;
+    // insert task before the previous task in the table
+    this.displayTask(clickedTask, currentTaskIndex - 1);
+
+    this.todoList.shiftTaskUp(clickedTask, currentTaskIndex);
+  }
+
+  moveTaskDown(id) {
+    const rows = this.table.childNodes;
+    let currentTaskIndex = -1;
+    // find index of the current task. Tasks start in the row thing at index 2
+    for (let i = 2; i < rows.length; i += 1) {
+      if (rows[i].id === id && currentTaskIndex === -1) {
+        currentTaskIndex = i;
+      }
+    }
+
+    // don't move task down if it's the last task
+    if (currentTaskIndex === rows.length - 1) {
+      return;
+    }
+
+    const clickedTask = this.todoList.getTaskById(id);
+    // disable the old tasks checkbox because it has not been clicked yet
+    clickedTask.onDelete(); // delete current task from everything
+    this.currentTask.checkBox.disabled = false;
+    this.displayTask(clickedTask, currentTaskIndex + 1);
+
+    // shift the task down in localStorage and in 'taskList'
+    this.todoList.shiftTaskDown(clickedTask, currentTaskIndex);
+  }
 }
 
 export { TodoListDom };

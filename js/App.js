@@ -232,6 +232,16 @@ TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
 });
 
+document.body.addEventListener('task-up', (e) => {
+  TDLDom.moveTaskUp(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
+document.body.addEventListener('task-down', (e) => {
+  TDLDom.moveTaskDown(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
 /**
  * Event that fires when someone focuses on a certain task
  */

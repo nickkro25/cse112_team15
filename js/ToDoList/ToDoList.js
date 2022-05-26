@@ -156,6 +156,16 @@ class ToDoList extends HTMLElement {
     this.addTaskToLocalStorage(task, 0);
   }
 
+  shiftTaskUp(task, currentIndex) {
+    this.taskList.splice(currentIndex - 1, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 3);
+  }
+
+  shiftTaskDown(task, currentIndex) {
+    this.taskList.splice(currentIndex + 1, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 1);
+  }
+
   /**
    * Adds task to the end of the todolist depending on if it is checked or not.
    * If checked, adds to the end. If not checked, adds right before the first

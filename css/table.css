@@ -225,19 +225,8 @@ tr.completedTask td {
   display: inline block;
 }
 
-.delete-svg:hover {
-  fill: red;
-  cursor: pointer;
-}
-
-.focus-svg:hover {
-  fill: yellow;
-  cursor: pointer;
-}
-
-button:disabled .focus-svg {
-  fill: black;
-  cursor: pointer;
+.double-buttons i {
+  color: white;
 }
 
 #add-button {
