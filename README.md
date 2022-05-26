@@ -26,7 +26,7 @@ To view the app, open the localhost url in Chrome.
 To view the code documentation for the app,
 ```bash
 $ git checkout dev_docs
-go to dev-docs/index.html
+go to /dev-docs/index.html
 right click the file and host as a live server
 ```
 
