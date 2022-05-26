@@ -24,6 +24,11 @@
   transition-duration: 1.5s;
 }
 
+#workSoundSelector *,
+#breakSoundSelector * {
+  color: black;
+}
+
 #settingsHeader {
   margin-top: 10px;
   font-size: 2em;
