@@ -45,7 +45,7 @@ const evenColor = {
  */
 const toothpaste = {
   name: '--toothpaste',
-  val: 'rgb(2, 177, 177)',
+  val: localStorage.getItem('--page-bg-color'),
   darkVal: '#2d2c2b',
 };
 
