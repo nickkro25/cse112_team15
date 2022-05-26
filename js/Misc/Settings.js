@@ -197,6 +197,8 @@ workColorPicker.addEventListener('change', () => {
   root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
   localStorage.setItem('--page-bg-color', workColorPicker.value);
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
+  pageBGColor.val = localStorage.getItem('--page-bg-color');
+  headerColor.val = localStorage.getItem('--header-color');
 });
 
 /**
