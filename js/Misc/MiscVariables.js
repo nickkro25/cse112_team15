@@ -24,7 +24,7 @@ const pageBGColor = {
 const headerColor = {
   name: '--header-color',
   val: localStorage.getItem('--header-color'),
-  darkVal: '2d2c2b',
+  darkVal: '#2d2c2b',
 };
 
 /**
