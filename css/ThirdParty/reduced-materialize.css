@@ -232,7 +232,7 @@ i.right {
 
 @media only screen and (max-width: 992px) {
   i.right {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 
@@ -252,7 +252,7 @@ i.large {
   #faqButton,
   #statsButton,
   #settingsButton,
-  #onboardingButton{
+  #onboardingButton {
     font-size: 0;
   }
 }
@@ -411,12 +411,11 @@ nav .brand-logo {
 }
 
 @media only screen and (max-width: 600px) {
-
-  .brand-logo li{
+  .brand-logo li {
     display: none;
   }
 
-  .brand-logo img{
+  .brand-logo img {
     height: 50px;
   }
 }
@@ -476,7 +475,7 @@ nav ul a.btn-floating {
   nav ul a.btn-large,
   nav ul a.btn-floating {
     margin-top: -2px;
-    margin-left: 0px;
+    margin-left: 0;
     margin-right: 15px;
     padding: 0 8px;
     letter-spacing: 0;

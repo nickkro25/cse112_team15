@@ -62,7 +62,7 @@
     <!-- Header bar at the top of the page for title text & navigation -->
     <header data-title="Welcome!" data-intro="Welcome to our pomodoro app!" data-step='1'>
       <nav>
-        <div class="nav-wrapper">
+        <div id= "nav-wrapper" class="nav-wrapper">
           <a href="#!" class="brand-logo" disable><img src="./assets/img/logo2.png" height='60px'>
             <li> Go Go Pomo! </li>
           </a>
@@ -75,7 +75,7 @@
                   class="material-icons right">insert_chart</i></a></li>
             <li><a class="btn" id="settingsButton" data-title="Misc"
                 data-intro="If you would like to change the sounds of the app or enter into dark mode, click here"
-                data-step='12'>Settings<i class="material-icons right">settings</i></a></li>
+                data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
             <li><a class="btn" id="onboardingButton" data-title="Misc"
                 data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
                   class="material-icons right">replay</i></a></li>
@@ -111,23 +111,23 @@
         <div id="workSoundGroup">
           <label for="work sound">Work Time Sound:</label><br>
           <select name="work sound" id="workSoundSelector">
-            <option value="horn" selected>Air Horn</option>
-            <option value="celebration">Celebration</option>
-            <option value="error">Error</option>
-            <option value="noot">Noot</option>
-            <option value="ping">Ping</option>
-            <option value="siren">Siren</option>
+            <option value="marimba" selected>Marimba</option>
+            <option value="kitchen">Kitchen Timer</option>
+            <option value="microwave">Microwave Beep</option>
+            <option value="fire">Fire Alarm</option>
+            <option value="item">Item Get</option>
+            <option value="ringtone">Ringtone</option>
           </select>
         </div>
         <div id="breakSoundGroup">
           <label for="break sound">Break Time Sound:</label><br>
           <select name="break sound" id="breakSoundSelector">
-            <option value="horn">Air horn</option>
-            <option value="celebration" selected>Celebration</option>
-            <option value="error">Error</option>
-            <option value="noot">Noot</option>
-            <option value="ping">Ping</option>
-            <option value="siren">Siren</option>
+            <option value="marimba" selected>Marimba</option>
+            <option value="kitchen">Kitchen Timer</option>
+            <option value="microwave">Microwave Beep</option>
+            <option value="fire">Fire Alarm</option>
+            <option value="item">Item Get</option>
+            <option value="ringtone">Ringtone</option>
           </select>
         </div>
         <div id="darkModeGroup">
@@ -192,7 +192,7 @@
 	<!-- Container for task list -->
 	<section id='tasklist' class='section-container' id='todo' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
-			<tr>
+			<tr id="taskListHeader">
 				<th class='col1-checkbox'></th>
 				<th class='col2-task'>TASKS</th>
 				<th class='col3-pomos'>#</th>

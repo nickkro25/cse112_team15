@@ -44,7 +44,7 @@ jobs:
         uses: actions-js/push@v1.2
         with:
           github_token: ${{secrets.GITHUB_TOKEN }}
-          branch: 'meeting_notes'
+          branch: 'dev_docs'
           force: true
   release:
     runs-on: ubuntu-latest

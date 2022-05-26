@@ -46,11 +46,12 @@ th {
 
 td {
   transition-duration: 0s;
+  word-break: break-word;
 }
 
 tr {
   margin-top: 20px;
-
+  
   /* width: 100%; */
 }
 

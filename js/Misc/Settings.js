@@ -56,6 +56,15 @@ const root = document.querySelector(':root');
 /**
  * handle the settings popup display
  */
+
+document.addEventListener('click', (event) => {
+  if (settingsPopup.style.display === 'block') {
+    if (!settingsPopup.contains(event.target) && (event.target.id !== 'settingsButton' && event.target.id !== 'settingsButtonIcon')) {
+      settingsPopup.style.display = 'none';
+    }
+  }
+});
+
 settingsButton.addEventListener('click', () => {
   if (settingsPopup.style.display === 'block') {
     settingsPopup.style.display = 'none';
@@ -158,6 +167,16 @@ function updateDarkMode() {
     root.style.setProperty(tableBG.name, tableBG.darkVal);
     root.style.setProperty(modalBGColor.name, modalBGColor.darkVal);
     root.style.setProperty(modalFontColor.name, modalFontColor.darkVal);
+    document.getElementById('faqButton').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('statsButton').style.backgroundColor = 'rgb(78, 78, 78';
+    document.getElementById('settingsButton').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
   } else {
     root.style.setProperty(pageBGColor.name, pageBGColor.val);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.shortVal);
@@ -172,6 +191,15 @@ function updateDarkMode() {
     root.style.setProperty(tableBG.name, tableBG.val);
     root.style.setProperty(modalBGColor.name, modalBGColor.val);
     root.style.setProperty(modalFontColor.name, modalFontColor.val);
+    document.getElementById('faqButton').style.backgroundColor = '#26a69a';
+    document.getElementById('statsButton').style.backgroundColor = '#26a69a';
+    document.getElementById('settingsButton').style.backgroundColor = '#26a69a';
+    document.getElementById('onboardingButton').style.backgroundColor = '#26a69a';
+    document.getElementById('nav-wrapper').style.backgroundColor = 'darkcyan';
+    document.getElementById('startTimer').style.backgroundColor = '#26a69a';
+    document.getElementById('delete-all-button').style.backgroundColor = '#26a69a';
+    document.getElementById('add-button').style.backgroundColor = '#26a69a';
+    document.getElementById('add-todo').style.backgroundColor = '#008B8B';
   }
 }
 
@@ -248,8 +276,8 @@ longColorPicker.addEventListener('change', () => {
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
 autoStartSwitch.checked = localStorage.getItem('autoStartSwitch') == null ? true : localStorage.getItem('autoStartSwitch') === 'true';
 muteSwitch.checked = localStorage.getItem('muteSwitch') == null ? false : localStorage.getItem('muteSwitch') === 'true';
-workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'horn' : localStorage.getItem('workSoundSelector');
-breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'celebration' : localStorage.getItem('breakSoundSelector');
+workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'marimba' : localStorage.getItem('workSoundSelector');
+breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'marimba' : localStorage.getItem('breakSoundSelector');
 changeSound(workSoundSelector, false);
 changeSound(breakSoundSelector, false);
 updateDarkMode();
