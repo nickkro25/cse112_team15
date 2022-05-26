@@ -1,4 +1,4 @@
-import { classNames, svg } from './TaskVariables.js';
+import { classNames} from './TaskVariables.js';
 import { TaskStorage } from './TodoListDomVariables.js';
 
 /**
