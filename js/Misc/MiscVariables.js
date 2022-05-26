@@ -13,7 +13,11 @@ const breakNames = {
  */
 const pageBGColor = {
   name: '--page-bg-color',
+  shortName: '--page-bg-color-short',
+  longName: '--page-bg-color-long',
   val: localStorage.getItem('--page-bg-color'),
+  shortVal: localStorage.getItem('--page-bg-color-short'),
+  longVal: localStorage.getItem('--page-bg-color-long'),
   darkVal: '#363636',
 };
 
@@ -23,7 +27,11 @@ const pageBGColor = {
  */
 const headerColor = {
   name: '--header-color',
+  shortName: '--header-color-short',
+  longName: '--header-color-long',
   val: localStorage.getItem('--header-color'),
+  shortVal: localStorage.getItem('--header-color-short'),
+  longVal: localStorage.getItem('--header-color-long'),
   darkVal: '#2d2c2b',
 };
 
@@ -34,8 +42,10 @@ const headerColor = {
 const evenColor = {
   name: '--even-color',
   shortName: '--even-color-short',
+  longName: '--even-color-long',
   val: 'rgba(149, 218, 229, 0.603)',
   shortVal: '#98c7e9',
+  longVal: '#98c7e9',
   darkVal: 'lightslategray',
 };
 
@@ -45,7 +55,7 @@ const evenColor = {
  */
 const toothpaste = {
   name: '--toothpaste',
-  val: localStorage.getItem('--page-bg-color'),
+  val: 'rgb(2, 177, 177)',
   darkVal: '#2d2c2b',
 };
 
