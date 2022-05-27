@@ -179,16 +179,19 @@
 			<tr id="taskListHeader">
 				<th class='col1-checkbox'></th>
 				<th class='col2-task'>TASKS</th>
-				<th class='col3-pomos'>#</th>
+				<th class='col3-pomos'># of Pomos</th>
 				<th class='col4-delete'>
 					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
 				</th>
 			</tr>
 		</table>
 		<div id='form-container'>
-			<form id='add-todo' overflow data-title="Tasks" data-intro="Here you can enter the name as well as the amount of 25 minute pomo-sessions your task will take" data-step='7'>
+			<form id='add-todo' overflow data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
 				<input type='text' name='task-name' placeholder='Enter task' class='task-name' required>
-				<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
+				<div class="tooltip">
+					<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
+					<span class="tooltiptext">Amount of pomo-sessions</span>
+				</div>
 				<button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
 			</form>
 		</div>
