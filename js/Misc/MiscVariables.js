@@ -43,9 +43,9 @@ const evenColor = {
   name: '--even-color',
   shortName: '--even-color-short',
   longName: '--even-color-long',
-  val: 'rgba(149, 218, 229, 0.603)',
-  shortVal: '#98c7e9',
-  longVal: '#98c7e9',
+  val: localStorage.getItem('--btn-icon-color'),
+  shortVal: localStorage.getItem('--btn-icon-color-short'),
+  longVal: localStorage.getItem('--btn-icon-color-long'),
   darkVal: 'lightslategray',
 };
 
