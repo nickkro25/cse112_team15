@@ -1,4 +1,11 @@
-import { timeToString } from '../Misc/UtilityFunctions.js';
+function timeToString(duration) {
+  const minutes = Math.floor(duration / 60);
+  const seconds = duration % 60;
+  if (seconds < 10) {
+    return `${minutes}:0${seconds}`;
+  }
+  return `${minutes}:${seconds}`;
+}
 
 /**
  * Local timer class
