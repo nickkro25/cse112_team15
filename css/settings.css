@@ -35,12 +35,14 @@
   grid-template-rows: auto auto;
   grid-template-columns: auto auto auto;
   row-gap: 1rem;
+  color: black;
 }
 
 #colorChangeHeader {
   margin-top: 1.3em;
   font-size: 1.5em;
   text-align: center;
+  color: black;
 }
 
 #colorSelectorDiv {
