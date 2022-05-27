@@ -8,6 +8,7 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
+  /* transition-duration: 2s; */
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -25,14 +26,13 @@ table {
 
 th,
 td {
-  padding: 15px;
+  padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-
   /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
-  background-color: var(--header-color);
+  /* background-color: var(--header-color); */
   color: var(--font-color);
   text-align: left;
   padding: 20px 10px;
@@ -40,17 +40,17 @@ th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  transition-duration: 0s;
+  transition-duration: 2s;
 }
 
 td {
-  transition-duration: 0s;
+  transition-duration: 2s;
   word-break: break-word;
 }
 
 tr {
   margin-top: 20px;
-  
+  transition-duration: 2s;
   /* width: 100%; */
 }
 
@@ -66,7 +66,6 @@ tr:nth-child(odd) td {
 
 tr:hover td {
   background-image: linear-gradient(transparent, var(--tr-hover-color));
-  transition-duration: 0;
 }
 
 tr td:first-child,
@@ -133,6 +132,14 @@ svg {
   padding-bottom: 10px;
   border-bottom-left-radius: var(--td-border-radius);
   border-bottom-right-radius: var(--td-border-radius);
+  transition-duration: 2s;
+}
+
+#todo {
+  transition-duration: 2s;
+}
+
+#taskListHeader {
   transition-duration: 2s;
 }
 
