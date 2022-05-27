@@ -199,7 +199,7 @@ tr.completedTask td {
 }
 
 #tasklist::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 /* Makes the 3 dots for the table */
