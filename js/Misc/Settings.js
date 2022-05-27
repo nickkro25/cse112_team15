@@ -177,6 +177,7 @@ function updateDarkMode() {
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('todo').style.backgroundColor = 'rgb(62, 62, 62)';
   } else {
     root.style.setProperty(pageBGColor.name, pageBGColor.val);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.shortVal);
@@ -191,15 +192,17 @@ function updateDarkMode() {
     root.style.setProperty(tableBG.name, tableBG.val);
     root.style.setProperty(modalBGColor.name, modalBGColor.val);
     root.style.setProperty(modalFontColor.name, modalFontColor.val);
-    document.getElementById('faqButton').style.backgroundColor = '#26a69a';
-    document.getElementById('statsButton').style.backgroundColor = '#26a69a';
-    document.getElementById('settingsButton').style.backgroundColor = '#26a69a';
-    document.getElementById('onboardingButton').style.backgroundColor = '#26a69a';
-    document.getElementById('nav-wrapper').style.backgroundColor = 'darkcyan';
-    document.getElementById('startTimer').style.backgroundColor = '#26a69a';
-    document.getElementById('delete-all-button').style.backgroundColor = '#26a69a';
-    document.getElementById('add-button').style.backgroundColor = '#26a69a';
-    document.getElementById('add-todo').style.backgroundColor = '#008B8B';
+    document.getElementById('faqButton').style.backgroundColor = null;
+    document.getElementById('statsButton').style.backgroundColor = null;
+    document.getElementById('settingsButton').style.backgroundColor = null;
+    document.getElementById('onboardingButton').style.backgroundColor = null;
+    document.getElementById('nav-wrapper').style.backgroundColor = null;
+    document.getElementById('startTimer').style.backgroundColor = null;
+    document.getElementById('delete-all-button').style.backgroundColor = null;
+    document.getElementById('add-button').style.backgroundColor = null;
+    document.getElementById('taskListHeader').style.backgroundColor = null;
+    document.getElementById('add-todo').style.backgroundColor = null;
+    document.getElementById('todo').style.backgroundColor = null;
   }
 }
 
