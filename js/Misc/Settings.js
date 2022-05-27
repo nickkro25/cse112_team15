@@ -113,8 +113,10 @@ const colorShade = (col, amt) => {
 if (localStorage.getItem('--page-bg-color') === null) {
   localStorage.setItem('--page-bg-color', '#d9645f');
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
+  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
+  evenColor.val = localStorage.getItem('--btn-icon-color');
 }
 
 root.style.setProperty('--page-bg-color', localStorage.getItem('--page-bg-color'));
@@ -126,8 +128,10 @@ workColorPicker.value = localStorage.getItem('--page-bg-color');
 if (localStorage.getItem('--page-bg-color-short') === null) {
   localStorage.setItem('--page-bg-color-short', '#76a662');
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
+  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
   pageBGColor.shortVal = localStorage.getItem('--page-bg-color-short');
   headerColor.shortVal = localStorage.getItem('--header-color-short');
+  evenColor.shortVal = localStorage.getItem('--btn-icon-color-short');
 }
 
 root.style.setProperty('--page-bg-color-short', localStorage.getItem('--page-bg-color-short'));
@@ -139,8 +143,10 @@ shortColorPicker.value = localStorage.getItem('--page-bg-color-short');
 if (localStorage.getItem('--page-bg-color-long') === null) {
   localStorage.setItem('--page-bg-color-long', '#66b4db');
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
+  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
   pageBGColor.longVal = localStorage.getItem('--page-bg-color-long');
   headerColor.longVal = localStorage.getItem('--header-color-long');
+  evenColor.longVal = localStorage.getItem('--btn-icon-color-long');
 }
 
 root.style.setProperty('--page-bg-color-long', localStorage.getItem('--page-bg-color-long'));
@@ -240,8 +246,11 @@ workColorPicker.addEventListener('change', () => {
   root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
   localStorage.setItem('--page-bg-color', workColorPicker.value);
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
+  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+  localStorage.setItem('--even-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
+  evenColor.val = localStorage.getItem('--btn-icon-color');
 });
 
 /**
@@ -256,8 +265,11 @@ shortColorPicker.addEventListener('change', () => {
   root.style.setProperty('--btn-icon-color-short', colorShade(shortColorPicker.value, 30));
   localStorage.setItem('--page-bg-color-short', shortColorPicker.value);
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
+  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+  localStorage.setItem('--even-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
   pageBGColor.shortVal = localStorage.getItem('--page-bg-color-short');
   headerColor.shortVal = localStorage.getItem('--header-color-short');
+  evenColor.shortVal = localStorage.getItem('--btn-icon-color-short');
 });
 
 /**
@@ -272,8 +284,11 @@ longColorPicker.addEventListener('change', () => {
   root.style.setProperty('--btn-icon-color-long', colorShade(longColorPicker.value, 30));
   localStorage.setItem('--page-bg-color-long', longColorPicker.value);
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
+  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+  localStorage.setItem('--even-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
   pageBGColor.longVal = localStorage.getItem('--page-bg-color-long');
   headerColor.longVal = localStorage.getItem('--header-color-long');
+  evenColor.longVal = localStorage.getItem('--btn-icon-color-long');
 });
 // set values from localStorage
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
