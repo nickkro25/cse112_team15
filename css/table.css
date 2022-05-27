@@ -198,15 +198,19 @@ tr.completedTask td {
   width: 16px;
 }
 
+.three-dots {
+  color: white;
+}
+
 /* Makes the 3 dots for the table */
-.three-dots::after {
+/* .three-dots::after {
   cursor: pointer;
   color: #fcc;
   content: '\2807';
   font-size: 20px;
   align-items: center;
   text-decoration: none !important;
-}
+} */
 
 /* Styling for the div that holds both the focus and delete button */
 .double-buttons {

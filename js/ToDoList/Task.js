@@ -268,8 +268,9 @@ class Task extends HTMLTableRowElement {
    */
   setupThreeDotsButton() {
     const button = document.createElement('button');
-    const threeDots = document.createElement('div');
-    threeDots.className = classNames.threeDots;
+    const threeDots = document.createElement('i');
+    threeDots.className = 'material-icons three-dots';
+    threeDots.textContent = 'more_vert';
     button.appendChild(threeDots);
 
     button.addEventListener('click', () => {

@@ -157,12 +157,15 @@ class ToDoList extends HTMLElement {
   }
 
   shiftTaskUp(task, currentIndex) {
-    this.taskList.splice(currentIndex - 1, 0, task);
+    // index starts at 2 because of children shenanigans
+    // to get index-1, we do index-2-1 = index-3
+    this.taskList.splice(currentIndex - 3, 0, task);
     this.addTaskToLocalStorage(task, currentIndex - 3);
   }
 
   shiftTaskDown(task, currentIndex) {
-    this.taskList.splice(currentIndex + 1, 0, task);
+    // to get index+1, we do index-2+1 = index-3
+    this.taskList.splice(currentIndex - 1, 0, task);
     this.addTaskToLocalStorage(task, currentIndex - 1);
   }
 
