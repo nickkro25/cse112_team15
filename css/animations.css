@@ -5,7 +5,7 @@
 }
 
 .short-break nav {
-  background-color: var(--header-color-short);
+  border-bottom: 1px solid var(--header-color-short);
   transition-duration: 2s;
 }
 
@@ -43,7 +43,18 @@
   transition-duration: 2s;
 }
 
-.short-break .btn,
+.short-break a.btn {
+  box-shadow: 2px 1px 0.5px var(--header-color-short),
+  -1px -0.5px 0.01px rgba(255,255,255,0.6);
+  transition-duration: 2s;
+}
+
+.short-break a.btn:hover {
+  box-shadow: none;
+  background-color: var(--header-color-short);
+  transition-duration: 0s;
+}
+
 .short-break .btn-large,
 .short-break .btn-floating {
   background-color: var(--btn-icon-color-short);
@@ -92,7 +103,7 @@
 }
 
 .long-break nav {
-  background-color: var(--header-color-long);
+  border-bottom: 1px solid var(--header-color-long);
   transition-duration: 2s;
 }
 
@@ -124,6 +135,18 @@
 .long-break .btn-floating {
   background-color: var(--btn-icon-color-long);
   transition-duration: 2s;
+}
+
+.long-break a.btn {
+  box-shadow: 2px 1px 0.5px var(--header-color-long),
+  -1px -0.5px 0.01px rgba(255,255,255,0.6);
+  transition-duration: 2s;
+}
+
+.long-break a.btn:hover {
+  box-shadow: none;
+  background-color: var(--header-color-long);
+  transition-duration: 0s;
 }
 
 .long-break .modal-content {

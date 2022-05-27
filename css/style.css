@@ -60,7 +60,16 @@ body {
 header,
 nav {
   overflow: hidden;
-  background-color: var(--header-color);
+  background-color: transparent;
+  transition-duration: 2s;
+}
+
+header {
+  box-shadow: none;
+}
+
+nav {
+  border-bottom: 1px solid var(--header-color);
   transition-duration: 2s;
 }
 
@@ -273,6 +282,20 @@ a {
   color: white;
   background-color: transparent;
   text-decoration: underline;
+}
+
+.btn {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.3rem;
+  line-height: 2rem;
+  box-shadow: 2px 1px 0.5px var(--header-color),
+  -1px -0.5px 0.01px rgba(255,255,255,0.6);
+}
+
+#startTimer {
+  background-color: var(--page-bg-color-short);
 }
 
 @media only screen and (max-width: 1200px) {
