@@ -247,7 +247,7 @@ workColorPicker.addEventListener('change', () => {
   localStorage.setItem('--page-bg-color', workColorPicker.value);
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
   localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
-  localStorage.setItem('--even-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+  root.style.setProperty('--even-color', localStorage.getItem('--btn-icon-color'));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
   evenColor.val = localStorage.getItem('--btn-icon-color');
@@ -266,7 +266,7 @@ shortColorPicker.addEventListener('change', () => {
   localStorage.setItem('--page-bg-color-short', shortColorPicker.value);
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
   localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
-  localStorage.setItem('--even-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+  root.style.setProperty('--even-color-short', localStorage.getItem('--btn-icon-color-short'));
   pageBGColor.shortVal = localStorage.getItem('--page-bg-color-short');
   headerColor.shortVal = localStorage.getItem('--header-color-short');
   evenColor.shortVal = localStorage.getItem('--btn-icon-color-short');
@@ -285,7 +285,7 @@ longColorPicker.addEventListener('change', () => {
   localStorage.setItem('--page-bg-color-long', longColorPicker.value);
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
   localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
-  localStorage.setItem('--even-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+  root.style.setProperty('--even-color-long', localStorage.getItem('--btn-icon-color-long'));
   pageBGColor.longVal = localStorage.getItem('--page-bg-color-long');
   headerColor.longVal = localStorage.getItem('--header-color-long');
   evenColor.longVal = localStorage.getItem('--btn-icon-color-long');
