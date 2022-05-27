@@ -330,14 +330,16 @@ class Task extends HTMLTableRowElement {
    * Update method to edit task name
    */
   updateText() {
-    this.children[1].textContent = this.name;
+    this.querySelector(`#text-${this.id}`).textContent = this.name;
+    // this.children[1].textContent = this.name;
   }
 
   /**
    * This updates the pomo sessions when a session is complete
    */
   updatePomoSessions() {
-    this.children[2].textContent = `${this.currentSessionNum}/${this.totalSessions}`;
+    this.querySelector(`#pomoSessions-${this.id}`).textContent = `${this.currentSessionNum}/${this.totalSessions}`;
+    // this.children[2].textContent = `${this.currentSessionNum}/${this.totalSessions}`;
   }
 
   /**
