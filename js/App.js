@@ -157,7 +157,9 @@ const DistractionPage = new Distraction(distractButton, distractPopUp,
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
   // eslint-disable-next-line
-  introJs().start(); 
+  setTimeout(function () {
+    introJs().start();
+  }, 2000);
   localStorage.setItem('onboarding', 'true');
 }
 
