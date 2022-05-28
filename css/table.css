@@ -98,6 +98,11 @@ tr th:last-child {
   /* padding-right: 15px; */
 }
 
+/* Give current task a different bg color to make it stand out */
+tr.uncheckedTask:nth-child(2) td {
+  background-color: rgb(179, 179, 141);
+}
+
 td button {
   display: block;
   margin: auto;
@@ -195,7 +200,8 @@ td button:active {
 
 /* larger checkbox */
 input[type='checkbox'] {
-  /* display: none; */
+  display: none;
+
   /* width: 20px;
   height: 20px;
   background: white;

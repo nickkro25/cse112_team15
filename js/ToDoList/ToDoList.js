@@ -76,9 +76,19 @@ class ToDoList extends HTMLElement {
     });
     this.dispatchEvent(event);
     this.idCounter += 1;
-    this.taskList.push(task);
-    if (!fromLocalStorage) {
-      this.addTaskToLocalStorage(task);
+    // make sure to add task in appropriate spot
+    let firstUncheckedTask = -1;
+    for (let i = 0; i < this.taskList.length && firstUncheckedTask === -1; i += 1) {
+      if (this.taskList[i].checked === true) firstUncheckedTask = i;
+    }
+    if (firstUncheckedTask === -1) {
+      this.taskList.push(task);
+      if (!fromLocalStorage) { this.addTaskToLocalStorage(task); }
+    } else {
+      this.taskList.splice(firstUncheckedTask, 0, task);
+      if (!fromLocalStorage) {
+        this.addTaskToLocalStorage(task, firstUncheckedTask);
+      }
     }
     return task;
   }

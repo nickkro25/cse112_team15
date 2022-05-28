@@ -15,7 +15,7 @@ class TodoListDom {
    * @param {HTMLButtonElement} submitBtn - Button to submit the entered tasks
    * @param {HTMLButtonElement} deleteAllBtn - Delete all tasks button
    */
-  constructor(HTMLTable, HTMLForm, submitBtn, deleteAllBtn, currentTaskDiv) {
+  constructor(HTMLTable, HTMLForm, submitBtn, deleteAllBtn, finishTaskBtn, currentTaskDiv) {
     /**
      * Holds the TodoList so the Dom Manager can acess it
      * @type {ToDoList}
@@ -36,6 +36,11 @@ class TodoListDom {
      * @type {HTMLButtonElement}
      */
     this.deleteAllBtn = deleteAllBtn;
+    /**
+     * The button where users click to check off the current task
+     * @type {HTMLButtonElement}
+     */
+    this.finishTaskBtn = finishTaskBtn;
     /**
      * The table where the todolist is displayed
      * @type {HTMLTableElement}
@@ -119,6 +124,7 @@ class TodoListDom {
 
   /**
    * Sets up the form dissapearing and submit event listeners
+   * Also set up finish task button
    */
   setupEventListeners() {
     // event listener for form submit
@@ -144,6 +150,10 @@ class TodoListDom {
       while (list[0] !== undefined) {
         list[0].deleteButton.click();
       }
+    });
+
+    this.finishTaskBtn.addEventListener('click', () => {
+      this.todoList.getCurrentTask().checkBox.click();
     });
   }
 
@@ -237,13 +247,17 @@ class TodoListDom {
     if (this.currentTask === null && nextTask === null) {
       // no currentTask, nothing in table
       this.currentTaskDiv.textContent = 'No current task';
+      this.finishTaskBtn.disabled = true;
     } else if (this.currentTask === null && nextTask !== null) {
       // no currentTask, something in table
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.finishTaskBtn.disabled = false;
     } else if (this.currentTask !== null && nextTask === null) { // last task completed
       this.currentTaskDiv.textContent = 'No current task';
+      this.finishTaskBtn.disabled = true;
     } else if (this.currentTask !== nextTask) {
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.finishTaskBtn.disabled = false;
     }
     this.currentTask = nextTask;
     if (this.currentTask != null) this.currentTask.checkBox.disabled = false;
@@ -309,15 +323,16 @@ class TodoListDom {
       }
     }
 
-    // don't move task down if it's the last task
-    if (currentTaskIndex === rows.length - 1) {
+    // don't move task down if it's the last task or if the next task is a checked task
+    const firstCompletedTaskIndex = this.getFirstCompletedTaskIndex();
+    if (currentTaskIndex === rows.length - 1 || currentTaskIndex + 1 === firstCompletedTaskIndex) {
       return;
     }
 
     const clickedTask = this.todoList.getTaskById(id);
     // disable the old tasks checkbox because it has not been clicked yet
     clickedTask.onDelete(); // delete current task from everything
-    this.currentTask.checkBox.disabled = false;
+    this.currentTask.checkBox.disabled = true;
     this.displayTask(clickedTask, currentTaskIndex + 1);
 
     // shift the task down in localStorage and in 'taskList'

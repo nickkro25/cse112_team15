@@ -135,6 +135,11 @@ const currentTaskDiv = document.getElementById('currentTask');
 const tourButton = document.getElementById('onboardingButton');
 
 /**
+ * Button to complete current task (replaces checkbox functionality)
+ * @type {HTMLButtonElement}
+ */
+const finishTaskBtn = document.getElementById('finishTask');
+/**
  * @type {Statistics}
  */
 const StatsPage = new Statistics();
@@ -142,7 +147,7 @@ const StatsPage = new Statistics();
  * @type {TodoListDom} DOM handler for the ToDo List data structure
  */
 const TDLDom = new TodoListDom(todoTable, addTodoForm, addTodoButton,
-  deleteAllButton, currentTaskDiv);
+  deleteAllButton, finishTaskBtn, currentTaskDiv);
 
 /**
  * @type {Timer}
