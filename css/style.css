@@ -32,7 +32,7 @@
   --scroll-color: var(--even-color);
 
   /* table row spacing */
-  --td-border-radius: 22px;
+  --td-border-radius: 2px;
   --table-border: 12px;
   --table-row-margin: 20px;
 

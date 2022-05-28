@@ -84,10 +84,10 @@ class Task extends HTMLTableRowElement {
     this.taskDownButton = this.setupTaskDownButton();
 
     this.setupLastColumnToggle(this.threeDotsButton,
-      this.deleteButton.parentElement,
-      this.focusButton.parentElement,
-      this.taskUpButton.parentElement,
-      this.taskDownButton.parentElement);
+      this.deleteButton,
+      this.focusButton,
+      this.taskUpButton,
+      this.taskDownButton);
   }
 
   /**
@@ -162,13 +162,8 @@ class Task extends HTMLTableRowElement {
    */
   setupDeleteButton() {
     const deleteBtn = document.createElement('button');
-    const deleteIcon = document.createElement('i');
-    deleteIcon.className = 'material-icons delete-single';
-    deleteIcon.textContent = 'delete';
-    deleteBtn.appendChild(deleteIcon);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(deleteBtn);
+    deleteBtn.className = 'material-icons delete-single';
+    deleteBtn.textContent = 'delete';
     deleteBtn.addEventListener('click', () => {
       this.onDelete();
     });
@@ -182,13 +177,8 @@ class Task extends HTMLTableRowElement {
    */
   setupFocusButton() {
     const focusBtn = document.createElement('button');
-    const focusIcon = document.createElement('i');
-    focusIcon.className = 'material-icons focus';
-    focusIcon.textContent = 'keyboard_double_arrow_up';
-    focusBtn.appendChild(focusIcon);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(focusBtn);
+    focusBtn.className = 'material-icons focus';
+    focusBtn.textContent = 'keyboard_double_arrow_up';
 
     // hide the button if the task came from local storage and was checked
     if (this.checked) {
@@ -197,7 +187,7 @@ class Task extends HTMLTableRowElement {
 
     focusBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'block';
-      focusBtn.parentElement.parentElement.style.display = 'none';
+      focusBtn.parentElement.style.display = 'none';
       const event = new CustomEvent('focus-task', {
         bubbles: true,
         composed: true,
@@ -213,17 +203,12 @@ class Task extends HTMLTableRowElement {
 
   setupTaskUpButton() {
     const taskUpBtn = document.createElement('button');
-    const upIcon = document.createElement('i');
-    upIcon.className = 'material-icons task-up';
-    upIcon.textContent = 'keyboard_arrow_up';
-    taskUpBtn.appendChild(upIcon);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(taskUpBtn);
+    taskUpBtn.className = 'material-icons task-up';
+    taskUpBtn.textContent = 'keyboard_arrow_up';
 
     taskUpBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'block';
-      taskUpBtn.parentElement.parentElement.style.display = 'none';
+      taskUpBtn.parentElement.style.display = 'none';
       const event = new CustomEvent('task-up', {
         bubbles: true,
         composed: true,
@@ -238,17 +223,15 @@ class Task extends HTMLTableRowElement {
 
   setupTaskDownButton() {
     const taskDownBtn = document.createElement('button');
-    const downIcon = document.createElement('i');
-    downIcon.className = 'material-icons task-down';
-    downIcon.textContent = 'keyboard_arrow_down';
-    taskDownBtn.appendChild(downIcon);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(taskDownBtn);
+    taskDownBtn.className = 'material-icons task-down';
+    taskDownBtn.textContent = 'keyboard_arrow_down';
+    // const inlineDiv = document.createElement('div');
+    // inlineDiv.className = classNames.inlineDiv;
+    // inlineDiv.appendChild(taskDownBtn);
 
     taskDownBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'block';
-      taskDownBtn.parentElement.parentElement.style.display = 'none';
+      taskDownBtn.parentElement.style.display = 'none';
       const event = new CustomEvent('task-down', {
         bubbles: true,
         composed: true,
@@ -268,14 +251,11 @@ class Task extends HTMLTableRowElement {
    */
   setupThreeDotsButton() {
     const button = document.createElement('button');
-    const threeDots = document.createElement('i');
-    threeDots.className = 'material-icons three-dots';
-    threeDots.textContent = 'more_vert';
-    button.appendChild(threeDots);
-
+    button.className = 'material-icons three-dots';
+    button.textContent = 'more_vert';
     button.addEventListener('click', () => {
       button.parentElement.style.display = 'none';
-      this.deleteButton.parentElement.parentElement.style.display = 'inline-block';
+      this.deleteButton.parentElement.style.display = 'block';
     });
 
     return button;

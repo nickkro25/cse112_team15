@@ -80,7 +80,7 @@ tr td:last-child,
 tr th:last-child {
   /* border-top-right-radius: var(--td-border-radius); */
   border-bottom-right-radius: var(--td-border-radius);
-  padding-right: 30px;
+  padding-right: 15px;
 }
 
 td button {
@@ -89,6 +89,18 @@ td button {
   background-color: transparent;
   outline: none;
   border: none;
+  text-align: center;
+  color: white;
+  transition-duration: 0.1s;
+}
+
+td button:hover {
+  color: var(--header-color);
+  cursor: pointer;
+}
+
+td button:active {
+  background-color: transparent;
 }
 
 .col1-checkbox {
@@ -103,6 +115,7 @@ td button {
 .col4-delete {
   width: 10vw;
   text-align: center;
+  /* margin: auto; */
 }
 
 .col2-task {
@@ -198,9 +211,6 @@ tr.completedTask td {
   width: 16px;
 }
 
-.three-dots {
-  color: white;
-}
 
 /* Makes the 3 dots for the table */
 /* .three-dots::after {
@@ -215,19 +225,17 @@ tr.completedTask td {
 /* Styling for the div that holds both the focus and delete button */
 .double-buttons {
   max-height: 100%;
-  display: inline-block;
+  display: block;
 }
 
 .double-buttons button {
-  width: 50%;
+  border: none;
+  background-color: transparent;
+  /* width: 50%;
   max-height: 100%;
   background-color: transparent;
   border: none;
-  display: inline block;
-}
-
-.double-buttons i {
-  color: white;
+  display: inline block; */
 }
 
 #add-button {
