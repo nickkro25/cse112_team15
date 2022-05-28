@@ -9,7 +9,7 @@ const sessionStartName = 'Pomo-Time!';
  * Message displayed after user is distracted
  * @type {String}
  */
-const distractionMessage = 'Session Interrupted Due to Distraction!'
+const distractionMessage = 'Session Interrupted Due to Distraction!';
 
 /**
  * Parameters for the working mode of the timer
@@ -51,5 +51,5 @@ const buttonText = {
 };
 
 export {
-  sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText
+  sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText,
 };
