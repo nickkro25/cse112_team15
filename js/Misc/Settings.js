@@ -99,6 +99,7 @@ function updateDarkMode() {
     document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('finishTask').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
@@ -120,6 +121,7 @@ function updateDarkMode() {
     document.getElementById('onboardingButton').style.backgroundColor = '#26a69a';
     document.getElementById('nav-wrapper').style.backgroundColor = 'darkcyan';
     document.getElementById('startTimer').style.backgroundColor = '#26a69a';
+    document.getElementById('finishTask').style.backgroundColor = '#26a69a';
     document.getElementById('delete-all-button').style.backgroundColor = '#26a69a';
     document.getElementById('add-button').style.backgroundColor = '#26a69a';
     document.getElementById('add-todo').style.backgroundColor = '#008B8B';
