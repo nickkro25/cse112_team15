@@ -100,7 +100,15 @@ class Task extends HTMLTableRowElement {
     checkBox.setAttribute('type', 'checkbox');
     checkBox.setAttribute('id', `checkbox-${this.id}`);
     checkBox.setAttribute('class', 'custom_checkbox');
+    const icon = document.createElement('label');
+    icon.setAttribute('id', `done-${this.id}`);
+    icon.setAttribute('for', `checkbox-${this.id}`);
+    icon.setAttribute('class', 'material-icons');
+    icon.textContent = 'check_box';
+    icon.addEventListener('mouseenter', () => { icon.textContent = 'check_box_outline_blank'; });
+    icon.addEventListener('mouseleave', () => { icon.textContent = 'check_box'; });
     firstCol.appendChild(checkBox);
+    firstCol.appendChild(icon);
     this.appendChild(firstCol);
     // undisable the checkbox by default (updated by the todolistdom class)
     checkBox.disabled = false;

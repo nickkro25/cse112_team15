@@ -195,19 +195,37 @@ td button:active {
 
 /* larger checkbox */
 input[type='checkbox'] {
-  /* display: none; */
-  width: 20px;
+  display: none;
+  /* width: 20px;
   height: 20px;
   background: white;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 /* checkbox highlight when checked */
 
 /* input[type='checkbox']:checked {
-  box-shadow: 0 0 0 3px lime;
+  display: none;
 } */
+
+label {
+  transition-duration: 0.25s;
+  position: relative;
+  top: 3px;
+}
+
+.uncheckedTask label {
+  visibility: hidden;
+}
+
+.completedTask label {
+  visibility: visible;
+}
+
+.completedTask label:hover {
+  color: var(--header-color);
+}
 
 
 /* different color row for checked off tasks */
