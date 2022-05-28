@@ -17,31 +17,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pomodoro</title>
   <link rel="icon" type="image/png" href="./assets/img/pomatoLogo3.png">
+  <style>
+    #loader {
+        border: 12px solid white;
+        border-radius: 50%;
+        border-top: 12px solid #444444;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+    }
+      
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+      
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+  </style>
 </head>
 
 <body>
-  <script>
-    // update dark theme at the beginning to prevent transition
-    const pageBGColor = {
-      name: '--page-bg-color',
-      darkVal: '#363636',
-    };
-    const headerColor = {
-      name: '--header-color',
-      darkVal: '2d2c2b',
-    };
-    const toothpaste = {
-      name: '--toothpaste',
-      darkVal: '#2d2c2b',
-    };
-    if (localStorage.getItem('darkModeSwitch') === 'true') {
-      document.querySelector('body').style.transitionDuration = '0s';
-      const root = document.documentElement; 
-      root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
-      root.style.setProperty(headerColor.name, headerColor.darkVal);
-      root.style.setProperty(toothpaste.name, toothpaste.darkVal);
-    }
-  </script>
 	<noscript>
     <style type="text/css">
       .main-page {
@@ -56,7 +59,8 @@
       properly
     </h2>
   </noscript>
-
+  <div id="loader" class="center"></div>
+  <div id="others" style="display: none">
   <div id='overlay'></div>
   <div class='main-page'>
     <!-- Header bar at the top of the page for title text & navigation -->
@@ -253,16 +257,19 @@
       </div>
 
 </section>
+</div>
 <script type="module" src="./js/App.js"></script>
 <script type="module" src="./js/Distraction/Distraction.js"></script>
 <script type="module" src="./js/Misc/Settings.js"></script>
 <script type="module" src="./js/FAQ/FAQ.js"></script>
 <script src="./js/ThirdParty/intro.js"></script>
-</div>
 <script>
-  // set the transition back to 2s after dark theme is painted
-  document.querySelector('body').style.transitionDuration = '2s';
+  document.onreadystatechange = setTimeout(function () {
+    document.querySelector("#loader").style.display = "none";
+    document.querySelector("#others").style.display = null;
+  }, 2000);
 </script>
+</div>
 </body>
 
 </html>
