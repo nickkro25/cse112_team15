@@ -50,6 +50,7 @@ td {
 
 tr {
   margin-top: 20px;
+
   /* width: 100%; */
 }
 
@@ -57,10 +58,12 @@ tr {
   from {
     opacity: 0;
   }
+
   to {
-    opacity: 1;	
+    opacity: 1;
   }
 }
+
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -76,7 +79,6 @@ tr {
 tbody ~ tr {
   animation: fade-in 0.25s linear;
 }
-
 
 tr:nth-child(even) td {
   background-color: var(--even-color);
@@ -104,6 +106,7 @@ tr td:last-child,
 tr th:last-child {
   /* border-top-right-radius: var(--td-border-radius); */
   border-bottom-right-radius: var(--td-border-radius);
+
   /* padding-right: 15px; */
 }
 
@@ -139,6 +142,7 @@ td button:active {
 .col4-delete {
   width: 10vw;
   text-align: center;
+
   /* margin: auto; */
 }
 
@@ -212,6 +216,7 @@ input[type='checkbox'] {
 }
 
 /* checkbox highlight when checked */
+
 /* input[type='checkbox']:checked {
   box-shadow: 0 0 0 3px lime;
 } */
@@ -237,6 +242,7 @@ tr.completedTask td {
 
 
 /* Makes the 3 dots for the table */
+
 /* .three-dots::after {
   cursor: pointer;
   color: #fcc;
@@ -255,16 +261,6 @@ tr.completedTask td {
   max-height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.double-buttons button {
-  border: none;
-  background-color: transparent;
-  /* width: 50%;
-  max-height: 100%;
-  background-color: transparent;
-  border: none;
-  display: inline block; */
 }
 
 #add-button {
@@ -292,7 +288,7 @@ tr.completedTask td {
   z-index: 1;
   bottom: 125%;
   left: -50%;
-  margin-left: 0px;
+  margin-left: 0;
 
   /* Fade in tooltip */
   opacity: 0;
@@ -323,7 +319,7 @@ tr.completedTask td {
     overflow-y: auto;
   }
 
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -55%;
   }
 }
@@ -333,14 +329,13 @@ tr.completedTask td {
     width: 80%;
   }
 
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -50%;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -35%;
   }
 }
