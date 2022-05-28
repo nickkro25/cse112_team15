@@ -189,9 +189,9 @@ class Task extends HTMLTableRowElement {
     focusBtn.textContent = 'keyboard_double_arrow_up';
 
     // hide the button if the task came from local storage and was checked
-    // if (this.checked) {
-    //   focusBtn.style.display = 'none';
-    // }
+    if (this.checked) {
+      focusBtn.style.display = 'none';
+    }
 
     focusBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'flex';
@@ -214,6 +214,10 @@ class Task extends HTMLTableRowElement {
     taskUpBtn.className = 'material-icons task-up';
     taskUpBtn.textContent = 'keyboard_arrow_up';
 
+    if (this.checked) {
+      taskUpBtn.style.display = 'none';
+    }
+
     taskUpBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'flex';
       taskUpBtn.parentElement.style.display = 'none';
@@ -233,9 +237,9 @@ class Task extends HTMLTableRowElement {
     const taskDownBtn = document.createElement('button');
     taskDownBtn.className = 'material-icons task-down';
     taskDownBtn.textContent = 'keyboard_arrow_down';
-    // const inlineDiv = document.createElement('div');
-    // inlineDiv.className = classNames.inlineDiv;
-    // inlineDiv.appendChild(taskDownBtn);
+    if (this.checked) {
+      taskDownBtn.style.display = 'none';
+    }
 
     taskDownBtn.addEventListener('click', () => {
       this.threeDotsButton.parentElement.style.display = 'flex';
@@ -370,7 +374,11 @@ class Task extends HTMLTableRowElement {
     });
 
     this.dispatchEvent(event);
-    this.focusButton.parentElement.style.display = 'none';
+    const buttonsDiv = this.focusButton.parentElement;
+    buttonsDiv.style.display = 'none';
+    for (let i = 1; i < buttonsDiv.children.length; i += 1) {
+      buttonsDiv.children[i].style.display = 'none';
+    }
     this.updateLocalStorage();
   }
 
@@ -380,7 +388,11 @@ class Task extends HTMLTableRowElement {
   uncheckTask() {
     this.checked = false;
     this.setAttribute('class', classNames.uncheckedTaskClassName);
-    this.focusButton.parentElement.style.display = 'flex';
+    const buttonsDiv = this.focusButton.parentElement;
+    buttonsDiv.style.display = 'flex';
+    for (let i = 1; i < buttonsDiv.children.length; i += 1) {
+      buttonsDiv.children[i].style.display = 'inline-block';
+    }
     this.checkBox.disabled = false;
     this.updateLocalStorage();
   }

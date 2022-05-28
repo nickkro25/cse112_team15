@@ -195,7 +195,7 @@ td button:active {
 
 /* larger checkbox */
 input[type='checkbox'] {
-  display: none;
+  /* display: none; */
   /* width: 20px;
   height: 20px;
   background: white;
