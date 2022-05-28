@@ -213,7 +213,14 @@ class TodoListDom {
     const firstCompletedTaskIndex = this.getFirstCompletedTaskIndex();
     uncheckedTask.onDelete();
     this.todoList.addTaskToEnd(uncheckedTask);
-    this.displayTask(uncheckedTask, firstCompletedTaskIndex);
+    // this is for unchecked tasks that end up in the same spot in the list
+    // if the task before the first completed task is the task we just unchecked..
+    // then keep it in the same spot
+    if (this.todoList.taskList[firstCompletedTaskIndex - 3] === uncheckedTask) {
+      this.displayTask(uncheckedTask, firstCompletedTaskIndex - 1);
+    } else {
+      this.displayTask(uncheckedTask, firstCompletedTaskIndex);
+    }
   }
 
   /**
