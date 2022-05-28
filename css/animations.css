@@ -30,7 +30,8 @@
   transition-duration: 0;
 }
 
-.short-break tr:nth-child(even):not(.completedTask) td {
+.short-break tr:nth-child(even):not(.completedTask) td, 
+.short-break #tasklist::-webkit-scrollbar-thumb {
   background-color: var(--even-color-short);
 }
 
@@ -106,7 +107,8 @@
   transition-duration: 2s;
 }
 
-.long-break tr:nth-child(even):not(.completedTask) td {
+.long-break tr:nth-child(even):not(.completedTask) td, 
+.long-break #tasklist::-webkit-scrollbar-thumb {
   background-color: var(--even-color-long);
 }
 
