@@ -98,11 +98,6 @@ tr th:last-child {
   /* padding-right: 15px; */
 }
 
-/* Give current task a different bg color to make it stand out */
-tr.uncheckedTask:nth-child(2) td {
-  background-color: rgb(179, 179, 141);
-}
-
 td button {
   display: block;
   margin: auto;
@@ -236,8 +231,12 @@ label {
 
 /* different color row for checked off tasks */
 tr.completedTask td {
-  /* text-decoration: line-through; */
   background-color: var(--completed-task-color);
+}
+
+/* Give current task a different bg color to make it stand out */
+tr.uncheckedTask:nth-child(2) td {
+  background-color: rgb(179, 179, 141);
 }
 
 /* rounded scrollbar */

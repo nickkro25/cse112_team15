@@ -316,7 +316,6 @@ class Task extends HTMLTableRowElement {
         window.localData.splice(i, 1);
       }
     }
-    console.log(this.id);
     localStorage.setItem('tasks', JSON.stringify(window.localData));
   }
 

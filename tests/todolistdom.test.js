@@ -5,6 +5,7 @@ let tableLocation;
 let formLocation;
 let addBtnLocation;
 let deleteBtnLocation;
+let finishTaskBtnLocation;
 let currentTaskLocation;
 let myDOM;
 
@@ -20,8 +21,8 @@ beforeEach(() => {
       </table>
     </section>
     <section id="currentTask" class="section-container">
-
     </section>
+    <button id = "finishTask">Finish task</button>
     <div>
       <form id = "add-todo" style = "display: none;">
         <input type="text" name="task-name" placeholder="Write Essay">
@@ -35,9 +36,10 @@ beforeEach(() => {
   formLocation = document.getElementById('add-todo');
   addBtnLocation = document.getElementById('add-button');
   deleteBtnLocation = document.getElementById('delete-all-button');
+  finishTaskBtnLocation = document.getElementById('finishTask');
   currentTaskLocation = document.getElementById('currentTask');
   myDOM = new TodoListDom(tableLocation, formLocation, addBtnLocation,
-    deleteBtnLocation, currentTaskLocation);
+    deleteBtnLocation, finishTaskBtnLocation, currentTaskLocation);
   document.body.addEventListener('task-deleted', (e) => {
     myDOM.todoList.removeTask(e.detail.taskID);
   });
@@ -202,7 +204,7 @@ test('Adding two tasks should disable the checkbox for second task', () => {
   formLocation.submit();
 
   expect(tableLocation.children[1].checkBox.disabled).toBe(false);
-  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
   localStorage.clear();
 });
 
