@@ -219,6 +219,10 @@ html {
     font-size: 75%;
   }
 
+  #finishTask {
+    font-size: 50%;
+  }
+
   #timeDisplay {
     font-size: 240%;
   }
@@ -313,6 +317,10 @@ a {
 
   #distractionButton {
     padding: 0 5px;
+  }
+
+  #finishTask {
+    margin: 5px 0;
   }
 
   #timeDisplay {
