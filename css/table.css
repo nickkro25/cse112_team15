@@ -64,18 +64,6 @@ tr {
   }
 }
 
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
 tbody ~ tr {
   animation: fade-in 0.25s linear;
 }
@@ -240,18 +228,7 @@ tr.completedTask td {
   width: 16px;
 }
 
-
-/* Makes the 3 dots for the table */
-
-/* .three-dots::after {
-  cursor: pointer;
-  color: #fcc;
-  content: '\2807';
-  font-size: 20px;
-  align-items: center;
-  text-decoration: none !important;
-} */
-
+/* flex display for triple dot container for alignment purposes*/
 .triple-dots-touch {
   display: flex;
 }
