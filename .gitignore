@@ -2,3 +2,5 @@ node_modules/
 coverage/
 .DS_STORE
 materialize.css
+package.json
+package-lock.json

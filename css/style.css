@@ -178,6 +178,7 @@ a.brand-logo li {
   justify-content: space-around;
   text-align: center;
   padding: 10px;
+  word-break: break-word;
 }
 
 html {

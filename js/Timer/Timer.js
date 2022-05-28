@@ -63,15 +63,24 @@ class Timer extends HTMLElement {
      */
     this.longBreakTime = document.getElementById('longBreakTime');
     /**
-     * Checks if session has ended
-     * @type {Boolean}
-     */
-    this.end = false;
-    /**
      * auto start switch element
      * @type {HTMLInputElement}
      */
     this.autoStart = document.getElementById('autoStartSwitch');
+    /**
+     * Web worker responsible for count down timer
+     * @type {Worker}
+     */
+    this.timerWorker = new Worker('./js/Timer/TimerWorker.js');
+    // Recieve message from web worker and update display
+    this.timerWorker.onmessage = (e) => {
+      if (e.data !== -1) {
+        this.timeDisplay.textContent = e.data;
+        document.title = `${e.data} ${this.state}`;
+      } else {
+        this.onTimerComplete();
+      }
+    };
     /**
      * The sessionId. Increments on each working session. Stored in
      * local storage to keep track of id on multiple sessions every day
@@ -160,8 +169,6 @@ class Timer extends HTMLElement {
    * Updates the display for the status.
    */
   startTimer() {
-    this.end = false;
-
     // Edgar: StateQueue is set right after line 62, we get our timee duration
     // from TimerVariables.js, we want to change this to user set duration
     const session = this.stateQueue[0];
@@ -175,7 +182,7 @@ class Timer extends HTMLElement {
     });
 
     this.dispatchEvent(event);
-    this.countdown(session.duration * 60);
+    this.timerWorker.postMessage(session.duration * 60);
   }
 
   /**
@@ -183,7 +190,7 @@ class Timer extends HTMLElement {
    * Updates the display for the status.
    */
   endTimer() {
-    this.end = true;
+    this.timerWorker.postMessage(-1);
     this.displayStatus.textContent = sessionStartName;
     // #6: only works with whole numbers
     this.timeDisplay.textContent = timeToString(workMode.duration * 60);
@@ -196,26 +203,6 @@ class Timer extends HTMLElement {
     }
     const event = new CustomEvent('timer-end');
     this.dispatchEvent(event);
-  }
-
-  /**
-   * Counts down the timer for duration amount of minutes.
-   * Updates the DOM with current time remaining.
-   * @param {Number} duration Amount of seconds for the timer to run
-   */
-  countdown(duration) {
-    if (this.end) return;
-    const displayString = timeToString(duration);
-    this.timeDisplay.textContent = displayString;
-    document.title = `${this.state} ${displayString}`;
-    duration -= 1;
-    if (duration >= 0) {
-      setTimeout(() => {
-        this.countdown(duration);
-      }, 1000);
-    } else {
-      this.onTimerComplete();
-    }
   }
 
   /**
