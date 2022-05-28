@@ -334,3 +334,7 @@ tr.completedTask td {
     left: -35%;
   }
 }
+
+#taskListHeader th {
+  z-index: 1;
+}
