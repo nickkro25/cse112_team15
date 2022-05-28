@@ -323,10 +323,12 @@ TDLDom.todoList.addEventListener('task-deleted', (e) => {
  * 1. Store the id of the session during which it occurred
  * 2. Store the distraction in task
  */
-DistractionPage.addEventListener('distraction-created', (e) => {
+DistractionPage.addEventListener('distraction-created', distractionCreated(e));
+
+function distractionCreated(e) {
   e.detail.pomoSessionId = TimerObj.sessionId;
   StatsPage.addDistraction(e.detail);
-});
+}
 
 /**
  * When End Day is clicked, set pomo session id back to zero to restart distraction count
