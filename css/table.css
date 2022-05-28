@@ -228,7 +228,7 @@ tr.completedTask td {
   width: 16px;
 }
 
-/* flex display for triple dot container for alignment purposes*/
+/* flex display for triple dot container for alignment purposes */
 .triple-dots-touch {
   display: flex;
 }
