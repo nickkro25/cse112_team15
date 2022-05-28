@@ -340,3 +340,41 @@ test('Current Task after a session', () => {
   expect(currentTaskLocation.textContent).toBe('Working on: Task1');
   localStorage.clear();
 });
+
+test('Moving the third task up should make it the second task', () => {
+  formLocation.children[0].setAttribute('value', 'Task1');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute('value', 'Task2');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute('value', 'Task3');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.moveTaskUp('2');
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[2].taskText.textContent).toBe('Task3');
+  expect(tableLocation.children[3].taskText.textContent).toBe('Task2');
+  localStorage.clear();
+});
+
+test('Moving the first task down should make it the second task', () => {
+  formLocation.children[0].setAttribute('value', 'Task1');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute('value', 'Task2');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute('value', 'Task3');
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.moveTaskDown('0');
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[1].taskText.textContent).toBe('Task2');
+  expect(tableLocation.children[2].taskText.textContent).toBe('Task1');
+  localStorage.clear();
+});
