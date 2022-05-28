@@ -289,7 +289,7 @@ window.addEventListener('click', (e) => {
     const threeDotButtonList = document.getElementsByClassName(classNames.threeDotsWrapper);
     for (let i = 0; i < buttonPairList.length; i += 1) {
       buttonPairList[i].style.display = 'none';
-      threeDotButtonList[i].style.display = 'block';
+      threeDotButtonList[i].style.display = 'flex';
     }
   }
 });

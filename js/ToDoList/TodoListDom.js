@@ -262,7 +262,6 @@ class TodoListDom {
     clickedTask.onDelete();
     this.currentTask.checkBox.disabled = false;
     this.displayTask(clickedTask, currentTaskIndex);
-
     // remove the task and add it back to the top
     this.todoList.addTaskToTop(clickedTask);
   }

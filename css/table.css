@@ -50,9 +50,33 @@ td {
 
 tr {
   margin-top: 20px;
-  
   /* width: 100%; */
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;	
+  }
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+tbody ~ tr {
+  animation: fade-in 0.25s linear;
+}
+
 
 tr:nth-child(even) td {
   background-color: var(--even-color);
@@ -80,7 +104,7 @@ tr td:last-child,
 tr th:last-child {
   /* border-top-right-radius: var(--td-border-radius); */
   border-bottom-right-radius: var(--td-border-radius);
-  padding-right: 15px;
+  /* padding-right: 15px; */
 }
 
 td button {
@@ -179,12 +203,12 @@ td button:active {
 
 /* larger checkbox */
 input[type='checkbox'] {
-  display: none;
-  /* width: 20px;
+  /* display: none; */
+  width: 20px;
   height: 20px;
   background: white;
   border-radius: 10px;
-  cursor: pointer; */
+  cursor: pointer;
 }
 
 /* checkbox highlight when checked */
@@ -195,7 +219,7 @@ input[type='checkbox'] {
 
 /* different color row for checked off tasks */
 tr.completedTask td {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   background-color: var(--completed-task-color);
 }
 
@@ -222,10 +246,15 @@ tr.completedTask td {
   text-decoration: none !important;
 } */
 
+.triple-dots-touch {
+  display: flex;
+}
+
 /* Styling for the div that holds both the focus and delete button */
 .double-buttons {
   max-height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .double-buttons button {
