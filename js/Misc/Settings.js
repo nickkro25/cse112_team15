@@ -241,7 +241,7 @@ workColorPicker.addEventListener('change', () => {
   if (!darkModeSwitch.checked) {
     root.style.setProperty('--page-bg-color', workColorPicker.value);
     root.style.setProperty('--header-color', colorShade(workColorPicker.value, -60));
-    root.style.setProperty('--even-color', colorShade(longColorPicker.value, 30));
+    root.style.setProperty('--even-color', colorShade(workColorPicker.value, 30));
   }
   root.style.setProperty('--table-bg-color', colorShade(workColorPicker.value, -10));
   root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
@@ -260,7 +260,7 @@ shortColorPicker.addEventListener('change', () => {
   if (!darkModeSwitch.checked) {
     root.style.setProperty('--page-bg-color-short', shortColorPicker.value);
     root.style.setProperty('--header-color-short', colorShade(shortColorPicker.value, -60));
-    root.style.setProperty('--even-color-short', colorShade(longColorPicker.value, 30));
+    root.style.setProperty('--even-color-short', colorShade(shortColorPicker.value, 30));
   }
   root.style.setProperty('--table-bg-color-short', colorShade(shortColorPicker.value, -10));
   root.style.setProperty('--btn-icon-color-short', colorShade(shortColorPicker.value, 30));
