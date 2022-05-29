@@ -98,6 +98,7 @@
 }
 
 .short-break .main-page,
+.short-break nav .brand-logo,
 .short-break .btn,
 .short-break .pure-button,
 .short-break #startTimer,
@@ -188,6 +189,7 @@
 }
 
 .long-break .main-page,
+.long-break nav .brand-logo,
 .long-break .btn,
 .long-break .pure-button,
 .long-break #startTimer,
