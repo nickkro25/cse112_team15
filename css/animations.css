@@ -30,7 +30,19 @@
   transition-duration: 0;
 }
 
-.short-break tr:nth-child(even):not(.completedTask) td, 
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break tr:nth-child(even) td,
+.long-break tr:nth-child(odd) td,
+.long-break nav i {
+  color: var(--font-color-long);
+}
+
+.short-break tr:nth-child(even) td,
+.short-break tr:nth-child(odd) td {
+  color: var(--font-color-short);
+}
+
+.short-break tr:nth-child(even):not(.completedTask) td,
 .short-break #tasklist::-webkit-scrollbar-thumb {
   background-color: var(--even-color-short);
 }
@@ -92,8 +104,6 @@
 .short-break .modal-header,
 .short-break .modal-footer,
 .short-break th,
-.short-break tr:nth-child(even) td,
-.short-break tr:nth-child(odd) td,
 .short-break nav i,
 .short-break nav [class^="mdi-"],
 .short-break nav [class*="mdi-"],
@@ -105,6 +115,7 @@
 }
 
 /* long break color modes */
+
 /* Note: there are some long break color modes settings above for passing the style check in lint */
 .long-break {
   background-color: var(--page-bg-color-long);
@@ -126,7 +137,7 @@
   transition-duration: 2s;
 }
 
-.long-break tr:nth-child(even):not(.completedTask) td, 
+.long-break tr:nth-child(even):not(.completedTask) td,
 .long-break #tasklist::-webkit-scrollbar-thumb {
   background-color: var(--even-color-long);
 }
@@ -182,9 +193,6 @@
 .long-break .modal-header,
 .long-break .modal-footer,
 .long-break th,
-.long-break tr:nth-child(even) td,
-.long-break tr:nth-child(odd) td,
-.long-break nav i,
 .long-break nav [class^="mdi-"],
 .long-break nav [class*="mdi-"],
 .long-break nav i.material-icons,
