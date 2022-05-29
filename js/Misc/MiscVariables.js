@@ -1,7 +1,7 @@
 /**
  * Names for break
  * @type {Object}
-*/
+ */
 const breakNames = {
   short: 'short-break',
   long: 'long-break',
@@ -50,6 +50,20 @@ const evenColor = {
 };
 
 /**
+ * font color for the page
+ * @type {Object}
+ */
+ const fontColor = {
+  name: '--font-color',
+  shortName: '--font-color-short',
+  longName: '--font-color-long',
+  val: localStorage.getItem('--font-color'),
+  shortVal: localStorage.getItem('--font-color-short'),
+  longVal: localStorage.getItem('--font-color-long'),
+  darkVal: 'white',
+};
+
+/**
  * Toothpaste-esque colors
  * @type {Object}
  */
@@ -91,5 +105,5 @@ const modalFontColor = {
 
 export {
   breakNames, pageBGColor, headerColor, toothpaste, tableBG, evenColor,
-  modalBGColor, modalFontColor,
+  modalBGColor, modalFontColor, fontColor
 };
