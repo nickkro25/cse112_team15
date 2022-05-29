@@ -136,7 +136,33 @@ class Timer extends HTMLElement {
    * Moves on to start the timer again at the end of the function.
    */
   onTimerComplete() {
+
     const completedSession = this.stateQueue.shift();
+
+    //Gets current state to determine which notification to give.
+    const currentState = this.stateQueue[0].name;
+    const iconUrl = './assets/img/webicon.png';
+    if (Notification.permission === "granted") {
+      if(currentState === 'Short Break') {
+        const notification = new Notification('Pomo XV', {
+          body: 'Time for a short break!',
+          icon: iconUrl
+        });
+      }
+      else if (currentState === 'Working Time') {
+        const notification = new Notification('Pomo XV', {
+          body: 'Time to work!',
+          icon: iconUrl
+        });
+      } 
+      else if (currentState == 'Long Break') {
+        const notification = new Notification('Pomo XV', {
+          body: 'Time for a long break!',
+          icon: iconUrl
+        });
+      }
+    }
+
     this.stateQueue.push(completedSession);
     const event = new CustomEvent('timer-complete', {
       detail: {
@@ -171,6 +197,8 @@ class Timer extends HTMLElement {
   startTimer() {
     // Edgar: StateQueue is set right after line 62, we get our timee duration
     // from TimerVariables.js, we want to change this to user set duration
+    console.log("Test");
+    console.log(this.stateQueue[0].name);
     const session = this.stateQueue[0];
     this.state = session.name;
     this.displayStatus.textContent = this.state;
@@ -202,6 +230,7 @@ class Timer extends HTMLElement {
       this.stateQueue.push(workOrder[i]);
     }
     const event = new CustomEvent('timer-end');
+    console.log("kelar");
     this.dispatchEvent(event);
   }
 
