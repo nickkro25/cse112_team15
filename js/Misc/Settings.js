@@ -33,7 +33,7 @@ const muteSwitch = document.getElementById('muteSwitch');
 /**
  * @type {HTMLInputElement}
  */
-const noDeviceSwitch = document.getElementById('noDeviceSwitch')
+const noDeviceSwitch = document.getElementById('noDeviceSwitch');
 /**
  * the selector for work sound
  * @type {HTMLSelectElement}
@@ -150,7 +150,6 @@ muteSwitch.addEventListener('change', () => {
 noDeviceSwitch.addEventListener('change', () => {
   localStorage.setItem('noDeviceSwitch', noDeviceSwitch.checked);
 });
-
 
 // set values from localStorage
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';

@@ -154,7 +154,15 @@ const TimerObj = new Timer(startTimerButton, timeDisplay, modeDisplay);
  */
 const DistractionPage = new Distraction(distractButton, distractPopUp,
   cancelButton, distractForm, description, overlay);
+/**
+ * The switch element in settings for this feature
+ * @type {HTMLInputElement}
+ */
 const noDeviceSwitch = document.getElementById('noDeviceSwitch');
+/**
+ * For handling device distractions
+ * @type {DistractedByDevice}
+ */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
 
 // if the user has not already visited the page, run the introduction
@@ -323,17 +331,17 @@ TDLDom.todoList.addEventListener('task-deleted', (e) => {
 /**
  * When a distraction is logged:
  * 1. Store the id of the session during which it occurred
- * 2. Store the distraction in task
+ * 2. Reset the current work session
+ * 3. Store the distraction in task
  */
-DistractionPage.addEventListener('distraction-created', distractionCreated);
-
-distractedByDevice.addEventListener('distraction-created', distractionCreated);
-
 function distractionCreated(e) {
   e.detail.pomoSessionId = TimerObj.sessionId;
   TimerObj.resetSession();
   StatsPage.addDistraction(e.detail);
 }
+
+DistractionPage.addEventListener('distraction-created', distractionCreated);
+distractedByDevice.addEventListener('distraction-created', distractionCreated);
 
 /**
  * When End Day is clicked, set pomo session id back to zero to restart distraction count

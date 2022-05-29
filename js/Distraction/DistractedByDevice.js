@@ -19,7 +19,7 @@ class DistractedByDevice extends HTMLElement {
      * HTML Tag that is reponsible for displaying the mode of the timer
      * @type {HTMLElement}
      */
-     this.displayStatus = displayStatus;
+    this.displayStatus = displayStatus;
     /**
      * Records whether this feature is currently running
      * @type {Boolean}
@@ -66,22 +66,27 @@ class DistractedByDevice extends HTMLElement {
           pomoSessionId: null,
         },
       });
-      
+
       this.dispatchEvent(event);
     }
   }
 
+  /**
+   * Display warning message after session starts
+   * @param {Number} duration Duration of the message
+   * @param {String} text The original text to be set
+   */
   countdownMessage(duration, text) {
     if (duration > 0) {
-      this.displayStatus.textContent = 'Do not touch device after ' + duration + 's';
+      this.displayStatus.textContent = `Do not touch device after ${duration}s`;
       this.timeoutID = setTimeout(() => {
         this.countdownMessage(duration - 1, text);
       }, 1000);
     } else {
       this.displayStatus.textContent = text;
       this.running = true;
-      document.addEventListener('mousemove', () => this.userDistracted(), {once: true});
-      document.addEventListener('keydown', () => this.userDistracted(), {once: true});
+      document.addEventListener('mousemove', () => this.userDistracted(), { once: true });
+      document.addEventListener('keydown', () => this.userDistracted(), { once: true });
     }
   }
 }
