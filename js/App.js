@@ -5,6 +5,8 @@ import { Distraction } from './Distraction/Distraction.js';
 import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
+import { workMode } from './Timer/TimerVariables.js';
+//import { FAQ } from './FAQ/FAQ.js';
 
 /**
  * Used to see if data needs to be cleared or not (if timer is started after 3 a.m. or not)
@@ -220,9 +222,22 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+   
+    //hide all buttons on timer-start
+    document.getElementById('faqButton').style.display = 'none';
+    document.getElementById('statsButton').style.display = 'none';
+    document.getElementById('settingsButton').style.display = 'none';
+    document.getElementById('onboardingButton').style.display = 'none';
+    
   } else {
-    distractButton.disabled = true;
-  }
+    distractButton.disabled = true; 
+    
+    //unhide buttons on break time
+    document.getElementById('faqButton').style.display = 'inline-block';
+    document.getElementById('statsButton').style.display = 'inline-block';
+    document.getElementById('settingsButton').style.display = 'inline-block';
+    document.getElementById('onboardingButton').style.display = 'inline-block';
+    }
 });
 
 /**
@@ -230,6 +245,12 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+
+  //show all buttons when timer ends
+  document.getElementById('faqButton').style.display = 'inline-block';
+  document.getElementById('statsButton').style.display = 'inline-block';
+  document.getElementById('settingsButton').style.display = 'inline-block';
+  document.getElementById('onboardingButton').style.display = 'inline-block';
 });
 
 /**
