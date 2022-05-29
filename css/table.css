@@ -272,7 +272,7 @@ button:disabled .focus-svg {
   z-index: 1;
   bottom: 125%;
   left: -50%;
-  margin-left: 0px;
+  margin-left: 0;
 
   /* Fade in tooltip */
   opacity: 0;
@@ -303,7 +303,7 @@ button:disabled .focus-svg {
     overflow-y: auto;
   }
 
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -55%;
   }
 }
@@ -313,14 +313,13 @@ button:disabled .focus-svg {
     width: 80%;
   }
 
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -50%;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-  .tooltip .tooltiptext {    
+  .tooltip .tooltiptext {
     left: -35%;
   }
 }

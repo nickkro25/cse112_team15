@@ -222,6 +222,7 @@ TimerObj.addEventListener('timer-start', (e) => {
     distractButton.disabled = false;
   } else {
     distractButton.disabled = true;
+    DistractionPage.resetPopUp();
   }
 });
 
@@ -230,6 +231,7 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+  DistractionPage.resetPopUp();
 });
 
 /**
@@ -319,6 +321,7 @@ TDLDom.todoList.addEventListener('task-deleted', (e) => {
  */
 DistractionPage.addEventListener('distraction-created', (e) => {
   e.detail.pomoSessionId = TimerObj.sessionId;
+  TimerObj.resetSession();
   StatsPage.addDistraction(e.detail);
 });
 
