@@ -6,8 +6,7 @@ import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
 import { workMode } from './Timer/TimerVariables.js';
-//import { FAQ } from './FAQ/FAQ.js';
-
+import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
 /**
  * Used to see if data needs to be cleared or not (if timer is started after 3 a.m. or not)
  * @returns True if the current time is 03:00:00 or later. False otherwise.
