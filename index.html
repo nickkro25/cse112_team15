@@ -133,14 +133,32 @@
         </div>
         <div id="deviceNotUsedGroup">
           <div class="tooltip">
-            <label for="no device">Device required for work:</label>
+            <label>Device required for work:</label>
             <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
                                       please stay on this web page for this to work</span>
           </div><br>
-          <label name="no device" class="switch">
-          <input type="checkbox" id="noDeviceSwitch" checked="true">
+          <label class="switch">
+          <input type="checkbox" id="noDeviceSwitch" checked=checked>
           <span class="slider round"></span>
           </label>
+        </div>
+      </div>
+      <p id="colorChangeHeader">Color Theme</p>
+      <div id="colorPickerContent">
+        <div class="colorSelectorDiv">
+          <label>Work</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Short Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Long Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+          <span></span>
         </div>
       </div>
 
