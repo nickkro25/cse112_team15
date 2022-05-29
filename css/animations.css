@@ -98,6 +98,7 @@
 }
 
 .short-break .main-page,
+.short-break .btn,
 .short-break .pure-button,
 .short-break #startTimer,
 .short-break .close,
@@ -187,6 +188,7 @@
 }
 
 .long-break .main-page,
+.long-break .btn,
 .long-break .pure-button,
 .long-break #startTimer,
 .long-break .close,
