@@ -232,7 +232,7 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
-    //hide all buttons on timer-start
+    // hide all buttons on focus
     document.getElementById('faqButton').style.display = 'none';
     document.getElementById('statsButton').style.display = 'none';
     document.getElementById('settingsButton').style.display = 'none';
@@ -242,14 +242,12 @@ TimerObj.addEventListener('timer-start', (e) => {
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
-    //unhide buttons on break time
+    // unhide buttons on break time
     document.getElementById('faqButton').style.display = 'inline-block';
     document.getElementById('statsButton').style.display = 'inline-block';
     document.getElementById('settingsButton').style.display = 'inline-block';
     document.getElementById('onboardingButton').style.display = 'inline-block';
   }
-
-
 });
 
 /**
@@ -269,7 +267,7 @@ document.body.addEventListener('focus-task', (e) => {
   TDLDom.onFocusTask(e.detail.taskID);
   TDLDom.updateCurrentTask();
 
-  //show all buttons when timer ends
+  // show all buttons when timer ends
   document.getElementById('faqButton').style.display = 'inline-block';
   document.getElementById('statsButton').style.display = 'inline-block';
   document.getElementById('settingsButton').style.display = 'inline-block';
