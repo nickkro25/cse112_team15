@@ -77,7 +77,7 @@
   opacity: 1;
 }
 
-h1,
+#distract-form h1,
 b {
   color: black; /* so that text shows up for distraction box against white background */
 }
