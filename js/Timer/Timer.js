@@ -143,19 +143,17 @@ class Timer extends HTMLElement {
     const iconUrl = './assets/img/webicon.png';
     if (Notification.permission === 'granted') {
       if (currentState === 'Short Break') {
-        const notification = new Notification('Pomo XV', {
+        new Notification('Pomo XV', {
           body: 'Time for a short break!',
           icon: iconUrl,
         });
-      }
-      else if (currentState === 'Working Time') {
-        const notification = new Notification('Pomo XV', {
+      } else if (currentState === 'Working Time') {
+        new Notification('Pomo XV', {
           body: 'Time to work!',
           icon: iconUrl,
         });
-      } 
-      else if (currentState === 'Long Break') {
-        const notification = new Notification('Pomo XV', {
+      } else if (currentState === 'Long Break') {
+        new Notification('Pomo XV', {
           body: 'Time for a long break!',
           icon: iconUrl,
         });
