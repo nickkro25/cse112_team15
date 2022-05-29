@@ -1,13 +1,9 @@
-import {
-  updateDarkMode,
-} from '../Misc/Settings.js';
-
 /**
  * DistractedByDevice object, handles everything related to tracking mouse
  * & keyboard activity
  */
 class DistractedByDevice extends HTMLElement {
-  constructor(noDeviceSwitch) {
+  constructor(noDeviceSwitch, displayStatus) {
     super();
     /**
      * The switch element in settings for this feature
@@ -19,6 +15,11 @@ class DistractedByDevice extends HTMLElement {
      * @type {Number}
      */
     this.timeoutID = 0;
+    /**
+     * HTML Tag that is reponsible for displaying the mode of the timer
+     * @type {HTMLElement}
+     */
+     this.displayStatus = displayStatus;
     /**
      * Records whether this feature is currently running
      * @type {Boolean}
@@ -34,9 +35,8 @@ class DistractedByDevice extends HTMLElement {
     // TODO: There's no UI that indicates the switch is disabled, user might be confused
     this.noDeviceSwitch.disabled = true;
     if (!this.running && !this.noDeviceSwitch.checked) {
-      this.running = true;
-      document.addEventListener('mousemove', () => this.userDistracted(), {once: true});
-      document.addEventListener('keydown', () => this.userDistracted(), {once: true});
+      const text = this.displayStatus.textContent;
+      this.countdownMessage(5, text);
     }
   }
 
@@ -45,6 +45,7 @@ class DistractedByDevice extends HTMLElement {
    */
   endPomoTime() {
     this.noDeviceSwitch.disabled = false;
+    clearTimeout(this.timeoutID);
     if (this.running) {
       this.running = false;
       document.removeEventListener('mousemove', this.userDistracted);
@@ -57,15 +58,31 @@ class DistractedByDevice extends HTMLElement {
    * by their device
    */
   userDistracted() {
-    const event = new CustomEvent('distraction-created', {
-      detail: {
-        date: new Date(),
-        description: 'Distracted by device',
-        pomoSessionId: null,
-      },
-    });
-    
-    this.dispatchEvent(event);
+    if (this.running) {
+      const event = new CustomEvent('distraction-created', {
+        detail: {
+          date: new Date(),
+          description: 'Distracted by device',
+          pomoSessionId: null,
+        },
+      });
+      
+      this.dispatchEvent(event);
+    }
+  }
+
+  countdownMessage(duration, text) {
+    if (duration > 0) {
+      this.displayStatus.textContent = 'Do not touch device after ' + duration + 's';
+      this.timeoutID = setTimeout(() => {
+        this.countdownMessage(duration - 1, text);
+      }, 1000);
+    } else {
+      this.displayStatus.textContent = text;
+      this.running = true;
+      document.addEventListener('mousemove', () => this.userDistracted(), {once: true});
+      document.addEventListener('keydown', () => this.userDistracted(), {once: true});
+    }
   }
 }
 

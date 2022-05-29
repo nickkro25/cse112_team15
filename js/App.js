@@ -155,7 +155,7 @@ const TimerObj = new Timer(startTimerButton, timeDisplay, modeDisplay);
 const DistractionPage = new Distraction(distractButton, distractPopUp,
   cancelButton, distractForm, description, overlay);
 const noDeviceSwitch = document.getElementById('noDeviceSwitch');
-const distractedByDevice = new DistractedByDevice(noDeviceSwitch);
+const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
