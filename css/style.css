@@ -22,12 +22,14 @@
   --page-bg-color-short: #76a662;
   --header-color-short: colorShade(var(--page-bg-color-short), -60);
   --table-bg-color-short: colorShade(var(--page-bg-color-short), -10);
+  --font-color-short: white;
   --btn-icon-color-short: colorShade(var(--page-bg-color-short), 30);
 
   /* long break page colors */
   --page-bg-color-long: #66b4db;
   --header-color-long: colorShade(var(--page-bg-color-long), -60);
   --table-bg-color-long: colorShade(var(--page-bg-color-long), -10);
+  --font-color-long: white;
   --btn-icon-color-long: colorShade(var(--page-bg-color-long), 30);
 
   --even-color: rgba(149, 218, 229, 0.603);
@@ -215,6 +217,10 @@ html {
   }
 }
 
+#startTimer {
+  color: var(--font-color)
+}
+
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
     font-size: 35%;
@@ -271,7 +277,7 @@ html {
 }
 
 a {
-  color: white;
+  color: var(--font-color);
   background-color: transparent;
   text-decoration: underline;
 }
