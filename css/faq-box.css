@@ -73,6 +73,10 @@
   cursor: pointer;
 }
 
+#faqButton:hover{
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+}
+
 .modal-header {
   padding: 2px 16px;
   background-color: var(--header-color);
