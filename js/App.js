@@ -227,6 +227,7 @@ TimerObj.addEventListener('timer-start', (e) => {
     distractedByDevice.startPomoTime();
   } else {
     distractButton.disabled = true;
+    DistractionPage.resetPopUp();
   }
 });
 
@@ -236,6 +237,7 @@ TimerObj.addEventListener('timer-start', (e) => {
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
   distractedByDevice.endPomoTime();
+  DistractionPage.resetPopUp();
 });
 
 /**
@@ -329,6 +331,7 @@ distractedByDevice.addEventListener('distraction-created', distractionCreated);
 
 function distractionCreated(e) {
   e.detail.pomoSessionId = TimerObj.sessionId;
+  TimerObj.resetSession();
   StatsPage.addDistraction(e.detail);
 }
 
