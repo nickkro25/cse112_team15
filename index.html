@@ -23,6 +23,11 @@
         display: none;
       }
     </style>
+  </noscript>
+</head>
+
+<body>
+  <noscript>
     <h1>
       :(
     </h1>
@@ -31,9 +36,6 @@
       properly
     </h2>
   </noscript>
-</head>
-
-<body>
   <script>
     // update dark theme at the beginning to prevent transition
     const pageBGColor = {
@@ -86,7 +88,7 @@
 
     <!-- Settings popup -->
     <section id="settingsPopup">
-      <p id="settingsHeader">Settings</p>
+      <h1 id="settingsHeader">Settings</h1>
       <div id="settingsContent">
         <div id="customTimeGroup">
           <div id="focusTimeSelector">
@@ -131,22 +133,22 @@
           </select>
         </div>
         <div id="darkModeGroup">
-          <label for="darkModeLabel">Dark mode:</label><br>
-          <label id="darkModeLabel" class="switch">
+          <label>Dark mode:</label><br>
+          <label class="switch">
             <input type="checkbox" id="darkModeSwitch">
             <span class="slider round"></span>
           </label>
         </div>
         <div id="muteGroup">
-          <label for="muteLabel">Mute:</label><br>
-          <label id="muteLabel" class="switch">
+          <label>Mute:</label><br>
+          <label class="switch">
             <input type="checkbox" id="muteSwitch">
             <span class="slider round"></span>
           </label>
         </div>
         <div id="autoStartGroup">
-          <label for="autoStartLabel">Auto-start next timer:</label><br>
-          <label id="autoStartLabel" class="switch">
+          <label>Auto-start next timer:</label><br>
+          <label class="switch">
           <input type="checkbox" id="autoStartSwitch">
           <span class="slider round"></span>
           </label>
@@ -159,7 +161,7 @@
   <!-- Container for timer, timer buttons, and distraction button + prompt -->
 	<section id="timerContainer" class="section-container">
 		<div id="countdown">
-			<p id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</p>
+			<h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
 			<p id="top-left-border"> <span>┌</span> </p>
 			<p id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
@@ -174,7 +176,7 @@
 	<!-- Container for current task -->
 	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
 	<!-- Container for task list -->
-	<section id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
+	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
 			<tr id="taskListHeader">
 				<th class='col1-checkbox'></th>
@@ -195,12 +197,12 @@
 				<button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
 			</form>
 		</div>
-	</section>
+	</div>
 
     <!-- Distraction Box-->
     <section class="form-popup" id="distract-popup">
       <form class="form-container" id="distract-form">
-        <h1 class='distraction-label'>Report Distraction</h1>
+        <h2 class='distraction-label'>Report Distraction</h2>
         <label class="distraction-label small">Distraction Description</label>
         <input type="text" placeholder="Enter a short description of the distraction" id="description" required="">
         <button type="submit" class="distractFormButton" id="submit-button">Submit</button>
