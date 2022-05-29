@@ -46,11 +46,7 @@ class DistractedByDevice extends HTMLElement {
   endPomoTime() {
     this.noDeviceSwitch.disabled = false;
     clearTimeout(this.timeoutID);
-    if (this.running) {
-      this.running = false;
-      document.removeEventListener('mousemove', this.userDistracted);
-      document.removeEventListener('keydown', this.userDistracted);
-    }
+    this.running = false;
   }
 
   /**
@@ -58,6 +54,7 @@ class DistractedByDevice extends HTMLElement {
    * by their device
    */
   userDistracted() {
+    console.log('triggered');
     if (this.running) {
       const event = new CustomEvent('distraction-created', {
         detail: {
@@ -86,6 +83,7 @@ class DistractedByDevice extends HTMLElement {
       this.displayStatus.textContent = text;
       this.running = true;
       document.addEventListener('mousemove', () => this.userDistracted(), { once: true });
+      document.addEventListener('click', () => this.userDistracted(), { once: true });
       document.addEventListener('keydown', () => this.userDistracted(), { once: true });
     }
   }
