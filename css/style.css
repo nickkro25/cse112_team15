@@ -75,7 +75,7 @@ a.brand-logo {
   margin-left: 1vw;
 }
 
-a.brand-logo li {
+a.brand-logo span {
   margin-left: 1vw;
 }
 
@@ -159,6 +159,7 @@ a.brand-logo li {
   top: 10px;
   margin: 10px;
   font-size: 80%;
+  font-weight: normal;
 }
 
 #timeDisplay {
