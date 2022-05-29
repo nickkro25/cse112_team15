@@ -405,7 +405,7 @@ nav .nav-wrapper {
 
 nav .brand-logo {
   position: absolute;
-  color: #fff;
+  color: var(--font-color);
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
