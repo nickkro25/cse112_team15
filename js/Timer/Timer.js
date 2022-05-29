@@ -46,7 +46,6 @@ class Timer extends HTMLElement {
      * @type {HTMLElement}
      */
     this.displayStatus = displayStatus;
-
     /**
      * HTML tag for controlling the focus timer length
      * @type {HTMLElement}
