@@ -1,7 +1,7 @@
 /**
  * Names for break
  * @type {Object}
- */
+*/
 const breakNames = {
   short: 'short-break',
   long: 'long-break',
@@ -53,7 +53,7 @@ const evenColor = {
  * font color for the page
  * @type {Object}
  */
- const fontColor = {
+const fontColor = {
   name: '--font-color',
   shortName: '--font-color-short',
   longName: '--font-color-long',
@@ -105,5 +105,5 @@ const modalFontColor = {
 
 export {
   breakNames, pageBGColor, headerColor, toothpaste, tableBG, evenColor,
-  modalBGColor, modalFontColor, fontColor
+  modalBGColor, modalFontColor, fontColor,
 };
