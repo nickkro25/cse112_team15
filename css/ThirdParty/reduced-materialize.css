@@ -606,7 +606,7 @@ html {
 .btn,
 .btn-large {
   text-decoration: none;
-  color: #fff;
+  color: var(--font-color);
   background-color: var(--btn-icon-color);
   text-align: center;
   letter-spacing: 0.5px;
