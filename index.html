@@ -36,6 +36,28 @@
       properly
     </h2>
   </noscript>
+  <script>
+    // update dark theme at the beginning to prevent transition
+    const pageBGColor = {
+      name: '--page-bg-color',
+      darkVal: '#363636',
+    };
+    const headerColor = {
+      name: '--header-color',
+      darkVal: '2d2c2b',
+    };
+    const toothpaste = {
+      name: '--toothpaste',
+      darkVal: '#2d2c2b',
+    };
+    if (localStorage.getItem('darkModeSwitch') === 'true') {
+      document.querySelector('body').style.transitionDuration = '0s';
+      const root = document.documentElement;
+      root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
+      root.style.setProperty(headerColor.name, headerColor.darkVal);
+      root.style.setProperty(toothpaste.name, toothpaste.darkVal);
+    }
+  </script>
 
   <div id='overlay'></div>
   <div class='main-page'>
@@ -134,7 +156,7 @@
         <div id="deviceNotUsedGroup">
           <div class="tooltip">
             <label for="no device">Device required for work:</label>
-            <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
+            <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction, 
                                       please stay on this web page for this to work</span>
           </div><br>
           <label name="no device" class="switch">
@@ -244,40 +266,6 @@
       </div>
 
 </section>
-
-<script>
-  // update dark theme at the beginning to prevent transition
-  const pageBGColor = {
-    name: '--page-bg-color',
-    darkVal: '#363636',
-  };
-  const headerColor = {
-    name: '--header-color',
-    darkVal: '2d2c2b',
-  };
-  const toothpaste = {
-    name: '--toothpaste',
-    darkVal: '#2d2c2b',
-  };
-  if (localStorage.getItem('darkModeSwitch') === 'true') {
-    document.querySelector('body').style.transitionDuration = '0s';
-    const root = document.documentElement;
-    root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
-    root.style.setProperty(headerColor.name, headerColor.darkVal);
-    root.style.setProperty(toothpaste.name, toothpaste.darkVal);
-    document.getElementById('faqButton').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('statsButton').style.backgroundColor = 'rgb(78, 78, 78';
-    document.getElementById('settingsButton').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
-  }
-</script>
-
 <script type="module" src="./js/App.js"></script>
 <script type="module" src="./js/Distraction/Distraction.js"></script>
 <script type="module" src="./js/Misc/Settings.js"></script>
