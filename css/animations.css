@@ -85,6 +85,25 @@
   background-color: var(--btn-icon-color-short);
 }
 
+.short-break .main-page,
+.short-break .pure-button,
+.short-break #startTimer,
+.short-break .close,
+.short-break .modal-header,
+.short-break .modal-footer,
+.short-break th,
+.short-break tr:nth-child(even) td,
+.short-break tr:nth-child(odd) td,
+.short-break nav i,
+.short-break nav [class^="mdi-"],
+.short-break nav [class*="mdi-"],
+.short-break nav i.material-icons,
+.short-break a,
+.short-break #submit-button,
+.short-break .btn-floating i {
+  color: var(--font-color-short);
+}
+
 /* long break color modes */
 /* Note: there are some long break color modes settings above for passing the style check in lint */
 .long-break {
@@ -154,6 +173,25 @@
 
 .long-break button:focus {
   background-color: var(--btn-icon-color-long);
+}
+
+.long-break .main-page,
+.long-break .pure-button,
+.long-break #startTimer,
+.long-break .close,
+.long-break .modal-header,
+.long-break .modal-footer,
+.long-break th,
+.long-break tr:nth-child(even) td,
+.long-break tr:nth-child(odd) td,
+.long-break nav i,
+.long-break nav [class^="mdi-"],
+.long-break nav [class*="mdi-"],
+.long-break nav i.material-icons,
+.long-break a,
+.long-break #submit-button,
+.long-break .btn-floating i {
+  color: var(--font-color-long);
 }
 
 /* distraction popup animations */
