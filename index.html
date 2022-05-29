@@ -17,6 +17,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pomodoro</title>
   <link rel="icon" type="image/svg" href="./assets/img/webicon2.svg">
+  <noscript>
+    <style>
+      .main-page {
+        display: none;
+      }
+    </style>
+    <h1>
+      :(
+    </h1>
+    <h2>
+      It looks like your browser does not have Javascript enabled. Please turn it on in order to use this website
+      properly
+    </h2>
+  </noscript>
 </head>
 
 <body>
@@ -36,26 +50,12 @@
     };
     if (localStorage.getItem('darkModeSwitch') === 'true') {
       document.querySelector('body').style.transitionDuration = '0s';
-      const root = document.documentElement; 
+      const root = document.documentElement;
       root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
       root.style.setProperty(headerColor.name, headerColor.darkVal);
       root.style.setProperty(toothpaste.name, toothpaste.darkVal);
     }
   </script>
-	<noscript>
-    <style type="text/css">
-      .main-page {
-        display: none;
-      }
-    </style>
-    <h1>
-      :(
-    </h1>
-    <h2>
-      It looks like your browser does not have Javascript enabled. Please turn it on in order to use this website
-      properly
-    </h2>
-  </noscript>
 
   <div id='overlay'></div>
   <div class='main-page'>
@@ -63,8 +63,8 @@
     <header data-title="Welcome!" data-intro="Welcome to our pomodoro app!" data-step='1'>
       <nav>
         <div id= "nav-wrapper" class="nav-wrapper">
-          <a href="#!" class="brand-logo" disable><img src="./assets/img/PomoXVlogo.png" height='60px'>
-            <li> PomoXV </li>
+          <a href="#!" class="brand-logo"><img src="./assets/img/PomoXVlogo.png" height='60' alt="PomoXV Logo">
+            <span style="float: right">PomoXV</span>
           </a>
           <ul class="right hide-on-med-and-down">
             <li><a class="waves-effect waves-light btn" id="faqButton" data-title="Misc"
@@ -109,8 +109,8 @@
           </div>
         </div>
         <div id="workSoundGroup">
-          <label for="work sound">Work Time Sound:</label><br>
-          <select name="work sound" id="workSoundSelector">
+          <label for="workSoundSelector">Work Time Sound:</label><br>
+          <select name="work-sound" id="workSoundSelector">
             <option value="marimba" selected>Marimba</option>
             <option value="kitchen">Kitchen Timer</option>
             <option value="microwave">Microwave Beep</option>
@@ -120,7 +120,7 @@
           </select>
         </div>
         <div id="breakSoundGroup">
-          <label for="break sound">Break Time Sound:</label><br>
+          <label for="breakSoundSelector">Break Time Sound:</label><br>
           <select name="break sound" id="breakSoundSelector">
             <option value="marimba" selected>Marimba</option>
             <option value="kitchen">Kitchen Timer</option>
@@ -131,28 +131,28 @@
           </select>
         </div>
         <div id="darkModeGroup">
-          <label for="dark mode">Dark mode:</label><br>
-          <label name="dark mode" class="switch">
+          <label for="darkModeLabel">Dark mode:</label><br>
+          <label id="darkModeLabel" class="switch">
             <input type="checkbox" id="darkModeSwitch">
             <span class="slider round"></span>
           </label>
         </div>
         <div id="muteGroup">
-          <label for="mute">Mute:</label><br>
-          <label name="mute" class="switch">
+          <label for="muteLabel">Mute:</label><br>
+          <label id="muteLabel" class="switch">
             <input type="checkbox" id="muteSwitch">
             <span class="slider round"></span>
           </label>
         </div>
         <div id="autoStartGroup">
-          <label for="auto start">Auto-start next timer:</label><br>
-          <label name="auto start" class="switch">
-          <input type="checkbox" id="autoStartSwitch" checked="true">
+          <label for="autoStartLabel">Auto-start next timer:</label><br>
+          <label id="autoStartLabel" class="switch">
+          <input type="checkbox" id="autoStartSwitch">
           <span class="slider round"></span>
           </label>
         </div>
       </div>
-      
+
     <!-- </div> -->
   </section>
 
@@ -174,7 +174,7 @@
 	<!-- Container for current task -->
 	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
 	<!-- Container for task list -->
-	<section id='tasklist' class='section-container' id='todo' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
+	<section id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
 			<tr id="taskListHeader">
 				<th class='col1-checkbox'></th>
@@ -186,7 +186,7 @@
 			</tr>
 		</table>
 		<div id='form-container'>
-			<form id='add-todo' overflow data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
+			<form id='add-todo' data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
 				<input type='text' name='task-name' placeholder='Enter task' class='task-name' required>
 				<div class="tooltip">
 					<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
