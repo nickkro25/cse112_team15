@@ -3,15 +3,12 @@ import {
 } from '../Misc/Settings.js';
 
 /**
- * DistractedByDevice object, handles everything related to
+ * DistractedByDevice object, handles everything related to tracking mouse
+ * & keyboard activity
  */
-class DistractedByDevice {
+class DistractedByDevice extends HTMLElement {
   constructor(noDeviceSwitch) {
-    /**
-     * Variable that keeps track of the duration of UI change
-     * @type {Number}
-     */
-    this.uiChangeDuration = 0;
+    super();
     /**
      * The switch element in settings for this feature
      * @type {HTMLInputElement}
@@ -38,8 +35,8 @@ class DistractedByDevice {
     this.noDeviceSwitch.disabled = true;
     if (!this.running && !this.noDeviceSwitch.checked) {
       this.running = true;
-      document.addEventListener('mousemove', this.userDistracted);
-      document.addEventListener('keydown', this.userDistracted);
+      document.addEventListener('mousemove', () => this.userDistracted(), {once: true});
+      document.addEventListener('keydown', () => this.userDistracted(), {once: true});
     }
   }
 
@@ -60,13 +57,17 @@ class DistractedByDevice {
    * by their device
    */
   userDistracted() {
-    clearTimeout(this.timeoutID);
-    this.uiChangeDuration = 300;
-    document.documentElement.style.setProperty('--page-bg-color', '#f54263');
-    this.timeoutID = setTimeout(() => {
-      updateDarkMode();
-    }, 3000);
+    const event = new CustomEvent('distraction-created', {
+      detail: {
+        date: new Date(),
+        description: 'Distracted by device',
+        pomoSessionId: null,
+      },
+    });
+    
+    this.dispatchEvent(event);
   }
 }
 
+customElements.define('device-distraction', DistractedByDevice);
 export { DistractedByDevice };
