@@ -245,8 +245,10 @@
       </div>
 
 </section>
-
 <script>
+  if (Notification.permission !== 'denied'){
+    Notification.requestPermission().then(permission => {});
+  }
   // update dark theme at the beginning to prevent transition
   const pageBGColor = {
     name: '--page-bg-color',
@@ -278,7 +280,6 @@
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
   }
 </script>
-
 <script type="module" src="./js/App.js"></script>
 <script type="module" src="./js/Distraction/Distraction.js"></script>
 <script type="module" src="./js/Misc/Settings.js"></script>

@@ -136,6 +136,29 @@ class Timer extends HTMLElement {
    */
   onTimerComplete() {
     const completedSession = this.stateQueue.shift();
+
+    // Gets current state to determine which notification to give.
+    const currentState = this.stateQueue[0].name;
+    const iconUrl = './assets/img/webicon.png';
+    if (Notification.permission === 'granted') {
+      if (currentState === 'Short Break') {
+        new Notification('Pomo XV', {
+          body: 'Time for a short break!',
+          icon: iconUrl,
+        });
+      } else if (currentState === 'Working Time') {
+        new Notification('Pomo XV', {
+          body: 'Time to work!',
+          icon: iconUrl,
+        });
+      } else if (currentState === 'Long Break') {
+        new Notification('Pomo XV', {
+          body: 'Time for a long break!',
+          icon: iconUrl,
+        });
+      }
+    }
+
     this.stateQueue.push(completedSession);
     const event = new CustomEvent('timer-complete', {
       detail: {
