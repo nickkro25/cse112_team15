@@ -261,8 +261,6 @@ TimerObj.addEventListener('timer-end', () => {
   document.getElementById('statsButton').style.display = 'inline-block';
   document.getElementById('settingsButton').style.display = 'inline-block';
   document.getElementById('onboardingButton').style.display = 'inline-block';
-
-  
 });
 
 /**
