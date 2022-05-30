@@ -1,5 +1,61 @@
 /* css styling for to-do list table */
 
+/* delete all modal stylying*/
+#delete-all-modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.delete-all-modal{
+  background-color: #fff;
+  width: 600px;
+  max-width: 75%;
+  padding: 30px 50px;
+}
+
+#buttonContainers {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.confirm-delete-all {
+  background-color: white;
+  font-weight: bold;
+  color: black;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 25px;
+}
+
+.cancel-delete-all {
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px 25px;
+}
+
+#cancel-delete-all:hover {
+  background-color: grey;
+  color: white;
+  transition-duration: 0.25s;
+}
+
+#confirm-delete-all:hover {
+  background-color: red;
+  color: white;
+  transition-duration: 0.25s;
+}
+
 /* container for table */
 #tasklist {
   position: relative;
