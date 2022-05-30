@@ -117,7 +117,7 @@ const colorShade = (col, amt) => {
 function getFontColor(hex) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   const arr = [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
-  if (0.213 * arr[0] + 0.715 * arr[1] + 0.072 * arr[2] > 255 / 2) {
+  if (0.213 * arr[0] + 0.715 * arr[1] + 0.072 * arr[2] > 200) {
     return 'black';
   }
   return 'white';
