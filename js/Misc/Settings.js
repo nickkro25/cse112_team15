@@ -126,6 +126,7 @@ function updateDarkMode() {
     document.getElementById('startTimer').style.backgroundColor = '#26a69a';
     document.getElementById('delete-all-button').style.backgroundColor = '#26a69a';
     document.getElementById('add-button').style.backgroundColor = '#26a69a';
+    document.getElementById('taskListHeader').style.backgroundColor = '#008B8B';
     document.getElementById('add-todo').style.backgroundColor = '#008B8B';
   }
 }
