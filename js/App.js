@@ -164,11 +164,15 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+const navButtons = [document.getElementById('faqButton'),
+  document.getElementById('statsButton'),
+  document.getElementById('settingsButton'),
+  document.getElementById('onboardingButton')];
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
   // eslint-disable-next-line
-  introJs().start(); 
+  introJs().start();
   localStorage.setItem('onboarding', 'true');
 }
 
@@ -233,20 +237,13 @@ TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
     // hide all buttons on focus
-    document.getElementById('faqButton').style.display = 'none';
-    document.getElementById('statsButton').style.display = 'none';
-    document.getElementById('settingsButton').style.display = 'none';
-    document.getElementById('onboardingButton').style.display = 'none';
-
+    navButtons.forEach((element) => { element.style.display = 'none'; });
     distractedByDevice.startPomoTime();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
     // unhide buttons on break time
-    document.getElementById('faqButton').style.display = 'inline-block';
-    document.getElementById('statsButton').style.display = 'inline-block';
-    document.getElementById('settingsButton').style.display = 'inline-block';
-    document.getElementById('onboardingButton').style.display = 'inline-block';
+    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
   }
 });
 
@@ -258,6 +255,9 @@ TimerObj.addEventListener('timer-end', () => {
 
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+
+  // show all buttons when timer ends
+  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
 });
 
 /**
@@ -266,12 +266,6 @@ TimerObj.addEventListener('timer-end', () => {
 document.body.addEventListener('focus-task', (e) => {
   TDLDom.onFocusTask(e.detail.taskID);
   TDLDom.updateCurrentTask();
-
-  // show all buttons when timer ends
-  document.getElementById('faqButton').style.display = 'inline-block';
-  document.getElementById('statsButton').style.display = 'inline-block';
-  document.getElementById('settingsButton').style.display = 'inline-block';
-  document.getElementById('onboardingButton').style.display = 'inline-block';
 });
 
 /**
