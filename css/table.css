@@ -54,6 +54,20 @@ tr {
   /* width: 100%; */
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+tbody ~ tr {
+  animation: fade-in 0.25s linear;
+}
+
 tr:nth-child(even) td {
   background-color: var(--even-color);
   color: var(--font-color);
@@ -65,7 +79,8 @@ tr:nth-child(odd) td {
 }
 
 tr:hover td {
-  background-image: linear-gradient(transparent, var(--tr-hover-color));
+  background-color: var(--tr-hover-color);
+  transition-duration: 0.05s;
 }
 
 tr td:first-child,
@@ -79,7 +94,8 @@ tr td:last-child,
 tr th:last-child {
   /* border-top-right-radius: var(--td-border-radius); */
   border-bottom-right-radius: var(--td-border-radius);
-  padding-right: 30px;
+
+  /* padding-right: 15px; */
 }
 
 td button {
@@ -88,16 +104,24 @@ td button {
   background-color: transparent;
   outline: none;
   border: none;
+  text-align: center;
+  color: white;
+  transition-duration: 0.1s;
 }
 
-svg {
-  width: 24px;
-  height: 24px;
+td button:hover {
+  color: var(--header-color);
+  cursor: pointer;
 }
 
-.col1-checkbox {
+td button:active {
+  background-color: transparent;
+}
+
+/* .col1-checkbox {
+  display: none;
   width: 10vw;
-}
+} */
 
 .col3-pomos {
   width: 10vw;
@@ -106,6 +130,8 @@ svg {
 .col4-delete {
   width: 10vw;
   text-align: center;
+
+  /* margin: auto; */
 }
 
 .col2-task {
@@ -177,23 +203,48 @@ svg {
 
 /* larger checkbox */
 input[type='checkbox'] {
-  width: 20px;
+  display: none;
+
+  /* width: 20px;
   height: 20px;
   background: white;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 /* checkbox highlight when checked */
-input[type='checkbox']:checked {
-  box-shadow: 0 0 0 3px lime;
+
+/* input[type='checkbox']:checked {
+  display: none;
+} */
+
+label {
+  transition-duration: 0.25s;
+  position: relative;
+  top: 3px;
+}
+
+.uncheckedTask label {
+  visibility: hidden;
+}
+
+.completedTask label {
+  visibility: visible;
+}
+
+.completedTask label:hover {
+  color: var(--header-color);
 }
 
 
 /* different color row for checked off tasks */
 tr.completedTask td {
-  text-decoration: line-through;
   background-color: var(--completed-task-color);
+}
+
+/* Give current task a different bg color to make it stand out */
+tr.uncheckedTask:nth-child(2) td {
+  background-color: rgb(179, 179, 141);
 }
 
 /* rounded scrollbar */
@@ -208,43 +259,16 @@ tr.completedTask td {
   width: 16px;
 }
 
-/* Makes the 3 dots for the table */
-.three-dots::after {
-  cursor: pointer;
-  color: #fcc;
-  content: '\2807';
-  font-size: 20px;
-  align-items: center;
-  text-decoration: none !important;
+/* flex display for triple dot container for alignment purposes */
+.triple-dots-touch {
+  display: flex;
 }
 
 /* Styling for the div that holds both the focus and delete button */
 .double-buttons {
   max-height: 100%;
-  display: inline-block;
-}
-
-.double-buttons button {
-  width: 50%;
-  max-height: 100%;
-  background-color: transparent;
-  border: none;
-  display: inline block;
-}
-
-.delete-svg:hover {
-  fill: red;
-  cursor: pointer;
-}
-
-.focus-svg:hover {
-  fill: yellow;
-  cursor: pointer;
-}
-
-button:disabled .focus-svg {
-  fill: black;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 #add-button {
@@ -322,4 +346,8 @@ button:disabled .focus-svg {
   .tooltip .tooltiptext {
     left: -35%;
   }
+}
+
+#taskListHeader th {
+  z-index: 1;
 }

@@ -32,7 +32,7 @@
   --scroll-color: var(--even-color);
 
   /* table row spacing */
-  --td-border-radius: 22px;
+  --td-border-radius: 2px;
   --table-border: 12px;
   --table-row-margin: 20px;
 
@@ -220,6 +220,10 @@ html {
     font-size: 75%;
   }
 
+  #finishTask {
+    font-size: 50%;
+  }
+
   #timeDisplay {
     font-size: 240%;
   }
@@ -314,6 +318,10 @@ a {
 
   #distractionButton {
     padding: 0 5px;
+  }
+
+  #finishTask {
+    margin: 5px 0;
   }
 
   #timeDisplay {

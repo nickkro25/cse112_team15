@@ -1,4 +1,4 @@
-import { classNames, svg } from './TaskVariables.js';
+import { classNames } from './TaskVariables.js';
 import { TaskStorage } from './TodoListDomVariables.js';
 
 /**
@@ -80,8 +80,14 @@ class Task extends HTMLTableRowElement {
      */
     this.focusButton = this.setupFocusButton();
 
+    this.taskUpButton = this.setupTaskUpButton();
+    this.taskDownButton = this.setupTaskDownButton();
+
     this.setupLastColumnToggle(this.threeDotsButton,
-      this.deleteButton.parentElement, this.focusButton.parentElement);
+      this.deleteButton,
+      this.focusButton,
+      this.taskUpButton,
+      this.taskDownButton);
   }
 
   /**
@@ -94,10 +100,18 @@ class Task extends HTMLTableRowElement {
     checkBox.setAttribute('type', 'checkbox');
     checkBox.setAttribute('id', `checkbox-${this.id}`);
     checkBox.setAttribute('class', 'custom_checkbox');
+    const icon = document.createElement('label');
+    icon.setAttribute('id', `done-${this.id}`);
+    icon.setAttribute('for', `checkbox-${this.id}`);
+    icon.setAttribute('class', 'material-icons');
+    icon.textContent = 'check_box';
+    icon.addEventListener('mouseenter', () => { icon.textContent = 'check_box_outline_blank'; });
+    icon.addEventListener('mouseleave', () => { icon.textContent = 'check_box'; });
     firstCol.appendChild(checkBox);
+    firstCol.appendChild(icon);
     this.appendChild(firstCol);
-    // undisable the checkbox by default (updated by the todolistdom class)
-    checkBox.disabled = false;
+    // disable the checkbox by default (updated by the todolistdom class)
+    checkBox.disabled = true;
 
     if (this.checked) {
       this.setAttribute('class', classNames.completedTaskClassName);
@@ -156,15 +170,8 @@ class Task extends HTMLTableRowElement {
    */
   setupDeleteButton() {
     const deleteBtn = document.createElement('button');
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttributeNS(null, 'd', svg.trashcan);
-    const svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgTag.appendChild(path);
-    svgTag.setAttribute('class', classNames.deleteSvg);
-    deleteBtn.appendChild(svgTag);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(deleteBtn);
+    deleteBtn.className = 'material-icons delete-single';
+    deleteBtn.textContent = 'delete';
     deleteBtn.addEventListener('click', () => {
       this.onDelete();
     });
@@ -178,24 +185,17 @@ class Task extends HTMLTableRowElement {
    */
   setupFocusButton() {
     const focusBtn = document.createElement('button');
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttributeNS(null, 'd', svg.star);
-    const svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgTag.setAttribute('class', classNames.focusSvg);
-    svgTag.appendChild(path);
-    focusBtn.appendChild(svgTag);
-    const inlineDiv = document.createElement('div');
-    inlineDiv.className = classNames.inlineDiv;
-    inlineDiv.appendChild(focusBtn);
+    focusBtn.className = 'material-icons focus';
+    focusBtn.textContent = 'keyboard_double_arrow_up';
 
     // hide the button if the task came from local storage and was checked
     if (this.checked) {
-      focusBtn.parentElement.style.display = 'none';
+      focusBtn.style.display = 'none';
     }
 
     focusBtn.addEventListener('click', () => {
-      this.threeDotsButton.parentElement.style.display = 'block';
-      focusBtn.parentElement.parentElement.style.display = 'none';
+      this.threeDotsButton.parentElement.style.display = 'flex';
+      focusBtn.parentElement.style.display = 'none';
       const event = new CustomEvent('focus-task', {
         bubbles: true,
         composed: true,
@@ -209,6 +209,53 @@ class Task extends HTMLTableRowElement {
     return focusBtn;
   }
 
+  setupTaskUpButton() {
+    const taskUpBtn = document.createElement('button');
+    taskUpBtn.className = 'material-icons task-up';
+    taskUpBtn.textContent = 'keyboard_arrow_up';
+
+    if (this.checked) {
+      taskUpBtn.style.display = 'none';
+    }
+
+    taskUpBtn.addEventListener('click', () => {
+      this.threeDotsButton.parentElement.style.display = 'flex';
+      taskUpBtn.parentElement.style.display = 'none';
+      const event = new CustomEvent('task-up', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          taskID: this.id,
+        },
+      });
+      document.body.dispatchEvent(event);
+    });
+    return taskUpBtn;
+  }
+
+  setupTaskDownButton() {
+    const taskDownBtn = document.createElement('button');
+    taskDownBtn.className = 'material-icons task-down';
+    taskDownBtn.textContent = 'keyboard_arrow_down';
+    if (this.checked) {
+      taskDownBtn.style.display = 'none';
+    }
+
+    taskDownBtn.addEventListener('click', () => {
+      this.threeDotsButton.parentElement.style.display = 'flex';
+      taskDownBtn.parentElement.style.display = 'none';
+      const event = new CustomEvent('task-down', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          taskID: this.id,
+        },
+      });
+      document.body.dispatchEvent(event);
+    });
+    return taskDownBtn;
+  }
+
   /**
    * Setups up the three dots "show more" button. Wrapped inside a div so it
    * can easily dissapear and appear on clicks
@@ -216,13 +263,11 @@ class Task extends HTMLTableRowElement {
    */
   setupThreeDotsButton() {
     const button = document.createElement('button');
-    const threeDots = document.createElement('div');
-    threeDots.className = classNames.threeDots;
-    button.appendChild(threeDots);
-
+    button.className = 'material-icons three-dots';
+    button.textContent = 'more_vert';
     button.addEventListener('click', () => {
       button.parentElement.style.display = 'none';
-      this.deleteButton.parentElement.parentElement.style.display = 'inline-block';
+      this.deleteButton.parentElement.style.display = 'flex';
     });
 
     return button;
@@ -237,25 +282,27 @@ class Task extends HTMLTableRowElement {
    * @param {HTMLDivElement} focusDiv - div where the focus button is located
    */
   setupLastColumnToggle(threeDotsButton, deleteDiv,
-    focusDiv) {
+    focusDiv, taskUpDiv, taskDownDiv) {
     const lastCol = document.createElement('td');
     const lastColDiv = document.createElement('div');
     const threeDotsDiv = document.createElement('div');
-    const deleteFocusDiv = document.createElement('div');
+    const ButtonsDiv = document.createElement('div');
 
     // wrap the delete and focus buttons in a div
-    deleteFocusDiv.className = classNames.doubleButtons;
-    deleteFocusDiv.appendChild(deleteDiv);
-    deleteFocusDiv.appendChild(focusDiv);
+    ButtonsDiv.className = classNames.doubleButtons;
+    ButtonsDiv.appendChild(deleteDiv);
+    ButtonsDiv.appendChild(focusDiv);
+    ButtonsDiv.appendChild(taskUpDiv);
+    ButtonsDiv.appendChild(taskDownDiv);
     // wrap the three dots button in a div
     threeDotsDiv.appendChild(threeDotsButton);
     threeDotsDiv.className = classNames.threeDotsWrapper;
 
     // make sure the delete and focus buttons are hidden
-    deleteFocusDiv.style.display = 'none';
+    ButtonsDiv.style.display = 'none';
     lastColDiv.appendChild(threeDotsDiv);
     lastColDiv.className = classNames.lastCol;
-    lastColDiv.appendChild(deleteFocusDiv);
+    lastColDiv.appendChild(ButtonsDiv);
     lastCol.appendChild(lastColDiv);
     this.appendChild(lastCol);
   }
@@ -276,14 +323,16 @@ class Task extends HTMLTableRowElement {
    * Update method to edit task name
    */
   updateText() {
-    this.children[1].textContent = this.name;
+    this.querySelector(`#text-${this.id}`).textContent = this.name;
+    // this.children[1].textContent = this.name;
   }
 
   /**
    * This updates the pomo sessions when a session is complete
    */
   updatePomoSessions() {
-    this.children[2].textContent = `${this.currentSessionNum}/${this.totalSessions}`;
+    this.querySelector(`#pomoSessions-${this.id}`).textContent = `${this.currentSessionNum}/${this.totalSessions}`;
+    // this.children[2].textContent = `${this.currentSessionNum}/${this.totalSessions}`;
   }
 
   /**
@@ -325,7 +374,11 @@ class Task extends HTMLTableRowElement {
     });
 
     this.dispatchEvent(event);
-    this.focusButton.parentElement.style.display = 'none';
+    const buttonsDiv = this.focusButton.parentElement;
+    buttonsDiv.style.display = 'none';
+    for (let i = 1; i < buttonsDiv.children.length; i += 1) {
+      buttonsDiv.children[i].style.display = 'none';
+    }
     this.updateLocalStorage();
   }
 
@@ -335,7 +388,11 @@ class Task extends HTMLTableRowElement {
   uncheckTask() {
     this.checked = false;
     this.setAttribute('class', classNames.uncheckedTaskClassName);
-    this.focusButton.parentElement.style.display = 'inline-block';
+    const buttonsDiv = this.focusButton.parentElement;
+    buttonsDiv.style.display = 'flex';
+    for (let i = 1; i < buttonsDiv.children.length; i += 1) {
+      buttonsDiv.children[i].style.display = 'inline-block';
+    }
     this.checkBox.disabled = false;
     this.updateLocalStorage();
   }

@@ -136,6 +136,11 @@ const currentTaskDiv = document.getElementById('currentTask');
 const tourButton = document.getElementById('onboardingButton');
 
 /**
+ * Button to complete current task (replaces checkbox functionality)
+ * @type {HTMLButtonElement}
+ */
+const finishTaskBtn = document.getElementById('finishTask');
+/**
  * @type {Statistics}
  */
 const StatsPage = new Statistics();
@@ -143,7 +148,7 @@ const StatsPage = new Statistics();
  * @type {TodoListDom} DOM handler for the ToDo List data structure
  */
 const TDLDom = new TodoListDom(todoTable, addTodoForm, addTodoButton,
-  deleteAllButton, currentTaskDiv);
+  deleteAllButton, finishTaskBtn, currentTaskDiv);
 
 /**
  * @type {Timer}
@@ -263,6 +268,16 @@ TimerObj.addEventListener('timer-end', () => {
   showTasklist();
 });
 
+document.body.addEventListener('task-up', (e) => {
+  TDLDom.moveTaskUp(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
+document.body.addEventListener('task-down', (e) => {
+  TDLDom.moveTaskDown(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
 /**
  * Event that fires when someone focuses on a certain task
  */
@@ -310,7 +325,7 @@ window.addEventListener('click', (e) => {
     const threeDotButtonList = document.getElementsByClassName(classNames.threeDotsWrapper);
     for (let i = 0; i < buttonPairList.length; i += 1) {
       buttonPairList[i].style.display = 'none';
-      threeDotButtonList[i].style.display = 'block';
+      threeDotButtonList[i].style.display = 'flex';
     }
   }
 });
