@@ -1,5 +1,5 @@
 import {
-  sessionStartName, workMode, shortBreakMode, longBreakMode, buttonText,
+  sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
 import { timeToString } from '../Misc/UtilityFunctions.js';
 /**
@@ -46,7 +46,6 @@ class Timer extends HTMLElement {
      * @type {HTMLElement}
      */
     this.displayStatus = displayStatus;
-
     /**
      * HTML tag for controlling the focus timer length
      * @type {HTMLElement}
@@ -137,6 +136,29 @@ class Timer extends HTMLElement {
    */
   onTimerComplete() {
     const completedSession = this.stateQueue.shift();
+
+    // Gets current state to determine which notification to give.
+    const currentState = this.stateQueue[0].name;
+    const iconUrl = './assets/img/webicon.png';
+    if (Notification.permission === 'granted') {
+      if (currentState === 'Short Break') {
+        new Notification('Pomo XV', {
+          body: 'Time for a short break!',
+          icon: iconUrl,
+        });
+      } else if (currentState === 'Working Time') {
+        new Notification('Pomo XV', {
+          body: 'Time to work!',
+          icon: iconUrl,
+        });
+      } else if (currentState === 'Long Break') {
+        new Notification('Pomo XV', {
+          body: 'Time for a long break!',
+          icon: iconUrl,
+        });
+      }
+    }
+
     this.stateQueue.push(completedSession);
     const event = new CustomEvent('timer-complete', {
       detail: {
@@ -203,6 +225,15 @@ class Timer extends HTMLElement {
     }
     const event = new CustomEvent('timer-end');
     this.dispatchEvent(event);
+  }
+
+  /**
+   * Reset the current work session, used for distraction
+   */
+  resetSession() {
+    this.timerWorker.postMessage(-1);
+    this.updateDisplay();
+    this.displayStatus.textContent = distractionMessage;
   }
 
   /**

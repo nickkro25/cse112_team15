@@ -32,7 +32,7 @@
   --scroll-color: var(--even-color);
 
   /* table row spacing */
-  --td-border-radius: 22px;
+  --td-border-radius: 2px;
   --table-border: 12px;
   --table-row-margin: 20px;
 
@@ -75,7 +75,7 @@ a.brand-logo {
   margin-left: 1vw;
 }
 
-a.brand-logo li {
+a.brand-logo span {
   margin-left: 1vw;
 }
 
@@ -159,6 +159,7 @@ a.brand-logo li {
   top: 10px;
   margin: 10px;
   font-size: 80%;
+  font-weight: normal;
 }
 
 #timeDisplay {
@@ -198,7 +199,7 @@ html {
   }
 }
 
-@media screen and (max-height: 550px) {
+/* @media screen and (max-height: 550px) {
   #timerContainer {
     height: 50vh;
   }
@@ -208,7 +209,7 @@ html {
       height: 240px;
     }
   }
-}
+} */
 
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
@@ -217,6 +218,10 @@ html {
 
   #startTimer {
     font-size: 75%;
+  }
+
+  #finishTask {
+    font-size: 50%;
   }
 
   #timeDisplay {
@@ -315,6 +320,10 @@ a {
     padding: 0 5px;
   }
 
+  #finishTask {
+    margin: 5px 0;
+  }
+
   #timeDisplay {
     position: relative;
     top: 0;
@@ -323,5 +332,23 @@ a {
     height: 130px;
     left: 0;
     font-size: 240%;
+  }
+}
+
+#timerContainer.focus {
+  transform: translate(0, 30%);
+}
+
+#currentTask.focus {
+  transform: translate(0, 270%);
+}
+
+@media screen and (max-width: 600px) {
+  #timerContainer.focus {
+    transform: translate(0, 40%);
+  }
+  
+  #currentTask.focus {
+    transform: translate(0, 250%);
   }
 }

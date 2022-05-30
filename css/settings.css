@@ -5,7 +5,7 @@
   right: 2%;
   padding: 5px 25px 25px 25px;
   border-radius: 25px;
-  transition-duration: 1.5s;
+  transition-duration: 2s;
   z-index: 2;
 }
 
@@ -20,7 +20,7 @@
 }
 
 #settingsPopup * {
-  transition-duration: 1.5s;
+  transition-duration: 2s;
 }
 
 #settingsHeader {
@@ -28,6 +28,7 @@
   margin-top: 10px;
   font-size: 2em;
   text-align: center;
+  font-weight: normal;
 }
 
 #settingsContent label {
@@ -90,6 +91,11 @@
 #autoStartGroup {
   grid-row: 4;
   grid-column: 1;
+}
+
+#deviceNotUsedGroup {
+  grid-row: 4;
+  grid-column: 2;
 }
 
 /* slider stuff from w3schools */
