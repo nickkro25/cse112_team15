@@ -233,6 +233,7 @@ function updateDarkMode() {
     document.getElementById('onboardingButton').style.backgroundColor = null;
     document.getElementById('nav-wrapper').style.backgroundColor = null;
     document.getElementById('startTimer').style.backgroundColor = null;
+    document.getElementById('finishTask').style.backgroundColor = null;
     document.getElementById('delete-all-button').style.backgroundColor = null;
     document.getElementById('add-button').style.backgroundColor = null;
     document.getElementById('taskListHeader').style.backgroundColor = null;
