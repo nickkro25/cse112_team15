@@ -164,11 +164,15 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+const navButtons = [document.getElementById('faqButton'),
+  document.getElementById('statsButton'),
+  document.getElementById('settingsButton'),
+  document.getElementById('onboardingButton')];
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
   // eslint-disable-next-line
-  introJs().start(); 
+  introJs().start();
   localStorage.setItem('onboarding', 'true');
 }
 
@@ -232,20 +236,14 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    // hide all buttons on focus
+    navButtons.forEach((element) => { element.style.display = 'none'; });
     distractedByDevice.startPomoTime();
-    //  hide all buttons on timer-start
-    document.getElementById('faqButton').style.display = 'none';
-    document.getElementById('statsButton').style.display = 'none';
-    document.getElementById('settingsButton').style.display = 'none';
-    document.getElementById('onboardingButton').style.display = 'none';
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
-    //  unhide buttons on break time
-    document.getElementById('faqButton').style.display = 'inline-block';
-    document.getElementById('statsButton').style.display = 'inline-block';
-    document.getElementById('settingsButton').style.display = 'inline-block';
-    document.getElementById('onboardingButton').style.display = 'inline-block';
+    // unhide buttons on break time
+    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
   }
 });
 
@@ -254,13 +252,11 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
-  //  unhide buttons
-  document.getElementById('faqButton').style.display = 'inline-block';
-  document.getElementById('statsButton').style.display = 'inline-block';
-  document.getElementById('settingsButton').style.display = 'inline-block';
-  document.getElementById('onboardingButton').style.display = 'inline-block';
+  // show all buttons when timer ends
+  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
 });
 
 /**
