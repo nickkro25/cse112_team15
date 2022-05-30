@@ -18,28 +18,34 @@ class Timer {
      */
     this.duration = 0;
     /**
-     * Check whether timer should end
-     * @type {Boolean}
+     * Keep track of timeout ID so that it can be interrupted
+     * @type {Number}
      */
-    this.end = false;
+    this.timeoutID = 0;
   }
 
   /**
    * Count down from the given duration
    */
   countdown() {
-    if (this.end) return;
     const displayString = timeToString(this.duration);
     postMessage(displayString);
     this.duration -= 1;
     if (this.duration >= 0) {
-      setTimeout(() => {
+      this.timeoutID = setTimeout(() => {
         this.countdown();
       }, 1000);
     } else {
       // Post -1 if count down is complete
       postMessage(-1);
     }
+  }
+
+  /**
+   * End the timer by interrupting the timeout
+   */
+  endTimer() {
+    clearTimeout(this.timeoutID);
   }
 }
 
@@ -49,9 +55,8 @@ onmessage = (e) => {
   // If message is -1 then end timer
   if (e.data !== -1) {
     timer.duration = e.data;
-    timer.end = false;
     timer.countdown();
   } else {
-    timer.end = true;
+    timer.endTimer();
   }
 };
