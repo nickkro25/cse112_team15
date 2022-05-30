@@ -169,11 +169,15 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+const navButtons = [document.getElementById('faqButton'),
+  document.getElementById('statsButton'),
+  document.getElementById('settingsButton'),
+  document.getElementById('onboardingButton')];
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
   // eslint-disable-next-line
-  introJs().start(); 
+  introJs().start();
   localStorage.setItem('onboarding', 'true');
 }
 
@@ -249,11 +253,15 @@ function showTasklist() {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    // hide all buttons on focus
+    navButtons.forEach((element) => { element.style.display = 'none'; });
     distractedByDevice.startPomoTime();
     hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
+    // unhide buttons on break time
+    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
     showTasklist();
   }
 });
@@ -263,8 +271,11 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+  // show all buttons when timer ends
+  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
   showTasklist();
 });
 
