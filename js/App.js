@@ -271,8 +271,6 @@ TimerObj.addEventListener('timer-end', () => {
 document.body.addEventListener('focus-task', (e) => {
   TDLDom.onFocusTask(e.detail.taskID);
   TDLDom.updateCurrentTask();
-
-  
 });
 
 /**
