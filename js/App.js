@@ -2,7 +2,7 @@ import { TodoListDom } from './ToDoList/TodoListDom.js';
 import { Timer } from './Timer/Timer.js';
 import { Statistics } from './Statistics/Statistics.js';
 import { Distraction } from './Distraction/Distraction.js';
-import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
+import { longBreakColors, shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
 import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
@@ -205,7 +205,12 @@ TimerObj.addEventListener('timer-complete', (e) => {
     TDLDom.onSessionComplete();
     StatsPage.addWorkTime(e.detail.duration);
     StatsPage.incrementActualPomoSessions();
-    shortBreakColors();
+
+    if (e.detail.nextSessionName === 'Short Break') {
+      shortBreakColors();
+    } else {
+      longBreakColors();
+    }
     breakModeSound();
   } else {
     StatsPage.addTimeSpent(e.detail.duration);

@@ -31,6 +31,36 @@
   font-weight: normal;
 }
 
+#colorPickerContent {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
+  row-gap: 1rem;
+  color: var(--modal-font-color);
+  transition-duration: 0s;
+}
+
+#colorChangeHeader {
+  margin-top: 1.3em;
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--modal-font-color);
+}
+
+.colorSelectorDiv {
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 1rem;
+  transition-duration: 0s;
+}
+
+.colorPicker {
+  text-align: center;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #settingsContent label {
   color: var(--modal-font-color);
 }

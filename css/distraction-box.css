@@ -47,7 +47,7 @@
   border-style: none;
   font-size: 20px;
   border-radius: 10px;
-  background-color: darkcyan;
+  background-color: var(--page-bg-color);
   color: white;
   padding: 10px;
   width: 100%;
@@ -57,13 +57,17 @@
   font-weight: 550;
 }
 
+#submit-button {
+  color: var(--font-color);
+}
+
 .cancel {
   background-color: #b32626;
 }
 
 .distractFormButton:hover,
 .distractFormButton:focus {
-  background-color: darkcyan;
+  background-color: var(--page-bg-color);
   text-decoration: none;
   cursor: pointer;
   opacity: 1;

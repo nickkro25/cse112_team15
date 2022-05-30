@@ -21,7 +21,8 @@ table {
 
   /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
-  background-color: var(--toothpaste);
+  background-color: var(--table-bg-color);
+  transition-duration: 2s;
 }
 
 th,
@@ -256,7 +257,7 @@ tr.uncheckedTask:nth-child(2) td {
 }
 
 #tasklist::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 /* flex display for triple dot container for alignment purposes */
