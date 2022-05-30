@@ -345,10 +345,10 @@ a {
 
 @media screen and (max-width: 600px) {
   #timerContainer.focus {
-    transform: translate(0, 60%);
+    transform: translate(0, 40%);
   }
   
   #currentTask.focus {
-    transform: translate(0, 300%);
+    transform: translate(0, 250%);
   }
 }
