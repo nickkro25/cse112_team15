@@ -232,13 +232,12 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    distractedByDevice.startPomoTime();
     // hide all buttons on focus
     document.getElementById('faqButton').style.display = 'none';
     document.getElementById('statsButton').style.display = 'none';
     document.getElementById('settingsButton').style.display = 'none';
     document.getElementById('onboardingButton').style.display = 'none';
-
-    distractedByDevice.startPomoTime();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
@@ -255,14 +254,15 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+  distractedByDevice.endPomoTime();
+  DistractionPage.resetPopUp();
   // show all buttons when timer ends
   document.getElementById('faqButton').style.display = 'inline-block';
   document.getElementById('statsButton').style.display = 'inline-block';
   document.getElementById('settingsButton').style.display = 'inline-block';
   document.getElementById('onboardingButton').style.display = 'inline-block';
 
-  distractedByDevice.endPomoTime();
-  DistractionPage.resetPopUp();
+  
 });
 
 /**
