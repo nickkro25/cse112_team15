@@ -225,6 +225,18 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
+function hideTasklist() {
+  document.getElementById('tasklist').style.display = 'none';
+  document.getElementById('timerContainer').classList.add('focus');
+  document.getElementById('currentTask').classList.add('focus');
+}
+
+function showTasklist() {
+  document.getElementById('tasklist').style.display = null;
+  document.getElementById('timerContainer').classList.remove('focus');
+  document.getElementById('currentTask').classList.remove('focus');
+}
+
 /**
  * When a session is started:
  * If it is a work session, disable distraction button, otherwise enable the distraction button
@@ -233,9 +245,11 @@ TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
     distractedByDevice.startPomoTime();
+    hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
+    showTasklist();
   }
 });
 
@@ -246,6 +260,7 @@ TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+  showTasklist();
 });
 
 /**
