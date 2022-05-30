@@ -14,7 +14,7 @@
 
 .short-break tr:hover td {
   background-image: linear-gradient(transparent, var(--tr-hover-color-short));
-  transition-duration: 0;
+  transition-duration: 0s;
 }
 
 .short-break tr:nth-child(even):not(.completedTask) td {

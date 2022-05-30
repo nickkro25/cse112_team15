@@ -234,6 +234,7 @@ class Timer extends HTMLElement {
     this.timerWorker.postMessage(-1);
     this.updateDisplay();
     this.displayStatus.textContent = distractionMessage;
+    document.title = 'Distracted';
   }
 
   /**
