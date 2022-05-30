@@ -15,7 +15,7 @@ class TodoListDom {
    * @param {HTMLButtonElement} submitBtn - Button to submit the entered tasks
    * @param {HTMLButtonElement} deleteAllBtn - Delete all tasks button
    */
-  constructor(HTMLTable, HTMLForm, submitBtn, deleteAllBtn, currentTaskDiv) {
+  constructor(HTMLTable, HTMLForm, submitBtn, deleteAllBtn, finishTaskBtn, currentTaskDiv) {
     /**
      * Holds the TodoList so the Dom Manager can acess it
      * @type {ToDoList}
@@ -36,6 +36,11 @@ class TodoListDom {
      * @type {HTMLButtonElement}
      */
     this.deleteAllBtn = deleteAllBtn;
+    /**
+     * The button where users click to check off the current task
+     * @type {HTMLButtonElement}
+     */
+    this.finishTaskBtn = finishTaskBtn;
     /**
      * The table where the todolist is displayed
      * @type {HTMLTableElement}
@@ -119,6 +124,7 @@ class TodoListDom {
 
   /**
    * Sets up the form dissapearing and submit event listeners
+   * Also set up finish task button
    */
   setupEventListeners() {
     // event listener for form submit
@@ -154,6 +160,10 @@ class TodoListDom {
           list[0].deleteButton.click();
         }
       });
+    });
+
+    this.finishTaskBtn.addEventListener('click', () => {
+      this.todoList.getCurrentTask().checkBox.click();
     });
   }
 
@@ -223,7 +233,14 @@ class TodoListDom {
     const firstCompletedTaskIndex = this.getFirstCompletedTaskIndex();
     uncheckedTask.onDelete();
     this.todoList.addTaskToEnd(uncheckedTask);
-    this.displayTask(uncheckedTask, firstCompletedTaskIndex);
+    // this is for unchecked tasks that end up in the same spot in the list
+    // if the task before the first completed task is the task we just unchecked..
+    // then keep it in the same spot
+    if (this.todoList.taskList[firstCompletedTaskIndex - 3] === uncheckedTask) {
+      this.displayTask(uncheckedTask, firstCompletedTaskIndex - 1);
+    } else {
+      this.displayTask(uncheckedTask, firstCompletedTaskIndex);
+    }
   }
 
   /**
@@ -240,13 +257,17 @@ class TodoListDom {
     if (this.currentTask === null && nextTask === null) {
       // no currentTask, nothing in table
       this.currentTaskDiv.textContent = 'No current task';
+      this.finishTaskBtn.disabled = true;
     } else if (this.currentTask === null && nextTask !== null) {
       // no currentTask, something in table
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.finishTaskBtn.disabled = false;
     } else if (this.currentTask !== null && nextTask === null) { // last task completed
       this.currentTaskDiv.textContent = 'No current task';
+      this.finishTaskBtn.disabled = true;
     } else if (this.currentTask !== nextTask) {
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.finishTaskBtn.disabled = false;
     }
     this.currentTask = nextTask;
     if (this.currentTask != null) this.currentTask.checkBox.disabled = false;
@@ -272,9 +293,60 @@ class TodoListDom {
     clickedTask.onDelete();
     this.currentTask.checkBox.disabled = false;
     this.displayTask(clickedTask, currentTaskIndex);
-
     // remove the task and add it back to the top
     this.todoList.addTaskToTop(clickedTask);
+  }
+
+  moveTaskUp(id) {
+    const rows = this.table.childNodes;
+    let currentTaskIndex = -1;
+    // find index of the current task
+    for (let i = 2; i < rows.length; i += 1) {
+      if (rows[i].id === id && currentTaskIndex === -1) {
+        currentTaskIndex = i;
+        break;
+      }
+    }
+
+    // don't do anything if it's the first task in the list
+    if (currentTaskIndex === 2) {
+      return;
+    }
+
+    const clickedTask = this.todoList.getTaskById(id);
+    // disable the old tasks checkbox because it has not been clicked yet
+    clickedTask.onDelete();
+    this.currentTask.checkBox.disabled = false;
+    // insert task before the previous task in the table
+    this.displayTask(clickedTask, currentTaskIndex - 1);
+
+    this.todoList.shiftTaskUp(clickedTask, currentTaskIndex);
+  }
+
+  moveTaskDown(id) {
+    const rows = this.table.childNodes;
+    let currentTaskIndex = -1;
+    // find index of the current task. Tasks start in the row thing at index 2
+    for (let i = 2; i < rows.length; i += 1) {
+      if (rows[i].id === id && currentTaskIndex === -1) {
+        currentTaskIndex = i;
+      }
+    }
+
+    // don't move task down if it's the last task or if the next task is a checked task
+    const firstCompletedTaskIndex = this.getFirstCompletedTaskIndex();
+    if (currentTaskIndex === rows.length - 1 || currentTaskIndex + 1 === firstCompletedTaskIndex) {
+      return;
+    }
+
+    const clickedTask = this.todoList.getTaskById(id);
+    // disable the old tasks checkbox because it has not been clicked yet
+    clickedTask.onDelete(); // delete current task from everything
+    this.currentTask.checkBox.disabled = true;
+    this.displayTask(clickedTask, currentTaskIndex + 1);
+
+    // shift the task down in localStorage and in 'taskList'
+    this.todoList.shiftTaskDown(clickedTask, currentTaskIndex);
   }
 }
 

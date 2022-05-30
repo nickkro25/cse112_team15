@@ -188,3 +188,23 @@ test('Unchecked Task Event', () => {
   const event = new CustomEvent('task-unchecked', {});
   aList.taskList[0].dispatchEvent(event);
 });
+
+test('Move third task up', () => {
+  const aList = new ToDoList();
+  aList.addTask('name', 1);
+  aList.addTask('name2', 1);
+  aList.addTask('name3', 1);
+  aList.addTask('name4', 1);
+  aList.shiftTaskUp(aList.taskList[2], 4);
+  expect(aList.taskList[1].name).toBe('name3');
+});
+
+test('Move third task down', () => {
+  const aList = new ToDoList();
+  aList.addTask('name', 1);
+  aList.addTask('name2', 1);
+  aList.addTask('name3', 1);
+  aList.addTask('name4', 1);
+  aList.shiftTaskDown(aList.taskList[2], 4);
+  expect(aList.taskList[3].name).toBe('name3');
+});
