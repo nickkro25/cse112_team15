@@ -71,6 +71,11 @@ class Timer extends HTMLElement {
      * @type {Worker}
      */
     this.timerWorker = new Worker('./js/Timer/TimerWorker.js');
+    /**
+     * String which will be
+     * @type {Notification}
+     */
+     this.notificationString = '';
     // Recieve message from web worker and update display
     this.timerWorker.onmessage = (e) => {
       if (e.data !== -1) {
@@ -137,27 +142,31 @@ class Timer extends HTMLElement {
   onTimerComplete() {
     const completedSession = this.stateQueue.shift();
 
-    // Gets current state to determine which notification to give.
-    const currentState = this.stateQueue[0].name;
-    const iconUrl = './assets/img/webicon.png';
-    if (Notification.permission === 'granted') {
-      if (currentState === 'Short Break') {
-        new Notification('Pomo XV', {
-          body: 'Time for a short break!',
-          icon: iconUrl,
-        });
-      } else if (currentState === 'Working Time') {
-        new Notification('Pomo XV', {
-          body: 'Time to work!',
-          icon: iconUrl,
-        });
-      } else if (currentState === 'Long Break') {
-        new Notification('Pomo XV', {
-          body: 'Time for a long break!',
-          icon: iconUrl,
-        });
-      }
-    }
+   // Gets current state to determine which notification to give.
+   const currentState = this.stateQueue[0].name;
+   const iconUrl = './assets/img/webicon.png';
+   if (Notification.permission === 'granted') {
+     if (currentState === 'Short Break') {
+       const notificationString = 'Time for a short break!';
+       new Notification('Pomo XV', {
+         body: notificationString,
+         icon: iconUrl,
+       });
+     } else if (currentState === 'Working Time') {
+       const notificationString = 'Time to work!';
+       new Notification('Pomo XV', {
+         body: notificationString,
+         icon: iconUrl,
+       });
+     } else if (currentState === 'Long Break') {
+       const notificationString = "Time for a long break!";
+       new Notification('Pomo XV', {
+         body: notificationString,
+         icon: iconUrl,
+       });
+     }
+   }
+
 
     this.stateQueue.push(completedSession);
     const event = new CustomEvent('timer-complete', {
