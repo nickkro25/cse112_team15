@@ -143,11 +143,9 @@ class TodoListDom {
       const deleteAllModal = document.getElementById('delete-all-modal-container');
       const cancelDeleteAll = document.getElementById('cancel-delete-all');
       const confirmDeleteAll = document.getElementById('confirm-delete-all');
-
       cancelDeleteAll.addEventListener('click', () => {
         deleteAllModal.style.display = 'none';
       });
-      
       deleteAllModal.style.display = 'flex';
       confirmDeleteAll.addEventListener('click', () => {
         deleteAllModal.style.display = 'none';
@@ -156,7 +154,6 @@ class TodoListDom {
           list[0].deleteButton.click();
         }
       });
-      
     });
   }
 
