@@ -199,7 +199,7 @@ html {
   }
 }
 
-@media screen and (max-height: 550px) {
+/* @media screen and (max-height: 550px) {
   #timerContainer {
     height: 50vh;
   }
@@ -209,7 +209,7 @@ html {
       height: 240px;
     }
   }
-}
+} */
 
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
