@@ -313,8 +313,8 @@ describe('Variables function correctly', () => {
     Stats = new Statistics();
     expect(Stats.dataToCompressExists()).toBeTruthy();
     console.log(new Date());
-    console.log(new Date(today.getFullYear() + 1, today.getMonth() + 1, today.getDate() + 1, 3, 0, 0));
-    localStorage.setItem('startDateTime', new Date(today.getFullYear() + 1, today.getMonth() + 1, today.getDate() + 1, 3, 0, 0));
+    console.log(new Date(today.getFullYear(), today.getMonth(), today.getDate(), 3, 0, 0));
+    localStorage.setItem('startDateTime', new Date(today.getFullYear(), today.getMonth(), today.getDate(), 3, 0, 0));
     Stats = new Statistics();
     expect(Stats.dataToCompressExists()).toBeFalsy();
   });
