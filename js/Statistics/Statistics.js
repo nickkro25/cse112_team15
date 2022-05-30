@@ -535,14 +535,20 @@ class Statistics extends HTMLElement {
     if (this.sessionStartDateTime.getFullYear() < currDate.getFullYear()) {
       return true;
     } if (this.sessionStartDateTime.getMonth() < currDate.getMonth()) {
+      console.log(this.sessionStartDateTime.getMonth());
+      console.log(currDate.getMonth());
       return true;
     } if (this.sessionStartDateTime.getDate() < currDate.getDate()) {
+      console.log(this.sessionStartDateTime.getDate());
+      console.log(currDate.getDate());
       return true;
     } if (this.sessionStartDateTime.getHours() <= 2) {
+      console.log(this.sessionStartDateTime.getHours());
       return true;
     }
     return false;
   }
+
 
   /**
    * Compresses necessary local variables to a history record and
