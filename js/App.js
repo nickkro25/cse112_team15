@@ -136,6 +136,11 @@ const currentTaskDiv = document.getElementById('currentTask');
 const tourButton = document.getElementById('onboardingButton');
 
 /**
+ * Button to complete current task (replaces checkbox functionality)
+ * @type {HTMLButtonElement}
+ */
+const finishTaskBtn = document.getElementById('finishTask');
+/**
  * @type {Statistics}
  */
 const StatsPage = new Statistics();
@@ -143,7 +148,7 @@ const StatsPage = new Statistics();
  * @type {TodoListDom} DOM handler for the ToDo List data structure
  */
 const TDLDom = new TodoListDom(todoTable, addTodoForm, addTodoButton,
-  deleteAllButton, currentTaskDiv);
+  deleteAllButton, finishTaskBtn, currentTaskDiv);
 
 /**
  * @type {Timer}
@@ -230,6 +235,18 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
+function hideTasklist() {
+  document.getElementById('tasklist').style.display = 'none';
+  document.getElementById('timerContainer').classList.add('focus');
+  document.getElementById('currentTask').classList.add('focus');
+}
+
+function showTasklist() {
+  document.getElementById('tasklist').style.display = null;
+  document.getElementById('timerContainer').classList.remove('focus');
+  document.getElementById('currentTask').classList.remove('focus');
+}
+
 /**
  * When a session is started:
  * If it is a work session, disable distraction button, otherwise enable the distraction button
@@ -238,9 +255,11 @@ TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
     distractedByDevice.startPomoTime();
+    hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
+    showTasklist();
   }
 });
 
@@ -251,6 +270,17 @@ TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+  showTasklist();
+});
+
+document.body.addEventListener('task-up', (e) => {
+  TDLDom.moveTaskUp(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
+document.body.addEventListener('task-down', (e) => {
+  TDLDom.moveTaskDown(e.detail.taskID);
+  TDLDom.updateCurrentTask();
 });
 
 /**
@@ -300,7 +330,7 @@ window.addEventListener('click', (e) => {
     const threeDotButtonList = document.getElementsByClassName(classNames.threeDotsWrapper);
     for (let i = 0; i < buttonPairList.length; i += 1) {
       buttonPairList[i].style.display = 'none';
-      threeDotButtonList[i].style.display = 'block';
+      threeDotButtonList[i].style.display = 'flex';
     }
   }
 });

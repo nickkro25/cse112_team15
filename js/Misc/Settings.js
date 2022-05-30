@@ -204,6 +204,7 @@ function updateDarkMode() {
     document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('finishTask').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
@@ -237,7 +238,6 @@ function updateDarkMode() {
     document.getElementById('taskListHeader').style.backgroundColor = null;
     document.getElementById('add-todo').style.backgroundColor = null;
     document.getElementById('todo').style.backgroundColor = null;
-    root.style.setProperty('--font-color', getFontColor(pageBGColor.val));
   }
 }
 

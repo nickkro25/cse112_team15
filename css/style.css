@@ -39,7 +39,7 @@
   --scroll-color: var(--even-color);
 
   /* table row spacing */
-  --td-border-radius: 22px;
+  --td-border-radius: 2px;
   --table-border: 12px;
   --table-row-margin: 20px;
 
@@ -230,6 +230,10 @@ html {
     font-size: 75%;
   }
 
+  #finishTask {
+    font-size: 50%;
+  }
+
   #timeDisplay {
     font-size: 240%;
   }
@@ -326,6 +330,10 @@ a {
     padding: 0 5px;
   }
 
+  #finishTask {
+    margin: 5px 0;
+  }
+
   #timeDisplay {
     position: relative;
     top: 0;
@@ -334,5 +342,23 @@ a {
     height: 130px;
     left: 0;
     font-size: 240%;
+  }
+}
+
+#timerContainer.focus {
+  transform: translate(0, 30%);
+}
+
+#currentTask.focus {
+  transform: translate(0, 270%);
+}
+
+@media screen and (max-width: 600px) {
+  #timerContainer.focus {
+    transform: translate(0, 60%);
+  }
+  
+  #currentTask.focus {
+    transform: translate(0, 300%);
   }
 }
