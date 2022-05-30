@@ -31,6 +31,10 @@ const autoStartSwitch = document.getElementById('autoStartSwitch');
  */
 const muteSwitch = document.getElementById('muteSwitch');
 /**
+ * @type {HTMLInputElement}
+ */
+const noDeviceSwitch = document.getElementById('noDeviceSwitch');
+/**
  * the selector for work sound
  * @type {HTMLSelectElement}
  */
@@ -124,6 +128,7 @@ function updateDarkMode() {
     document.getElementById('finishTask').style.backgroundColor = '#26a69a';
     document.getElementById('delete-all-button').style.backgroundColor = '#26a69a';
     document.getElementById('add-button').style.backgroundColor = '#26a69a';
+    document.getElementById('taskListHeader').style.backgroundColor = '#008B8B';
     document.getElementById('add-todo').style.backgroundColor = '#008B8B';
   }
 }
@@ -142,18 +147,18 @@ darkModeSwitch.addEventListener('change', () => {
 autoStartSwitch.addEventListener('change', () => {
   localStorage.setItem('autoStartSwitch', autoStartSwitch.checked);
 });
-
-/**
- * Update localStorage whenever settings are changed
- */
 muteSwitch.addEventListener('change', () => {
   localStorage.setItem('muteSwitch', muteSwitch.checked);
+});
+noDeviceSwitch.addEventListener('change', () => {
+  localStorage.setItem('noDeviceSwitch', noDeviceSwitch.checked);
 });
 
 // set values from localStorage
 darkModeSwitch.checked = localStorage.getItem('darkModeSwitch') == null ? false : localStorage.getItem('darkModeSwitch') === 'true';
 autoStartSwitch.checked = localStorage.getItem('autoStartSwitch') == null ? true : localStorage.getItem('autoStartSwitch') === 'true';
 muteSwitch.checked = localStorage.getItem('muteSwitch') == null ? false : localStorage.getItem('muteSwitch') === 'true';
+noDeviceSwitch.checked = localStorage.getItem('noDeviceSwitch') == null ? true : localStorage.getItem('noDeviceSwitch') === 'true';
 workSoundSelector.value = localStorage.getItem('workSoundSelector') == null ? 'marimba' : localStorage.getItem('workSoundSelector');
 breakSoundSelector.value = localStorage.getItem('breakSoundSelector') == null ? 'marimba' : localStorage.getItem('breakSoundSelector');
 changeSound(workSoundSelector, false);
