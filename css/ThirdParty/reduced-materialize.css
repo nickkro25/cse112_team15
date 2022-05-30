@@ -153,6 +153,7 @@ button,
 select {
   /* 1 */
   text-transform: none;
+  transition-duration: 2s;
 }
 
 /**
@@ -400,6 +401,7 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
+  transition-duration: 2s;
 }
 
 nav .brand-logo {
@@ -411,7 +413,7 @@ nav .brand-logo {
 }
 
 @media only screen and (max-width: 600px) {
-  .brand-logo li {
+  .brand-logo span {
     display: none;
   }
 
@@ -609,8 +611,8 @@ html {
   background-color: #26a69a;
   text-align: center;
   letter-spacing: 0.5px;
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
   cursor: pointer;
 }
 
@@ -631,8 +633,8 @@ html {
   padding: 0;
   background-color: #26a69a;
   border-radius: 50%;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: background-color 2s;
+  transition: background-color 2s;
   cursor: pointer;
   vertical-align: middle;
 }
@@ -700,8 +702,8 @@ button.btn-floating {
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   z-index: 1;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
 }
 
 .waves-effect input[type="button"],

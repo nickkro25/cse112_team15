@@ -5,6 +5,7 @@ import { Distraction } from './Distraction/Distraction.js';
 import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
+import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
 
 /**
  * Used to see if data needs to be cleared or not (if timer is started after 3 a.m. or not)
@@ -158,6 +159,16 @@ const TimerObj = new Timer(startTimerButton, timeDisplay, modeDisplay);
  */
 const DistractionPage = new Distraction(distractButton, distractPopUp,
   cancelButton, distractForm, description, overlay);
+/**
+ * The switch element in settings for this feature
+ * @type {HTMLInputElement}
+ */
+const noDeviceSwitch = document.getElementById('noDeviceSwitch');
+/**
+ * For handling device distractions
+ * @type {DistractedByDevice}
+ */
+const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
@@ -186,6 +197,7 @@ tourButton.addEventListener('click', () => {
  */
 TimerObj.addEventListener('timer-complete', (e) => {
   if (e.detail.sessionIsWork) { // if it was a work mode
+    distractedByDevice.endPomoTime();
     TDLDom.onSessionComplete();
     StatsPage.addWorkTime(e.detail.duration);
     StatsPage.incrementActualPomoSessions();
@@ -218,6 +230,18 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
+function hideTasklist() {
+  document.getElementById('tasklist').style.display = 'none';
+  document.getElementById('timerContainer').classList.add('focus');
+  document.getElementById('currentTask').classList.add('focus');
+}
+
+function showTasklist() {
+  document.getElementById('tasklist').style.display = null;
+  document.getElementById('timerContainer').classList.remove('focus');
+  document.getElementById('currentTask').classList.remove('focus');
+}
+
 /**
  * When a session is started:
  * If it is a work session, disable distraction button, otherwise enable the distraction button
@@ -225,8 +249,12 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    distractedByDevice.startPomoTime();
+    hideTasklist();
   } else {
     distractButton.disabled = true;
+    DistractionPage.resetPopUp();
+    showTasklist();
   }
 });
 
@@ -235,6 +263,9 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+  distractedByDevice.endPomoTime();
+  DistractionPage.resetPopUp();
+  showTasklist();
 });
 
 document.body.addEventListener('task-up', (e) => {
@@ -330,12 +361,17 @@ TDLDom.todoList.addEventListener('task-deleted', (e) => {
 /**
  * When a distraction is logged:
  * 1. Store the id of the session during which it occurred
- * 2. Store the distraction in task
+ * 2. Reset the current work session
+ * 3. Store the distraction in task
  */
-DistractionPage.addEventListener('distraction-created', (e) => {
+function distractionCreated(e) {
   e.detail.pomoSessionId = TimerObj.sessionId;
+  TimerObj.resetSession();
   StatsPage.addDistraction(e.detail);
-});
+}
+
+DistractionPage.addEventListener('distraction-created', distractionCreated);
+distractedByDevice.addEventListener('distraction-created', distractionCreated);
 
 /**
  * When End Day is clicked, set pomo session id back to zero to restart distraction count

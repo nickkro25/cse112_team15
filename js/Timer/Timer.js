@@ -1,5 +1,5 @@
 import {
-  sessionStartName, workMode, shortBreakMode, longBreakMode, buttonText,
+  sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
 import { timeToString } from '../Misc/UtilityFunctions.js';
 /**
@@ -46,7 +46,6 @@ class Timer extends HTMLElement {
      * @type {HTMLElement}
      */
     this.displayStatus = displayStatus;
-
     /**
      * HTML tag for controlling the focus timer length
      * @type {HTMLElement}
@@ -203,6 +202,15 @@ class Timer extends HTMLElement {
     }
     const event = new CustomEvent('timer-end');
     this.dispatchEvent(event);
+  }
+
+  /**
+   * Reset the current work session, used for distraction
+   */
+  resetSession() {
+    this.timerWorker.postMessage(-1);
+    this.updateDisplay();
+    this.displayStatus.textContent = distractionMessage;
   }
 
   /**
