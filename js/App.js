@@ -256,6 +256,7 @@ TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+  
   // show all buttons when timer ends
   document.getElementById('faqButton').style.display = 'inline-block';
   document.getElementById('statsButton').style.display = 'inline-block';
