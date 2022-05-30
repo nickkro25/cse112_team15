@@ -17,7 +17,7 @@ const distractionMessage = 'Session interrupted due to distraction!';
  */
 const workMode = {
   name: 'Working Time',
-  duration: .1,
+  duration: 25,
   isWork: true,
 };
 
