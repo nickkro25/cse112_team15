@@ -326,3 +326,21 @@ a {
     font-size: 240%;
   }
 }
+
+#timerContainer.focus {
+  transform: translate(0, 30%);
+}
+
+#currentTask.focus {
+  transform: translate(0, 270%);
+}
+
+@media screen and (max-width: 600px) {
+  #timerContainer.focus {
+    transform: translate(0, 60%);
+  }
+  
+  #currentTask.focus {
+    transform: translate(0, 300%);
+  }
+}
