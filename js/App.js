@@ -255,6 +255,11 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+  // show all buttons when timer ends
+  document.getElementById('faqButton').style.display = 'inline-block';
+  document.getElementById('statsButton').style.display = 'inline-block';
+  document.getElementById('settingsButton').style.display = 'inline-block';
+  document.getElementById('onboardingButton').style.display = 'inline-block';
 
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
@@ -267,11 +272,7 @@ document.body.addEventListener('focus-task', (e) => {
   TDLDom.onFocusTask(e.detail.taskID);
   TDLDom.updateCurrentTask();
 
-  // show all buttons when timer ends
-  document.getElementById('faqButton').style.display = 'inline-block';
-  document.getElementById('statsButton').style.display = 'inline-block';
-  document.getElementById('settingsButton').style.display = 'inline-block';
-  document.getElementById('onboardingButton').style.display = 'inline-block';
+  
 });
 
 /**
