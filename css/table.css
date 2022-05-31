@@ -21,6 +21,10 @@
   padding: 30px 50px;
 }
 
+h1 {
+  color: black;
+}
+
 #buttonContainers {
   display: flex;
   flex-direction: row-reverse;
