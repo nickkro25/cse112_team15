@@ -14,8 +14,10 @@ const breakNames = {
 const pageBGColor = {
   name: '--page-bg-color',
   shortName: '--page-bg-color-short',
-  val: 'cadetblue',
-  shortVal: '#336b87',
+  longName: '--page-bg-color-long',
+  val: localStorage.getItem('--page-bg-color'),
+  shortVal: localStorage.getItem('--page-bg-color-short'),
+  longVal: localStorage.getItem('--page-bg-color-long'),
   darkVal: '#363636',
 };
 
@@ -26,9 +28,11 @@ const pageBGColor = {
 const headerColor = {
   name: '--header-color',
   shortName: '--header-color-short',
-  val: 'darkcyan',
-  shortVal: '#4990b4',
-  darkVal: '2d2c2b',
+  longName: '--header-color-long',
+  val: localStorage.getItem('--header-color'),
+  shortVal: localStorage.getItem('--header-color-short'),
+  longVal: localStorage.getItem('--header-color-long'),
+  darkVal: '#2d2c2b',
 };
 
 /**
@@ -38,9 +42,25 @@ const headerColor = {
 const evenColor = {
   name: '--even-color',
   shortName: '--even-color-short',
-  val: 'rgba(149, 218, 229, 0.603)',
-  shortVal: '#98c7e9',
+  longName: '--even-color-long',
+  val: localStorage.getItem('--btn-icon-color'),
+  shortVal: localStorage.getItem('--btn-icon-color-short'),
+  longVal: localStorage.getItem('--btn-icon-color-long'),
   darkVal: 'lightslategray',
+};
+
+/**
+ * font color for the page
+ * @type {Object}
+ */
+const fontColor = {
+  name: '--font-color',
+  shortName: '--font-color-short',
+  longName: '--font-color-long',
+  val: localStorage.getItem('--font-color'),
+  shortVal: localStorage.getItem('--font-color-short'),
+  longVal: localStorage.getItem('--font-color-long'),
+  darkVal: 'white',
 };
 
 /**
@@ -85,5 +105,5 @@ const modalFontColor = {
 
 export {
   breakNames, pageBGColor, headerColor, toothpaste, tableBG, evenColor,
-  modalBGColor, modalFontColor,
+  modalBGColor, modalFontColor, fontColor,
 };

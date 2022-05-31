@@ -4,3 +4,4 @@ coverage/
 materialize.css
 package.json
 package-lock.json
+.idea/

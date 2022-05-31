@@ -153,6 +153,7 @@ button,
 select {
   /* 1 */
   text-transform: none;
+  transition-duration: 2s;
 }
 
 /**
@@ -395,23 +396,25 @@ nav i.material-icons {
   font-size: 24px;
   height: 56px;
   line-height: 56px;
+  color: var(--font-color);
 }
 
 nav .nav-wrapper {
   position: relative;
   height: 100%;
+  transition-duration: 2s;
 }
 
 nav .brand-logo {
   position: absolute;
-  color: #fff;
+  color: var(--font-color);
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
 }
 
 @media only screen and (max-width: 600px) {
-  .brand-logo li {
+  .brand-logo span {
     display: none;
   }
 
@@ -599,24 +602,24 @@ html {
 .btn:focus,
 .btn-large:focus,
 .btn-floating:focus {
-  background-color: #1d7d74;
+  background-color: colorShade(var(--btn-icon-color), 20);
 }
 
 .btn,
 .btn-large {
   text-decoration: none;
-  color: #fff;
-  background-color: #26a69a;
+  color: var(--font-color);
+  background-color: var(--btn-icon-color);
   text-align: center;
   letter-spacing: 0.5px;
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: var(--btn-icon-color);
 }
 
 .btn-floating {
@@ -629,16 +632,16 @@ html {
   height: 40px;
   line-height: 40px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: var(--btn-icon-color);
   border-radius: 50%;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: background-color 2s;
+  transition: background-color 2s;
   cursor: pointer;
   vertical-align: middle;
 }
 
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: var(--btn-icon-color);
 }
 
 .btn-floating::before {
@@ -659,7 +662,7 @@ html {
   width: inherit;
   display: inline-block;
   text-align: center;
-  color: #fff;
+  color: var(--font-color);
   font-size: 1.6rem;
   line-height: 40px;
 }
@@ -700,8 +703,8 @@ button.btn-floating {
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   z-index: 1;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
 }
 
 .waves-effect input[type="button"],
@@ -734,12 +737,12 @@ button.btn-floating {
 /* Firefox Bug: link not triggered */
 
 select:focus {
-  outline: 1px solid #c9f3ef;
+  outline: 1px solid colorShade(var(--page-bg-color), 100);
 }
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
+  background-color: var(--btn-icon-color);
 }
 
 

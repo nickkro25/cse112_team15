@@ -7,6 +7,9 @@ import Worker from './mockWorker.js';
 beforeEach(() => {
   window.localData = [];
   window.Worker = Worker;
+  window.Notification = ({
+    permission: 'denied',
+  });
   document.body.innerHTML = '<div>'
   + '  <p id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'

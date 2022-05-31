@@ -12,37 +12,42 @@
   --button-color-short: #763626;
 
   /* default page colors */
-  --page-bg-color: cadetblue;
+  --page-bg-color: #d9645f;
+  --header-color: colorShade(var(--page-bg-color), -60);
+  --table-bg-color: colorShade(var(--page-bg-color), -10);
   --font-color: white;
-  --timer-bg-color: darkcyan;
-
+  --btn-icon-color: colorShade(var(--page-bg-color), 30);
 
   /* short break page colors */
-  --page-bg-color-short: #336b87;
-  --timer-bg-color-short: #90afc5;
+  --page-bg-color-short: #76a662;
+  --header-color-short: colorShade(var(--page-bg-color-short), -60);
+  --table-bg-color-short: colorShade(var(--page-bg-color-short), -10);
+  --font-color-short: white;
+  --btn-icon-color-short: colorShade(var(--page-bg-color-short), 30);
 
-  /* toothpaste table theme */
-  --header-color: darkcyan;
+  /* long break page colors */
+  --page-bg-color-long: #66b4db;
+  --header-color-long: colorShade(var(--page-bg-color-long), -60);
+  --table-bg-color-long: colorShade(var(--page-bg-color-long), -10);
+  --font-color-long: white;
+  --btn-icon-color-long: colorShade(var(--page-bg-color-long), 30);
+
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
-  --toothpaste: rgb(2, 177, 177);
   --tr-hover-color: #f2f2f279;
   --completed-task-color: rgb(131, 156, 170);
-  --table-bg-color: var(--toothpaste);
   --scroll-color: var(--even-color);
 
   /* table row spacing */
-  --td-border-radius: 22px;
+  --td-border-radius: 2px;
   --table-border: 12px;
   --table-row-margin: 20px;
 
   /* shortbreak table theme */
   --even-color-short: #98c7e9;
   --odd-color-short: var(--even-color-short);
-  --header-color-short: #4990b4;
   --tr-hover-color-short: #bdd3df;
   --scroll-color-short: var(--even-color-short);
-  --table-bg-color-short: #60afcc;
 
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
@@ -58,6 +63,7 @@ header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
+  transition-duration: 2s;
 }
 
 ul {
@@ -75,7 +81,7 @@ a.brand-logo {
   margin-left: 1vw;
 }
 
-a.brand-logo li {
+a.brand-logo span {
   margin-left: 1vw;
 }
 
@@ -159,6 +165,7 @@ a.brand-logo li {
   top: 10px;
   margin: 10px;
   font-size: 80%;
+  font-weight: normal;
 }
 
 #timeDisplay {
@@ -198,7 +205,7 @@ html {
   }
 }
 
-@media screen and (max-height: 550px) {
+/* @media screen and (max-height: 550px) {
   #timerContainer {
     height: 50vh;
   }
@@ -208,6 +215,10 @@ html {
       height: 240px;
     }
   }
+} */
+
+#startTimer {
+  color: var(--font-color)
 }
 
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
@@ -217,6 +228,10 @@ html {
 
   #startTimer {
     font-size: 75%;
+  }
+
+  #finishTask {
+    font-size: 50%;
   }
 
   #timeDisplay {
@@ -266,7 +281,7 @@ html {
 }
 
 a {
-  color: white;
+  color: var(--font-color);
   background-color: transparent;
   text-decoration: underline;
 }
@@ -315,6 +330,10 @@ a {
     padding: 0 5px;
   }
 
+  #finishTask {
+    margin: 5px 0;
+  }
+
   #timeDisplay {
     position: relative;
     top: 0;
@@ -323,5 +342,23 @@ a {
     height: 130px;
     left: 0;
     font-size: 240%;
+  }
+}
+
+#timerContainer.focus {
+  transform: translate(0, 30%);
+}
+
+#currentTask.focus {
+  transform: translate(0, 270%);
+}
+
+@media screen and (max-width: 600px) {
+  #timerContainer.focus {
+    transform: translate(0, 40%);
+  }
+  
+  #currentTask.focus {
+    transform: translate(0, 250%);
   }
 }

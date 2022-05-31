@@ -76,9 +76,19 @@ class ToDoList extends HTMLElement {
     });
     this.dispatchEvent(event);
     this.idCounter += 1;
-    this.taskList.push(task);
-    if (!fromLocalStorage) {
-      this.addTaskToLocalStorage(task);
+    // make sure to add task in appropriate spot
+    let firstUncheckedTask = -1;
+    for (let i = 0; i < this.taskList.length && firstUncheckedTask === -1; i += 1) {
+      if (this.taskList[i].checked === true) firstUncheckedTask = i;
+    }
+    if (firstUncheckedTask === -1) {
+      this.taskList.push(task);
+      if (!fromLocalStorage) { this.addTaskToLocalStorage(task); }
+    } else {
+      this.taskList.splice(firstUncheckedTask, 0, task);
+      if (!fromLocalStorage) {
+        this.addTaskToLocalStorage(task, firstUncheckedTask);
+      }
     }
     return task;
   }
@@ -154,6 +164,19 @@ class ToDoList extends HTMLElement {
   addTaskToTop(task) {
     this.taskList.unshift(task);
     this.addTaskToLocalStorage(task, 0);
+  }
+
+  shiftTaskUp(task, currentIndex) {
+    // index starts at 2 because of children shenanigans
+    // to get index-1, we do index-2-1 = index-3
+    this.taskList.splice(currentIndex - 3, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 3);
+  }
+
+  shiftTaskDown(task, currentIndex) {
+    // to get index+1, we do index-2+1 = index-3
+    this.taskList.splice(currentIndex - 1, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 1);
   }
 
   /**
