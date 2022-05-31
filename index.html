@@ -187,10 +187,10 @@
 	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
 			<tr id="taskListHeader">
-				<th class='col1-checkbox'></th>
-				<th class='col2-task'>TASKS</th>
-				<th class='col3-pomos'># of Pomos</th>
-				<th class='col4-delete'>
+				<th class='taskListHead col1-checkbox'></th>
+				<th class='taskListHead col2-task'>TASKS</th>
+				<th class='taskListHead col3-pomos'># of Pomos</th>
+				<th class='taskListHead col4-delete'>
 					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
 				</th>
 			</tr>
@@ -294,7 +294,6 @@
     document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
   }
 </script>
