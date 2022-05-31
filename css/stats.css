@@ -58,7 +58,7 @@
 }
 
 #parentDiv::-webkit-scrollbar-thumb {
-  background-color: var(--toothpaste);
+  background-color: var(--page-bg-color);
   border: 2px solid transparent;
   border-radius: 8px;
   background-clip: padding-box;
