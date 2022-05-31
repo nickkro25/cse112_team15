@@ -147,18 +147,21 @@ class Timer extends HTMLElement {
           body: 'Time for a short break!',
           icon: iconUrl,
         });
+        notification.close();
       }
       else if (currentState === 'Working Time') {
         const notification = new Notification('Pomo XV', {
           body: 'Time to work!',
           icon: iconUrl,
         });
+        notification.close();
       } 
       else if (currentState === 'Long Break') {
         const notification = new Notification('Pomo XV', {
           body: 'Time for a long break!',
           icon: iconUrl,
         });
+        notification.close();
       }
     }
 
