@@ -266,12 +266,12 @@
 
 /* Note: there are some dark mode settings above for passing the style check in lint */
 
-.dark-mode .btn:hover,
-.dark-mode .btn-large:hover {
-  background-color: #b2b2b2;
-}
-
 .dark-mode .btn:focus,
 .dark-mode .btn-large:focus {
   background-color: rgb(78, 78, 78);
+}
+
+.dark-mode .btn:hover,
+.dark-mode .btn-large:hover {
+  background-color: #b2b2b2;
 }
