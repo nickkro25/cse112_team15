@@ -150,10 +150,16 @@
   <!-- Container for timer, timer buttons, and distraction button + prompt -->
 	<section id="timerContainer" class="section-container">
 		<div id="countdown">
-			<h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
-			<p id="top-left-border"> <span>┌</span> </p>
-			<p id="timeDisplay">  </p>
-			<p id="bottom-right-border"> <span>┘</span> </p>
+      <h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
+      <div class="time-wrapper">
+        <p id="timeDisplay">  </p>
+        <svg viewBox='0 0 260 110' preserveAspectRatio='none'>
+          <path d='M5,5 255,5' stroke-linecap="square"/>
+          <path d='M5,5 5,105' stroke-linecap="square"/>
+          <path d='M255,105 5,105' stroke-linecap="square"/>
+          <path d='M255,105 255,5' stroke-linecap="square"/>
+        </svg>
+      </div><br>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start &nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
 			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>

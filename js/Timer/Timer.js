@@ -76,6 +76,7 @@ class Timer extends HTMLElement {
       if (e.data !== -1) {
         this.timeDisplay.textContent = e.data;
         document.title = `${e.data} ${this.state}`;
+        this.progressBar(e.data);
       } else {
         this.onTimerComplete();
       }
@@ -292,6 +293,31 @@ class Timer extends HTMLElement {
     document.title = session.name;
     const distractionOffEvent = new CustomEvent('timer-end');
     this.dispatchEvent(distractionOffEvent);
+  }
+
+  progressBar(timeRemaining) {
+    timeRemaining = timeRemaining.split(':');
+    timeRemaining[0] *= 60;
+    timeRemaining = parseInt(timeRemaining[0], 10) + parseInt(timeRemaining[1], 10);
+    const session = this.stateQueue[0];
+    const percentage = 1 - (timeRemaining / (session.duration * 60));
+    const progress = document.querySelectorAll('.time-wrapper path');
+
+    function paint(value, index) {
+      let offset = 30;
+
+      if (index % 2 === 0) {
+        offset = 20;
+      }
+
+      const borderLen = value.getTotalLength() + 1;
+      value.style.strokeDashoffset = borderLen;
+      value.style.strokeDasharray = `${borderLen},${borderLen}`;
+      const offsetToSet = (percentage) * (borderLen - offset);
+      value.style.strokeDashoffset = (borderLen - offsetToSet - offset);
+    }
+
+    progress.forEach(paint);
   }
 }
 

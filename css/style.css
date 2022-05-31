@@ -167,10 +167,29 @@ a.brand-logo span {
   top: 0;
   bottom: 100px;
   font-size: 600%;
-  margin: -20px auto;
+  margin: auto;
   height: 300px;
   left: 0;
   width: 100%;
+}
+
+.time-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 45%;
+  transition: transform 150ms ease-in-out;
+}
+
+.time-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+path {
+  stroke: white;
+  stroke-width: 3;
+  fill: none;
 }
 
 #currentTask {
