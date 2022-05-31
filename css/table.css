@@ -8,6 +8,7 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
+
   /* transition-duration: 2s; */
 }
 
@@ -28,6 +29,7 @@ th,
 td {
   padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
+
   /* max-width: 20vw;      /* allows for word-wrap */
 }
 
@@ -51,6 +53,7 @@ td {
 tr {
   margin-top: 20px;
   transition-duration: 2s;
+
   /* width: 100%; */
 }
 
