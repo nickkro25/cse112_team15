@@ -616,7 +616,7 @@ html {
 
 .btn:hover,
 .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: var(--btn-icon-hover-color);
 }
 
 .btn-floating {
