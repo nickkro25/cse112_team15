@@ -179,7 +179,6 @@ root.style.setProperty('--btn-icon-color-long', colorShade(localStorage.getItem(
 root.style.setProperty('--btn-icon-hover-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 100));
 root.style.setProperty('--font-color-long', localStorage.getItem('--font-color-long'));
 longColorPicker.value = localStorage.getItem('--page-bg-color-long');
-console.log(root.style.getPropertyValue('--btn-icon-hover-color-long'));
 
 /**
  * Update the theme of the page based on darkModeSwitch
