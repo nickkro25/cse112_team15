@@ -126,7 +126,7 @@ function getFontColor(hex) {
 if (localStorage.getItem('--page-bg-color') === null) {
   localStorage.setItem('--page-bg-color', '#d9645f');
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
-  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 10));
   localStorage.setItem('--font-color', getFontColor(localStorage.getItem('--page-bg-color')));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
@@ -137,14 +137,15 @@ if (localStorage.getItem('--page-bg-color') === null) {
 root.style.setProperty('--page-bg-color', localStorage.getItem('--page-bg-color'));
 root.style.setProperty('--header-color', localStorage.getItem('--header-color'));
 root.style.setProperty('--table-bg-color', colorShade(localStorage.getItem('--page-bg-color'), -10));
-root.style.setProperty('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+root.style.setProperty('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 10));
+root.style.setProperty('--btn-icon-hover-color', colorShade(localStorage.getItem('--page-bg-color'), 100));
 root.style.setProperty('--font-color', localStorage.getItem('--font-color'));
 workColorPicker.value = localStorage.getItem('--page-bg-color');
 
 if (localStorage.getItem('--page-bg-color-short') === null) {
   localStorage.setItem('--page-bg-color-short', '#76a662');
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
-  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 10));
   localStorage.setItem('--font-color-short', getFontColor(localStorage.getItem('--page-bg-color-short')));
   pageBGColor.shortVal = localStorage.getItem('--page-bg-color-short');
   headerColor.shortVal = localStorage.getItem('--header-color-short');
@@ -155,14 +156,15 @@ if (localStorage.getItem('--page-bg-color-short') === null) {
 root.style.setProperty('--page-bg-color-short', localStorage.getItem('--page-bg-color-short'));
 root.style.setProperty('--header-color-short', localStorage.getItem('--header-color-short'));
 root.style.setProperty('--table-bg-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -10));
-root.style.setProperty('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+root.style.setProperty('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 10));
+root.style.setProperty('--btn-icon-hover-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 100));
 root.style.setProperty('--font-color-short', localStorage.getItem('--font-color-short'));
 shortColorPicker.value = localStorage.getItem('--page-bg-color-short');
 
 if (localStorage.getItem('--page-bg-color-long') === null) {
   localStorage.setItem('--page-bg-color-long', '#66b4db');
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
-  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 10));
   localStorage.setItem('--font-color-long', getFontColor(localStorage.getItem('--page-bg-color-long')));
   pageBGColor.longVal = localStorage.getItem('--page-bg-color-long');
   headerColor.longVal = localStorage.getItem('--header-color-long');
@@ -173,15 +175,18 @@ if (localStorage.getItem('--page-bg-color-long') === null) {
 root.style.setProperty('--page-bg-color-long', localStorage.getItem('--page-bg-color-long'));
 root.style.setProperty('--header-color-long', localStorage.getItem('--header-color-long'));
 root.style.setProperty('--table-bg-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -10));
-root.style.setProperty('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+root.style.setProperty('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 10));
+root.style.setProperty('--btn-icon-hover-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 100));
 root.style.setProperty('--font-color-long', localStorage.getItem('--font-color-long'));
 longColorPicker.value = localStorage.getItem('--page-bg-color-long');
+console.log(root.style.getPropertyValue('--btn-icon-hover-color-long'));
 
 /**
  * Update the theme of the page based on darkModeSwitch
  */
 function updateDarkMode() {
   if (darkModeSwitch.checked) {
+    document.getElementsByTagName('body')[0].classList.add('dark-mode');
     root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.darkVal);
     root.style.setProperty(pageBGColor.longName, pageBGColor.darkVal);
@@ -198,19 +203,14 @@ function updateDarkMode() {
     root.style.setProperty(tableBG.name, tableBG.darkVal);
     root.style.setProperty(modalBGColor.name, modalBGColor.darkVal);
     root.style.setProperty(modalFontColor.name, modalFontColor.darkVal);
-    document.getElementById('faqButton').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('statsButton').style.backgroundColor = 'rgb(78, 78, 78';
-    document.getElementById('settingsButton').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('finishTask').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('todo').style.backgroundColor = 'rgb(62, 62, 62)';
   } else {
+    document.getElementsByTagName('body')[0].classList.remove('dark-mode');
     root.style.setProperty(pageBGColor.name, pageBGColor.val);
     root.style.setProperty(pageBGColor.shortName, pageBGColor.shortVal);
     root.style.setProperty(pageBGColor.longName, pageBGColor.longVal);
@@ -227,12 +227,7 @@ function updateDarkMode() {
     root.style.setProperty(tableBG.name, tableBG.val);
     root.style.setProperty(modalBGColor.name, modalBGColor.val);
     root.style.setProperty(modalFontColor.name, modalFontColor.val);
-    document.getElementById('faqButton').style.backgroundColor = null;
-    document.getElementById('statsButton').style.backgroundColor = null;
-    document.getElementById('settingsButton').style.backgroundColor = null;
-    document.getElementById('onboardingButton').style.backgroundColor = null;
     document.getElementById('nav-wrapper').style.backgroundColor = null;
-    document.getElementById('startTimer').style.backgroundColor = null;
     document.getElementById('delete-all-button').style.backgroundColor = null;
     document.getElementById('add-button').style.backgroundColor = null;
     document.getElementById('taskListHeader').style.backgroundColor = null;
@@ -269,15 +264,16 @@ workColorPicker.addEventListener('change', () => {
   if (!darkModeSwitch.checked) {
     root.style.setProperty('--page-bg-color', workColorPicker.value);
     root.style.setProperty('--header-color', colorShade(workColorPicker.value, -60));
-    root.style.setProperty('--even-color', colorShade(workColorPicker.value, 30));
+    root.style.setProperty('--even-color', colorShade(workColorPicker.value, 10));
     root.style.setProperty('--font-color', getFontColor(workColorPicker.value));
   }
   root.style.setProperty('--table-bg-color', colorShade(workColorPicker.value, -10));
-  root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 30));
+  root.style.setProperty('--btn-icon-color', colorShade(workColorPicker.value, 10));
   localStorage.setItem('--page-bg-color', workColorPicker.value);
   localStorage.setItem('--header-color', colorShade(localStorage.getItem('--page-bg-color'), -60));
-  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 30));
+  localStorage.setItem('--btn-icon-color', colorShade(localStorage.getItem('--page-bg-color'), 10));
   localStorage.setItem('--font-color', getFontColor(localStorage.getItem('--page-bg-color')));
+  root.style.setProperty('--btn-icon-hover-color', colorShade(localStorage.getItem('--page-bg-color'), 100));
   pageBGColor.val = localStorage.getItem('--page-bg-color');
   headerColor.val = localStorage.getItem('--header-color');
   evenColor.val = localStorage.getItem('--btn-icon-color');
@@ -291,15 +287,16 @@ shortColorPicker.addEventListener('change', () => {
   if (!darkModeSwitch.checked) {
     root.style.setProperty('--page-bg-color-short', shortColorPicker.value);
     root.style.setProperty('--header-color-short', colorShade(shortColorPicker.value, -60));
-    root.style.setProperty('--even-color-short', colorShade(shortColorPicker.value, 30));
+    root.style.setProperty('--even-color-short', colorShade(shortColorPicker.value, 10));
     root.style.setProperty('--font-color-short', getFontColor(shortColorPicker.value));
   }
   root.style.setProperty('--table-bg-color-short', colorShade(shortColorPicker.value, -10));
-  root.style.setProperty('--btn-icon-color-short', colorShade(shortColorPicker.value, 30));
+  root.style.setProperty('--btn-icon-color-short', colorShade(shortColorPicker.value, 10));
   localStorage.setItem('--page-bg-color-short', shortColorPicker.value);
   localStorage.setItem('--header-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), -60));
-  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 30));
+  localStorage.setItem('--btn-icon-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 10));
   localStorage.setItem('--font-color-short', getFontColor(localStorage.getItem('--page-bg-color-short')));
+  root.style.setProperty('--btn-icon-hover-color-short', colorShade(localStorage.getItem('--page-bg-color-short'), 100));
   pageBGColor.shortVal = localStorage.getItem('--page-bg-color-short');
   headerColor.shortVal = localStorage.getItem('--header-color-short');
   evenColor.shortVal = localStorage.getItem('--btn-icon-color-short');
@@ -313,15 +310,16 @@ longColorPicker.addEventListener('change', () => {
   if (!darkModeSwitch.checked) {
     root.style.setProperty('--page-bg-color-long', longColorPicker.value);
     root.style.setProperty('--header-color-long', colorShade(longColorPicker.value, -60));
-    root.style.setProperty('--even-color-long', colorShade(longColorPicker.value, 30));
+    root.style.setProperty('--even-color-long', colorShade(longColorPicker.value, 10));
     root.style.setProperty('--font-color-long', getFontColor(longColorPicker.value));
   }
   root.style.setProperty('--table-bg-color-long', colorShade(longColorPicker.value, -10));
-  root.style.setProperty('--btn-icon-color-long', colorShade(longColorPicker.value, 30));
+  root.style.setProperty('--btn-icon-color-long', colorShade(longColorPicker.value, 10));
   localStorage.setItem('--page-bg-color-long', longColorPicker.value);
   localStorage.setItem('--header-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), -60));
-  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 30));
+  localStorage.setItem('--btn-icon-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 10));
   localStorage.setItem('--font-color-long', getFontColor(localStorage.getItem('--page-bg-color-long')));
+  root.style.setProperty('--btn-icon-hover-color-long', colorShade(localStorage.getItem('--page-bg-color-long'), 100));
   pageBGColor.longVal = localStorage.getItem('--page-bg-color-long');
   headerColor.longVal = localStorage.getItem('--header-color-long');
   evenColor.longVal = localStorage.getItem('--btn-icon-color-long');
