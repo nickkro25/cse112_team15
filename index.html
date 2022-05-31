@@ -133,14 +133,32 @@
         </div>
         <div id="deviceNotUsedGroup">
           <div class="tooltip">
-            <label for="no device">Device required for work:</label>
+            <label>Device required for work:</label>
             <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
                                       please stay on this web page for this to work</span>
           </div><br>
-          <label name="no device" class="switch">
-          <input type="checkbox" id="noDeviceSwitch" checked="true">
+          <label class="switch">
+          <input type="checkbox" id="noDeviceSwitch" checked=checked>
           <span class="slider round"></span>
           </label>
+        </div>
+      </div>
+      <p id="colorChangeHeader">Color Theme</p>
+      <div id="colorPickerContent">
+        <div class="colorSelectorDiv">
+          <label>Work</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Short Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Long Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+          <span></span>
         </div>
       </div>
 
@@ -156,6 +174,7 @@
 			<p id="bottom-right-border"> <span>┘</span> </p>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start &nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
+			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
 			<br> </div>
 	</section>
 	<br>
@@ -244,8 +263,10 @@
       </div>
 
 </section>
-
 <script>
+  if (Notification.permission !== 'denied'){
+    Notification.requestPermission().then(permission => {});
+  }
   // update dark theme at the beginning to prevent transition
   const pageBGColor = {
     name: '--page-bg-color',
@@ -277,7 +298,6 @@
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
   }
 </script>
-
 <script type="module" src="./js/App.js"></script>
 <script type="module" src="./js/Distraction/Distraction.js"></script>
 <script type="module" src="./js/Misc/Settings.js"></script>

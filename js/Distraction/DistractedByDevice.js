@@ -54,7 +54,6 @@ class DistractedByDevice extends HTMLElement {
    * by their device
    */
   userDistracted() {
-    console.log('triggered');
     if (this.running) {
       const event = new CustomEvent('distraction-created', {
         detail: {

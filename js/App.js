@@ -2,7 +2,7 @@ import { TodoListDom } from './ToDoList/TodoListDom.js';
 import { Timer } from './Timer/Timer.js';
 import { Statistics } from './Statistics/Statistics.js';
 import { Distraction } from './Distraction/Distraction.js';
-import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
+import { longBreakColors, shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
 import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
@@ -136,6 +136,11 @@ const currentTaskDiv = document.getElementById('currentTask');
 const tourButton = document.getElementById('onboardingButton');
 
 /**
+ * Button to complete current task (replaces checkbox functionality)
+ * @type {HTMLButtonElement}
+ */
+const finishTaskBtn = document.getElementById('finishTask');
+/**
  * @type {Statistics}
  */
 const StatsPage = new Statistics();
@@ -143,7 +148,7 @@ const StatsPage = new Statistics();
  * @type {TodoListDom} DOM handler for the ToDo List data structure
  */
 const TDLDom = new TodoListDom(todoTable, addTodoForm, addTodoButton,
-  deleteAllButton, currentTaskDiv);
+  deleteAllButton, finishTaskBtn, currentTaskDiv);
 
 /**
  * @type {Timer}
@@ -164,11 +169,15 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+const navButtons = [document.getElementById('faqButton'),
+  document.getElementById('statsButton'),
+  document.getElementById('settingsButton'),
+  document.getElementById('onboardingButton')];
 
 // if the user has not already visited the page, run the introduction
 if (localStorage.getItem('onboarding') === null) {
   // eslint-disable-next-line
-  introJs().start(); 
+  introJs().start();
   localStorage.setItem('onboarding', 'true');
 }
 
@@ -196,7 +205,12 @@ TimerObj.addEventListener('timer-complete', (e) => {
     TDLDom.onSessionComplete();
     StatsPage.addWorkTime(e.detail.duration);
     StatsPage.incrementActualPomoSessions();
-    shortBreakColors();
+
+    if (e.detail.nextSessionName === 'Short Break') {
+      shortBreakColors();
+    } else {
+      longBreakColors();
+    }
     breakModeSound();
   } else {
     StatsPage.addTimeSpent(e.detail.duration);
@@ -225,6 +239,18 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
+function hideTasklist() {
+  document.getElementById('tasklist').style.display = 'none';
+  document.getElementById('timerContainer').classList.add('focus');
+  document.getElementById('currentTask').classList.add('focus');
+}
+
+function showTasklist() {
+  document.getElementById('tasklist').style.display = null;
+  document.getElementById('timerContainer').classList.remove('focus');
+  document.getElementById('currentTask').classList.remove('focus');
+}
+
 /**
  * When a session is started:
  * If it is a work session, disable distraction button, otherwise enable the distraction button
@@ -232,10 +258,16 @@ startTimerButton.addEventListener('click', () => {
 TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
+    // hide all buttons on focus
+    navButtons.forEach((element) => { element.style.display = 'none'; });
     distractedByDevice.startPomoTime();
+    hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
+    // unhide buttons on break time
+    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+    showTasklist();
   }
 });
 
@@ -244,8 +276,22 @@ TimerObj.addEventListener('timer-start', (e) => {
  */
 TimerObj.addEventListener('timer-end', () => {
   distractButton.disabled = true;
+
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
+  // show all buttons when timer ends
+  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+  showTasklist();
+});
+
+document.body.addEventListener('task-up', (e) => {
+  TDLDom.moveTaskUp(e.detail.taskID);
+  TDLDom.updateCurrentTask();
+});
+
+document.body.addEventListener('task-down', (e) => {
+  TDLDom.moveTaskDown(e.detail.taskID);
+  TDLDom.updateCurrentTask();
 });
 
 /**
@@ -295,7 +341,7 @@ window.addEventListener('click', (e) => {
     const threeDotButtonList = document.getElementsByClassName(classNames.threeDotsWrapper);
     for (let i = 0; i < buttonPairList.length; i += 1) {
       buttonPairList[i].style.display = 'none';
-      threeDotButtonList[i].style.display = 'block';
+      threeDotButtonList[i].style.display = 'flex';
     }
   }
 });

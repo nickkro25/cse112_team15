@@ -66,6 +66,7 @@ header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
+  transition-duration: 2s;
 }
 
 ul {
@@ -207,7 +208,7 @@ html {
   }
 }
 
-@media screen and (max-height: 550px) {
+/* @media screen and (max-height: 550px) {
   #timerContainer {
     height: 50vh;
   }
@@ -217,6 +218,10 @@ html {
       height: 240px;
     }
   }
+} */
+
+#startTimer {
+  color: var(--font-color)
 }
 
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
@@ -226,6 +231,10 @@ html {
 
   #startTimer {
     font-size: 75%;
+  }
+
+  #finishTask {
+    font-size: 50%;
   }
 
   #timeDisplay {
@@ -275,7 +284,7 @@ html {
 }
 
 a {
-  color: white;
+  color: var(--font-color);
   background-color: transparent;
   text-decoration: underline;
 }
@@ -324,6 +333,10 @@ a {
     padding: 0 5px;
   }
 
+  #finishTask {
+    margin: 5px 0;
+  }
+
   #timeDisplay {
     position: relative;
     top: 0;
@@ -332,5 +345,23 @@ a {
     height: 130px;
     left: 0;
     font-size: 240%;
+  }
+}
+
+#timerContainer.focus {
+  transform: translate(0, 30%);
+}
+
+#currentTask.focus {
+  transform: translate(0, 270%);
+}
+
+@media screen and (max-width: 600px) {
+  #timerContainer.focus {
+    transform: translate(0, 40%);
+  }
+  
+  #currentTask.focus {
+    transform: translate(0, 250%);
   }
 }
