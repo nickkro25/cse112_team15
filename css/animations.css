@@ -63,6 +63,58 @@
   transition-duration: 2s;
 }
 
+.short-break .main-page,
+.short-break nav .brand-logo,
+.short-break .btn,
+.short-break .pure-button,
+.short-break #startTimer,
+.short-break .close,
+.short-break .modal-header,
+.short-break .modal-footer,
+.short-break th,
+.short-break nav i,
+.short-break nav [class^="mdi-"],
+.short-break nav [class*="mdi-"],
+.short-break nav i.material-icons,
+.short-break a,
+.short-break #submit-button,
+.short-break .btn-floating i {
+  color: var(--font-color-short);
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break .btn,
+.long-break .btn-large,
+.long-break .btn-floating {
+  background-color: var(--btn-icon-color-long);
+  transition-duration: 2s;
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break .main-page,
+.long-break nav .brand-logo,
+.long-break .btn,
+.long-break .pure-button,
+.long-break #startTimer,
+.long-break .close,
+.long-break .modal-header,
+.long-break .modal-footer,
+.long-break th,
+.long-break nav [class^="mdi-"],
+.long-break nav [class*="mdi-"],
+.long-break nav i.material-icons,
+.long-break a,
+.long-break #submit-button,
+.long-break .btn-floating i {
+  color: var(--font-color-long);
+}
+
+/* DARK MODE! (for style check in lint) */
+.dark-mode .btn,
+.dark-mode .btn-large {
+  background-color: rgb(78, 78, 78);
+}
+
 .short-break .btn:hover,
 .short-break .btn-large:hover {
   background-color: var(--btn-icon-hover-color-short);
@@ -102,25 +154,6 @@
   background-color: var(--btn-icon-color-short);
 }
 
-.short-break .main-page,
-.short-break nav .brand-logo,
-.short-break .btn,
-.short-break .pure-button,
-.short-break #startTimer,
-.short-break .close,
-.short-break .modal-header,
-.short-break .modal-footer,
-.short-break th,
-.short-break nav i,
-.short-break nav [class^="mdi-"],
-.short-break nav [class*="mdi-"],
-.short-break nav i.material-icons,
-.short-break a,
-.short-break #submit-button,
-.short-break .btn-floating i {
-  color: var(--font-color-short);
-}
-
 /* long break color modes */
 
 /* Note: there are some long break color modes settings above for passing the style check in lint */
@@ -150,18 +183,11 @@
 }
 
 .long-break tr:nth-child(odd):not(.completedTask) td {
-  background-color: var(--odd-color-long);
+  background-color: var(--even-color-long);
 }
 
 .long-break #add-todo {
   background-color: var(--header-color-long);
-  transition-duration: 2s;
-}
-
-.long-break .btn,
-.long-break .btn-large,
-.long-break .btn-floating {
-  background-color: var(--btn-icon-color-long);
   transition-duration: 2s;
 }
 
@@ -196,24 +222,6 @@
 
 .long-break button:focus {
   background-color: var(--btn-icon-color-long);
-}
-
-.long-break .main-page,
-.long-break nav .brand-logo,
-.long-break .btn,
-.long-break .pure-button,
-.long-break #startTimer,
-.long-break .close,
-.long-break .modal-header,
-.long-break .modal-footer,
-.long-break th,
-.long-break nav [class^="mdi-"],
-.long-break nav [class*="mdi-"],
-.long-break nav i.material-icons,
-.long-break a,
-.long-break #submit-button,
-.long-break .btn-floating i {
-  color: var(--font-color-long);
 }
 
 /* distraction popup animations */
@@ -252,12 +260,16 @@
   to { opacity: 0; }
 }
 
-.dark-mode .btn, 
-.dark-mode .btn-large {
-  background-color: rgb(78, 78, 78);
-}
+/* dark mode */
 
-.dark-mode .btn:hover, 
+/* Note: there are some dark mode settings above for passing the style check in lint */
+
+.dark-mode .btn:hover,
 .dark-mode .btn-large:hover {
   background-color: #b2b2b2;
+}
+
+.dark-mode .btn:focus,
+.dark-mode .btn-large:focus {
+  background-color: rgb(78, 78, 78);
 }
