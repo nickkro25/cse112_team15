@@ -149,6 +149,17 @@ class TodoListDom {
       const deleteAllModal = document.getElementById('delete-all-modal-container');
       const cancelDeleteAll = document.getElementById('cancel-delete-all');
       const confirmDeleteAll = document.getElementById('confirm-delete-all');
+      const deleteAllModalPopup = document.getElementsByClassName('delete-all-modal')[0];
+      
+      // Clicking outside of the popup closes the popup
+      deleteAllModal.addEventListener('click', (event) => {
+        if (deleteAllModal.style.display === 'flex') {
+          if (!deleteAllModalPopup.contains(event.target)) {
+            cancelDeleteAll.click();
+          }
+        }
+      });
+      
       cancelDeleteAll.addEventListener('click', () => {
         deleteAllModal.style.display = 'none';
       });
