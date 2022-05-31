@@ -150,7 +150,6 @@ class TodoListDom {
       const cancelDeleteAll = document.getElementById('cancel-delete-all');
       const confirmDeleteAll = document.getElementById('confirm-delete-all');
       const deleteAllModalPopup = document.getElementsByClassName('delete-all-modal')[0];
-      
       // Clicking outside of the popup closes the popup
       deleteAllModal.addEventListener('click', (event) => {
         if (deleteAllModal.style.display === 'flex') {
@@ -159,7 +158,6 @@ class TodoListDom {
           }
         }
       });
-      
       cancelDeleteAll.addEventListener('click', () => {
         deleteAllModal.style.display = 'none';
       });
