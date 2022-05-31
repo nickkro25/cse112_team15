@@ -251,3 +251,13 @@
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+.dark-mode .btn, 
+.dark-mode .btn-large {
+  background-color: rgb(78, 78, 78);
+}
+
+.dark-mode .btn:hover, 
+.dark-mode .btn-large:hover {
+  background-color: white;
+}
