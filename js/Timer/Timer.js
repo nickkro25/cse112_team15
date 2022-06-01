@@ -71,11 +71,6 @@ class Timer extends HTMLElement {
      * @type {Worker}
      */
     this.timerWorker = new Worker('./js/Timer/TimerWorker.js');
-    /**
-     * String which will be
-     * @type {Notification}
-     */
-     this.notificationString = '';
     // Recieve message from web worker and update display
     this.timerWorker.onmessage = (e) => {
       if (e.data !== -1) {

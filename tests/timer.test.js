@@ -174,27 +174,3 @@ test('changeTime', () => {
   longBreak.dispatchEvent(event);
   expect(localStorage.longBreakTime).toBe('9');
 });
-/*
-test('Notifications test', () => {
-  const displayTime = document.getElementById('displayTime');
-  const displayStatus = document.getElementById('displayStatus');
-  const button = document.getElementById('start');
-  window.Notification = ({
-    permission: 'granted',
-  });
-  const TimerObj = new Timer(button, displayTime, displayStatus);
-  jest.clearAllTimers();
-  TimerObj.startTimer();
- 
-  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
-  expect(displayStatus.textContent).toBe(shortBreakMode.name);
-  expect(TimerObj.notificationString).toBe('Time for a short break!');
- 
-  jest.advanceTimersByTime(shortBreakMode.duration * 60 * 1000);
-  expect(displayStatus.textContent).toBe(shortBreakMode.name);
-  expect(TimerObj.notificationString).toBe('Time to work!');
- 
-  window.Notification = ({
-    permission: 'denied',
-  });
-});*/
