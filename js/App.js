@@ -254,7 +254,7 @@ function showTasklist() {
   document.getElementById('modeDisplay').style.fontSize = 'large';
   document.getElementById('tasklist').style.opacity = '1';
   document.getElementById('tasklist').style.visibility = 'visible';
-  document.getElementById('tasklist').style.transition = 'opacity 1s linear'
+  document.getElementById('tasklist').style.transition = 'opacity 1s linear';
   document.getElementById('tasklist').style.transitionDelay = '1s';
   document.getElementById('tasklist').style.display = null;
   document.getElementById('currentTask').style.fontSize = 'large';
