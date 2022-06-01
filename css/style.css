@@ -166,6 +166,7 @@ a.brand-logo span {
   margin: 10px;
   font-size: 80%;
   font-weight: normal;
+  transition-duration: 2s;
 }
 
 #timeDisplay {

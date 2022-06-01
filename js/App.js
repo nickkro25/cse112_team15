@@ -240,13 +240,24 @@ startTimerButton.addEventListener('click', () => {
 });
 
 function hideTasklist() {
-  document.getElementById('tasklist').style.display = 'none';
+  // document.getElementById('tasklist').style.display = 'none';
+  document.getElementById('modeDisplay').style.fontSize = 'xx-large';
+  document.getElementById('tasklist').style.opacity = '0';
+  document.getElementById('tasklist').style.visibility = 'hidden';
+  document.getElementById('tasklist').style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
+  document.getElementById('currentTask').style.fontSize = 'xx-large';
   document.getElementById('timerContainer').classList.add('focus');
   document.getElementById('currentTask').classList.add('focus');
 }
 
 function showTasklist() {
+  document.getElementById('modeDisplay').style.fontSize = 'large';
+  document.getElementById('tasklist').style.opacity = '1';
+  document.getElementById('tasklist').style.visibility = 'visible';
+  document.getElementById('tasklist').style.transition = 'opacity 1s linear'
+  document.getElementById('tasklist').style.transitionDelay = '1s';
   document.getElementById('tasklist').style.display = null;
+  document.getElementById('currentTask').style.fontSize = 'large';
   document.getElementById('timerContainer').classList.remove('focus');
   document.getElementById('currentTask').classList.remove('focus');
 }
