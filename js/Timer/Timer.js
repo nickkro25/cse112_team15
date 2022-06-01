@@ -145,27 +145,25 @@ class Timer extends HTMLElement {
    // Gets current state to determine which notification to give.
    const currentState = this.stateQueue[0].name;
    const iconUrl = './assets/img/webicon.png';
+   /* istanbul ignore next */
    if (Notification.permission === 'granted') {
-     if (currentState === 'Short Break') {
-       const notificationString = 'Time for a short break!';
-       new Notification('Pomo XV', {
-         body: notificationString,
-         icon: iconUrl,
-       });
-     } else if (currentState === 'Working Time') {
-       const notificationString = 'Time to work!';
-       new Notification('Pomo XV', {
-         body: notificationString,
-         icon: iconUrl,
-       });
-     } else if (currentState === 'Long Break') {
-       const notificationString = "Time for a long break!";
-       new Notification('Pomo XV', {
-         body: notificationString,
-         icon: iconUrl,
-       });
-     }
-   }
+    if (currentState === 'Short Break') {
+      new Notification('Pomo XV', {
+        body: 'Time for a short break!',
+        icon: iconUrl,
+      });
+    } else if (currentState === 'Working Time') {
+      new Notification('Pomo XV', {
+        body: 'Time to work!',
+        icon: iconUrl,
+      });
+    } else if (currentState === 'Long Break') {
+      new Notification('Pomo XV', {
+        body: 'Time for a long break!',
+        icon: iconUrl,
+      });
+    }
+  }
 
 
     this.stateQueue.push(completedSession);
