@@ -46,7 +46,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: var(--modal-bg-color);
   padding: 20px;
   width: 25%;
@@ -58,14 +58,14 @@
 }
 
 #parentDiv::-webkit-scrollbar-thumb {
-  background-color: var(--page-bg-color);
+  background-color: var(--scroll-bar);
   border: 2px solid transparent;
   border-radius: 8px;
   background-clip: padding-box;
 }
 
 #parentDiv::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 .stats-info {
