@@ -58,10 +58,10 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   background: none;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 0.5rem;
+  border-radius: 2px;
   height: 2rem;
+  width: 4.5rem;
   border: 0;
   padding: 0;
   cursor: pointer;
