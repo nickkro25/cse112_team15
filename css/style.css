@@ -361,6 +361,10 @@ nav.focus {
   font-size: xx-large;
 }
 
+#currentTask.animate {
+  animation: fadeEffect-popup 0.25s;
+}
+
 @media screen and (max-width: 600px) {
   #timerContainer.focus {
     transform: translate(0, 40%);
@@ -368,7 +372,5 @@ nav.focus {
 
   #currentTask.focus {
     font-size: xx-large;
-
-    /* transform: translate(0, 250%); */
   }
 }
