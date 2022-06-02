@@ -50,15 +50,21 @@
 .colorSelectorDiv {
   font-size: 14px;
   text-align: center;
-  padding-bottom: 1rem;
   transition-duration: 0s;
 }
 
 .colorPicker {
-  text-align: center;
-  height: 100%;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5rem;
+  height: 2rem;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 #settingsContent label {
