@@ -44,7 +44,8 @@
   background-color: var(--tr-hover-color);
 }
 
-.long-break tr:nth-child(odd) td {
+.long-break tr:nth-child(odd) td,
+.long-break tr:nth-child(even) td {
   background-color: var(--even-color-long);
 }
 
