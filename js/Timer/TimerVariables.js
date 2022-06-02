@@ -47,7 +47,7 @@ const longBreakMode = {
  */
 const buttonText = {
   stopTimerText: 'End Day',
-  startTimerText: 'Start',
+  startTimerText: 'Start\xa0\xa0\xa0\xa0',
 };
 
 export {

@@ -51,8 +51,11 @@
                   class="material-icons right">help_outline</i></a></li>
                         <li><a class="waves-effect waves-light btn" id="statsButton" data-title="Misc" data-intro="You can see your statistics for the current day here" data-step='11'>Statistics<i
                   class="material-icons right">insert_chart</i></a></li>
-                        <li><a class="btn" id="settingsButton" data-title="Misc" data-intro="If you would like to change the sounds of the app or enter into dark mode, click here" data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
-                        <li><a class="btn" id="onboardingButton" data-title="Misc" data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
+            <li><a class="waves-effect waves-light btn" id="settingsButton" data-title="Misc"
+                data-intro="If you would like to change the sounds of the app or enter into dark mode, click here"
+                data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
+            <li><a class="waves-effect waves-light btn" id="onboardingButton" data-title="Misc"
+                data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
                   class="material-icons right">replay</i></a></li>
                     </ul>
                 </div>
@@ -173,6 +176,47 @@
                 <br> </div>
         </section>
         <br>
+  <!-- Container for timer, timer buttons, and distraction button + prompt -->
+	<section id="timerContainer" class="section-container">
+		<div id="countdown">
+			<h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
+			<p id="top-left-border"> <span>┌</span> </p>
+			<p id="timeDisplay">  </p>
+			<p id="bottom-right-border"> <span>┘</span> </p>
+			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
+			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
+			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
+			<br> </div>
+	</section>
+	<br>
+
+	<!-- The audio cue -->
+	<audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
+	<!-- Container for current task -->
+	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
+	<!-- Container for task list -->
+	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
+		<table id='todo'>
+			<tr id="taskListHeader">
+				<th class='col1-checkbox'></th>
+				<th class='col2-task'>TASKS</th>
+				<th class='col3-pomos'># of Pomos</th>
+				<th class='col4-delete'>
+					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
+				</th>
+			</tr>
+		</table>
+		<div id='form-container'>
+			<form id='add-todo' data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
+				<input type='text' name='task-name' placeholder='Enter task' class='task-name' maxlength='80' required>
+				<div class="tooltip">
+					<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
+					<span class="tooltiptext">Amount of pomo-sessions</span>
+				</div>
+				<button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
+			</form>
+		</div>
+	</div>
 
         <!-- The audio cue -->
         <audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
@@ -253,52 +297,49 @@
                 </div>
             </div>
 
-        </section>
-        <script>
-            if (Notification.permission !== 'denied') {
-                Notification.requestPermission().then(permission => {});
-            }
-            // update dark theme at the beginning to prevent transition
-            const pageBGColor = {
-                name: '--page-bg-color',
-                darkVal: '#363636',
-            };
-            const headerColor = {
-                name: '--header-color',
-                darkVal: '2d2c2b',
-            };
-            const toothpaste = {
-                name: '--toothpaste',
-                darkVal: '#2d2c2b',
-            };
-            if (localStorage.getItem('darkModeSwitch') === 'true') {
-                document.querySelector('body').style.transitionDuration = '0s';
-                const root = document.documentElement;
-                root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
-                root.style.setProperty(headerColor.name, headerColor.darkVal);
-                root.style.setProperty(toothpaste.name, toothpaste.darkVal);
-                document.getElementById('faqButton').style.backgroundColor = 'rgb(78, 78, 78)';
-                document.getElementById('statsButton').style.backgroundColor = 'rgb(78, 78, 78';
-                document.getElementById('settingsButton').style.backgroundColor = 'rgb(78, 78, 78)';
-                document.getElementById('onboardingButton').style.backgroundColor = 'rgb(78, 78, 78)';
-                document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-                document.getElementById('startTimer').style.backgroundColor = 'rgb(32, 32, 32)';
-                document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
-                document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
-                document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
-                document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
-            }
-        </script>
-        <script type="module" src="./js/App.js"></script>
-        <script type="module" src="./js/Distraction/Distraction.js"></script>
-        <script type="module" src="./js/Misc/Settings.js"></script>
-        <script type="module" src="./js/FAQ/FAQ.js"></script>
-        <script src="./js/ThirdParty/intro.js"></script>
-    </div>
-    <script>
-        // set the transition back to 2s after dark theme is painted
-        document.querySelector('body').style.transitionDuration = '2s';
-    </script>
+
+</section>
+<script>
+  if (Notification.permission !== 'denied'){
+    Notification.requestPermission().then(permission => {});
+  }
+  // update dark theme at the beginning to prevent transition
+  const pageBGColor = {
+    name: '--page-bg-color',
+    darkVal: '#363636',
+  };
+  const headerColor = {
+    name: '--header-color',
+    darkVal: '2d2c2b',
+  };
+  const toothpaste = {
+    name: '--toothpaste',
+    darkVal: '#2d2c2b',
+  };
+  if (localStorage.getItem('darkModeSwitch') === 'true') {
+    document.querySelector('body').style.transitionDuration = '0s';
+    const root = document.documentElement;
+    root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
+    root.style.setProperty(headerColor.name, headerColor.darkVal);
+    root.style.setProperty(toothpaste.name, toothpaste.darkVal);
+    document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
+  }
+</script>
+<script type="module" src="./js/App.js"></script>
+<script type="module" src="./js/Distraction/Distraction.js"></script>
+<script type="module" src="./js/Misc/Settings.js"></script>
+<script type="module" src="./js/FAQ/FAQ.js"></script>
+<script src="./js/ThirdParty/intro.js"></script>
+</div>
+<script>
+  // set the transition back to 2s after dark theme is painted
+  document.querySelector('body').style.transitionDuration = '2s';
+</script>
+
 </body>
 
 </html>

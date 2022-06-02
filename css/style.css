@@ -12,25 +12,28 @@
   --button-color-short: #763626;
 
   /* default page colors */
-  --page-bg-color: #d9645f;
-  --header-color: colorShade(var(--page-bg-color), -60);
-  --table-bg-color: colorShade(var(--page-bg-color), -10);
-  --font-color: white;
-  --btn-icon-color: colorShade(var(--page-bg-color), 30);
+  --page-bg-color: none;
+  --header-color: none;
+  --table-bg-color: none;
+  --font-color: none;
+  --btn-icon-color: none;
+  --btn-icon-hover-color: none;
 
   /* short break page colors */
-  --page-bg-color-short: #76a662;
-  --header-color-short: colorShade(var(--page-bg-color-short), -60);
-  --table-bg-color-short: colorShade(var(--page-bg-color-short), -10);
-  --font-color-short: white;
-  --btn-icon-color-short: colorShade(var(--page-bg-color-short), 30);
+  --page-bg-color-short: none;
+  --header-color-short: none;
+  --table-bg-color-short: none;
+  --font-color-short: none;
+  --btn-icon-color-short: none;
+  --btn-icon-hover-color-short: none;
 
   /* long break page colors */
-  --page-bg-color-long: #66b4db;
-  --header-color-long: colorShade(var(--page-bg-color-long), -60);
-  --table-bg-color-long: colorShade(var(--page-bg-color-long), -10);
-  --font-color-long: white;
-  --btn-icon-color-long: colorShade(var(--page-bg-color-long), 30);
+  --page-bg-color-long: none;
+  --header-color-long: none;
+  --table-bg-color-long: none;
+  --font-color-long: none;
+  --btn-icon-color-long: none;
+  --btn-icon-hover-color-long: none;
 
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
@@ -357,7 +360,7 @@ a {
   #timerContainer.focus {
     transform: translate(0, 40%);
   }
-  
+
   #currentTask.focus {
     transform: translate(0, 250%);
   }
