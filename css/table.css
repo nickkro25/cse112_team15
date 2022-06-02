@@ -179,7 +179,7 @@ td button:active {
   font-size: 100%;
   background-color: white;
   border-style: none;
-  border-radius: 60vh;
+  border-radius: 2.5px;
   border-color: var(--header-color);
   height: 2.5em;
   padding-left: 1vw;
@@ -190,7 +190,7 @@ td button:active {
 
 .task-name {
   width: 40%;
-  margin-left: 10%;
+  margin-left: 7%;
 }
 
 .task-length {
