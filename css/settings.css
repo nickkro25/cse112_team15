@@ -4,7 +4,7 @@
   position: absolute;
   right: 2%;
   padding: 5px 25px 25px 25px;
-  border-radius: 25px;
+  border-radius: 5px;
   transition-duration: var(--theme-transi-dura);
   z-index: 2;
 }
@@ -20,7 +20,7 @@
 }
 
 #settingsPopup * {
-  transition-duration: var(--theme-transi-dura);
+  transition-duration: 2s;
 }
 
 #settingsHeader {

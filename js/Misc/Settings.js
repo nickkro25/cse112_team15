@@ -117,7 +117,7 @@ const colorShade = (col, amt) => {
 function getFontColor(hex) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   const arr = [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
-  if (0.213 * arr[0] + 0.715 * arr[1] + 0.072 * arr[2] > 255 / 2) {
+  if (0.213 * arr[0] + 0.715 * arr[1] + 0.072 * arr[2] > 200) {
     return 'black';
   }
   return 'white';
@@ -205,7 +205,10 @@ function updateDarkMode() {
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
+    const heads = document.querySelectorAll('#taskListHeader th');
+    for (let i = 0; i < heads.length; i += 1) {
+      heads[i].style.backgroundColor = 'rgb(32, 32, 32)';
+    }
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
     document.getElementById('todo').style.backgroundColor = 'rgb(62, 62, 62)';
   } else {
@@ -229,7 +232,10 @@ function updateDarkMode() {
     document.getElementById('nav-wrapper').style.backgroundColor = null;
     document.getElementById('delete-all-button').style.backgroundColor = null;
     document.getElementById('add-button').style.backgroundColor = null;
-    document.getElementById('taskListHeader').style.backgroundColor = null;
+    const heads = document.querySelectorAll('#taskListHeader th');
+    for (let i = 0; i < heads.length; i += 1) {
+      heads[i].style.backgroundColor = null;
+    }
     document.getElementById('add-todo').style.backgroundColor = null;
     document.getElementById('todo').style.backgroundColor = null;
   }
