@@ -9,7 +9,11 @@
   overflow-y: auto;
   border-radius: var(--td-border-radius);
 
-  /* transition-duration: 2s; */
+  transition-duration: 2s;
+}
+
+#tasklist * {
+  transition: background-color 2s;
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -20,18 +24,14 @@ table {
   table-layout: fixed; /* allows for word-wrap */
   min-height: 44vh;
 
-  /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
   background-color: var(--table-bg-color);
-  transition-duration: 2s;
 }
 
 th,
 td {
   padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-
-  /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
@@ -43,19 +43,14 @@ th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  transition-duration: 2s;
 }
 
 td {
-  transition-duration: 2s;
   word-break: break-word;
 }
 
 tr {
   margin-top: 20px;
-  transition-duration: 2s;
-
-  /* width: 100%; */
 }
 
 @keyframes fade-in {
@@ -162,15 +157,6 @@ td button:active {
   padding-bottom: 10px;
   border-bottom-left-radius: var(--td-border-radius);
   border-bottom-right-radius: var(--td-border-radius);
-  transition-duration: 2s;
-}
-
-#todo {
-  transition-duration: 2s;
-}
-
-#taskListHeader {
-  transition-duration: 2s;
 }
 
 /* checkbox and delete button styling */
@@ -257,6 +243,7 @@ tr.uncheckedTask:nth-child(2) td {
   border: 2px solid transparent;
   border-radius: 8px;
   background-clip: padding-box;
+  transition-duration: 2s;
 }
 
 #tasklist::-webkit-scrollbar {

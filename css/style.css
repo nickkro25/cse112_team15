@@ -55,6 +55,8 @@
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
+
+  --transition-speed: .25s;
 }
 
 body {
@@ -185,8 +187,9 @@ a.brand-logo span {
 }
 
 #currentTask {
-  font-size: larger;
+  font-size: 80%;
   display: flex;
+  /* width: fit-content; */
   justify-content: space-around;
   text-align: center;
   padding: 10px;
@@ -209,18 +212,6 @@ html {
     }
   }
 }
-
-/* @media screen and (max-height: 550px) {
-  #timerContainer {
-    height: 50vh;
-  }
-
-  @media screen and (max-height: 480px) {
-    #timerContainer {
-      height: 240px;
-    }
-  }
-} */
 
 #startTimer {
   color: var(--font-color)
@@ -354,12 +345,21 @@ a {
   }
 }
 
+nav.focus {
+  /* transform: translate(0, -100%); */
+  background-color: var(--page-bg-color);
+}
+
 #timerContainer.focus {
   transform: translate(0, 30%);
 }
 
+#timerContainer.focus #modeDisplay {
+  font-size: xx-large;
+}
+
 #currentTask.focus {
-  transform: translate(0, 270%);
+  font-size: xx-large;
 }
 
 @media screen and (max-width: 600px) {
@@ -368,6 +368,7 @@ a {
   }
 
   #currentTask.focus {
-    transform: translate(0, 250%);
+  font-size: xx-large;
+    /* transform: translate(0, 250%); */
   }
 }
