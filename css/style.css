@@ -225,6 +225,10 @@ html {
   color: var(--font-color)
 }
 
+#distractionButton {
+  color: white;
+}
+
 @media screen and (max-width: 500px)/*, (max-height: 550px)*/ {
   #distractionButton {
     font-size: 35%;
