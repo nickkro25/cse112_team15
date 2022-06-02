@@ -34,7 +34,6 @@
   --font-color-long: none;
   --btn-icon-color-long: none;
   --btn-icon-hover-color-long: none;
-
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
   --tr-hover-color: #f2f2f279;
@@ -55,8 +54,7 @@
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
-
-  --transition-speed: .25s;
+  --transition-speed: 0.25s;
 }
 
 body {
@@ -189,6 +187,7 @@ a.brand-logo span {
 #currentTask {
   font-size: 80%;
   display: flex;
+
   /* width: fit-content; */
   justify-content: space-around;
   text-align: center;
@@ -214,7 +213,7 @@ html {
 }
 
 #startTimer {
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 #distractionButton {
@@ -368,7 +367,8 @@ nav.focus {
   }
 
   #currentTask.focus {
-  font-size: xx-large;
+    font-size: xx-large;
+
     /* transform: translate(0, 250%); */
   }
 }

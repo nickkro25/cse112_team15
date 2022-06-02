@@ -260,7 +260,6 @@ function exitFocusMode() {
   document.getElementById('timerContainer').classList.remove('focus');
   document.getElementById('currentTask').classList.remove('focus');
   document.querySelector('nav').classList.remove('focus');
-
 }
 
 /**

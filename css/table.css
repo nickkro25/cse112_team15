@@ -8,7 +8,6 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
-
   transition-duration: 2s;
 }
 
@@ -23,7 +22,6 @@ table {
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
   min-height: 44vh;
-
   margin-top: -20px;
   background-color: var(--table-bg-color);
 }
