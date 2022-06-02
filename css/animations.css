@@ -4,20 +4,46 @@
   transition-duration: 2s;
 }
 
-.short-break th {
+.short-break nav {
   background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
 .short-break table {
   background-color: var(--table-bg-color-short);
+  transition-duration: 2s;
+}
+
+.short-break th {
+  background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
 .short-break tr:hover td {
   background-image: linear-gradient(transparent, var(--tr-hover-color-short));
+  transition-duration: 0s;
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break tr:hover td {
+  background-image: linear-gradient(transparent, var(--tr-hover-color-long));
   transition-duration: 0;
 }
 
-.short-break tr:nth-child(even):not(.completedTask) td {
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break tr:nth-child(even) td,
+.long-break tr:nth-child(odd) td,
+.long-break nav i {
+  color: var(--font-color-long);
+}
+
+.short-break tr:nth-child(even) td,
+.short-break tr:nth-child(odd) td {
+  color: var(--font-color-short);
+}
+
+.short-break tr:nth-child(even):not(.completedTask) td,
+.short-break #tasklist::-webkit-scrollbar-thumb {
   background-color: var(--even-color-short);
 }
 
@@ -27,11 +53,177 @@
 
 .short-break #add-todo {
   background-color: var(--header-color-short);
+  transition-duration: 2s;
 }
 
-.short-break #form-container {
-  background-color: var(--page-bg-color-short);
+.short-break .btn,
+.short-break .btn-large,
+.short-break .btn-floating {
+  background-color: var(--btn-icon-color-short);
   transition-duration: 2s;
+}
+
+.short-break .main-page,
+.short-break nav .brand-logo,
+.short-break .btn,
+.short-break .pure-button,
+.short-break #startTimer,
+.short-break #finishTask,
+.short-break .close,
+.short-break .modal-header,
+.short-break .modal-footer,
+.short-break th,
+.short-break nav i,
+.short-break nav [class^="mdi-"],
+.short-break nav [class*="mdi-"],
+.short-break nav i.material-icons,
+.short-break a,
+.short-break #submit-button,
+.short-break .btn-floating i {
+  color: var(--font-color-short);
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break .btn,
+.long-break .btn-large,
+.long-break .btn-floating {
+  background-color: var(--btn-icon-color-long);
+  transition-duration: 2s;
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break .main-page,
+.long-break nav .brand-logo,
+.long-break .btn,
+.long-break .pure-button,
+.long-break #startTimer,
+.long-break #finishTask,
+.long-break .close,
+.long-break .modal-header,
+.long-break .modal-footer,
+.long-break th,
+.long-break nav [class^="mdi-"],
+.long-break nav [class*="mdi-"],
+.long-break nav i.material-icons,
+.long-break a,
+.long-break #submit-button,
+.long-break .btn-floating i {
+  color: var(--font-color-long);
+}
+
+/* DARK MODE! (for style check in lint) */
+.dark-mode .btn,
+.dark-mode .btn-large {
+  background-color: rgb(78, 78, 78);
+}
+
+.short-break .btn:hover,
+.short-break .btn-large:hover {
+  background-color: var(--btn-icon-hover-color-short);
+}
+
+.short-break .modal-content {
+  background-color: var(--page-bg-color-short);
+  border: 3px solid var(--header-color-short);
+  box-shadow: 0 4px 8px 0 var(--header-color-short), 0 6px 20px 0 var(--header-color-short);
+}
+
+.short-break .modal-header,
+.short-break .modal-footer {
+  background-color: var(--header-color-short);
+}
+
+/* LONG BREAK MODE! (for style check in lint) */
+.long-break .distractFormButton {
+  color: var(--page-bg-color-long);
+}
+
+.short-break .statslabel,
+.short-break .tab-btn-active,
+.short-break .tab-btn,
+.short-break .stats-info,
+.short-break .distractFormButton,
+.short-break .distractFormButton:hover,
+.short-break .distractFormButton:focus {
+  color: var(--page-bg-color-short);
+}
+
+.short-break #parentDiv::-webkit-scrollbar-thumb {
+  background-color: var(--page-bg-color-short);
+}
+
+.short-break button:focus {
+  background-color: var(--btn-icon-color-short);
+}
+
+/* long break color modes */
+
+/* Note: there are some long break color modes settings above for passing the style check in lint */
+.long-break {
+  background-color: var(--page-bg-color-long);
+  transition-duration: 2s;
+}
+
+.long-break nav {
+  background-color: var(--header-color-long);
+  transition-duration: 2s;
+}
+
+.long-break table {
+  background-color: var(--table-bg-color-long);
+  transition-duration: 2s;
+}
+
+.long-break th {
+  background-color: var(--header-color-long);
+  transition-duration: 2s;
+}
+
+.long-break tr:nth-child(even):not(.completedTask) td,
+.long-break #tasklist::-webkit-scrollbar-thumb {
+  background-color: var(--even-color-long);
+}
+
+.long-break tr:nth-child(odd):not(.completedTask) td {
+  background-color: var(--even-color-long);
+}
+
+.long-break #add-todo {
+  background-color: var(--header-color-long);
+  transition-duration: 2s;
+}
+
+.long-break .btn:hover,
+.long-break .btn-large:hover {
+  background-color: var(--btn-icon-hover-color-long);
+}
+
+.long-break .modal-content {
+  background-color: var(--page-bg-color-long);
+  border: 3px solid var(--header-color-long);
+  box-shadow: 0 4px 8px 0 var(--header-color-long), 0 6px 20px 0 var(--header-color-long);
+}
+
+.long-break .modal-header,
+.long-break .modal-footer {
+  background-color: var(--header-color-long);
+}
+
+.long-break .statslabel,
+.long-break .tab-btn-active,
+.long-break .tab-btn,
+.long-break .stats-info,
+.long-break .distractFormButton:hover,
+.long-break .distractFormButton:focus {
+  color: var(--page-bg-color-long);
+}
+
+.long-break #parentDiv::-webkit-scrollbar-thumb {
+  background-color: var(--page-bg-color-long);
+}
+
+.long-break button:focus {
+  background-color: var(--btn-icon-color-long);
 }
 
 /* distraction popup animations */
@@ -68,4 +260,18 @@
 @keyframes overlay-animation-out {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+/* dark mode */
+
+/* Note: there are some dark mode settings above for passing the style check in lint */
+
+.dark-mode .btn:focus,
+.dark-mode .btn-large:focus {
+  background-color: rgb(78, 78, 78);
+}
+
+.dark-mode .btn:hover,
+.dark-mode .btn-large:hover {
+  background-color: #b2b2b2;
 }

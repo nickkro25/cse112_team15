@@ -64,10 +64,11 @@
 #tasklist {
   position: relative;
   margin: 1% auto;
-  height: 45vh;
+  height: 44vh;
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
+
   /* transition-duration: 2s; */
 }
 
@@ -77,22 +78,24 @@ table {
   border-collapse: separate;
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
-  min-height: 45vh;
+  min-height: 44vh;
 
   /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
-  background-color: var(--toothpaste);
+  background-color: var(--table-bg-color);
+  transition-duration: 2s;
 }
 
 th,
 td {
   padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
+
   /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
-  /* background-color: var(--header-color); */
+  background-color: var(--header-color);
   color: var(--font-color);
   text-align: left;
   padding: 20px 10px;
@@ -111,6 +114,7 @@ td {
 tr {
   margin-top: 20px;
   transition-duration: 2s;
+
   /* width: 100%; */
 }
 
@@ -316,7 +320,7 @@ tr.uncheckedTask:nth-child(2) td {
 }
 
 #tasklist::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 /* flex display for triple dot container for alignment purposes */
@@ -383,7 +387,7 @@ tr.uncheckedTask:nth-child(2) td {
 
 @media screen and (min-width: 1300px) {
   #tasklist {
-    height: 60vh;
+    height: 44vh;
     overflow-y: auto;
   }
 

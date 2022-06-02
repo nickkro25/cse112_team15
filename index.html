@@ -53,10 +53,10 @@
             <li><a class="waves-effect waves-light btn" id="statsButton" data-title="Misc"
                 data-intro="You can see your statistics for the current day here" data-step='11'>Statistics<i
                   class="material-icons right">insert_chart</i></a></li>
-            <li><a class="btn" id="settingsButton" data-title="Misc"
+            <li><a class="waves-effect waves-light btn" id="settingsButton" data-title="Misc"
                 data-intro="If you would like to change the sounds of the app or enter into dark mode, click here"
                 data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
-            <li><a class="btn" id="onboardingButton" data-title="Misc"
+            <li><a class="waves-effect waves-light btn" id="onboardingButton" data-title="Misc"
                 data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
                   class="material-icons right">replay</i></a></li>
           </ul>
@@ -133,14 +133,32 @@
         </div>
         <div id="deviceNotUsedGroup">
           <div class="tooltip">
-            <label for="no device">Device required for work:</label>
+            <label>Device required for work:</label>
             <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
                                       please stay on this web page for this to work</span>
           </div><br>
-          <label name="no device" class="switch">
-          <input type="checkbox" id="noDeviceSwitch" checked="true">
+          <label class="switch">
+          <input type="checkbox" id="noDeviceSwitch" checked=checked>
           <span class="slider round"></span>
           </label>
+        </div>
+      </div>
+      <p id="colorChangeHeader">Color Theme</p>
+      <div id="colorPickerContent">
+        <div class="colorSelectorDiv">
+          <label>Work</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Short Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+          <span></span>
+        </div>
+        <div class="colorSelectorDiv">
+          <label>Long Break</label><br>
+          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+          <span></span>
         </div>
       </div>
 
@@ -154,7 +172,7 @@
 			<p id="top-left-border"> <span>┌</span> </p>
 			<p id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
-			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start &nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
+			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
 			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
 			<br> </div>
@@ -179,7 +197,7 @@
 		</table>
 		<div id='form-container'>
 			<form id='add-todo' data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
-				<input type='text' name='task-name' placeholder='Enter task' class='task-name' required>
+				<input type='text' name='task-name' placeholder='Enter task' class='task-name' maxlength='80' required>
 				<div class="tooltip">
 					<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
 					<span class="tooltiptext">Amount of pomo-sessions</span>
@@ -256,7 +274,36 @@
       </div>
     </section>
 </section>
-
+<script>
+  if (Notification.permission !== 'denied'){
+    Notification.requestPermission().then(permission => {});
+  }
+  // update dark theme at the beginning to prevent transition
+  const pageBGColor = {
+    name: '--page-bg-color',
+    darkVal: '#363636',
+  };
+  const headerColor = {
+    name: '--header-color',
+    darkVal: '2d2c2b',
+  };
+  const toothpaste = {
+    name: '--toothpaste',
+    darkVal: '#2d2c2b',
+  };
+  if (localStorage.getItem('darkModeSwitch') === 'true') {
+    document.querySelector('body').style.transitionDuration = '0s';
+    const root = document.documentElement;
+    root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
+    root.style.setProperty(headerColor.name, headerColor.darkVal);
+    root.style.setProperty(toothpaste.name, toothpaste.darkVal);
+    document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
+    document.getElementById('taskListHeader').style.backgroundColor = 'rgb(32, 32, 32)';
+    document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
+  }
+</script>
 <script type="module" src="./js/App.js"></script>
 <script type="module" src="./js/Distraction/Distraction.js"></script>
 <script type="module" src="./js/Misc/Settings.js"></script>

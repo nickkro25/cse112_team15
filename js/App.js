@@ -2,7 +2,7 @@ import { TodoListDom } from './ToDoList/TodoListDom.js';
 import { Timer } from './Timer/Timer.js';
 import { Statistics } from './Statistics/Statistics.js';
 import { Distraction } from './Distraction/Distraction.js';
-import { shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
+import { longBreakColors, shortBreakColors, workModeColors } from './Misc/ChangeColors.js';
 import { breakModeSound, workModeSound } from './Misc/Sounds.js';
 import { classNames } from './ToDoList/TaskVariables.js';
 import { DistractedByDevice } from './Distraction/DistractedByDevice.js';
@@ -169,6 +169,10 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+/**
+ * For hiding/showing the nav buttons
+ * @type {Array}
+ */
 const navButtons = [document.getElementById('faqButton'),
   document.getElementById('statsButton'),
   document.getElementById('settingsButton'),
@@ -205,7 +209,12 @@ TimerObj.addEventListener('timer-complete', (e) => {
     TDLDom.onSessionComplete();
     StatsPage.addWorkTime(e.detail.duration);
     StatsPage.incrementActualPomoSessions();
-    shortBreakColors();
+
+    if (e.detail.nextSessionName === 'Short Break') {
+      shortBreakColors();
+    } else {
+      longBreakColors();
+    }
     breakModeSound();
   } else {
     StatsPage.addTimeSpent(e.detail.duration);
@@ -254,14 +263,20 @@ TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
     // hide all buttons on focus
-    navButtons.forEach((element) => { element.style.display = 'none'; });
+    navButtons.forEach((element) => {
+      element.style.opacity = '0';
+      element.style.pointerEvents = 'none';
+    });
     distractedByDevice.startPomoTime();
     hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
     // unhide buttons on break time
-    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+    navButtons.forEach((element) => {
+      element.style.opacity = '1';
+      element.style.pointerEvents = 'auto';
+    });
     showTasklist();
   }
 });
@@ -275,7 +290,10 @@ TimerObj.addEventListener('timer-end', () => {
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
   // show all buttons when timer ends
-  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+  navButtons.forEach((element) => {
+    element.style.opacity = '1';
+    element.style.pointerEvents = 'auto';
+  });
   showTasklist();
 });
 

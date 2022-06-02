@@ -1,6 +1,8 @@
 import {
   sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText,
 } from './TimerVariables.js';
+import { workModeColors } from '../Misc/ChangeColors.js';
+
 import { timeToString } from '../Misc/UtilityFunctions.js';
 /**
  * A class for the Timer object. Has functions to start the timer,
@@ -140,6 +142,7 @@ class Timer extends HTMLElement {
     // Gets current state to determine which notification to give.
     const currentState = this.stateQueue[0].name;
     const iconUrl = './assets/img/webicon.png';
+    /* istanbul ignore next */
     if (Notification.permission === 'granted') {
       if (currentState === 'Short Break') {
         new Notification('Pomo XV', {
@@ -166,6 +169,7 @@ class Timer extends HTMLElement {
         duration: completedSession.duration,
         sessionIsWork: completedSession.isWork,
         sessionId: this.sessionId,
+        nextSessionName: this.stateQueue[0].name,
       },
     });
 
@@ -234,6 +238,7 @@ class Timer extends HTMLElement {
     this.timerWorker.postMessage(-1);
     this.updateDisplay();
     this.displayStatus.textContent = distractionMessage;
+    document.title = 'Distracted';
   }
 
   /**
@@ -271,7 +276,7 @@ class Timer extends HTMLElement {
       } else {
         this.endTimer();
         this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
-        document.getElementsByTagName('body')[0].classList.remove('short-break');
+        workModeColors();
       }
     });
 
