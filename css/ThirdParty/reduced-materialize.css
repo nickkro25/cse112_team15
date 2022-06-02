@@ -703,8 +703,8 @@ button.btn-floating {
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   z-index: 1;
-  /* -webkit-transition: 2s ease-out;
-  transition: 2s ease-out; */
+  -webkit-transition: opacity 2s ease-out, 0.2s background-color ease-out;
+  transition: opacity 2s ease-out, 0.2s background-color ease-out;
 }
 
 .waves-effect input[type="button"],
