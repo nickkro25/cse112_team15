@@ -113,6 +113,11 @@ td button {
   transition-duration: 0.1s;
 }
 
+.triple-dots-touch button,
+.double-buttons button {
+  color: var(--font-color);
+}
+
 td button:hover {
   color: var(--header-color);
   cursor: pointer;
@@ -201,11 +206,6 @@ td button:active {
 
 ::placeholder {
   color: gray;
-}
-
-.triple-dots-touch button,
-.double-buttons button {
-  color: var(--font-color);
 }
 
 /* other table features: checkbox, delete button, scrollbar */
