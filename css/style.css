@@ -360,7 +360,7 @@ a {
   #timerContainer.focus {
     transform: translate(0, 40%);
   }
-  
+
   #currentTask.focus {
     transform: translate(0, 250%);
   }
