@@ -35,7 +35,7 @@ class DistractedByDevice extends HTMLElement {
     // TODO: There's no UI that indicates the switch is disabled, user might be confused
     this.noDeviceSwitch.disabled = true;
     if (!this.running && !this.noDeviceSwitch.checked) {
-      const text = this.displayStatus.textContent;
+      const text = 'Working Away From Device';
       this.countdownMessage(5, text);
     }
   }
@@ -70,7 +70,7 @@ class DistractedByDevice extends HTMLElement {
   /**
    * Display warning message after session starts
    * @param {Number} duration Duration of the message
-   * @param {String} text The original text to be set
+   * @param {String} text Text to be set after count down
    */
   countdownMessage(duration, text) {
     if (duration > 0) {
