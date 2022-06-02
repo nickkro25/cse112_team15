@@ -79,6 +79,7 @@ li {
 
 a.brand-logo {
   margin-left: 1vw;
+  pointer-events: none;
 }
 
 a.brand-logo span {
@@ -357,7 +358,7 @@ a {
   #timerContainer.focus {
     transform: translate(0, 40%);
   }
-  
+
   #currentTask.focus {
     transform: translate(0, 250%);
   }
