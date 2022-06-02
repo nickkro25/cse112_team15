@@ -82,6 +82,7 @@ li {
 
 a.brand-logo {
   margin-left: 1vw;
+  pointer-events: none;
 }
 
 a.brand-logo span {
