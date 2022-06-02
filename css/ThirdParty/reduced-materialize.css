@@ -619,7 +619,7 @@ html {
 
 .btn:hover,
 .btn-large:hover {
-  background-color: var(--btn-icon-color);
+  background-color: var(--btn-icon-hover-color);
 }
 
 .btn-floating {
