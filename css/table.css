@@ -237,9 +237,8 @@ label {
 }
 
 .completedTask label:hover {
-  color: var(--header-color);
+  color: var(--font-color);
 }
-
 
 /* different color row for checked off tasks */
 tr.completedTask td {
@@ -247,7 +246,9 @@ tr.completedTask td {
 }
 
 /* Give current task a different bg color to make it stand out */
-tr.uncheckedTask:nth-child(2) td {
+tr.uncheckedTask:nth-child(2) td,
+.short-break tr.uncheckedTask:nth-child(2) td,
+.long-break tr.uncheckedTask:nth-child(2) td {
   background-color: rgb(179, 179, 141);
 }
 
