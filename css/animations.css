@@ -156,6 +156,11 @@
   background-color: var(--btn-icon-color-short);
 }
 
+.short-break .triple-dots-touch button,
+.short-break .double-buttons button {
+  color: var(--font-color-short);
+}
+
 /* long break color modes */
 
 /* Note: there are some long break color modes settings above for passing the style check in lint */
@@ -224,6 +229,11 @@
 
 .long-break button:focus {
   background-color: var(--btn-icon-color-long);
+}
+
+.long-break .triple-dots-touch button,
+.long-break .double-buttons button {
+  color: var(--font-color-long);
 }
 
 /* distraction popup animations */
