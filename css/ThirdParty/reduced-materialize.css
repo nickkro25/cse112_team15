@@ -740,12 +740,6 @@ select:focus {
   outline: 1px solid colorShade(var(--page-bg-color), 100);
 }
 
-button:focus {
-  outline: none;
-  background-color: var(--btn-icon-color);
-}
-
-
 /* Text Inputs + Textarea
    ========================================================================== */
 
