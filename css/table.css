@@ -203,6 +203,11 @@ td button:active {
   color: gray;
 }
 
+.triple-dots-touch button,
+.double-buttons button {
+  color: var(--font-color);
+}
+
 /* other table features: checkbox, delete button, scrollbar */
 
 /* larger checkbox */
