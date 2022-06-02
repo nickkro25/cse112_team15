@@ -273,7 +273,7 @@ class Statistics extends HTMLElement {
       }
       content = document.getElementsByClassName(classNames.distNumberClass);
       contentlabel = document.getElementsByClassName(classNames.distLabelClass);
-      document.getElementsByClassName('dist-list')[0].style.display = 'block';
+      document.getElementsByClassName('dist-list')[0].style.display = 'inline-block';
       for (let i = 0; i < content.length; i += 1) {
         content[i].style.display = 'block';
       }
