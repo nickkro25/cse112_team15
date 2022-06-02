@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <link rel="shortcut icon" href="#" />
-  <link rel="stylesheet" href="./css/ThirdParty/reduced-materialize.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./css/ThirdParty/introjs.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/distraction-box.css" />
-  <link rel="stylesheet" href="./css/faq-box.css" />
-  <link rel="stylesheet" href="./css/table.css" />
-  <link rel="stylesheet" href="./css/animations.css" />
-  <link rel="stylesheet" href="./css/settings.css" />
-  <link rel="stylesheet" href="./css/stats.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pomodoro</title>
-  <link rel="icon" type="image/svg" href="./assets/img/webicon2.svg">
-  <noscript>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./css/ThirdParty/reduced-materialize.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/ThirdParty/introjs.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/distraction-box.css" />
+    <link rel="stylesheet" href="./css/faq-box.css" />
+    <link rel="stylesheet" href="./css/table.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/settings.css" />
+    <link rel="stylesheet" href="./css/stats.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro</title>
+    <link rel="icon" type="image/svg" href="./assets/img/webicon2.svg">
+    <noscript>
     <style>
       .main-page {
         display: none;
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <noscript>
+    <noscript>
     <h1>
       :(
     </h1>
@@ -37,60 +37,55 @@
     </h2>
   </noscript>
 
-  <div id='overlay'></div>
-  <div class='main-page'>
-    <!-- Header bar at the top of the page for title text & navigation -->
-    <header data-title="Welcome!" data-intro="Welcome to our pomodoro app!" data-step='1'>
-      <nav>
-        <div id= "nav-wrapper" class="nav-wrapper">
-          <a href="#!" class="brand-logo"><img src="./assets/img/PomoXVlogo.png" height='60' alt="PomoXV Logo">
-            <span style="float: right">PomoXV</span>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li><a class="waves-effect waves-light btn" id="faqButton" data-title="Misc"
-                data-intro="Click this FAQ Button for more information on the Pomodoro Technique" data-step='10'>FAQ<i
+    <div id='overlay'></div>
+    <div class='main-page'>
+        <!-- Header bar at the top of the page for title text & navigation -->
+        <header data-title="Welcome!" data-intro="Welcome to our pomodoro app!" data-step='1'>
+            <nav>
+                <div id="nav-wrapper" class="nav-wrapper">
+                    <a href="#!" class="brand-logo"><img src="./assets/img/xvlogosvg.svg" height='60' alt="PomoXV Logo">
+                        <span style="float: right">PomoXV</span>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="waves-effect waves-light btn" id="faqButton" data-title="Misc" data-intro="Click this FAQ Button for more information on the Pomodoro Technique" data-step='10'>FAQ<i
                   class="material-icons right">help_outline</i></a></li>
-            <li><a class="waves-effect waves-light btn" id="statsButton" data-title="Misc"
-                data-intro="You can see your statistics for the current day here" data-step='11'>Statistics<i
+                        <li><a class="waves-effect waves-light btn" id="statsButton" data-title="Misc" data-intro="You can see your statistics for the current day here" data-step='11'>Statistics<i
                   class="material-icons right">insert_chart</i></a></li>
-            <li><a class="waves-effect waves-light btn" id="settingsButton" data-title="Misc"
-                data-intro="If you would like to change the sounds of the app or enter into dark mode, click here"
-                data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
-            <li><a class="waves-effect waves-light btn" id="onboardingButton" data-title="Misc"
-                data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
+                        <li><a class="waves-effect waves-light btn" id="settingsButton" data-title="Misc" data-intro="If you would like to change the sounds of the app or enter into dark mode, click here" data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
+                        <li><a class="waves-effect waves-light btn" id="onboardingButton" data-title="Misc" data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
                   class="material-icons right">replay</i></a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-    <!-- Settings popup -->
-    <section id="settingsPopup">
-      <h1 id="settingsHeader">Settings</h1>
-      <div id="settingsContent">
-        <div id="customTimeGroup">
-          <div id="focusTimeSelector">
-            <label>
+        <!-- Settings popup -->
+        <section id="settingsPopup">
+            <h1 id="settingsHeader">Settings</h1>
+            <div id="settingsContent">
+                <div id="customTimeGroup">
+                    <div id="focusTimeSelector">
+                        <label>
               Focus:<br>
               <input id="focusTime" type="number" min="1" max="99" step="1">
             </label>
-          </div>
-          <div id="shortTimeSelector">
-            <label>
+                    </div>
+                    <div id="shortTimeSelector">
+                        <label>
               Short Break:<br>
               <input id="shortBreakTime" type="number" min="1" max="99" step="1">
             </label>
-          </div>
-          <div id="longTimeSelector">
-            <label>
+                    </div>
+                    <div id="longTimeSelector">
+                        <label>
               Long Break:<br>
               <input id="longBreakTime" type="number" min="1" max="99" step="1">
             </label>
-          </div>
-        </div>
-        <div id="workSoundGroup">
-          <label for="workSoundSelector">Work Time Sound:</label><br>
-          <select name="work-sound" id="workSoundSelector">
+                    </div>
+                </div>
+                <div id="workSoundGroup">
+                    <label for="workSoundSelector">Work Time Sound:</label><br>
+                    <select name="work-sound" id="workSoundSelector">
             <option value="marimba" selected>Marimba</option>
             <option value="kitchen">Kitchen Timer</option>
             <option value="microwave">Microwave Beep</option>
@@ -98,10 +93,10 @@
             <option value="item">Item Get</option>
             <option value="ringtone">Ringtone</option>
           </select>
-        </div>
-        <div id="breakSoundGroup">
-          <label for="breakSoundSelector">Break Time Sound:</label><br>
-          <select name="break sound" id="breakSoundSelector">
+                </div>
+                <div id="breakSoundGroup">
+                    <label for="breakSoundSelector">Break Time Sound:</label><br>
+                    <select name="break sound" id="breakSoundSelector">
             <option value="marimba" selected>Marimba</option>
             <option value="kitchen">Kitchen Timer</option>
             <option value="microwave">Microwave Beep</option>
@@ -109,199 +104,195 @@
             <option value="item">Item Get</option>
             <option value="ringtone">Ringtone</option>
           </select>
-        </div>
-        <div id="darkModeGroup">
-          <label>Dark mode:</label><br>
-          <label class="switch">
+                </div>
+                <div id="darkModeGroup">
+                    <label>Dark mode:</label><br>
+                    <label class="switch">
             <input type="checkbox" id="darkModeSwitch">
             <span class="slider round"></span>
           </label>
-        </div>
-        <div id="muteGroup">
-          <label>Mute:</label><br>
-          <label class="switch">
+                </div>
+                <div id="muteGroup">
+                    <label>Mute:</label><br>
+                    <label class="switch">
             <input type="checkbox" id="muteSwitch">
             <span class="slider round"></span>
           </label>
-        </div>
-        <div id="autoStartGroup">
-          <label>Auto-start next timer:</label><br>
-          <label class="switch">
+                </div>
+                <div id="autoStartGroup">
+                    <label>Auto-start next timer:</label><br>
+                    <label class="switch">
           <input type="checkbox" id="autoStartSwitch">
           <span class="slider round"></span>
           </label>
-        </div>
-        <div id="deviceNotUsedGroup">
-          <div class="tooltip">
-            <label>Device required for work:</label>
-            <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
+                </div>
+                <div id="deviceNotUsedGroup">
+                    <div class="tooltip">
+                        <label>Device required for work:</label>
+                        <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
                                       please stay on this web page for this to work</span>
-          </div><br>
-          <label class="switch">
+                    </div><br>
+                    <label class="switch">
           <input type="checkbox" id="noDeviceSwitch" checked=checked>
           <span class="slider round"></span>
           </label>
-        </div>
-      </div>
-      <p id="colorChangeHeader">Color Theme</p>
-      <div id="colorPickerContent">
-        <div class="colorSelectorDiv">
-          <label>Work</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Short Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Long Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
-          <span></span>
-        </div>
-      </div>
-
-    <!-- </div> -->
-  </section>
-
-  <!-- Container for timer, timer buttons, and distraction button + prompt -->
-	<section id="timerContainer" class="section-container">
-		<div id="countdown">
-			<h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
-			<p id="top-left-border"> <span>┌</span> </p>
-			<p id="timeDisplay">  </p>
-			<p id="bottom-right-border"> <span>┘</span> </p>
-			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
-			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
-			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
-			<br> </div>
-	</section>
-	<br>
-
-	<!-- The audio cue -->
-	<audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
-	<!-- Container for current task -->
-	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
-	<!-- Container for task list -->
-	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
-		<table id='todo'>
-			<tr id="taskListHeader">
-				<th class='col1-checkbox'></th>
-				<th class='col2-task'>TASKS</th>
-				<th class='col3-pomos'># of Pomos</th>
-				<th class='col4-delete'>
-					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
-				</th>
-			</tr>
-		</table>
-		<div id='form-container'>
-			<form id='add-todo' data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
-				<input type='text' name='task-name' placeholder='Enter task' class='task-name' maxlength='80' required>
-				<div class="tooltip">
-					<input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
-					<span class="tooltiptext">Amount of pomo-sessions</span>
-				</div>
-				<button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
-			</form>
-		</div>
-	</div>
-
-    <!-- Distraction Box-->
-    <section class="form-popup" id="distract-popup">
-      <form class="form-container" id="distract-form">
-        <h2 class='distraction-label'>Report Distraction</h2>
-        <label class="distraction-label small">Distraction Description</label>
-        <input type="text" placeholder="Enter a short description of the distraction" id="description" required="">
-        <button type="submit" class="distractFormButton" id="submit-button">Submit</button>
-        <button type="button" class="distractFormButton cancel" id="cancel-button">Cancel</button>
-      </form>
-    </section>
-    <!-- Stats-->
-    <section class="stats-popup" id='stats-section'>
-      <div id='parentDiv' class='slide-out'>
-        <span class="close-stats-button" id='close-stats-button'>&times;</span>
-        <h2 class='statslabel'>Your Stats</h2>
-        <div class="tab">
-          <button class="tab-btn" id="data"> Data </button>
-          <button class="tab-btn" id="distraction"> Distraction </button>
-        </div>
-        <div id='stats-info' class='stats-info-container'></div>
-      </div>
-    </section>
-
-    <!-- FAQ-->
-    <section class="faq">
-      <div id="FAQ">
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <div class="modal-header"> <span class="close">&times;</span>
-              <h2>The PomoXV Timer Can Help You With Productivity</h2>
+                </div>
             </div>
-            <div class="modal-body">
-              <h2>What is the PomoXV Timer?</h2>
-              <p> PomoXV is a Pomodoro Technique timer that works on your computer with an aim to increase your
-                productivity and reduce the stress and anxiety of planning your time. The aim of this app is to help you
-                focus on any task you are working on, such as studying, writing, or coding. This app is inspired by <a
-                  href='https://francescocirillo.com/pages/pomodoro-technique' target='_blank' rel='noopener'>Pomodoro
+            <p id="colorChangeHeader">Color Theme</p>
+            <div id="colorPickerContent">
+                <div class="colorSelectorDiv">
+                    <label>Work</label><br>
+                    <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+                    <span></span>
+                </div>
+                <div class="colorSelectorDiv">
+                    <label>Short Break</label><br>
+                    <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+                    <span></span>
+                </div>
+                <div class="colorSelectorDiv">
+                    <label>Long Break</label><br>
+                    <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- </div> -->
+        </section>
+
+        <!-- Container for timer, timer buttons, and distraction button + prompt -->
+        <section id="timerContainer" class="section-container">
+            <div id="countdown">
+                <h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3'> Pomo-Time!</h2>
+                <p id="top-left-border"> <span>┌</span> </p>
+                <p id="timeDisplay"> </p>
+                <p id="bottom-right-border"> <span>┘</span> </p>
+                <button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
+                <button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
+                <button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
+                <br> </div>
+        </section>
+        <br>
+
+        <!-- The audio cue -->
+        <audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
+        <!-- Container for current task -->
+        <section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8'> &nbsp; </section>
+        <!-- Container for task list -->
+        <div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
+            <table id='todo'>
+                <tr id="taskListHeader">
+                    <th class='col1-checkbox'></th>
+                    <th class='col2-task'>TASKS</th>
+                    <th class='col3-pomos'># of Pomos</th>
+                    <th class='col4-delete'>
+                        <button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
+                    </th>
+                </tr>
+            </table>
+            <div id='form-container'>
+                <form id='add-todo' data-title="Tasks" data-intro="Here you can enter the name as well as the amount of pomo-sessions your task will take" data-step='7'>
+                    <input type='text' name='task-name' placeholder='Enter task' class='task-name' maxlength='80' required>
+                    <div class="tooltip">
+                        <input type='number' name='task-length' placeholder='#' class='task-length' min='1' max='9' required>
+                        <span class="tooltiptext">Amount of pomo-sessions</span>
+                    </div>
+                    <button id="add-button" type='submit' class="btn-floating btn-small"><i class="material-icons">add</i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Distraction Box-->
+        <section class="form-popup" id="distract-popup">
+            <form class="form-container" id="distract-form">
+                <h2 class='distraction-label'>Report Distraction</h2>
+                <label class="distraction-label small">Distraction Description</label>
+                <input type="text" placeholder="Enter a short description of the distraction" id="description" required="">
+                <button type="submit" class="distractFormButton" id="submit-button">Submit</button>
+                <button type="button" class="distractFormButton cancel" id="cancel-button">Cancel</button>
+            </form>
+        </section>
+        <!-- Stats-->
+        <section class="stats-popup" id='stats-section'>
+            <div id='parentDiv' class='slide-out'>
+                <span class="close-stats-button" id='close-stats-button'>&times;</span>
+                <h2 class='statslabel'>Your Stats</h2>
+                <div class="tab">
+                    <button class="tab-btn" id="data"> Data </button>
+                    <button class="tab-btn" id="distraction"> Distraction </button>
+                </div>
+                <div id='stats-info' class='stats-info-container'></div>
+            </div>
+        </section>
+
+        <!-- FAQ-->
+        <section class="faq">
+            <div id="FAQ">
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header"> <span class="close">&times;</span>
+                            <h2>The PomoXV Timer Can Help You With Productivity</h2>
+                        </div>
+                        <div class="modal-body">
+                            <h2>What is the PomoXV Timer?</h2>
+                            <p> PomoXV is a Pomodoro Technique timer that works on your computer with an aim to increase your productivity and reduce the stress and anxiety of planning your time. The aim of this app is to help you focus on any task you are
+                                working on, such as studying, writing, or coding. This app is inspired by <a href='https://francescocirillo.com/pages/pomodoro-technique' target='_blank' rel='noopener'>Pomodoro
                   Technique</a> which is a time management method developed by Francesco Cirillo. </p>
-              <h2>What is the Pomodoro Technique?</h2>
-              <p> The Pomodoro Technique is a technique created by Francesco Cirillo for a more productive way to work
-                and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in
-                length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for
-                'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. - <a
-                  href='https://en.wikipedia.org/wiki/Pomodoro_Technique' target='_blank' rel='noopener'>Wikipedia</a>
-              </p>
+                            <h2>What is the Pomodoro Technique?</h2>
+                            <p> The Pomodoro Technique is a technique created by Francesco Cirillo for a more productive way to work and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by
+                                short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. - <a href='https://en.wikipedia.org/wiki/Pomodoro_Technique'
+                                    target='_blank' rel='noopener'>Wikipedia</a>
+                            </p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <h2>Stay Productive!</h2>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="modal-footer">
-              <h2>Stay Productive!</h2>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-</section>
-<script>
-  if (Notification.permission !== 'denied'){
-    Notification.requestPermission().then(permission => {});
-  }
-  // update dark theme at the beginning to prevent transition
-  const pageBGColor = {
-    name: '--page-bg-color',
-    darkVal: '#363636',
-  };
-  const headerColor = {
-    name: '--header-color',
-    darkVal: '2d2c2b',
-  };
-  const toothpaste = {
-    name: '--toothpaste',
-    darkVal: '#2d2c2b',
-  };
-  if (localStorage.getItem('darkModeSwitch') === 'true') {
-    document.querySelector('body').style.transitionDuration = '0s';
-    const root = document.documentElement;
-    root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
-    root.style.setProperty(headerColor.name, headerColor.darkVal);
-    root.style.setProperty(toothpaste.name, toothpaste.darkVal);
-    document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
-  }
-</script>
-<script type="module" src="./js/App.js"></script>
-<script type="module" src="./js/Distraction/Distraction.js"></script>
-<script type="module" src="./js/Misc/Settings.js"></script>
-<script type="module" src="./js/FAQ/FAQ.js"></script>
-<script src="./js/ThirdParty/intro.js"></script>
-</div>
-<script>
-  // set the transition back to 2s after dark theme is painted
-  document.querySelector('body').style.transitionDuration = '2s';
-</script>
+        </section>
+        <script>
+            if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {});
+            }
+            // update dark theme at the beginning to prevent transition
+            const pageBGColor = {
+                name: '--page-bg-color',
+                darkVal: '#363636',
+            };
+            const headerColor = {
+                name: '--header-color',
+                darkVal: '2d2c2b',
+            };
+            const toothpaste = {
+                name: '--toothpaste',
+                darkVal: '#2d2c2b',
+            };
+            if (localStorage.getItem('darkModeSwitch') === 'true') {
+                document.querySelector('body').style.transitionDuration = '0s';
+                const root = document.documentElement;
+                root.style.setProperty(pageBGColor.name, pageBGColor.darkVal);
+                root.style.setProperty(headerColor.name, headerColor.darkVal);
+                root.style.setProperty(toothpaste.name, toothpaste.darkVal);
+                document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
+                document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
+                document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
+                document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
+            }
+        </script>
+        <script type="module" src="./js/App.js"></script>
+        <script type="module" src="./js/Distraction/Distraction.js"></script>
+        <script type="module" src="./js/Misc/Settings.js"></script>
+        <script type="module" src="./js/FAQ/FAQ.js"></script>
+        <script src="./js/ThirdParty/intro.js"></script>
+    </div>
+    <script>
+        // set the transition back to 2s after dark theme is painted
+        document.querySelector('body').style.transitionDuration = '2s';
+    </script>
 </body>
 
 </html>
