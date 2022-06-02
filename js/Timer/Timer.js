@@ -142,6 +142,7 @@ class Timer extends HTMLElement {
     // Gets current state to determine which notification to give.
     const currentState = this.stateQueue[0].name;
     const iconUrl = './assets/img/webicon.png';
+    /* istanbul ignore next */
     if (Notification.permission === 'granted') {
       if (currentState === 'Short Break') {
         new Notification('Pomo XV', {
@@ -237,6 +238,7 @@ class Timer extends HTMLElement {
     this.timerWorker.postMessage(-1);
     this.updateDisplay();
     this.displayStatus.textContent = distractionMessage;
+    document.title = 'Distracted';
   }
 
   /**

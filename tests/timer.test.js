@@ -13,7 +13,7 @@ beforeEach(() => {
   document.body.innerHTML = '<div>'
   + '  <p id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'
-  + '<button id=start>Start</button>'
+  + '<button id=start>Start&nbsp;&nbsp;&nbsp;&nbsp;</button>'
   + '<input type="number" id="focusTime">'
   + '<input type="number" id="shortBreakTime">'
   + '<input type="number" id="longBreakTime">'
@@ -126,7 +126,7 @@ test('Test Timer Pauses After Work Session When Auto Start is Disabled', () => {
   autoStartSwitch.checked = false;
   jest.advanceTimersByTime(workMode.duration * 60 * 1000);
   expect(TimerObj.displayStatus.textContent).toBe('Short Break');
-  expect(button.childNodes[0].nodeValue).toBe('Start');
+  expect(button.childNodes[0].nodeValue).toBe(buttonText.startTimerText);
   expect(displayStatus.textContent).toBe('Short Break');
   expect(document.title).toBe('Short Break');
 });

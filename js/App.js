@@ -169,6 +169,10 @@ const noDeviceSwitch = document.getElementById('noDeviceSwitch');
  * @type {DistractedByDevice}
  */
 const distractedByDevice = new DistractedByDevice(noDeviceSwitch, modeDisplay);
+/**
+ * For hiding/showing the nav buttons
+ * @type {Array}
+ */
 const navButtons = [document.getElementById('faqButton'),
   document.getElementById('statsButton'),
   document.getElementById('settingsButton'),
@@ -270,14 +274,20 @@ TimerObj.addEventListener('timer-start', (e) => {
   if (e.detail.sessionIsWork) {
     distractButton.disabled = false;
     // hide all buttons on focus
-    navButtons.forEach((element) => { element.style.display = 'none'; });
+    navButtons.forEach((element) => {
+      element.style.opacity = '0';
+      element.style.pointerEvents = 'none';
+    });
     distractedByDevice.startPomoTime();
     hideTasklist();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
     // unhide buttons on break time
-    navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+    navButtons.forEach((element) => {
+      element.style.opacity = '1';
+      element.style.pointerEvents = 'auto';
+    });
     showTasklist();
   }
 });
@@ -291,7 +301,10 @@ TimerObj.addEventListener('timer-end', () => {
   distractedByDevice.endPomoTime();
   DistractionPage.resetPopUp();
   // show all buttons when timer ends
-  navButtons.forEach((element) => { element.style.display = 'inline-block'; });
+  navButtons.forEach((element) => {
+    element.style.opacity = '1';
+    element.style.pointerEvents = 'auto';
+  });
   showTasklist();
 });
 
