@@ -153,7 +153,7 @@ button,
 select {
   /* 1 */
   text-transform: none;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /**
@@ -402,7 +402,7 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 nav .brand-logo {
@@ -612,8 +612,8 @@ html {
   background-color: var(--btn-icon-color);
   text-align: center;
   letter-spacing: 0.5px;
-  -webkit-transition: background-color 2s ease-out;
-  transition: background-color 2s ease-out;
+  -webkit-transition: var(--theme-transi-dura) ease-out;
+  transition: var(--theme-transi-dura) ease-out;
   cursor: pointer;
 }
 
@@ -634,8 +634,8 @@ html {
   padding: 0;
   background-color: var(--btn-icon-color);
   border-radius: 50%;
-  -webkit-transition: background-color 2s;
-  transition: background-color 2s;
+  -webkit-transition: var(--theme-transi-dura);
+  transition: var(--theme-transi-dura);
   cursor: pointer;
   vertical-align: middle;
 }
@@ -703,8 +703,8 @@ button.btn-floating {
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   z-index: 1;
-  -webkit-transition: opacity 2s ease-out, 0.2s background-color ease-out;
-  transition: opacity 2s ease-out, 0.2s background-color ease-out;
+  -webkit-transition: opacity var(--focus-transi-dura) ease-out, var(--highlight-transi-dura) background-color ease-out;
+  transition: opacity var(--focus-transi-dura) ease-out, var(--highlight-transi-dura) background-color ease-out;
 }
 
 .waves-effect input[type="button"],

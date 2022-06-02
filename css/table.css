@@ -9,7 +9,7 @@
   overflow-y: auto;
   border-radius: var(--td-border-radius);
 
-  /* transition-duration: 2s; */
+  /* transition-duration: var(--theme-transi-dura); */
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -23,7 +23,7 @@ table {
   /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
   background-color: var(--table-bg-color);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 th,
@@ -43,17 +43,17 @@ th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 td {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
   word-break: break-word;
 }
 
 tr {
   margin-top: 20px;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 
   /* width: 100%; */
 }
@@ -162,15 +162,15 @@ td button:active {
   padding-bottom: 10px;
   border-bottom-left-radius: var(--td-border-radius);
   border-bottom-right-radius: var(--td-border-radius);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 #todo {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 #taskListHeader {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* checkbox and delete button styling */
@@ -304,7 +304,7 @@ tr.uncheckedTask:nth-child(2) td {
 
   /* Fade in tooltip */
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s !important;
 }
 
 /* Tooltip arrow */
