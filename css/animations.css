@@ -44,11 +44,13 @@
   background-color: var(--tr-hover-color);
 }
 
+/* LONG BREAK MODE! (for style check in lint) */
 .long-break tr:nth-child(odd) td,
 .long-break tr:nth-child(even) td {
   background-color: var(--even-color-long);
 }
 
+/* LONG BREAK MODE! (for style check in lint) */
 .long-break tr:hover td {
   background-color: var(--tr-hover-color);
 }
