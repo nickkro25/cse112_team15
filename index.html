@@ -172,18 +172,18 @@
 			<p id="top-left-border"> <span>┌</span> </p>
 			<p id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
+      <!-- Container for current task -->
+      <div id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </div>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
 			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
 			<br> </div>
-	</section>
-	<br>
-
-	<!-- The audio cue -->
-	<audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
-	<!-- Container for current task -->
-	<section id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </section>
-	<!-- Container for task list -->
+    </section>
+    <br>
+    
+    <!-- The audio cue -->
+    <audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
+    <!-- Container for task list -->
 	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
 			<tr id="taskListHeader">
