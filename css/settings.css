@@ -19,10 +19,6 @@
   row-gap: 25px;
 }
 
-#settingsPopup * {
-  transition-duration: 2s;
-}
-
 #settingsHeader {
   color: var(--modal-font-color);
   margin-top: 10px;
@@ -37,7 +33,7 @@
   grid-template-columns: auto auto auto;
   row-gap: 1rem;
   color: var(--modal-font-color);
-  transition-duration: 0s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 #colorChangeHeader {
@@ -51,7 +47,7 @@
   font-size: 14px;
   text-align: center;
   padding-bottom: 1rem;
-  transition-duration: 0s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .colorPicker {
