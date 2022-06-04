@@ -243,16 +243,23 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
-function hideTasklist() {
-  document.getElementById('tasklist').style.display = 'none';
+function enterFocusMode() {
+  document.getElementById('tasklist').style.opacity = '0';
+  document.getElementById('tasklist').style.visibility = 'hidden';
+  document.getElementById('tasklist').style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
   document.getElementById('timerContainer').classList.add('focus');
   document.getElementById('currentTask').classList.add('focus');
+  document.querySelector('nav').classList.add('focus');
 }
 
-function showTasklist() {
-  document.getElementById('tasklist').style.display = null;
+function exitFocusMode() {
+  document.getElementById('tasklist').style.opacity = '1';
+  document.getElementById('tasklist').style.visibility = 'visible';
+  document.getElementById('tasklist').style.transition = 'opacity 1s linear';
+  document.getElementById('tasklist').style.transitionDelay = '1s';
   document.getElementById('timerContainer').classList.remove('focus');
   document.getElementById('currentTask').classList.remove('focus');
+  document.querySelector('nav').classList.remove('focus');
 }
 
 /**
@@ -268,7 +275,7 @@ TimerObj.addEventListener('timer-start', (e) => {
       element.style.pointerEvents = 'none';
     });
     distractedByDevice.startPomoTime();
-    hideTasklist();
+    enterFocusMode();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
@@ -277,7 +284,7 @@ TimerObj.addEventListener('timer-start', (e) => {
       element.style.opacity = '1';
       element.style.pointerEvents = 'auto';
     });
-    showTasklist();
+    exitFocusMode();
   }
 });
 
@@ -294,7 +301,7 @@ TimerObj.addEventListener('timer-end', () => {
     element.style.opacity = '1';
     element.style.pointerEvents = 'auto';
   });
-  showTasklist();
+  exitFocusMode();
 });
 
 document.body.addEventListener('task-up', (e) => {

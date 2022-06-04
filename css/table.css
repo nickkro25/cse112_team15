@@ -8,8 +8,11 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
+  transition-duration: 2s;
+}
 
-  /* transition-duration: var(--theme-transi-dura); */
+#tasklist * {
+  transition: background-color var(--theme-transi-dura);
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -19,8 +22,6 @@ table {
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
   min-height: 44vh;
-
-  /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
   background-color: var(--table-bg-color);
   transition-duration: var(--theme-transi-dura);
@@ -30,8 +31,6 @@ th,
 td {
   padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-
-  /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
@@ -257,6 +256,7 @@ tr.uncheckedTask:nth-child(2) td {
   border: 2px solid transparent;
   border-radius: 8px;
   background-clip: padding-box;
+  transition-duration: 2s;
 }
 
 #tasklist::-webkit-scrollbar {
