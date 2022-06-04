@@ -230,6 +230,11 @@ class Timer extends HTMLElement {
     }
     const event = new CustomEvent('timer-end');
     this.dispatchEvent(event);
+    // When ending the timer, reset all indicators
+    const indicators = document.querySelectorAll('.indicator');
+    for (let i = 0; i < indicators.length; i += 1) {
+      indicators[i].textContent = 'trip_origin';
+    }
   }
 
   /**
