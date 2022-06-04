@@ -81,11 +81,6 @@
   opacity: 1;
 }
 
-#distract-form h1,
-b {
-  color: black; /* so that text shows up for distraction box against white background */
-}
-
 @media screen and (max-width: 600px) {
   #distract-form {
     width: 80vw;
