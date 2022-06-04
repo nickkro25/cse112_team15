@@ -377,7 +377,7 @@ nav.focus {
   }
 
   #currentTask.focus {
-    font-size: xx-large;
+    font-size: 90%;
   }
 }
 
