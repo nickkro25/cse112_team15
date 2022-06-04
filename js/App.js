@@ -194,6 +194,22 @@ tourButton.addEventListener('click', () => {
 });
 
 /**
+ * Update session indicator icons based on how many pomos are left until long break
+ */
+function updateSessionIndicators(location) {
+  const indicators = document.querySelectorAll('.indicator');
+  // Long break finished, reset all indicators
+  if (location === 7) {
+    for (let i = 0; i < indicators.length; i += 1) {
+      indicators[i].textContent = 'trip_origin';
+    }
+  } else {
+    // fill in the appropriate indicator
+    indicators[6 - location].textContent = 'circle';
+  }
+}
+
+/**
  * When timer is complete, if a work session was completed then:
  * 1. Increment current task pomo sessions
  * 2. Add work time to stats
@@ -221,6 +237,7 @@ TimerObj.addEventListener('timer-complete', (e) => {
     workModeColors();
     workModeSound();
   }
+  updateSessionIndicators(e.detail.longBreakLocation);
 });
 
 /**
