@@ -75,11 +75,6 @@ ul {
   padding: 0;
 }
 
-li {
-  display: inline;
-  float: right;
-}
-
 a.brand-logo {
   margin-left: 1vw;
   pointer-events: none;
