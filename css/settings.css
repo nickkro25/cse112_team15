@@ -5,7 +5,7 @@
   right: 2%;
   padding: 5px 25px 25px 25px;
   border-radius: 5px;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
   z-index: 2;
 }
 

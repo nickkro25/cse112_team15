@@ -54,19 +54,23 @@
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
-  --transition-speed: 0.25s;
+  
+  /* the theme transition duration */
+  --theme-transi-dura: background-color 0.2s;
+  --focus-transi-dura: 2s;
+  --highlight-transi-dura: 0.2s;
 }
 
 body {
   background-color: var(--page-bg-color);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 ul {
@@ -104,7 +108,7 @@ a.brand-logo span {
 .section-container {
   position: relative;
   margin: auto;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* header styling */
@@ -156,6 +160,7 @@ a.brand-logo span {
   min-width: 650px; */
 
   /* background-color: var(--timer-bg-color); */
+  transition: transform var(--focus-transi-dura);
   border-radius: 10px;
 }
 
@@ -193,6 +198,7 @@ a.brand-logo span {
   text-align: center;
   padding: 10px;
   word-break: break-word;
+  transition: transform var(--focus-transi-dura);
 }
 
 html {
