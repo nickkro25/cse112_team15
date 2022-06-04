@@ -34,7 +34,6 @@
   --font-color-long: none;
   --btn-icon-color-long: none;
   --btn-icon-hover-color-long: none;
-
   --even-color: rgba(149, 218, 229, 0.603);
   --odd-color: var(--even-color);
   --tr-hover-color: #f2f2f279;
@@ -222,7 +221,7 @@ html {
 } */
 
 #startTimer {
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 #distractionButton {
