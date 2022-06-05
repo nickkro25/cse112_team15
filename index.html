@@ -66,103 +66,112 @@
 
     <!-- Settings popup -->
     <section id="settingsPopup">
-      <h1 id="settingsHeader">Settings</h1>
+      <!-- <h2 id="settingsHeader">Settings</h2> -->
       <div id="settingsContent">
+        <h2 id="timerLengthText">Timer Length</h2>
         <div id="customTimeGroup">
           <div id="focusTimeSelector">
             <label>
-              Focus:<br>
+              Work<br>
               <input id="focusTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
           <div id="shortTimeSelector">
             <label>
-              Short Break:<br>
+              Short Break<br>
               <input id="shortBreakTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
           <div id="longTimeSelector">
             <label>
-              Long Break:<br>
+              Long Break<br>
               <input id="longBreakTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
         </div>
-        <div id="workSoundGroup">
-          <label for="workSoundSelector">Work Time Sound:</label><br>
-          <select name="work-sound" id="workSoundSelector">
-            <option value="marimba" selected>Marimba</option>
-            <option value="kitchen">Kitchen Timer</option>
-            <option value="microwave">Microwave Beep</option>
-            <option value="fire">Fire Alarm</option>
-            <option value="item">Item Get</option>
-            <option value="ringtone">Ringtone</option>
-          </select>
+        <div id="soundsHeaderGroup">
+          <h2 id="soundsHeader">Sounds</h2>
+          <div id="muteGroup">
+            <label id="muteText">Mute</label>
+            <label class="switch">
+              <input type="checkbox" id="muteSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
-        <div id="breakSoundGroup">
-          <label for="breakSoundSelector">Break Time Sound:</label><br>
-          <select name="break sound" id="breakSoundSelector">
-            <option value="marimba" selected>Marimba</option>
-            <option value="kitchen">Kitchen Timer</option>
-            <option value="microwave">Microwave Beep</option>
-            <option value="fire">Fire Alarm</option>
-            <option value="item">Item Get</option>
-            <option value="ringtone">Ringtone</option>
-          </select>
+        <div id="soundGroup">
+          <div id="workSoundGroup">
+            <label for="workSoundSelector">Work Sound</label><br>
+            <select name="work-sound" id="workSoundSelector">
+              <option value="marimba" selected>Marimba</option>
+              <option value="kitchen">Kitchen Timer</option>
+              <option value="microwave">Microwave Beep</option>
+              <option value="fire">Fire Alarm</option>
+              <option value="item">Item Get</option>
+              <option value="ringtone">Ringtone</option>
+            </select>
+          </div>
+          <div id="breakSoundGroup">
+            <label for="breakSoundSelector">Break Sound</label><br>
+            <select name="break sound" id="breakSoundSelector">
+              <option value="marimba" selected>Marimba</option>
+              <option value="kitchen">Kitchen Timer</option>
+              <option value="microwave">Microwave Beep</option>
+              <option value="fire">Fire Alarm</option>
+              <option value="item">Item Get</option>
+              <option value="ringtone">Ringtone</option>
+            </select>
+          </div>
         </div>
-        <div id="darkModeGroup">
-          <label>Dark mode:</label><br>
-          <label class="switch">
-            <input type="checkbox" id="darkModeSwitch">
+        <div id="colorHeaderGroup">
+          <h2 id="colorHeader">Appearance</h2>
+          <div id="darkModeGroup">
+            <label id="darkModeText">Dark Mode</label><br>
+            <label class="switch">
+              <input type="checkbox" id="darkModeSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div id="colorPickerContent">
+          <div class="colorSelectorDiv">
+            <label>Work</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+            <span></span>
+          </div>
+          <div class="colorSelectorDiv">
+            <label>Short Break</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+            <span></span>
+          </div>
+          <div class="colorSelectorDiv">
+            <label>Long Break</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+            <span></span>
+          </div>
+        </div>
+        <h2>Work Settings</h2>
+        <div id="workSettingsGroup">
+          <div id="autoStartGroup">
+            <label>Auto-Start Next Timer</label><br>
+            <label class="switch">
+            <input type="checkbox" id="autoStartSwitch">
             <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="muteGroup">
-          <label>Mute:</label><br>
-          <label class="switch">
-            <input type="checkbox" id="muteSwitch">
+            </label>
+          </div>
+          <div id="deviceNotUsedGroup">
+            <div class="tooltip">
+              <label>Device Required</label>
+              <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
+                                        please stay on this web page for this to work</span>
+            </div><br>
+            <label class="switch">
+            <input type="checkbox" id="noDeviceSwitch" checked=checked>
             <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="autoStartGroup">
-          <label>Auto-start next timer:</label><br>
-          <label class="switch">
-          <input type="checkbox" id="autoStartSwitch">
-          <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="deviceNotUsedGroup">
-          <div class="tooltip">
-            <label>Device required for work:</label>
-            <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
-                                      please stay on this web page for this to work</span>
-          </div><br>
-          <label class="switch">
-          <input type="checkbox" id="noDeviceSwitch" checked=checked>
-          <span class="slider round"></span>
-          </label>
+            </label>
+          </div>
         </div>
       </div>
-      <p id="colorChangeHeader">Color Theme</p>
-      <div id="colorPickerContent">
-        <div class="colorSelectorDiv">
-          <label>Work</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Short Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Long Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
-          <span></span>
-        </div>
-      </div>
-
-    <!-- </div> -->
   </section>
 
   <!-- Container for timer, timer buttons, and distraction button + prompt -->
