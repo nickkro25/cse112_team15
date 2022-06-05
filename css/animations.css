@@ -1,22 +1,22 @@
 /* short break color modes */
 .short-break {
   background-color: var(--page-bg-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break nav {
   background-color: var(--header-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break table {
   background-color: var(--table-bg-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break th {
   background-color: var(--header-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* LONG BREAK MODE! (for style check in lint) */
@@ -61,14 +61,14 @@
 
 .short-break #add-todo {
   background-color: var(--header-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break .btn,
 .short-break .btn-large,
 .short-break .btn-floating {
   background-color: var(--btn-icon-color-short);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break .main-page,
@@ -96,7 +96,7 @@
 .long-break .btn-large,
 .long-break .btn-floating {
   background-color: var(--btn-icon-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* LONG BREAK MODE! (for style check in lint) */
@@ -164,27 +164,32 @@
   background-color: var(--btn-icon-color-short);
 }
 
+.short-break .triple-dots-touch button,
+.short-break .double-buttons button {
+  color: var(--font-color-short);
+}
+
 /* long break color modes */
 
 /* Note: there are some long break color modes settings above for passing the style check in lint */
 .long-break {
   background-color: var(--page-bg-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .long-break nav {
   background-color: var(--header-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .long-break table {
   background-color: var(--table-bg-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .long-break th {
   background-color: var(--header-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .long-break #tasklist::-webkit-scrollbar-thumb {
@@ -197,7 +202,7 @@
 
 .long-break #add-todo {
   background-color: var(--header-color-long);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .long-break .btn:hover,
@@ -231,6 +236,11 @@
 
 .long-break button:focus {
   background-color: var(--btn-icon-color-long);
+}
+
+.long-break .triple-dots-touch button,
+.long-break .double-buttons button {
+  color: var(--font-color-long);
 }
 
 /* distraction popup animations */
