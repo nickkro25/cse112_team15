@@ -274,7 +274,8 @@ function enterFocusMode() {
   currentTaskDiv.classList.add('focus');
   navBar.style.transitionDuration = '2s';
   navBar.classList.add('focus');
-  document.getElementById('sessionIndicator').style.display = 'none';
+  document.getElementById('sessionIndicator').style.opacity = 0;
+  document.getElementById('sessionIndicator').classList.add('focus');
 }
 
 function exitFocusMode() {
@@ -286,7 +287,8 @@ function exitFocusMode() {
   currentTaskDiv.classList.remove('focus');
   navBar.style.transitionDuration = '2s';
   navBar.classList.remove('focus');
-  document.getElementById('sessionIndicator').style.display = 'block';
+  document.getElementById('sessionIndicator').style.opacity = 1;
+  document.getElementById('sessionIndicator').classList.remove('focus');
 }
 
 /**
