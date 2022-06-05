@@ -48,16 +48,16 @@
           </a>
           <ul class="right hide-on-med-and-down">
             <li><a class="waves-effect waves-light btn" id="faqButton" data-title="Misc"
-                data-intro="Click this FAQ Button for more information on the Pomodoro Technique" data-step='10'>FAQ<i
+                data-intro="Click this FAQ Button for more information on the Pomodoro Technique" data-step='11'>FAQ<i
                   class="material-icons right">help_outline</i></a></li>
             <li><a class="waves-effect waves-light btn" id="statsButton" data-title="Misc"
-                data-intro="You can see your statistics for the current day here" data-step='11'>Statistics<i
+                data-intro="You can see your statistics for the current day here" data-step='12'>Statistics<i
                   class="material-icons right">insert_chart</i></a></li>
             <li><a class="waves-effect waves-light btn" id="settingsButton" data-title="Misc"
                 data-intro="If you would like to change the sounds of the app or enter into dark mode, click here"
-                data-step='12'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
+                data-step='13'>Settings<i id="settingsButtonIcon" class="material-icons right">settings</i></a></li>
             <li><a class="waves-effect waves-light btn" id="onboardingButton" data-title="Misc"
-                data-intro="If you would like to rerun the tutorial, click here" data-step='13'>TOUR<i
+                data-intro="If you would like to rerun the tutorial, click here" data-step='14'>TOUR<i
                   class="material-icons right">replay</i></a></li>
           </ul>
         </div>
@@ -66,103 +66,112 @@
 
     <!-- Settings popup -->
     <section id="settingsPopup">
-      <h1 id="settingsHeader">Settings</h1>
+      <!-- <h2 id="settingsHeader">Settings</h2> -->
       <div id="settingsContent">
+        <h2 id="timerLengthText">Timer Length</h2>
         <div id="customTimeGroup">
           <div id="focusTimeSelector">
             <label>
-              Focus:<br>
+              Work<br>
               <input id="focusTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
           <div id="shortTimeSelector">
             <label>
-              Short Break:<br>
+              Short Break<br>
               <input id="shortBreakTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
           <div id="longTimeSelector">
             <label>
-              Long Break:<br>
+              Long Break<br>
               <input id="longBreakTime" type="number" min="1" max="99" step="1">
             </label>
           </div>
         </div>
-        <div id="workSoundGroup">
-          <label for="workSoundSelector">Work Time Sound:</label><br>
-          <select name="work-sound" id="workSoundSelector">
-            <option value="marimba" selected>Marimba</option>
-            <option value="kitchen">Kitchen Timer</option>
-            <option value="microwave">Microwave Beep</option>
-            <option value="fire">Fire Alarm</option>
-            <option value="item">Item Get</option>
-            <option value="ringtone">Ringtone</option>
-          </select>
+        <div id="soundsHeaderGroup">
+          <h2 id="soundsHeader">Sounds</h2>
+          <div id="muteGroup">
+            <label id="muteText">Mute</label>
+            <label class="switch">
+              <input type="checkbox" id="muteSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
-        <div id="breakSoundGroup">
-          <label for="breakSoundSelector">Break Time Sound:</label><br>
-          <select name="break sound" id="breakSoundSelector">
-            <option value="marimba" selected>Marimba</option>
-            <option value="kitchen">Kitchen Timer</option>
-            <option value="microwave">Microwave Beep</option>
-            <option value="fire">Fire Alarm</option>
-            <option value="item">Item Get</option>
-            <option value="ringtone">Ringtone</option>
-          </select>
+        <div id="soundGroup">
+          <div id="workSoundGroup">
+            <label for="workSoundSelector">Work Sound</label><br>
+            <select name="work-sound" id="workSoundSelector">
+              <option value="marimba" selected>Marimba</option>
+              <option value="kitchen">Kitchen Timer</option>
+              <option value="microwave">Microwave Beep</option>
+              <option value="fire">Fire Alarm</option>
+              <option value="item">Item Get</option>
+              <option value="ringtone">Ringtone</option>
+            </select>
+          </div>
+          <div id="breakSoundGroup">
+            <label for="breakSoundSelector">Break Sound</label><br>
+            <select name="break sound" id="breakSoundSelector">
+              <option value="marimba" selected>Marimba</option>
+              <option value="kitchen">Kitchen Timer</option>
+              <option value="microwave">Microwave Beep</option>
+              <option value="fire">Fire Alarm</option>
+              <option value="item">Item Get</option>
+              <option value="ringtone">Ringtone</option>
+            </select>
+          </div>
         </div>
-        <div id="darkModeGroup">
-          <label>Dark mode:</label><br>
-          <label class="switch">
-            <input type="checkbox" id="darkModeSwitch">
+        <div id="colorHeaderGroup">
+          <h2 id="colorHeader">Appearance</h2>
+          <div id="darkModeGroup">
+            <label id="darkModeText">Dark Mode</label><br>
+            <label class="switch">
+              <input type="checkbox" id="darkModeSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div id="colorPickerContent">
+          <div class="colorSelectorDiv">
+            <label>Work</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
+            <span></span>
+          </div>
+          <div class="colorSelectorDiv">
+            <label>Short Break</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
+            <span></span>
+          </div>
+          <div class="colorSelectorDiv">
+            <label>Long Break</label><br>
+            <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
+            <span></span>
+          </div>
+        </div>
+        <h2>Work Settings</h2>
+        <div id="workSettingsGroup">
+          <div id="autoStartGroup">
+            <label>Auto-Start Next Timer</label><br>
+            <label class="switch">
+            <input type="checkbox" id="autoStartSwitch">
             <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="muteGroup">
-          <label>Mute:</label><br>
-          <label class="switch">
-            <input type="checkbox" id="muteSwitch">
+            </label>
+          </div>
+          <div id="deviceNotUsedGroup">
+            <div class="tooltip">
+              <label>Device Required</label>
+              <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
+                                        please stay on this web page for this to work</span>
+            </div><br>
+            <label class="switch">
+            <input type="checkbox" id="noDeviceSwitch" checked=checked>
             <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="autoStartGroup">
-          <label>Auto-start next timer:</label><br>
-          <label class="switch">
-          <input type="checkbox" id="autoStartSwitch">
-          <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="deviceNotUsedGroup">
-          <div class="tooltip">
-            <label>Device required for work:</label>
-            <span class="tooltiptext">When turned off, mouse or keyboard input will be marked as distraction,
-                                      please stay on this web page for this to work</span>
-          </div><br>
-          <label class="switch">
-          <input type="checkbox" id="noDeviceSwitch" checked=checked>
-          <span class="slider round"></span>
-          </label>
+            </label>
+          </div>
         </div>
       </div>
-      <p id="colorChangeHeader">Color Theme</p>
-      <div id="colorPickerContent">
-        <div class="colorSelectorDiv">
-          <label>Work</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="workColorPicker" value="#D9645F">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Short Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="shortColorPicker" value="#76A662">
-          <span></span>
-        </div>
-        <div class="colorSelectorDiv">
-          <label>Long Break</label><br>
-          <input name="workColor" class="colorPicker" type="color" id="longColorPicker" value="#66B4DB">
-          <span></span>
-        </div>
-      </div>
-
-    <!-- </div> -->
   </section>
 
   <!-- Container for timer, timer buttons, and distraction button + prompt -->
@@ -186,7 +195,7 @@
       <div id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </div>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
-			<button class="btn-large waves-effect waves-light" id="finishTask" disabled>Finish Task <i class="material-icons right">done</i></button>
+			<button class="btn-large waves-effect waves-light" id="finishTask" data-title="Tasks" data-intro="If you finish the current task, press this button" data-step='9' disabled>Finish Task <i class="material-icons right">done</i></button>
 			<br> </div>
     </section>
     <br>
@@ -201,7 +210,7 @@
 				<th class='col2-task'>TASKS</th>
 				<th class='col3-pomos'># of Pomos</th>
 				<th class='col4-delete'>
-					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='9' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
+					<button data-title="Tasks" data-intro="If you would like to start fresh, press this button to delete all of your tasks" data-step='10' id="delete-all-button" type='submit' class="btn-floating btn-small"><i class="material-icons">delete_forever</i></button>
 				</th>
 			</tr>
 		</table>
@@ -245,22 +254,36 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <div class="modal-header"> <span class="close">&times;</span>
-              <h2>The PomoXV Timer Can Help You With Productivity</h2>
+              <h2>PomoXV FAQ</h2>
             </div>
             <div class="modal-body">
-              <h2>What is the PomoXV Timer?</h2>
-              <p> PomoXV is a Pomodoro Technique timer that works on your computer with an aim to increase your
-                productivity and reduce the stress and anxiety of planning your time. The aim of this app is to help you
-                focus on any task you are working on, such as studying, writing, or coding. This app is inspired by <a
-                  href='https://francescocirillo.com/pages/pomodoro-technique' target='_blank' rel='noopener'>Pomodoro
-                  Technique</a> which is a time management method developed by Francesco Cirillo. </p>
-              <h2>What is the Pomodoro Technique?</h2>
-              <p> The Pomodoro Technique is a technique created by Francesco Cirillo for a more productive way to work
-                and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in
-                length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for
-                'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. - <a
-                  href='https://en.wikipedia.org/wiki/Pomodoro_Technique' target='_blank' rel='noopener'>Wikipedia</a>
+              <h2>What is a Pomodoro Timer?</h2>
+              <p> A Pomodoro Timer is a technique used to <b> increase productivity </b> and <b>decrease distractions</b>. The technique uses a timer to break down work into intervals, traditionally 25 minutes in
+                length, separated by short breaks. After four working sessions, there is a reward of a long break.
+                Each working interval is known as a pomodoro, from the Italian word for
+                'tomato', coined after the tomato-shaped kitchen timer that the inventor of the technique used as a university student. - 
+                <a href='https://en.wikipedia.org/wiki/Pomodoro_Technique' target='_blank' rel='noopener'>Wikipedia</a>
               </p>
+              <h2>How do I use the PomoXV Timer?</h2>
+              <ol>
+                <li> Enter your tasks in the <b>task list</b>, including how many work sessions you need to complete it</li>
+                <li> Adjust your <b>settings</b> to maximize productivity for this work period</li>
+                <li> Start working by pressing <b>start </b> </li>
+                <li> Check off completed tasks using the <b>finish task</b> button </li>
+                <li> If you get <b>distracted </b> during a work session, report it using the distraction button and <b>restart </b> your work session </li>
+                <li> During <b>break time</b>, it is recommended to walk around, drink water, and not work to avoid burnout</li>
+                <li> After you finish your work day, check out your <b>stats </b> for the day using the statistics button</li>
+              </ol>  
+              <h2>What is PomoXV?</h2>
+              <p> PomoXV is a team of driven UCSD students in the Advanced Software Engineering class, CSE 112, taught by Thomas Powell. For this class
+                  we were tasked to choose an old project from the CSE 110 Software Engineering class and revamp it, in order to practice practical software engineering in an established
+                  code base. The <b>current </b> code base for this project is located 
+                  <a href='https://github.com/nickkro25/cse112_team15' target='_blank' rel='noopener'> here</a>.
+                  The <b>previous</b> code base is located    
+                  <a href='https://github.com/Anshul-Birla/cse110-w21-group28' target='_blank' rel='noopener'> here</a>.
+                  And finally the<b> previous application</b> is located    
+                  <a href='https://anshul-birla.github.io/cse110-w21-group28/' target='_blank' rel='noopener'> here</a>.   
+              </p>    
             </div>
 
             <div class="modal-footer">
