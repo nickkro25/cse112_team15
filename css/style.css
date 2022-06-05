@@ -54,6 +54,7 @@
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
+  --current-task-color: rgba(179, 179, 141, 0.7);
   
   /* the theme transition duration */
   --theme-transi-dura: background-color 0.2s;
