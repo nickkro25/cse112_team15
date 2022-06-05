@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="shortcut icon" href="#" />
   <link rel="stylesheet" href="./css/ThirdParty/reduced-materialize.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|" rel="stylesheet">
   <link rel="stylesheet" href="./css/ThirdParty/introjs.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/distraction-box.css" />
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./css/settings.css" />
   <link rel="stylesheet" href="./css/stats.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pomodoro</title>
+  <title>PomoXV</title>
   <link rel="icon" type="image/svg" href="./assets/img/webicon2.svg">
   <noscript>
     <style>
@@ -182,6 +182,16 @@
 			<p id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
       <!-- Container for current task -->
+      <div id="sessionIndicator">
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+        <span class="material-icons indicator">trip_origin</span>
+      </div>
       <div id="currentTask" class="section-container" data-title="Tasks" data-intro="The task you should currently be working on should be displayed here" data-step='8' > &nbsp; </div>
 			<button class="btn-large waves-effect waves-light" id="startTimer" data-title="Timer" data-intro="You can start the timer here" data-step='2'>Start&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons right" >timer</i></button>
 			<button class="btn-large waves-effect waves-light  red lighten-2" id="distractionButton" data-title="Timer" data-intro="During a working session, you can log any distractions you had" data-step='4' disabled>Distraction <i class="material-icons right">warning</i></button>
@@ -191,7 +201,7 @@
     <br>
     
     <!-- The audio cue -->
-    <audio id="alert-sound" src="./assets/audio/air-horn.mp3"></audio>
+    <audio id="alert-sound" src="./assets/audio/marimba.mp3"></audio>
     <!-- Container for task list -->
 	<div id='tasklist' class='section-container' data-title="Tasks" data-intro="Your tasks live in this table" data-step='5'>
 		<table id='todo'>
@@ -220,7 +230,6 @@
     <section class="form-popup" id="distract-popup">
       <form class="form-container" id="distract-form">
         <h2 class='distraction-label'>Report Distraction</h2>
-        <label class="distraction-label small">Distraction Description</label>
         <input type="text" placeholder="Enter a short description of the distraction" id="description" required="">
         <button type="submit" class="distractFormButton" id="submit-button">Submit</button>
         <button type="button" class="distractFormButton cancel" id="cancel-button">Cancel</button>

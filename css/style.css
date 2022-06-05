@@ -371,10 +371,34 @@ nav.focus {
 
 @media screen and (max-width: 600px) {
   #timerContainer.focus {
-    transform: translate(0, 40%);
+    transform: translate(0, 20%);
   }
 
   #currentTask.focus {
-    font-size: xx-large;
+    font-size: 90%;
   }
+}
+
+.indicator:nth-child(odd) {
+  color: var(--header-color);
+}
+
+.indicator:nth-child(even) {
+  color: var(--header-color-short);
+}
+
+.indicator:last-child {
+  color: var(--header-color-long);
+}
+
+.dark-mode .indicator:nth-child(odd) {
+  color: var(--btn-icon-color);
+}
+
+.dark-mode .indicator:nth-child(even) {
+  color: var(--btn-icon-color-short);
+}
+
+.dark-mode .indicator:last-child {
+  color: var(--btn-icon-color-long);
 }

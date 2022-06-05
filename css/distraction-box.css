@@ -12,7 +12,7 @@
 }
 
 #distract-form {
-  border-radius: 20px;
+  border-radius: 5px;
   width: 350px;
   padding: 10px 20px;
   background-color: var(--modal-bg-color);
@@ -24,14 +24,10 @@
   color: var(--modal-font-color);
 }
 
-.small {
-  font-size: 14px;
-}
-
 #description {
   outline: none;
   border-style: solid;
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: darkgray;
   border-width: 3px;
   font-size: 14px;
@@ -46,7 +42,7 @@
 .distractFormButton {
   border-style: none;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--page-bg-color);
   color: white;
   padding: 10px;

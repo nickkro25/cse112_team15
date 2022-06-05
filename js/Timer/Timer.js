@@ -170,6 +170,7 @@ class Timer extends HTMLElement {
         sessionIsWork: completedSession.isWork,
         sessionId: this.sessionId,
         nextSessionName: this.stateQueue[0].name,
+        longBreakLocation: this.stateQueue.findIndex((el) => el === longBreakMode),
       },
     });
 
@@ -220,7 +221,7 @@ class Timer extends HTMLElement {
     this.displayStatus.textContent = sessionStartName;
     // #6: only works with whole numbers
     this.timeDisplay.textContent = timeToString(workMode.duration * 60);
-    document.title = 'Pomodoro';
+    document.title = 'PomoXV';
     this.stateQueue = [];
     const workOrder = [workMode, shortBreakMode, workMode,
       shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
@@ -229,6 +230,11 @@ class Timer extends HTMLElement {
     }
     const event = new CustomEvent('timer-end');
     this.dispatchEvent(event);
+    // When ending the timer, reset all indicators
+    const indicators = document.querySelectorAll('.indicator');
+    for (let i = 0; i < indicators.length; i += 1) {
+      indicators[i].textContent = 'trip_origin';
+    }
   }
 
   /**
