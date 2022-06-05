@@ -287,7 +287,6 @@ function exitFocusMode() {
   currentTaskDiv.classList.remove('focus');
   navBar.style.transitionDuration = '2s';
   navBar.classList.remove('focus');
-  document.getElementById('sessionIndicator').style.display = 'block';
   document.getElementById('sessionIndicator').style.opacity = 1;
   document.getElementById('sessionIndicator').classList.remove('focus');
 }

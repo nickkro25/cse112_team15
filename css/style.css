@@ -188,6 +188,7 @@ a.brand-logo span {
 
 #sessionIndicator {
   transition-duration: var(--focus-transi-dura);
+  /* transition: transform 3s; */
   height: 48px;
 }
 
