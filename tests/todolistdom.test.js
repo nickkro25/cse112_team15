@@ -122,7 +122,6 @@ test('Addding an invalid task causes an alert', () => {
 });
 
 test('Delete all should remove from table and local storage', () => {
-
   const confirmDeleteAllBtnLocation = document.getElementById('confirm-delete-all');
   formLocation.children[0].setAttribute('value', 'Write Essay');
   formLocation.children[1].value = 2;
