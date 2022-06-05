@@ -186,6 +186,11 @@ a.brand-logo span {
   width: 100%;
 }
 
+#sessionIndicator {
+  transition-duration: var(--focus-transi-dura);
+  height: 48px;
+}
+
 #currentTask {
   font-size: 80%;
   display: flex;
@@ -359,6 +364,11 @@ nav.focus {
 
 #timerContainer.focus #modeDisplay {
   font-size: xx-large;
+}
+
+#sessionIndicator.focus {
+  transition-duration: var(--focus-transi-dura);
+  height: 0px;
 }
 
 #currentTask.focus {
