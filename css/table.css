@@ -112,6 +112,11 @@ td button {
   transition-duration: 0.1s;
 }
 
+.triple-dots-touch button,
+.double-buttons button {
+  color: var(--font-color);
+}
+
 td button:hover {
   color: var(--header-color);
   cursor: pointer;
@@ -178,7 +183,7 @@ td button:active {
   font-size: 100%;
   background-color: white;
   border-style: none;
-  border-radius: 60vh;
+  border-radius: 2.5px;
   border-color: var(--header-color);
   height: 2.5em;
   padding-left: 1vw;
@@ -189,7 +194,7 @@ td button:active {
 
 .task-name {
   width: 40%;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .task-length {
@@ -236,9 +241,8 @@ label {
 }
 
 .completedTask label:hover {
-  color: var(--header-color);
+  color: var(--font-color);
 }
-
 
 /* different color row for checked off tasks */
 tr.completedTask td {
@@ -246,7 +250,9 @@ tr.completedTask td {
 }
 
 /* Give current task a different bg color to make it stand out */
-tr.uncheckedTask:nth-child(2) td {
+tr.uncheckedTask:nth-child(2) td,
+.short-break tr.uncheckedTask:nth-child(2) td,
+.long-break tr.uncheckedTask:nth-child(2) td {
   background-color: rgb(179, 179, 141);
 }
 
