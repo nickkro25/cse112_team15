@@ -255,6 +255,7 @@ function enterFocusMode() {
   todoTable.parentElement.style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
   timeDisplay.parentElement.parentElement.classList.add('focus');
   currentTaskDiv.classList.add('focus');
+  navBar.style.transitionDuration = '2s';
   navBar.classList.add('focus');
 }
 
