@@ -10,8 +10,12 @@
   width: 315px;
 }
 
-#settingsPopup * {
-  transition-duration: 2s;
+#settingsHeader {
+  color: var(--modal-font-color);
+  margin-top: 10px;
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal;
 }
 
 /* slider stuff from w3schools */
@@ -167,16 +171,12 @@ input:checked + .slider::before {
 }
 
 #colorHeader {
-  /* grid-row: 1; */
   grid-column: 1;
-
-  /* display: flex; */
   justify-self: left;
   align-self: center;
 }
 
 #darkModeGroup {
-  /* grid-row: 1; */
   grid-column: 2;
   display: flex;
   justify-self: right;
@@ -193,7 +193,7 @@ input:checked + .slider::before {
   grid-template-columns: auto auto auto;
   row-gap: 1rem;
   color: var(--modal-font-color);
-  transition-duration: 0s;
+  transition-duration: var(--theme-transi-dura);
   padding-bottom: 15px;
   border-bottom: 1.5px gray solid;
 }
@@ -202,7 +202,7 @@ input:checked + .slider::before {
   font-size: 14px;
   text-align: center;
   padding-bottom: 1rem;
-  transition-duration: 0s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 .colorPicker {

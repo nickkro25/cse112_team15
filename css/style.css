@@ -55,7 +55,7 @@
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
   --current-task-color: rgba(179, 179, 141, 0.7);
-  
+
   /* the theme transition duration */
   --theme-transi-dura: background-color 0.2s;
   --focus-transi-dura: 2s;
@@ -71,7 +71,7 @@ header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
-  transition-duration: var(--theme-transi-dura);
+  transition: background-color var(--theme-transi-dura);
 }
 
 ul {
@@ -171,7 +171,8 @@ a.brand-logo span {
   margin: 10px;
   font-size: 80%;
   font-weight: normal;
-  transition-duration: 2s;
+  transition: color var(--theme-transi-dura);
+  transition: font-size var(--focus-transi-dura);
 }
 
 #timeDisplay {
@@ -194,7 +195,8 @@ a.brand-logo span {
   text-align: center;
   padding: 10px;
   word-break: break-word;
-  transition: transform var(--focus-transi-dura);
+  transition: color var(--theme-transi-dura);
+  transition: font-size var(--focus-transi-dura);
 }
 
 html {
@@ -347,7 +349,7 @@ a {
 }
 
 nav.focus {
-  /* transform: translate(0, -100%); */
+  /* transition-duration: var(--focus-transi-dura); */
   background-color: var(--page-bg-color);
 }
 

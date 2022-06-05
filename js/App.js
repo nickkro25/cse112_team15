@@ -17,6 +17,12 @@ function after3amToday() {
 }
 
 /**
+ * Navigation bar
+ * @type {HTMLElement}
+ */
+const navBar = document.querySelector('nav');
+
+/**
  * Location where time is displayed
  * @type {HTMLParagraphElement}
  */
@@ -244,22 +250,24 @@ startTimerButton.addEventListener('click', () => {
 });
 
 function enterFocusMode() {
-  document.getElementById('tasklist').style.opacity = '0';
-  document.getElementById('tasklist').style.visibility = 'hidden';
-  document.getElementById('tasklist').style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
-  document.getElementById('timerContainer').classList.add('focus');
-  document.getElementById('currentTask').classList.add('focus');
-  document.querySelector('nav').classList.add('focus');
+  todoTable.parentElement.style.opacity = '0';
+  todoTable.parentElement.style.visibility = 'hidden';
+  todoTable.parentElement.style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
+  timeDisplay.parentElement.parentElement.classList.add('focus');
+  currentTaskDiv.classList.add('focus');
+  navBar.style.transitionDuration = '2s';
+  navBar.classList.add('focus');
 }
 
 function exitFocusMode() {
-  document.getElementById('tasklist').style.opacity = '1';
-  document.getElementById('tasklist').style.visibility = 'visible';
-  document.getElementById('tasklist').style.transition = 'opacity 1s linear';
-  document.getElementById('tasklist').style.transitionDelay = '1s';
-  document.getElementById('timerContainer').classList.remove('focus');
-  document.getElementById('currentTask').classList.remove('focus');
-  document.querySelector('nav').classList.remove('focus');
+  todoTable.parentElement.style.opacity = '1';
+  todoTable.parentElement.style.visibility = 'visible';
+  todoTable.parentElement.style.transition = 'opacity 1s linear';
+  todoTable.parentElement.style.transitionDelay = '1s';
+  timeDisplay.parentElement.parentElement.classList.remove('focus');
+  currentTaskDiv.classList.remove('focus');
+  navBar.style.transitionDuration = '2s';
+  navBar.classList.remove('focus');
 }
 
 /**
@@ -451,3 +459,7 @@ if (after3amToday() && StatsPage.dataToCompressExists()) {
  * Makes the Data tab default when Statistics popup appears
  */
 statsTabBtn.click();
+
+navBar.addEventListener('transitionend', () => {
+  navBar.style.transitionDuration = '0.2s';
+});
