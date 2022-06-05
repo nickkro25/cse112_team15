@@ -267,6 +267,7 @@ function enterFocusMode() {
   document.getElementById('timerContainer').classList.add('focus');
   document.getElementById('currentTask').classList.add('focus');
   document.querySelector('nav').classList.add('focus');
+  document.getElementById('sessionIndicator').style.display = 'none';
 }
 
 function exitFocusMode() {
@@ -277,6 +278,7 @@ function exitFocusMode() {
   document.getElementById('timerContainer').classList.remove('focus');
   document.getElementById('currentTask').classList.remove('focus');
   document.querySelector('nav').classList.remove('focus');
+  document.getElementById('sessionIndicator').style.display = 'block';
 }
 
 /**
