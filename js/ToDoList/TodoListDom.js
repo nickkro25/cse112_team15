@@ -146,10 +146,29 @@ class TodoListDom {
     });
 
     this.deleteAllBtn.addEventListener('click', () => {
-      const list = this.todoList.taskList;
-      while (list[0] !== undefined) {
-        list[0].deleteButton.click();
-      }
+      const deleteAllModal = document.getElementById('delete-all-modal-container');
+      const cancelDeleteAll = document.getElementById('cancel-delete-all');
+      const confirmDeleteAll = document.getElementById('confirm-delete-all');
+      const deleteAllModalPopup = document.getElementsByClassName('delete-all-modal')[0];
+      // Clicking outside of the popup closes the popup
+      deleteAllModal.addEventListener('click', (event) => {
+        if (deleteAllModal.style.display === 'flex') {
+          if (!deleteAllModalPopup.contains(event.target)) {
+            cancelDeleteAll.click();
+          }
+        }
+      });
+      cancelDeleteAll.addEventListener('click', () => {
+        deleteAllModal.style.display = 'none';
+      });
+      deleteAllModal.style.display = 'flex';
+      confirmDeleteAll.addEventListener('click', () => {
+        deleteAllModal.style.display = 'none';
+        const list = this.todoList.taskList;
+        while (list[0] !== undefined) {
+          list[0].deleteButton.click();
+        }
+      });
     });
 
     this.finishTaskBtn.addEventListener('click', () => {

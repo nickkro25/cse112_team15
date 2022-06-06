@@ -31,7 +31,17 @@ beforeEach(() => {
       </form>
       <button id = "add-button" type="button">Add a task</button>
       <button id = "delete-all-button" class="deleteAllButton" type="button">Delete All</button>
-    </div> `;
+
+    </div>
+    <section id="delete-all-modal-container">
+      <div class="delete-all-modal">
+        <h1>Are you sure you want to delete all tasks?</h1>
+        <div id="buttonContainers">
+          <button class="confirm-delete-all" id="confirm-delete-all" type="submit">DELETE</button>
+          <button class="cancel-delete-all" id="cancel-delete-all" type="submit">CANCEL</button>
+        </div>
+      </div>
+    </section> `;
   tableLocation = document.getElementById('todo');
   formLocation = document.getElementById('add-todo');
   addBtnLocation = document.getElementById('add-button');
@@ -112,6 +122,7 @@ test('Addding an invalid task causes an alert', () => {
 });
 
 test('Delete all should remove from table and local storage', () => {
+  const confirmDeleteAllBtnLocation = document.getElementById('confirm-delete-all');
   formLocation.children[0].setAttribute('value', 'Write Essay');
   formLocation.children[1].value = 2;
   formLocation.submit();
@@ -119,6 +130,7 @@ test('Delete all should remove from table and local storage', () => {
   formLocation.children[1].value = 2;
   formLocation.submit();
   deleteBtnLocation.click();
+  confirmDeleteAllBtnLocation.click();
   expect(tableLocation.children[1]).toEqual(undefined);
   expect(window.localData.length).toEqual(0);
 });
