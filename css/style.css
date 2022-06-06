@@ -172,7 +172,7 @@ a.brand-logo span {
   font-size: 80%;
   font-weight: normal;
   transition: color var(--theme-transi-dura);
-  transition: font-size var(--focus-transi-dura);
+  transition: transform var(--focus-transi-dura);
 }
 
 #timeDisplay {
@@ -203,7 +203,7 @@ a.brand-logo span {
   padding: 10px;
   word-break: break-word;
   transition: color var(--theme-transi-dura);
-  transition: font-size var(--focus-transi-dura);
+  transition: transform var(--focus-transi-dura);
 }
 
 html {
@@ -365,7 +365,8 @@ nav.focus {
 }
 
 #timerContainer.focus #modeDisplay {
-  font-size: xx-large;
+  /* font-size: xx-large; */
+  transform: scale(1.25);
 }
 
 #sessionIndicator.focus {
@@ -374,7 +375,8 @@ nav.focus {
 }
 
 #currentTask.focus {
-  font-size: xx-large;
+  /* font-size: xx-large; */
+  transform: scale(1.25);
 }
 
 #currentTask.animate {
@@ -386,8 +388,13 @@ nav.focus {
     transform: translate(0, 20%);
   }
 
+  #timerContainer.focus #modeDisplay {
+    /* font-size: xx-large; */
+    transform: scale(1.1);
+  }
+
   #currentTask.focus {
-    font-size: 90%;
+    transform: scale(1.1);
   }
 }
 
