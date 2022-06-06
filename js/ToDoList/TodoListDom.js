@@ -155,6 +155,10 @@ class TodoListDom {
     this.finishTaskBtn.addEventListener('click', () => {
       this.todoList.getCurrentTask().checkBox.click();
     });
+
+    this.currentTaskDiv.addEventListener('animationend', () => {
+      this.currentTaskDiv.classList.remove('animate');
+    });
   }
 
   /**
@@ -247,16 +251,20 @@ class TodoListDom {
     if (this.currentTask === null && nextTask === null) {
       // no currentTask, nothing in table
       this.currentTaskDiv.textContent = 'No current task';
+      this.currentTaskDiv.classList.add('animate');
       this.finishTaskBtn.disabled = true;
     } else if (this.currentTask === null && nextTask !== null) {
       // no currentTask, something in table
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.currentTaskDiv.classList.add('animate');
       this.finishTaskBtn.disabled = false;
     } else if (this.currentTask !== null && nextTask === null) { // last task completed
       this.currentTaskDiv.textContent = 'No current task';
+      this.currentTaskDiv.classList.add('animate');
       this.finishTaskBtn.disabled = true;
     } else if (this.currentTask !== nextTask) {
       this.currentTaskDiv.textContent = `Working on: ${nextTask.name}`;
+      this.currentTaskDiv.classList.add('animate');
       this.finishTaskBtn.disabled = false;
     }
     this.currentTask = nextTask;

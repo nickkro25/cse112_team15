@@ -17,6 +17,12 @@ function after3amToday() {
 }
 
 /**
+ * Navigation bar
+ * @type {HTMLElement}
+ */
+const navBar = document.querySelector('nav');
+
+/**
  * Location where time is displayed
  * @type {HTMLParagraphElement}
  */
@@ -194,6 +200,22 @@ tourButton.addEventListener('click', () => {
 });
 
 /**
+ * Update session indicator icons based on how many pomos are left until long break
+ */
+function updateSessionIndicators(location) {
+  const indicators = document.querySelectorAll('.indicator');
+  // Long break finished, reset all indicators
+  if (location === 7) {
+    for (let i = 0; i < indicators.length; i += 1) {
+      indicators[i].textContent = 'trip_origin';
+    }
+  } else {
+    // fill in the appropriate indicator
+    indicators[6 - location].textContent = 'circle';
+  }
+}
+
+/**
  * When timer is complete, if a work session was completed then:
  * 1. Increment current task pomo sessions
  * 2. Add work time to stats
@@ -221,6 +243,7 @@ TimerObj.addEventListener('timer-complete', (e) => {
     workModeColors();
     workModeSound();
   }
+  updateSessionIndicators(e.detail.longBreakLocation);
 });
 
 /**
@@ -243,16 +266,29 @@ startTimerButton.addEventListener('click', () => {
   }
 });
 
-function hideTasklist() {
-  document.getElementById('tasklist').style.display = 'none';
-  document.getElementById('timerContainer').classList.add('focus');
-  document.getElementById('currentTask').classList.add('focus');
+function enterFocusMode() {
+  todoTable.parentElement.style.opacity = '0';
+  todoTable.parentElement.style.visibility = 'hidden';
+  todoTable.parentElement.style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
+  timeDisplay.parentElement.parentElement.classList.add('focus');
+  currentTaskDiv.classList.add('focus');
+  navBar.style.transitionDuration = '2s';
+  navBar.classList.add('focus');
+  document.getElementById('sessionIndicator').style.opacity = 0;
+  document.getElementById('sessionIndicator').classList.add('focus');
 }
 
-function showTasklist() {
-  document.getElementById('tasklist').style.display = null;
-  document.getElementById('timerContainer').classList.remove('focus');
-  document.getElementById('currentTask').classList.remove('focus');
+function exitFocusMode() {
+  todoTable.parentElement.style.opacity = '1';
+  todoTable.parentElement.style.visibility = 'visible';
+  todoTable.parentElement.style.transition = 'opacity 1s linear';
+  todoTable.parentElement.style.transitionDelay = '1s';
+  timeDisplay.parentElement.parentElement.classList.remove('focus');
+  currentTaskDiv.classList.remove('focus');
+  navBar.style.transitionDuration = '2s';
+  navBar.classList.remove('focus');
+  document.getElementById('sessionIndicator').style.opacity = 1;
+  document.getElementById('sessionIndicator').classList.remove('focus');
 }
 
 /**
@@ -268,7 +304,7 @@ TimerObj.addEventListener('timer-start', (e) => {
       element.style.pointerEvents = 'none';
     });
     distractedByDevice.startPomoTime();
-    hideTasklist();
+    enterFocusMode();
   } else {
     distractButton.disabled = true;
     DistractionPage.resetPopUp();
@@ -277,7 +313,7 @@ TimerObj.addEventListener('timer-start', (e) => {
       element.style.opacity = '1';
       element.style.pointerEvents = 'auto';
     });
-    showTasklist();
+    exitFocusMode();
   }
 });
 
@@ -294,7 +330,7 @@ TimerObj.addEventListener('timer-end', () => {
     element.style.opacity = '1';
     element.style.pointerEvents = 'auto';
   });
-  showTasklist();
+  exitFocusMode();
 });
 
 document.body.addEventListener('task-up', (e) => {
@@ -444,3 +480,7 @@ if (after3amToday() && StatsPage.dataToCompressExists()) {
  * Makes the Data tab default when Statistics popup appears
  */
 statsTabBtn.click();
+
+navBar.addEventListener('transitionend', () => {
+  navBar.style.transitionDuration = '0.2s';
+});

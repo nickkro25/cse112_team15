@@ -8,8 +8,11 @@
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
+  transition-duration: 2s;
+}
 
-  /* transition-duration: 2s; */
+#tasklist * {
+  transition: background-color var(--theme-transi-dura);
 }
 
 /* table itself + header, cells, rows, then columns styling */
@@ -19,19 +22,15 @@ table {
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
   min-height: 44vh;
-
-  /* max-width: 100%;     /* allows for word-wrap */
   margin-top: -20px;
   background-color: var(--table-bg-color);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 th,
 td {
   padding: 10px;
   word-wrap: break-word; /* so that long tasks don't extend the table */
-
-  /* max-width: 20vw;      /* allows for word-wrap */
 }
 
 th {
@@ -43,17 +42,17 @@ th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 td {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
   word-break: break-word;
 }
 
 tr {
   margin-top: 20px;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 
   /* width: 100%; */
 }
@@ -113,6 +112,11 @@ td button {
   transition-duration: 0.1s;
 }
 
+.triple-dots-touch button,
+.double-buttons button {
+  color: var(--font-color);
+}
+
 td button:hover {
   color: var(--header-color);
   cursor: pointer;
@@ -162,15 +166,15 @@ td button:active {
   padding-bottom: 10px;
   border-bottom-left-radius: var(--td-border-radius);
   border-bottom-right-radius: var(--td-border-radius);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 #todo {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 #taskListHeader {
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* checkbox and delete button styling */
@@ -179,7 +183,7 @@ td button:active {
   font-size: 100%;
   background-color: white;
   border-style: none;
-  border-radius: 60vh;
+  border-radius: 2.5px;
   border-color: var(--header-color);
   height: 2.5em;
   padding-left: 1vw;
@@ -190,7 +194,7 @@ td button:active {
 
 .task-name {
   width: 40%;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .task-length {
@@ -237,9 +241,8 @@ label {
 }
 
 .completedTask label:hover {
-  color: var(--header-color);
+  color: var(--font-color);
 }
-
 
 /* different color row for checked off tasks */
 tr.completedTask td {
@@ -247,7 +250,9 @@ tr.completedTask td {
 }
 
 /* Give current task a different bg color to make it stand out */
-tr.uncheckedTask:nth-child(2) td {
+tr.uncheckedTask:nth-child(2) td,
+.short-break tr.uncheckedTask:nth-child(2) td,
+.long-break tr.uncheckedTask:nth-child(2) td {
   background-color: rgb(179, 179, 141);
 }
 
@@ -257,6 +262,7 @@ tr.uncheckedTask:nth-child(2) td {
   border: 2px solid transparent;
   border-radius: 8px;
   background-clip: padding-box;
+  transition-duration: 2s;
 }
 
 #tasklist::-webkit-scrollbar {
@@ -304,7 +310,7 @@ tr.uncheckedTask:nth-child(2) td {
 
   /* Fade in tooltip */
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s !important;
 }
 
 /* Tooltip arrow */

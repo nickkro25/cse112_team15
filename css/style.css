@@ -1,5 +1,5 @@
 * {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 /* color variables for buttons, page, and timer */
@@ -54,29 +54,30 @@
   /* distraction/settings background */
   --modal-bg-color: #f1f1f1;
   --modal-font-color: black;
+  --current-task-color: rgba(179, 179, 141, 0.7);
+
+  /* the theme transition duration */
+  --theme-transi-dura: background-color 0.2s;
+  --focus-transi-dura: 2s;
+  --highlight-transi-dura: 0.2s;
 }
 
 body {
   background-color: var(--page-bg-color);
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
-  transition-duration: 2s;
+  transition: background-color var(--theme-transi-dura);
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-li {
-  display: inline;
-  float: right;
 }
 
 a.brand-logo {
@@ -103,7 +104,7 @@ a.brand-logo span {
 .section-container {
   position: relative;
   margin: auto;
-  transition-duration: 2s;
+  transition-duration: var(--theme-transi-dura);
 }
 
 /* header styling */
@@ -155,6 +156,7 @@ a.brand-logo span {
   min-width: 650px; */
 
   /* background-color: var(--timer-bg-color); */
+  transition: transform var(--focus-transi-dura);
   border-radius: 10px;
 }
 
@@ -169,6 +171,8 @@ a.brand-logo span {
   margin: 10px;
   font-size: 80%;
   font-weight: normal;
+  transition: color var(--theme-transi-dura);
+  transition: font-size var(--focus-transi-dura);
 }
 
 #timeDisplay {
@@ -182,13 +186,23 @@ a.brand-logo span {
   width: 100%;
 }
 
+#sessionIndicator {
+  transition-duration: var(--focus-transi-dura);
+  /* transition: transform 3s; */
+  height: 48px;
+}
+
 #currentTask {
-  font-size: larger;
+  font-size: 80%;
   display: flex;
+
+  /* width: fit-content; */
   justify-content: space-around;
   text-align: center;
   padding: 10px;
   word-break: break-word;
+  transition: color var(--theme-transi-dura);
+  transition: font-size var(--focus-transi-dura);
 }
 
 html {
@@ -207,18 +221,6 @@ html {
     }
   }
 }
-
-/* @media screen and (max-height: 550px) {
-  #timerContainer {
-    height: 50vh;
-  }
-
-  @media screen and (max-height: 480px) {
-    #timerContainer {
-      height: 240px;
-    }
-  }
-} */
 
 #startTimer {
   color: var(--font-color);
@@ -352,20 +354,62 @@ a {
   }
 }
 
+nav.focus {
+  /* transition-duration: var(--focus-transi-dura); */
+  background-color: var(--page-bg-color);
+}
+
 #timerContainer.focus {
   transform: translate(0, 30%);
 }
 
+#timerContainer.focus #modeDisplay {
+  font-size: xx-large;
+}
+
+#sessionIndicator.focus {
+  transition-duration: var(--focus-transi-dura);
+  height: 0px;
+}
+
 #currentTask.focus {
-  transform: translate(0, 270%);
+  font-size: xx-large;
+}
+
+#currentTask.animate {
+  animation: fadeEffect-popup 0.25s;
 }
 
 @media screen and (max-width: 600px) {
   #timerContainer.focus {
-    transform: translate(0, 40%);
+    transform: translate(0, 20%);
   }
 
   #currentTask.focus {
-    transform: translate(0, 250%);
+    font-size: 90%;
   }
+}
+
+.indicator:nth-child(odd) {
+  color: var(--header-color);
+}
+
+.indicator:nth-child(even) {
+  color: var(--header-color-short);
+}
+
+.indicator:last-child {
+  color: var(--header-color-long);
+}
+
+.dark-mode .indicator:nth-child(odd) {
+  color: var(--btn-icon-color);
+}
+
+.dark-mode .indicator:nth-child(even) {
+  color: var(--btn-icon-color-short);
+}
+
+.dark-mode .indicator:last-child {
+  color: var(--btn-icon-color-long);
 }
