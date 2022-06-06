@@ -143,7 +143,7 @@ class Timer extends HTMLElement {
     const currentState = this.stateQueue[0].name;
     const iconUrl = './assets/img/webicon.png';
     /* istanbul ignore next */
-    if (Notification.permission === 'granted') {
+    if ('Notification' in window && Notification.permission === 'granted') {
       if (currentState === 'Short Break') {
         new Notification('Pomo XV', {
           body: 'Time for a short break!',
