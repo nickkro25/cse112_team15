@@ -1,7 +1,7 @@
 # Pomo XV
 [![CD](https://github.com/nickkro25/cse112_team15/actions/workflows/CD.yml/badge.svg)](https://github.com/nickkro25/cse112_team15/actions/workflows/CD.yml)
 
-Pomo XV is a web application dedicated to making the Pomodoro Technique as easy as possible. 
+Pomo XV is a web application dedicated to making the Pomodoro Technique as easy as possible. [View the application here]( https://nickkro25.github.io/cse112_team15/)
 ## Setup 
 Requires:
 - NodeJS + NPM
