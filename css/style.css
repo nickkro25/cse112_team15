@@ -188,6 +188,7 @@ a.brand-logo span {
 
 #sessionIndicator {
   transition-duration: var(--focus-transi-dura);
+
   /* transition: transform 3s; */
   height: 48px;
 }
@@ -369,7 +370,7 @@ nav.focus {
 
 #sessionIndicator.focus {
   transition-duration: var(--focus-transi-dura);
-  height: 0px;
+  height: 0;
 }
 
 #currentTask.focus {
