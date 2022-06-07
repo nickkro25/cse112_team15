@@ -71,8 +71,12 @@
   transition-duration: 2s;
 }
 
-#tasklist * {
+#tasklist tr {
   transition: background-color var(--theme-transi-dura);
+}
+
+.btn-floating:hover {
+  background-color: var(--btn-icon-hover-color);
 }
 
 /* table itself + header, cells, rows, then columns styling */
