@@ -1,6 +1,6 @@
 /* css styling for to-do list table */
 
-/* delete all modal stylying*/
+/* delete all modal stylying */
 #delete-all-modal-container {
   background-color: rgba(0, 0, 0, 0.3);
   display: none;
@@ -14,7 +14,7 @@
   height: 100vh;
 }
 
-.delete-all-modal{
+.delete-all-modal {
   background-color: #fff;
   width: 600px;
   max-width: 75%;
@@ -69,10 +69,6 @@
   overflow-y: auto;
   border-radius: var(--td-border-radius);
   transition-duration: 2s;
-}
-
-#tasklist tr {
-  transition: background-color var(--theme-transi-dura);
 }
 
 .btn-floating:hover {
@@ -133,6 +129,10 @@ tr {
 
 tbody ~ tr {
   animation: fade-in 0.25s linear;
+}
+
+#tasklist tr {
+  transition: background-color var(--theme-transi-dura);
 }
 
 tr:nth-child(even) td {
