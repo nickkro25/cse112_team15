@@ -11,7 +11,7 @@ beforeEach(() => {
     permission: 'denied',
   });
   document.body.innerHTML = '<div>'
-  + '  <p id="displayTime"></p>'
+  + '  <p class="show-focus-time" id="displayTime"></p>'
   + ' <p id="displayStatus"></p>'
   + '<button id=start>Start&nbsp;&nbsp;&nbsp;&nbsp;</button>'
   + '<input type="number" id="focusTime">'
