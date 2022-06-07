@@ -68,7 +68,6 @@
 .short-break .btn-large,
 .short-break .btn-floating {
   background-color: var(--btn-icon-color-short);
-  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break .main-page,
@@ -96,7 +95,6 @@
 .long-break .btn-large,
 .long-break .btn-floating {
   background-color: var(--btn-icon-color-long);
-  transition-duration: var(--theme-transi-dura);
 }
 
 /* LONG BREAK MODE! (for style check in lint) */
