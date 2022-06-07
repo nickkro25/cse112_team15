@@ -272,7 +272,7 @@ function enterFocusMode() {
   todoTable.parentElement.style.transition = 'visibility 0s 0.25s, opacity 0.25s linear';
   timeDisplay.parentElement.parentElement.classList.add('focus');
   currentTaskDiv.classList.add('focus');
-  navBar.style.transitionDuration = '2s';
+  navBar.style.transitionDuration = '0.2s';
   navBar.classList.add('focus');
   document.getElementById('sessionIndicator').style.opacity = 0;
   document.getElementById('sessionIndicator').classList.add('focus');
@@ -285,7 +285,7 @@ function exitFocusMode() {
   todoTable.parentElement.style.transitionDelay = '1s';
   timeDisplay.parentElement.parentElement.classList.remove('focus');
   currentTaskDiv.classList.remove('focus');
-  navBar.style.transitionDuration = '2s';
+  navBar.style.transitionDuration = '0.2s';
   navBar.classList.remove('focus');
   document.getElementById('sessionIndicator').style.opacity = 1;
   document.getElementById('sessionIndicator').classList.remove('focus');
