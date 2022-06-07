@@ -354,6 +354,10 @@ a {
 
 nav.focus {
   /* transition-duration: var(--focus-transi-dura); */
+
+  /* this should be something like rgba(var(--header-color), 0),
+  but this is unsupported, we need some way to convert rgb() to rgba()
+  */
   background-color: rgba(200, 100, 100, 0);
 }
 
@@ -367,7 +371,7 @@ nav.focus {
 
 #sessionIndicator.focus {
   transition-duration: var(--focus-transi-dura);
-  height: 0px;
+  height: 0;
 }
 
 #currentTask.focus {
