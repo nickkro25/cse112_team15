@@ -67,7 +67,6 @@ body {
   transition-duration: var(--theme-transi-dura);
 }
 
-header,
 nav {
   overflow: hidden;
   background-color: var(--header-color);
@@ -355,7 +354,7 @@ a {
 
 nav.focus {
   /* transition-duration: var(--focus-transi-dura); */
-  background-color: var(--page-bg-color);
+  background-color: rgba(200, 100, 100, 0);
 }
 
 #timerContainer.focus {
