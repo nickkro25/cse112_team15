@@ -362,10 +362,16 @@
 <script type="module" src="./js/Misc/Settings.js"></script>
 <script type="module" src="./js/FAQ/FAQ.js"></script>
 <script src="./js/ThirdParty/intro.js"></script>
+<script src="./js/NoSleep.js"></script>
 </div>
 <script>
   // set the transition back to 2s after dark theme is painted
   document.querySelector('body').style.transitionDuration = '0.2s';
+
+  const noSleep = new NoSleep();
+  document.addEventListener('click', function() {
+    noSleep.enable(); // keep the screen on!
+  }, false);
 </script>
 </body>
 
