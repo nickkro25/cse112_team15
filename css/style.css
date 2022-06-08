@@ -168,9 +168,10 @@ a.brand-logo span {
 #modeDisplay {
   position: relative;
   top: 10px;
-  margin: 10px;
+  margin: auto;
   font-size: 80%;
   font-weight: normal;
+  width: fit-content;
   transition: color var(--theme-transi-dura);
   transition: transform var(--focus-transi-dura);
 }
@@ -196,8 +197,7 @@ a.brand-logo span {
 #currentTask {
   font-size: 80%;
   display: flex;
-
-  /* width: fit-content; */
+  width: fit-content;
   justify-content: space-around;
   text-align: center;
   padding: 10px;
@@ -365,7 +365,7 @@ nav.focus {
 }
 
 #timerContainer.focus #modeDisplay {
-  /* font-size: xx-large; */
+   /*font-size: xx-large;*/
   transform: scale(1.25);
 }
 
