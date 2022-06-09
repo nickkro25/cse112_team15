@@ -5,6 +5,10 @@ PomoXV is a web application dedicated to making the Pomodoro Technique as easy a
 
 [Check out the application here!]( https://nickkro25.github.io/cse112_team15/)
 
+## App Instructions
+
+Read about how to use PomoXV in the ["App Walkthrough"](https://github.com/nickkro25/cse112_team15/wiki/App-Walkthrough) section of our wiki.
+
 ## Setup 
 Requires:
 - NodeJS + NPM
