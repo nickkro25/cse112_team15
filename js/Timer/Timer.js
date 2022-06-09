@@ -181,6 +181,7 @@ class Timer extends HTMLElement {
     }
 
     localStorage.setItem('timer-running', false);
+    document.getElementById('toggle').click();
 
     if (this.autoStart.checked === false) {
       // check whether auto start break option is checked
@@ -213,6 +214,7 @@ class Timer extends HTMLElement {
     this.dispatchEvent(event);
     this.timerWorker.postMessage(session.duration * 60);
     localStorage.setItem('timer-running', true);
+    document.getElementById('toggle').click();
   }
 
   /**
@@ -239,6 +241,7 @@ class Timer extends HTMLElement {
       indicators[i].textContent = 'trip_origin';
     }
     localStorage.setItem('timer-running', false);
+    document.getElementById('toggle').click();
   }
 
   /**
