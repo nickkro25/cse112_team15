@@ -180,6 +180,8 @@ class Timer extends HTMLElement {
       localStorage.setItem('pomoSessionId', this.sessionId);
     }
 
+    localStorage.setItem('timer-running', false);
+
     if (this.autoStart.checked === false) {
       // check whether auto start break option is checked
       // update the display if the option is not checked, but don't start the timer yet
@@ -210,6 +212,7 @@ class Timer extends HTMLElement {
 
     this.dispatchEvent(event);
     this.timerWorker.postMessage(session.duration * 60);
+    localStorage.setItem('timer-running', true);
   }
 
   /**
@@ -235,6 +238,7 @@ class Timer extends HTMLElement {
     for (let i = 0; i < indicators.length; i += 1) {
       indicators[i].textContent = 'trip_origin';
     }
+    localStorage.setItem('timer-running', false);
   }
 
   /**
