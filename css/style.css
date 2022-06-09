@@ -365,7 +365,7 @@ nav.focus {
 }
 
 #timerContainer.focus #modeDisplay {
-   /*font-size: xx-large;*/
+  /* font-size: xx-large; */
   transform: scale(1.25);
 }
 

@@ -417,6 +417,10 @@ tr.uncheckedTask:nth-child(2) td,
 }
 
 @media screen and (max-width: 600px) {
+  #tasklist {
+    width: 97%;
+  }
+
   .tooltip .tooltiptext {
     left: -35%;
   }
