@@ -64,7 +64,7 @@
 #tasklist {
   position: relative;
   margin: 1% auto;
-  height: 44vh;
+  height: 43vh;
   width: 50%;
   overflow-y: auto;
   border-radius: var(--td-border-radius);
@@ -81,7 +81,7 @@ table {
   border-collapse: separate;
   border-spacing: 0 var(--table-border);
   table-layout: fixed; /* allows for word-wrap */
-  min-height: 44vh;
+  min-height: 43vh;
   margin-top: -20px;
   background-color: var(--table-bg-color);
   transition-duration: var(--theme-transi-dura);
@@ -276,19 +276,7 @@ td button:active {
 /* larger checkbox */
 input[type='checkbox'] {
   display: none;
-
-  /* width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 10px;
-  cursor: pointer; */
 }
-
-/* checkbox highlight when checked */
-
-/* input[type='checkbox']:checked {
-  display: none;
-} */
 
 label {
   transition-duration: 0.25s;
@@ -397,7 +385,18 @@ tr.uncheckedTask:nth-child(2) td,
 
 @media screen and (min-width: 1300px) {
   #tasklist {
-    height: 44vh;
+    height: 39vh;
+    overflow-y: auto;
+  }
+
+  .tooltip .tooltiptext {
+    left: -55%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #tasklist {
+    height: 39vh;
     overflow-y: auto;
   }
 
@@ -408,6 +407,7 @@ tr.uncheckedTask:nth-child(2) td,
 
 @media screen and (max-width: 992px) {
   #tasklist {
+    height: 40vh;
     width: 80%;
   }
 
@@ -417,6 +417,10 @@ tr.uncheckedTask:nth-child(2) td,
 }
 
 @media screen and (max-width: 600px) {
+  #tasklist {
+    width: 97%;
+  }
+
   .tooltip .tooltiptext {
     left: -35%;
   }
