@@ -235,6 +235,8 @@ class Timer extends HTMLElement {
     for (let i = 0; i < indicators.length; i += 1) {
       indicators[i].textContent = 'trip_origin';
     }
+    // Show focus time
+    this.timeDisplay.className = 'show-focus-time';
   }
 
   /**
@@ -256,15 +258,23 @@ class Timer extends HTMLElement {
     if (e.target.value === 0) { e.target.value = 1; }
     if (e.target.value > 99) { e.target.value = 99; }
     if (e.target.id === 'focusTime') {
-      this.timeDisplay.textContent = `${e.target.value}:00`;
+      if (this.timeDisplay.className === 'show-focus-time') {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
       workMode.duration = e.target.value;
       localStorage.setItem('workModeTime', e.target.value);
     } else if (e.target.id === 'shortBreakTime') {
       // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+      if (this.timeDisplay.className === 'show-short-break-time') {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
       shortBreakMode.duration = e.target.value;
       localStorage.setItem('shortBreakTime', e.target.value);
     } else if (e.target.id === 'longBreakTime') {
       // document.getElementById("timeDisplay").textContent = " " + e.target.value + ":00" + " ";
+      if (this.timeDisplay.className === 'show-long-break-time') {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
       longBreakMode.duration = e.target.value;
       localStorage.setItem('longBreakTime', e.target.value);
     }
@@ -300,6 +310,13 @@ class Timer extends HTMLElement {
     const session = this.stateQueue[0];
     this.displayStatus.textContent = this.state;
     this.timeDisplay.textContent = timeToString(session.duration * 60);
+    if (session.name === 'Working Time') {
+      this.timeDisplay.className = 'show-focus-time';
+    } else if (session.name === 'Short Break') {
+      this.timeDisplay.className = 'show-short-break-time';
+    } else if (session.name === 'Long Break') {
+      this.timeDisplay.className = 'show-long-break-time';
+    }
     document.title = session.name;
     const distractionOffEvent = new CustomEvent('timer-end');
     this.dispatchEvent(distractionOffEvent);
