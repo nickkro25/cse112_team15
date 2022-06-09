@@ -68,7 +68,6 @@
 .short-break .btn-large,
 .short-break .btn-floating {
   background-color: var(--btn-icon-color-short);
-  transition-duration: var(--theme-transi-dura);
 }
 
 .short-break .main-page,
@@ -96,7 +95,6 @@
 .long-break .btn-large,
 .long-break .btn-floating {
   background-color: var(--btn-icon-color-long);
-  transition-duration: var(--theme-transi-dura);
 }
 
 /* LONG BREAK MODE! (for style check in lint) */
@@ -121,12 +119,14 @@
 
 /* DARK MODE! (for style check in lint) */
 .dark-mode .btn,
-.dark-mode .btn-large {
+.dark-mode .btn-large,
+.dark-mode .btn-floating {
   background-color: rgb(78, 78, 78);
 }
 
 .short-break .btn:hover,
-.short-break .btn-large:hover {
+.short-break .btn-large:hover,
+.short-break .btn-floating:hover {
   background-color: var(--btn-icon-hover-color-short);
 }
 
@@ -206,7 +206,8 @@
 }
 
 .long-break .btn:hover,
-.long-break .btn-large:hover {
+.long-break .btn-large:hover,
+.long-break .btn-floating:hover {
   background-color: var(--btn-icon-hover-color-long);
 }
 
@@ -289,6 +290,7 @@
 }
 
 .dark-mode .btn:hover,
-.dark-mode .btn-large:hover {
+.dark-mode .btn-large:hover,
+.dark-mode .btn-floating:hover {
   background-color: #b2b2b2;
 }

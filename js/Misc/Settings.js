@@ -203,8 +203,6 @@ function updateDarkMode() {
     root.style.setProperty(modalBGColor.name, modalBGColor.darkVal);
     root.style.setProperty(modalFontColor.name, modalFontColor.darkVal);
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     const heads = document.querySelectorAll('#taskListHeader th');
     for (let i = 0; i < heads.length; i += 1) {
       heads[i].style.backgroundColor = 'rgb(32, 32, 32)';
@@ -230,8 +228,6 @@ function updateDarkMode() {
     root.style.setProperty(modalBGColor.name, modalBGColor.val);
     root.style.setProperty(modalFontColor.name, modalFontColor.val);
     document.getElementById('nav-wrapper').style.backgroundColor = null;
-    document.getElementById('delete-all-button').style.backgroundColor = null;
-    document.getElementById('add-button').style.backgroundColor = null;
     const heads = document.querySelectorAll('#taskListHeader th');
     for (let i = 0; i < heads.length; i += 1) {
       heads[i].style.backgroundColor = null;

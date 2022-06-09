@@ -179,7 +179,7 @@
 		<div id="countdown">
 			<h2 id="modeDisplay" data-title="Timer" data-intro="This displays whether you should be working or be on break" data-step='3' > Pomo-Time!</h2>
 			<p id="top-left-border"> <span>┌</span> </p>
-			<p id="timeDisplay">  </p>
+			<p class="show-focus-time" id="timeDisplay">  </p>
 			<p id="bottom-right-border"> <span>┘</span> </p>
       <!-- Container for current task -->
       <div id="sessionIndicator">
@@ -351,8 +351,6 @@
     root.style.setProperty(headerColor.name, headerColor.darkVal);
     root.style.setProperty(toothpaste.name, toothpaste.darkVal);
     document.getElementById('nav-wrapper').style.backgroundColor = 'rgb(32, 32, 32)';
-    document.getElementById('delete-all-button').style.backgroundColor = 'rgb(78, 78, 78)';
-    document.getElementById('add-button').style.backgroundColor = 'rgb(78, 78, 78)';
     document.getElementById('add-todo').style.backgroundColor = 'rgb(32, 32, 32)';
   }
 </script>
