@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/ToDoList/ToDoList.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/ToDoList/ToDoList.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Task } from &apos;./Task.js&apos;;
+
+/**
+ * Queue based TodoList data structure which holds Task objects.
+ * API-like methods to perform operations on the underlying queue
+ */
+class ToDoList extends HTMLElement {
+  /**
+   * Initializes the todolist array and the counter for id&apos;s
+   */
+  constructor() {
+    super();
+    /**
+     * Array that stores each task
+     * @type {Task[]}
+     */
+    this.taskList = [];
+    /**
+     * This is the total task count that is also a way
+     * to give each task a unique id
+     * @type {number}
+     */
+    this.idCounter = 0;
+  }
+
+  /**
+   * Verifies that incoming parameters are non-empty and defined, then creates Task
+   * @param {String} name - Task subject
+   * @param {Number} totalSession - Projected number of Pomo Sessions
+   * @param {Number} [currentSession = 0] - Total amount of sessions completed already
+   * @param {Boolean} [completed = false] - Task checked off or not
+   * @param {Boolean} [fromLocalStorage = false] - If a task is being added from local storage
+   *
+   * @returns {Task} - Task object to be placed into DOM
+   *
+   * @throws {Undefined Name} Task name cannot be undefined
+   * @throws {Empty Name} Task name is an empty string
+   * @throws {Undefiend Length Task} Expected number of pomo sessions is undefined
+   * @throws {0 Length Task} Expected number of pomo sessions is 0
+   */
+  addTask(name, totalSession, currentSession = 0, completed = false, fromLocalStorage = false) {
+    if (name === undefined) {
+      throw new Error(&apos;Undefined Name&apos;);
+    } else if (name === &apos;&apos;) {
+      throw new Error(&apos;Empty Name&apos;);
+    } else if (totalSession === undefined) {
+      throw new Error(&apos;Undefined Length Task&apos;);
+    } else if (totalSession === 0) {
+      throw new Error(&apos;0 Length Task&apos;);
+    } else if (Number.isNaN(totalSession)) {
+      throw new Error(&apos;Number Not Passed In&apos;);
+    }
+
+    const task = new Task(this.idCounter, name, totalSession, currentSession, completed);
+    task.addEventListener(&apos;task-checked-off&apos;, () =&gt; {
+      const event = new CustomEvent(&apos;task-checked-off&apos;, {
+      });
+      this.dispatchEvent(event);
+    });
+    task.addEventListener(&apos;task-unchecked&apos;, () =&gt; {
+      const event = new CustomEvent(&apos;task-unchecked&apos;, {
+      });
+      this.dispatchEvent(event);
+    });
+    task.addEventListener(&apos;task-deleted&apos;, (e) =&gt; {
+      const event = new CustomEvent(&apos;task-deleted&apos;, {
+        detail: e.detail,
+      });
+      this.dispatchEvent(event);
+    });
+    const event = new CustomEvent(&apos;task-added&apos;, {
+      detail: {
+        taskName: name,
+        duration: totalSession,
+      },
+    });
+    this.dispatchEvent(event);
+    this.idCounter += 1;
+    // make sure to add task in appropriate spot
+    let firstUncheckedTask = -1;
+    for (let i = 0; i &lt; this.taskList.length &amp;&amp; firstUncheckedTask === -1; i += 1) {
+      if (this.taskList[i].checked === true) firstUncheckedTask = i;
+    }
+    if (firstUncheckedTask === -1) {
+      this.taskList.push(task);
+      if (!fromLocalStorage) { this.addTaskToLocalStorage(task); }
+    } else {
+      this.taskList.splice(firstUncheckedTask, 0, task);
+      if (!fromLocalStorage) {
+        this.addTaskToLocalStorage(task, firstUncheckedTask);
+      }
+    }
+    return task;
+  }
+
+  /**
+   * Adds a task to local storage
+   * @param {Task} task - Task to be added
+   * @param {Number} [index = undefined] - Index to add at. Default to end of local storage
+   */
+  // eslint-disable-next-line class-methods-use-this
+  addTaskToLocalStorage(task, index = undefined) {
+    const arr = [task.id, task.name, task.totalSessions, task.currentSessionNum, task.checked];
+    if (index === undefined) {
+      window.localData.push(arr);
+    } else {
+      window.localData.splice(index, 0, arr);
+    }
+    localStorage.setItem(&apos;tasks&apos;, JSON.stringify(window.localData));
+  }
+
+  /**
+   * Gets the first unchecked task in the todolist.
+   * Returns null if no such task exists
+   * @returns {Task} - First unchecked task in list
+   *
+   */
+  getCurrentTask() {
+    for (let i = 0; i &lt; this.taskList.length; i += 1) {
+      if (!this.taskList[i].checked) {
+        return this.taskList[i];
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Gets the task corresponding to the id given
+   * @param {String} id - ID of task
+   * @returns {Task} - Task with ID, null if none found
+   */
+  getTaskById(id) {
+    for (let i = 0; i &lt; this.taskList.length; i += 1) {
+      if (Number(this.taskList[i].id) === Number(id)) return this.taskList[i];
+    }
+    return null;
+  }
+
+  /**
+   * Removes a task with the given id from the todolist
+   * @param {String} id - id of task to remove
+   * @returns {Boolean} true if succesful, false if no task found
+   */
+  removeTask(id) {
+    let index = -1;
+    for (let i = 0; i &lt; this.taskList.length; i += 1) {
+      if (Number(this.taskList[i].id) === Number(id)) {
+        index = i;
+      }
+    }
+
+    if (index !== -1) {
+      this.taskList.splice(index, 1);
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Adds a task to the top of the todolist
+   * @param {Task} task - task to be added to the top
+   */
+  addTaskToTop(task) {
+    this.taskList.unshift(task);
+    this.addTaskToLocalStorage(task, 0);
+  }
+
+  shiftTaskUp(task, currentIndex) {
+    // index starts at 2 because of children shenanigans
+    // to get index-1, we do index-2-1 = index-3
+    this.taskList.splice(currentIndex - 3, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 3);
+  }
+
+  shiftTaskDown(task, currentIndex) {
+    // to get index+1, we do index-2+1 = index-3
+    this.taskList.splice(currentIndex - 1, 0, task);
+    this.addTaskToLocalStorage(task, currentIndex - 1);
+  }
+
+  /**
+   * Adds task to the end of the todolist depending on if it is checked or not.
+   * If checked, adds to the end. If not checked, adds right before the first
+   * checked task (i.e. makes the task being added the last unchecked task)
+   * @param {Task} task - task object that needs to be added
+   */
+  addTaskToEnd(task) {
+    if (task.checked) {
+      this.taskList.push(task);
+      this.addTaskToLocalStorage(task);
+    } else {
+      let firstUncheckedTask = -1;
+      for (let i = 0; i &lt; this.taskList.length &amp;&amp; firstUncheckedTask === -1; i += 1) {
+        if (this.taskList[i].checked === true) firstUncheckedTask = i;
+      }
+      if (firstUncheckedTask === -1) {
+        this.taskList.push(task);
+        this.addTaskToLocalStorage(task);
+      } else {
+        this.taskList.splice(firstUncheckedTask, 0, task);
+        this.addTaskToLocalStorage(task, firstUncheckedTask);
+      }
+    }
+  }
+}
+
+customElements.define(&apos;custom-todolist&apos;, ToDoList);
+export { ToDoList };
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

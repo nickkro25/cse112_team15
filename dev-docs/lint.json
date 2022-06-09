@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Task#setupLastColumnToggle",
+    "filePath": "js/ToDoList/Task.js",
+    "lines": [
+      {
+        "lineNumber": 275,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 276,
+        "line": "   * Sets up the last column of the todolist. Wraps things"
+      },
+      {
+        "lineNumber": 277,
+        "line": "   * in the divs they need to be wrapped in. Add task"
+      },
+      {
+        "lineNumber": 278,
+        "line": "   * and check HTML file to see structure that this creates"
+      },
+      {
+        "lineNumber": 279,
+        "line": "   * @param {HTMLButtonElement} threeDotsButton - show more button"
+      },
+      {
+        "lineNumber": 280,
+        "line": "   * @param {HTMLDivElement} deleteDiv - div where the delete button is located"
+      },
+      {
+        "lineNumber": 281,
+        "line": "   * @param {HTMLDivElement} focusDiv - div where the focus button is located"
+      },
+      {
+        "lineNumber": 282,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 283,
+        "line": "  setupLastColumnToggle(threeDotsButton, deleteDiv,"
+      }
+    ],
+    "codeParams": [
+      "threeDotsButton",
+      "deleteDiv",
+      "focusDiv",
+      "taskUpDiv",
+      "taskDownDiv"
+    ],
+    "docParams": [
+      "threeDotsButton",
+      "deleteDiv",
+      "focusDiv"
+    ]
+  }
+]

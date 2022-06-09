@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">tests/todolistdom.test.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/todolistdom.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { TodoListDom } from &apos;../js/ToDoList/TodoListDom.js&apos;;
+
+/** @Test {ToDoList} */
+let tableLocation;
+let formLocation;
+let addBtnLocation;
+let deleteBtnLocation;
+let finishTaskBtnLocation;
+let currentTaskLocation;
+let myDOM;
+
+beforeEach(() =&gt; {
+  document.body.innerHTML = `&lt;section id=&quot;tasklist&quot; class=&quot;section_container&quot;&gt;
+      &lt;h2&gt;To Do&lt;/h2&gt;
+      &lt;table id=&apos;todo&apos;&gt;
+        &lt;th&gt;
+          &lt;td&gt;Task&lt;/td&gt;
+          &lt;td&gt;Pomos&lt;/td&gt;
+          &lt;td&gt;Delete&lt;/td&gt;
+        &lt;/th&gt;
+      &lt;/table&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;currentTask&quot; class=&quot;section-container&quot;&gt;
+    &lt;/section&gt;
+    &lt;button id = &quot;finishTask&quot;&gt;Finish task&lt;/button&gt;
+    &lt;div&gt;
+      &lt;form id = &quot;add-todo&quot; style = &quot;display: none;&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;task-name&quot; placeholder=&quot;Write Essay&quot;&gt;
+        &lt;input type=&quot;number&quot; name=&quot;task-length&quot; placeholder=&quot;1&quot;&gt;
+        &lt;input type=&quot;submit&quot;&gt;
+      &lt;/form&gt;
+      &lt;button id = &quot;add-button&quot; type=&quot;button&quot;&gt;Add a task&lt;/button&gt;
+      &lt;button id = &quot;delete-all-button&quot; class=&quot;deleteAllButton&quot; type=&quot;button&quot;&gt;Delete All&lt;/button&gt;
+
+    &lt;/div&gt;
+    &lt;section id=&quot;delete-all-modal-container&quot;&gt;
+      &lt;div class=&quot;delete-all-modal&quot;&gt;
+        &lt;h1&gt;Are you sure you want to delete all tasks?&lt;/h1&gt;
+        &lt;div id=&quot;buttonContainers&quot;&gt;
+          &lt;button class=&quot;confirm-delete-all&quot; id=&quot;confirm-delete-all&quot; type=&quot;submit&quot;&gt;DELETE&lt;/button&gt;
+          &lt;button class=&quot;cancel-delete-all&quot; id=&quot;cancel-delete-all&quot; type=&quot;submit&quot;&gt;CANCEL&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt; `;
+  tableLocation = document.getElementById(&apos;todo&apos;);
+  formLocation = document.getElementById(&apos;add-todo&apos;);
+  addBtnLocation = document.getElementById(&apos;add-button&apos;);
+  deleteBtnLocation = document.getElementById(&apos;delete-all-button&apos;);
+  finishTaskBtnLocation = document.getElementById(&apos;finishTask&apos;);
+  currentTaskLocation = document.getElementById(&apos;currentTask&apos;);
+  myDOM = new TodoListDom(tableLocation, formLocation, addBtnLocation,
+    deleteBtnLocation, finishTaskBtnLocation, currentTaskLocation);
+  document.body.addEventListener(&apos;task-deleted&apos;, (e) =&gt; {
+    myDOM.todoList.removeTask(e.detail.taskID);
+  });
+});
+
+test(&apos;true&apos;, () =&gt; {
+  expect(true).toBeTruthy();
+});
+
+test(&apos;Valid construction of TDLDom&apos;, () =&gt; {
+  expect(myDOM.todoList.taskList).toEqual([]);
+});
+
+test(&apos;TodoList can function without any tasks&apos;, () =&gt; {
+  const currentTaskFunction = () =&gt; { myDOM.updateCurrentTask(); };
+  expect(currentTaskFunction).not.toThrow(Error);
+  const sessionCompleteFunction = () =&gt; { myDOM.onSessionComplete(); };
+  expect(sessionCompleteFunction).not.toThrow(Error);
+});
+
+test(&apos;Add a task and click checkoff&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Write Essay&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  expect(tableLocation.children[1].taskText.textContent).toMatch(new RegExp(&apos;Write *Essay&apos;));
+  expect(tableLocation.children[1].pomoSessions.textContent).toMatch(new RegExp(&apos;0/2&apos;));
+  tableLocation.children[1].checkBox.click();
+  expect(tableLocation.children[1].checkBox.checked).toBe(true);
+  expect(tableLocation.children[1].checkBox.disabled).toBe(false);
+});
+
+test(&apos;Reload the page with local storage&apos;, () =&gt; {
+  expect(tableLocation.children[1].taskText.textContent).toMatch(new RegExp(&apos;Write *Essay&apos;));
+  expect(tableLocation.children[1].pomoSessions.textContent).toMatch(new RegExp(&apos;0/2&apos;));
+});
+
+test(&apos;Add another task&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Write Essay&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+});
+
+test(&apos;Reload the page with completed task&apos;, () =&gt; {
+  expect(tableLocation.children[1].checked).toEqual(false);
+});
+
+// Now has a task
+test(&apos;Clicking remove button should remove task from table and local storage&apos;, () =&gt; {
+  tableLocation.children[1].deleteButton.click();
+  tableLocation.children[1].deleteButton.click();
+  expect(tableLocation.children[1]).toEqual(undefined);
+  expect(window.localData.length).toEqual(0);
+  localStorage.clear();
+});
+
+test(&apos;Incrementing session updates value accordingly&apos;, () =&gt; {
+  formLocation.children[0].value = &apos;Write Essay&apos;;
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  myDOM.onSessionComplete();
+  expect(tableLocation.children[1].children[1].textContent).toMatch(new RegExp(&apos;Write *Essay&apos;));
+  expect(tableLocation.children[1].children[2].textContent).toMatch(new RegExp(&apos;1/2&apos;));
+  localStorage.clear();
+});
+
+test(&apos;Addding an invalid task causes an alert&apos;, () =&gt; {
+  global.alert = jest.fn();
+  formLocation.submit();
+  expect(global.alert).toHaveBeenCalledTimes(1);
+});
+
+test(&apos;Delete all should remove from table and local storage&apos;, () =&gt; {
+  const confirmDeleteAllBtnLocation = document.getElementById(&apos;confirm-delete-all&apos;);
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Write Essay&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Write Essay&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  deleteBtnLocation.click();
+  confirmDeleteAllBtnLocation.click();
+  expect(tableLocation.children[1]).toEqual(undefined);
+  expect(window.localData.length).toEqual(0);
+});
+
+test(&apos;Focus Button should reorder the tasks when no tasks are checked off&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  myDOM.onFocusTask(&apos;1&apos;);
+  expect(myDOM.todoList.getCurrentTask().name).toBe(&apos;Task2&apos;);
+  expect(myDOM.todoList.taskList[1].name).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Focus Button should reorder the tasks even if tasks are checked off&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  tableLocation.children[2].checkBox.click();
+  myDOM.onFocusTask(&apos;2&apos;);
+  expect(myDOM.todoList.getCurrentTask().name).toBe(&apos;Task3&apos;);
+  expect(myDOM.todoList.taskList[1].name).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Focus Button should reorder the tasks even if tasks are deleted&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  tableLocation.children[2].deleteButton.click();
+  myDOM.onFocusTask(&apos;2&apos;);
+  expect(myDOM.todoList.getCurrentTask().name).toBe(&apos;Task3&apos;);
+  expect(myDOM.todoList.taskList[1].name).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task gets updated when focus button is clicked&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.onFocusTask(&apos;1&apos;);
+  myDOM.updateCurrentTask();
+  expect(myDOM.currentTask.name).toBe(&apos;Task2&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Adding first task should not disable the checkbox&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  expect(tableLocation.children[1].checkBox.disabled).toBe(false);
+  localStorage.clear();
+});
+
+test(&apos;Adding two tasks should disable the checkbox for second task&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  expect(tableLocation.children[1].checkBox.disabled).toBe(false);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(true);
+  localStorage.clear();
+});
+
+test(&apos;Focusing on a task updates checkboxes accordingly&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.onFocusTask(&apos;1&apos;);
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[1].checkBox.disabled).toBe(false);
+  expect(tableLocation.children[1].taskText.textContent).toBe(&apos;Task2&apos;);
+  expect(tableLocation.children[2].checkBox.disabled).toBe(false);
+  localStorage.clear();
+});
+
+test(&apos;Checking a task brings it to the bottom&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  myDOM.onCompletedTask();
+
+  expect(tableLocation.children[2].taskText.textContent).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Checking a task brings it to the bottom with completed tasks already there&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task4&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  tableLocation.children[1].checked = true;
+  myDOM.onCompletedTask();
+  myDOM.updateCurrentTask();
+  myDOM.onCompletedTask();
+
+  expect(tableLocation.children[4].taskText.textContent).toBe(&apos;Task2&apos;);
+  expect(tableLocation.children[3].taskText.textContent).toBe(&apos;Task1&apos;);
+  expect(tableLocation.children[2].taskText.textContent).toBe(&apos;Task4&apos;);
+  expect(tableLocation.children[1].taskText.textContent).toBe(&apos;Task3&apos;);
+
+  localStorage.clear();
+});
+
+test(&apos;Unchecking a task brings it to the bottom of the unchecked tasks&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  tableLocation.children[1].checked = true;
+  myDOM.onCompletedTask();
+  myDOM.updateCurrentTask();
+  tableLocation.children[1].checked = true;
+  myDOM.onCompletedTask();
+  myDOM.updateCurrentTask();
+  tableLocation.children[3].checked = false;
+  myDOM.onUncheckedTask(tableLocation.children[3].id);
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[1].taskText.textContent).toBe(&apos;Task3&apos;);
+  expect(tableLocation.children[2].taskText.textContent).toBe(&apos;Task2&apos;);
+  expect(tableLocation.children[3].taskText.textContent).toBe(&apos;Task1&apos;);
+  expect(myDOM.todoList.taskList[0].taskText.textContent).toBe(&apos;Task3&apos;);
+  expect(myDOM.todoList.taskList[1].taskText.textContent).toBe(&apos;Task2&apos;);
+  expect(myDOM.todoList.taskList[2].taskText.textContent).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task shows No current task when no input&apos;, () =&gt; {
+  expect(currentTaskLocation.textContent).toBe(&apos;No current task&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task after one input&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  myDOM.updateCurrentTask();
+
+  expect(currentTaskLocation.textContent).toBe(&apos;Working on: Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task after input deleted&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  tableLocation.children[1].deleteButton.click();
+  myDOM.updateCurrentTask();
+
+  expect(currentTaskLocation.textContent).toBe(&apos;No current task&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task after input checked off&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  tableLocation.children[1].checkBox.click();
+  myDOM.updateCurrentTask();
+
+  expect(currentTaskLocation.textContent).toBe(&apos;No current task&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Current Task after a session&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  myDOM.onSessionComplete();
+  myDOM.updateCurrentTask();
+
+  expect(currentTaskLocation.textContent).toBe(&apos;Working on: Task1&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Moving the third task up should make it the second task&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.moveTaskUp(&apos;2&apos;);
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[2].taskText.textContent).toBe(&apos;Task3&apos;);
+  expect(tableLocation.children[3].taskText.textContent).toBe(&apos;Task2&apos;);
+  localStorage.clear();
+});
+
+test(&apos;Moving the first task down should make it the second task&apos;, () =&gt; {
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task1&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task2&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+  formLocation.children[0].setAttribute(&apos;value&apos;, &apos;Task3&apos;);
+  formLocation.children[1].value = 2;
+  formLocation.submit();
+
+  myDOM.moveTaskDown(&apos;0&apos;);
+  myDOM.updateCurrentTask();
+
+  expect(tableLocation.children[1].taskText.textContent).toBe(&apos;Task2&apos;);
+  expect(tableLocation.children[2].taskText.textContent).toBe(&apos;Task1&apos;);
+  localStorage.clear();
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

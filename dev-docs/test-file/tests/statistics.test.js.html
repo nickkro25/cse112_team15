@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">tests/statistics.test.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/statistics.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Statistics } from &apos;../js/Statistics/Statistics.js&apos;;
+import { buttonText } from &apos;../js/Timer/TimerVariables.js&apos;;
+
+/** @Test {ToDoList} */
+
+document.body.innerHTML += &quot;&lt;div id=&apos;overlay&apos;&gt;&lt;/div&gt;&quot;
++ &quot;&lt;span class=&apos;close-stats-button&apos; id=&apos;close-stats-button&apos;&gt;&amp;times;&lt;/span&gt;&quot;
++ &quot;&lt;h2 class=&apos;statslabel&apos;&gt;Your Stats&lt;/h2&gt;&quot;
++ &quot;&lt;div class =&apos;tab&apos;&gt;&quot;
++ &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;data&apos; &gt; Data &lt;/button&gt;&quot;
++ &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;distraction&apos;&gt; Distraction &lt;/button&gt;&quot;
++ &apos;&lt;/div&gt;&apos;
++ &quot;&lt;div id=&apos;stats-info&apos; class=&apos;stats-info-container&apos;&gt;&quot;
++ &apos;&lt;/div&gt;&apos;;
+let Stats = new Statistics();
+beforeEach(() =&gt; {
+  document.body.innerHTML += &quot;&lt;div id=&apos;overlay&apos;&gt;&lt;/div&gt;&quot;
+  + &quot;&lt;div class =&apos;tab&apos;&gt;&quot;
+  + &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;data&apos; &gt; Data &lt;/button&gt;&quot;
+  + &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;distraction&apos;&gt; Distraction &lt;/button&gt;&quot;
+  + &apos;&lt;/div&gt;&apos;
+  + &quot;&lt;div id=&apos;stats-info&apos; class=&apos;stats-info-container&apos;&gt;&quot;
+  + &apos;&lt;/div&gt;&apos;;
+  Stats = new Statistics();
+});
+
+afterEach(() =&gt; {
+  localStorage.clear();
+});
+
+test(&apos;statsTab Button calls event listener&apos;, () =&gt; {
+  const btn = document.getElementById(&apos;data&apos;);
+  btn.click();
+  expect(btn.className).toBe(&apos;tab-btn-active&apos;);
+});
+
+test(&apos;Call to update dom updates text content correctly&apos;, () =&gt; {
+  Stats.totalMins = 15;
+  Stats.updateDom();
+  expect(Stats.timeSpent.textContent).toBe(&apos;15&apos;);
+});
+
+describe(&apos;Variables function correctly&apos;, () =&gt; {
+  test(&apos;Task completion increments count correctly&apos;, () =&gt; {
+    Stats.incrementTasksCompleted();
+    expect(Stats.tasksCompleted).toBe(1);
+    for (let i = 0; i &lt; 4; i += 1) {
+      Stats.incrementTasksCompleted();
+    }
+    expect(Stats.tasksCompleted).toBe(5);
+  });
+
+  test(&apos;Task un-completion decrements count correctly&apos;, () =&gt; {
+    for (let i = 0; i &lt;= 4; i += 1) {
+      Stats.incrementTasksCompleted();
+    }
+    Stats.decrementTasksCompleted();
+    expect(Stats.tasksCompleted).toBe(4);
+    for (let i = 0; i &lt; 3; i += 1) {
+      Stats.decrementTasksCompleted();
+    }
+    expect(Stats.tasksCompleted).toBe(1);
+    Stats.decrementTasksCompleted();
+    expect(Stats.tasksCompleted).toBe(0);
+    Stats.decrementTasksCompleted();
+    expect(Stats.tasksCompleted).toBe(0);
+  });
+
+  test(&apos;Actual Pomo Session increments count correctly&apos;, () =&gt; {
+    Stats.incrementActualPomoSessions();
+    expect(Stats.actualPomoSessions).toBe(1);
+    for (let i = 0; i &lt; 4; i += 1) {
+      Stats.incrementActualPomoSessions();
+    }
+    expect(Stats.actualPomoSessions).toBe(5);
+  });
+
+  test(&apos;Estimated Pomo Session increments count correctly&apos;, () =&gt; {
+    Stats.addExpectedPomoSessions(5);
+    expect(Stats.expectedPomoSessions).toBe(5);
+    for (let i = 0; i &lt; 4; i += 1) {
+      Stats.addExpectedPomoSessions(2);
+    }
+    expect(Stats.expectedPomoSessions).toBe(13);
+  });
+
+  test(&apos;Estimated Pomo Session decrements count correctly&apos;, () =&gt; {
+    for (let i = 0; i &lt;= 4; i += 1) {
+      Stats.addExpectedPomoSessions(2);
+    }
+    expect(Stats.expectedPomoSessions).toBe(10);
+    for (let i = 0; i &lt; 4; i += 1) {
+      Stats.deleteExpectedPomoSessions(2);
+    }
+    expect(Stats.expectedPomoSessions).toBe(2);
+    Stats.deleteExpectedPomoSessions(2);
+    expect(Stats.expectedPomoSessions).toBe(0);
+    Stats.deleteExpectedPomoSessions(5);
+    expect(Stats.expectedPomoSessions).toBe(0);
+  });
+
+  test(&apos;Time Spent increments count correctly&apos;, () =&gt; {
+    Stats.addTimeSpent(5);
+    expect(Stats.totalMins).toBe(5);
+    Stats.addTimeSpent(25);
+    expect(Stats.totalMins).toBe(30);
+    Stats.addTimeSpent(15);
+    expect(Stats.totalMins).toBe(45);
+  });
+
+  test(&apos;Work time increments work time count correctly&apos;, () =&gt; {
+    Stats.addWorkTime(5);
+    expect(Stats.workMins).toBe(5);
+    Stats.addWorkTime(25);
+    expect(Stats.workMins).toBe(30);
+    Stats.addWorkTime(15);
+    expect(Stats.workMins).toBe(45);
+  });
+
+  test(&apos;Work time increments time spent count correctly&apos;, () =&gt; {
+    Stats.addWorkTime(5);
+    expect(Stats.totalMins).toBe(5);
+    Stats.addWorkTime(25);
+    expect(Stats.totalMins).toBe(30);
+    Stats.addWorkTime(15);
+    expect(Stats.totalMins).toBe(45);
+  });
+
+  test(&apos;Work time increments time spent independently of work time&apos;, () =&gt; {
+    Stats.addWorkTime(5);
+    expect(Stats.totalMins).toBe(5);
+    expect(Stats.workMins).toBe(5);
+    Stats.addTimeSpent(10);
+    expect(Stats.totalMins).toBe(15);
+    expect(Stats.workMins).toBe(5);
+    Stats.addWorkTime(25);
+    expect(Stats.totalMins).toBe(40);
+    expect(Stats.workMins).toBe(30);
+  });
+
+  test(&apos;Average time per task works correctly, completed tasks exist&apos;, () =&gt; {
+    for (let i = 0; i &lt; 5; i += 1) {
+      Stats.incrementTasksCompleted();
+    }
+
+    expect(Stats.tasksCompleted).toBe(5);
+    expect(Stats.getAverageTimePerTask()).toBe(0);
+
+    Stats.addWorkTime(10);
+
+    expect(Stats.getAverageTimePerTask()).toBe(2);
+
+    Stats.addTimeSpent(20);
+
+    expect(Stats.getAverageTimePerTask()).toBe(2);
+
+    for (let i = 0; i &lt; 5; i += 1) {
+      Stats.incrementTasksCompleted();
+    }
+
+    expect(Stats.getAverageTimePerTask()).toBe(1);
+  });
+
+  test(&apos;Average time per task works correctly, completed tasks DO NOT exist&apos;, () =&gt; {
+    expect(Stats.getAverageTimePerTask()).toBe(0);
+    Stats.addWorkTime(20);
+    expect(Stats.getAverageTimePerTask()).toBe(0);
+    Stats.incrementTasksCompleted();
+    expect(Stats.getAverageTimePerTask()).toBe(20);
+  });
+
+  test(&apos;Distractions stored correctly&apos;, () =&gt; {
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+
+    Stats.addDistraction({
+      name: &apos;second distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 35),
+      pomoSessionId: 1,
+    });
+    Stats.updateDistractionList();
+
+    Stats.addDistraction({
+      name: &apos;third distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 40),
+      pomoSessionId: 1,
+    });
+    Stats.updateDistractionList();
+
+    expect(Stats.distractionList[0].name).toEqual(&apos;first distraction&apos;);
+  });
+
+  test(&apos;Unique distractions calculated correctly&apos;, () =&gt; {
+    expect(Stats.getNumUniqueDistractions()).toBe(0);
+
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+
+    expect(Stats.getNumUniqueDistractions()).toBe(1);
+
+    Stats.addDistraction({
+      name: &apos;second distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 35),
+      pomoSessionId: 1,
+    });
+
+    expect(Stats.getNumUniqueDistractions()).toBe(2);
+
+    Stats.addDistraction({
+      name: &apos;third distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 40),
+      pomoSessionId: 1,
+    });
+
+    expect(Stats.getNumUniqueDistractions()).toBe(2);
+  });
+
+  test(&apos;Distractions per task calculated correctly&apos;, () =&gt; {
+    expect(Stats.getAvgDistractionsPerTask()).toBe(0);
+
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+
+    expect(Stats.getAvgDistractionsPerTask()).toBe(0);
+    Stats.incrementTasksCompleted();
+    expect(Stats.getAvgDistractionsPerTask()).toBe(1);
+
+    Stats.addDistraction({
+      name: &apos;second distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 35),
+      pomoSessionId: 1,
+    });
+
+    expect(Stats.getAvgDistractionsPerTask()).toEqual(2);
+    Stats.incrementTasksCompleted();
+    expect(Stats.getAvgDistractionsPerTask()).toBe(1);
+
+    Stats.addDistraction({
+      name: &apos;third distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 40),
+      pomoSessionId: 1,
+    });
+
+    Stats.addDistraction({
+      name: &apos;fourth distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 45),
+      pomoSessionId: 1,
+    });
+    expect(Stats.getAvgDistractionsPerTask()).toBe(2);
+
+    for (let i = 0; i &lt; 4; i += 1) {
+      Stats.incrementTasksCompleted();
+    }
+
+    expect(Stats.getAvgDistractionsPerTask()).toEqual(0.7); // ROUNDED FROM 0.67
+  });
+
+  test(&apos;flushLocalStorage deletes all data older than a year&apos;, () =&gt; {
+    Stats.history.push({ // a few days ago
+      date: new Date(2022, 4, 9, 10, 35),
+      distractionCount: 1,
+      timeSpent: 1,
+    });
+    Stats.history.push({ // a few months ago (same year)
+      date: new Date(2022, 0, 1, 10, 35),
+      distractionCount: 1,
+      timeSpent: 1,
+    });
+    Stats.history.push({ // a few months ago (previous year)
+      date: new Date(2021, 10, 9, 10, 35),
+      distractionCount: 1,
+      timeSpent: 1,
+    });
+    Stats.history.push({ // more than a year ago (barely)
+      date: new Date(2021, 0, 1, 10, 35),
+      distractionCount: 1,
+      timeSpent: 1,
+    });
+    Stats.flushHistory();
+    expect(Stats.history.length).toBe(3);
+  });
+
+  test(&apos;Data compression trigger works&apos;, () =&gt; {
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(2020, 0, 1));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(2021, 2, 11));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(2021, 2, 10));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(2021, 1, 11));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    const today = new Date();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(today.getFullYear(), today.getMonth(), today.getDate(), 1, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(today.getFullYear(), today.getMonth() - 1, today.getDate(), 1, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1, 1, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeTruthy();
+    localStorage.setItem(&apos;startDateTime&apos;, new Date(today.getFullYear(), today.getMonth(), today.getDate(), 3, 0, 0));
+    Stats = new Statistics();
+    expect(Stats.dataToCompressExists()).toBeFalsy();
+  });
+
+  test(&apos;clearData resets all values&apos;, () =&gt; {
+    Stats.workMins = 10;
+    Stats.totalMins = 50;
+    Stats.tasksCompleted = 11;
+    expect(Stats.workMins).toBe(10);
+    Stats.clearData();
+    expect(Stats.totalMins).toBe(0);
+    expect(Stats.workMins).toBe(0);
+    expect(Stats.tasksCompleted).toBe(0);
+    expect(Stats.distractionList.length).toBe(0);
+    expect(Stats.expectedPomoSessions).toBe(0);
+    expect(Stats.actualPomoSessions).toBe(0);
+  });
+});
+
+describe(&apos;local storage tests&apos;, () =&gt; {
+  beforeEach(() =&gt; {
+    document.body.innerHTML += &quot;&lt;div id=&apos;overlay&apos;&gt;&lt;/div&gt;&quot;
+    + &quot;&lt;div class =&apos;tab&apos;&gt;&quot;
+    + &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;data&apos; &gt; Data &lt;/button&gt;&quot;
+    + &quot;&lt;button class=&apos;tab-btn&apos; id=&apos;distraction&apos;&gt; Distraction &lt;/button&gt;&quot;
+    + &apos;&lt;/div&gt;&apos;
+    + &quot;&lt;div id=&apos;stats-info&apos; class=&apos;stats-info-container&apos;&gt;&quot;
+    + &apos;&lt;/div&gt;&apos;;
+    Stats = new Statistics();
+    localStorage.clear();
+  });
+
+  test(&apos;Everything is initialized to zeroes&apos;, () =&gt; {
+    expect(Stats.totalMins).toBe(0);
+    expect(Stats.workMins).toBe(0);
+    expect(Stats.tasksCompleted).toBe(0);
+    expect(Stats.distractionList.length).toBe(0);
+    expect(Stats.expectedPomoSessions).toBe(0);
+    expect(Stats.actualPomoSessions).toBe(0);
+  });
+
+  test(&apos;non-empty local storage initialized correctly&apos;, () =&gt; {
+    localStorage.setItem(&apos;totalMins&apos;, 1);
+    localStorage.setItem(&apos;workMins&apos;, 2);
+    localStorage.setItem(&apos;tasksCompleted&apos;, 3);
+    localStorage.setItem(&apos;expectedPomoSessions&apos;, 4);
+    localStorage.setItem(&apos;actualPomoSessions&apos;, 5);
+    localStorage.setItem(&apos;currDistractionList&apos;, JSON.stringify([{
+      name: &apos;fourth distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 45),
+      pomoSessionId: 1,
+    }]));
+    Stats = new Statistics();
+    expect(Stats.totalMins).toBe(1);
+    expect(Stats.workMins).toBe(2);
+    expect(Stats.tasksCompleted).toBe(3);
+    expect(Stats.distractionList.length).toBe(1);
+    expect(Stats.expectedPomoSessions).toBe(4);
+    expect(Stats.actualPomoSessions).toBe(5);
+  });
+
+  test(&apos;Data compresses as expected&apos;, () =&gt; {
+    expect(Stats.history.length).toBe(0);
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+    Stats.addDistraction({
+      name: &apos;first distraction&apos;,
+      date: new Date(2021, 3, 3, 10, 30),
+      pomoSessionId: 0,
+    });
+    Stats.totalMins = 10;
+    Stats.compressStats();
+    let temp = JSON.parse(localStorage.getItem(&apos;statsHistory&apos;));
+    expect(temp.length).toBe(1);
+    Stats.compressStats();
+    temp = JSON.parse(localStorage.getItem(&apos;statsHistory&apos;));
+    expect(temp.length).toBe(2);
+    expect(temp[0].timeSpent).toBe(10);
+  });
+});
+
+test(&apos;Distraction Tab Button Pressed, all Data tab items hidden&apos;, () =&gt; {
+  Stats = new Statistics();
+
+  const content = document.getElementsByClassName(&apos;stats-info&apos;);
+  const contentlabel = document.getElementsByClassName(&apos;stats-info-label&apos;);
+  const btn = document.getElementById(&apos;distraction&apos;);
+  btn.click();
+  for (let i = 0; i &lt; content.length; i += 1) {
+    expect(content[i].style.display).toBe(&apos;none&apos;);
+    expect(contentlabel[i].style.display).toBe(&apos;none&apos;);
+  }
+});
+
+test(&apos;Clicking outside of the popup closes the popup&apos;, () =&gt; {
+  Stats = new Statistics();
+  const overlay = document.getElementById(&apos;overlay&apos;);
+  const event = new Event(&apos;click&apos;);
+  overlay.dispatchEvent(event);
+  const btn = document.getElementById(&apos;close-stats-button&apos;);
+  btn.click();
+  expect(overlay.style.animation).toBe(&apos;&apos;);
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

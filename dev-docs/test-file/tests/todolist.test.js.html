@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">tests/todolist.test.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/todolist.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { ToDoList } from &apos;../js/ToDoList/ToDoList.js&apos;;
+import { Task } from &apos;../js/ToDoList/Task&apos;;
+
+/** @Test {ToDoList} */
+
+beforeEach(() =&gt; {
+  window.localData = [];
+});
+
+test(&apos;Construction of empty list&apos;, () =&gt; {
+  const theList = new ToDoList();
+  expect(theList.taskList).toEqual([]);
+});
+
+test(&apos;Valid construction of new list in HTML&apos;, () =&gt; {
+  const listLocation = document.getElementById(&apos;ToDoListDiv&apos;);
+  const aList = new ToDoList();
+  expect(aList.taskList).toEqual([]);
+});
+
+test(&apos;Adding Items to List&apos;, () =&gt; {
+  const listLocation = document.getElementById(&apos;ToDoListDiv&apos;);
+  const aList = new ToDoList();
+  aList.addTask(&apos;First Task&apos;, 5);
+  expect(aList.taskList.length).toBe(1);
+  aList.addTask(&apos;Second Task&apos;, 2);
+  expect(aList.taskList.length).toBe(2);
+});
+
+test(&apos;Adding 0 Pomo Length Task&apos;, () =&gt; {
+  const aList = new ToDoList();
+  const errTask = () =&gt; { aList.addTask(&apos;First Task&apos;, 0); };
+  expect(errTask).toThrow(&apos;0 Length Task&apos;);
+});
+
+test(&apos;Adding undefined Pomo Length Task&apos;, () =&gt; {
+  const aList = new ToDoList();
+  const errTask = () =&gt; { aList.addTask(&apos;First Task&apos;, undefined); };
+  expect(errTask).toThrow(&apos;Undefined Length Task&apos;);
+});
+
+test(&apos;Adding Task w/o name&apos;, () =&gt; {
+  const aList = new ToDoList();
+  const errTask = () =&gt; { aList.addTask(undefined, 4); };
+  expect(errTask).toThrow(&apos;Undefined Name&apos;);
+});
+
+test(&apos;Adding Task w/ empty name&apos;, () =&gt; {
+  const aList = new ToDoList();
+  const errTask = () =&gt; { aList.addTask(&apos;&apos;, 4); };
+  expect(errTask).toThrow(&apos;Empty Name&apos;);
+});
+
+test(&apos;Adding Task w/ NaN for PomoSession&apos;, () =&gt; {
+  const aList = new ToDoList();
+  const errTask = () =&gt; { aList.addTask(&apos;TempTask&apos;, NaN); };
+  expect(errTask).toThrow(&apos;Number Not Passed In&apos;);
+});
+
+test(&apos;Get currentTask&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;First Task&apos;, 5);
+  aList.addTask(&apos;Second Task&apos;, 2);
+  const currTask = aList.getCurrentTask();
+  expect(currTask.name).toBe(&apos;First Task&apos;);
+});
+
+test(&apos;Get currentTask on empty list should be null&apos;, () =&gt; {
+  const aList = new ToDoList();
+  expect(aList.getCurrentTask()).toBe(null);
+});
+
+test(&apos;Get currentTask on list with all completed elements should be null&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;First Task&apos;, 5);
+  aList.getCurrentTask().checkOffTask();
+  expect(aList.getCurrentTask()).toBe(null);
+});
+
+test(&apos;Preserve special characters in task name&apos;, () =&gt; {
+  const aList = new ToDoList();
+  // eslint-disable-next-line no-template-curly-in-string
+  const strName = &apos;A s^ri\ng w!t\\n spe`cia| &quot;some ver${this.id}y special&quot; chara%cter$&apos;;
+  aList.addTask(strName, 5);
+  aList.addTask(&apos;Second Task&apos;, 2);
+  const currTask = aList.getCurrentTask();
+  expect(currTask.name).toBe(strName);
+});
+
+test(&apos;Deleted Task do not come up as current task&apos;, () =&gt; {
+  const aList = new ToDoList();
+  document.body.addEventListener(&apos;task-deleted&apos;, (e) =&gt; {
+    aList.removeTask(e.detail.taskID);
+  });
+  aList.addTask(&apos;task1&apos;, 1);
+  aList.addTask(&apos;task2&apos;, 2);
+  const task1 = aList.getCurrentTask();
+  task1.deleteButton.click();
+  const currTask = aList.getCurrentTask();
+  expect(currTask.name).toBe(&apos;task2&apos;);
+  expect(currTask.totalSessions).toBe(2);
+});
+
+test(&apos;Getting task by ID returns task if present&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  let returnedTask = aList.getTaskById(&apos;0&apos;);
+  expect(returnedTask.name).toBe(&apos;name&apos;);
+  returnedTask = aList.getTaskById(&apos;1&apos;);
+  expect(returnedTask.name).toBe(&apos;name2&apos;);
+});
+
+test(&apos;Getting task by ID returns null if task not present&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 2);
+  aList.addTask(&apos;name2&apos;, 2);
+  const returnedTask = aList.getTaskById(&apos;not present&apos;);
+  expect(returnedTask).toBe(null);
+});
+
+test(&apos;Deleting task by ID returns deletes task when present&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  const ret = aList.removeTask(&apos;0&apos;);
+  expect(ret).toBe(true);
+  const returnedTask = aList.getTaskById(&apos;0&apos;);
+  expect(returnedTask).toBe(null);
+});
+
+test(&apos;Deleting task by ID returns false if task not present&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  const ret = aList.removeTask(&apos;nonexistant&apos;);
+  expect(ret).toBe(false);
+});
+
+test(&apos;Move task to top of todolist&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  const task = new Task(&apos;new&apos;, &apos;newtask&apos;, 2);
+  aList.addTaskToTop(task);
+  expect(aList.taskList[0]).toBe(task);
+});
+
+test(&apos;Adding completed task to end of todolist&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  const checkedTask = new Task(&apos;2&apos;, &apos;unchecked&apos;, 4, 0, true);
+  aList.addTaskToEnd(checkedTask);
+  expect(aList.taskList[2]).toBe(checkedTask);
+});
+
+test(&apos;Adding unchecked task to end of todolist&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  aList.addTask(&apos;name3&apos;, 1);
+  aList.addTask(&apos;name4&apos;, 1);
+  aList.addTask(&apos;name5&apos;, 2, 1, true, true);
+  aList.addTask(&apos;name6&apos;, 2, 1, true, true);
+  const uncheckedTask = new Task(&apos;10&apos;, &apos;checked&apos;, 4, 0, false);
+  aList.addTaskToEnd(uncheckedTask);
+  expect(aList.taskList[4]).toBe(uncheckedTask);
+});
+
+test(&apos;Adding unchecked task to end of todolist when no checked tasks exist&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  aList.addTask(&apos;name3&apos;, 1);
+  aList.addTask(&apos;name4&apos;, 1);
+  const uncheckedTask = new Task(&apos;10&apos;, &apos;checked&apos;, 4, 0, false);
+  aList.addTaskToEnd(uncheckedTask);
+  expect(aList.taskList[4]).toBe(uncheckedTask);
+});
+
+test(&apos;Unchecked Task Event&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  aList.addTask(&apos;name3&apos;, 1);
+  aList.addTask(&apos;name4&apos;, 1);
+  const event = new CustomEvent(&apos;task-unchecked&apos;, {});
+  aList.taskList[0].dispatchEvent(event);
+});
+
+test(&apos;Move third task up&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  aList.addTask(&apos;name3&apos;, 1);
+  aList.addTask(&apos;name4&apos;, 1);
+  aList.shiftTaskUp(aList.taskList[2], 4);
+  expect(aList.taskList[1].name).toBe(&apos;name3&apos;);
+});
+
+test(&apos;Move third task down&apos;, () =&gt; {
+  const aList = new ToDoList();
+  aList.addTask(&apos;name&apos;, 1);
+  aList.addTask(&apos;name2&apos;, 1);
+  aList.addTask(&apos;name3&apos;, 1);
+  aList.addTask(&apos;name4&apos;, 1);
+  aList.shiftTaskDown(aList.taskList[2], 4);
+  expect(aList.taskList[3].name).toBe(&apos;name3&apos;);
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

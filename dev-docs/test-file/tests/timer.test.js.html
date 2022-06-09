@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">tests/timer.test.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/timer.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Timer } from &apos;../js/Timer/Timer&apos;;
+import {
+  workMode, shortBreakMode, longBreakMode, buttonText,
+} from &apos;../js/Timer/TimerVariables&apos;;
+import Worker from &apos;./mockWorker.js&apos;;
+
+beforeEach(() =&gt; {
+  window.localData = [];
+  window.Worker = Worker;
+  window.Notification = ({
+    permission: &apos;denied&apos;,
+  });
+  document.body.innerHTML = &apos;&lt;div&gt;&apos;
+  + &apos;  &lt;p class=&quot;show-focus-time&quot; id=&quot;displayTime&quot;&gt;&lt;/p&gt;&apos;
+  + &apos; &lt;p id=&quot;displayStatus&quot;&gt;&lt;/p&gt;&apos;
+  + &apos;&lt;button id=start&gt;Start&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/button&gt;&apos;
+  + &apos;&lt;input type=&quot;number&quot; id=&quot;focusTime&quot;&gt;&apos;
+  + &apos;&lt;input type=&quot;number&quot; id=&quot;shortBreakTime&quot;&gt;&apos;
+  + &apos;&lt;input type=&quot;number&quot; id=&quot;longBreakTime&quot;&gt;&apos;
+  + &apos;&lt;input type=&quot;checkbox&quot; id=&quot;autoStartSwitch&quot; checked=&quot;true&quot;&gt;&apos;
+  + &apos;&lt;/div&gt;&apos;;
+  jest.useFakeTimers();
+  jest.clearAllTimers();
+});
+
+test(&apos;Test Initial State is Nothing&apos;, () =&gt; {
+  const button = document.getElementById(&apos;start&apos;);
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const TimerObj = new Timer(button, displayTime, null);
+  expect(TimerObj.state).toBe(&apos;&apos;);
+  expect(TimerObj.sessionId).toBe(0);
+});
+
+test(&apos;Test First Iteration of Timer&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  TimerObj.startTimer();
+  expect(TimerObj.state).toBe(workMode.name);
+});
+
+test(&apos;Test That Queue Gets Updated During Second Iteration Of Timer&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  TimerObj.startTimer();
+
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+
+  expect(TimerObj.stateQueue[0]).toBe(shortBreakMode);
+  expect(TimerObj.stateQueue[6]).toBe(longBreakMode);
+});
+
+test(&apos;Test That Multiple Iterations of the Timer Work&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  TimerObj.startTimer();
+
+  jest.advanceTimersByTime(workMode.duration * 120 * 1000);
+  expect(TimerObj.sessionId).toBe(1);
+});
+
+test(&apos;Test That HTML Gets Updated During Second &apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  TimerObj.startTimer();
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+
+  expect(displayStatus.textContent).toBe(shortBreakMode.name);
+  expect(displayTime.textContent).toBe(`${shortBreakMode.duration}:00`);
+});
+
+test(&apos;Test That Start Button Functions Properly &apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  button.click();
+  expect(button.textContent).toBe(buttonText.stopTimerText);
+});
+
+test(&apos;Test That Clicking Start Twice Changes HTML &apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  button.click();
+  button.click();
+  expect(TimerObj.startButton.textContent.indexOf(buttonText.startTimerText) &gt; -1).toBe(true);
+  expect(TimerObj.displayStatus.textContent).toBe(&apos;Pomo-Time!&apos;);
+});
+
+test(&apos;Test That Timer Resets Properly When End Day is Clicked&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  jest.clearAllTimers();
+  button.click();
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+  button.click();
+  TimerObj.resetPomoSessionId();
+  expect(TimerObj.stateQueue[0]).toBe(workMode);
+  expect(TimerObj.sessionId).toBe(0);
+});
+
+test(&apos;Test Timer Pauses After Work Session When Auto Start is Disabled&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+  const autoStartSwitch = document.getElementById(&apos;autoStartSwitch&apos;);
+  jest.clearAllTimers();
+  button.click();
+  autoStartSwitch.checked = false;
+  jest.advanceTimersByTime(workMode.duration * 60 * 1000);
+  expect(TimerObj.displayStatus.textContent).toBe(&apos;Short Break&apos;);
+  expect(button.childNodes[0].nodeValue).toBe(buttonText.startTimerText);
+  expect(displayStatus.textContent).toBe(&apos;Short Break&apos;);
+  expect(document.title).toBe(&apos;Short Break&apos;);
+});
+
+test(&apos;get previous time durations from localStorage on refresh&apos;, () =&gt; {
+  localStorage.workModeTime = 26;
+  localStorage.shortBreakTime = 6;
+  localStorage.longBreakTime = 16;
+
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  expect(TimerObj.focusTime.value).toBe(&apos;26&apos;);
+  expect(TimerObj.shortBreakTime.value).toBe(&apos;6&apos;);
+  expect(TimerObj.longBreakTime.value).toBe(&apos;16&apos;);
+
+  localStorage.clear();
+});
+
+test(&apos;changeTime&apos;, () =&gt; {
+  const displayTime = document.getElementById(&apos;displayTime&apos;);
+  const displayStatus = document.getElementById(&apos;displayStatus&apos;);
+  const button = document.getElementById(&apos;start&apos;);
+  const TimerObj = new Timer(button, displayTime, displayStatus);
+
+  const event = new Event(&apos;change&apos;);
+
+  const focus = TimerObj.focusTime;
+  focus.dispatchEvent(event);
+  event.target.value = 33;
+  focus.dispatchEvent(event);
+  expect(localStorage.workModeTime).toBe(&apos;33&apos;);
+
+  const shortBreak = TimerObj.shortBreakTime;
+  shortBreak.dispatchEvent(event);
+  event.target.value = 1;
+  shortBreak.dispatchEvent(event);
+  expect(localStorage.shortBreakTime).toBe(&apos;1&apos;);
+
+  const longBreak = TimerObj.longBreakTime;
+  longBreak.dispatchEvent(event);
+  event.target.value = 9;
+  longBreak.dispatchEvent(event);
+  expect(localStorage.longBreakTime).toBe(&apos;9&apos;);
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

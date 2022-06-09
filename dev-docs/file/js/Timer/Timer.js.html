@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/Timer/Timer.js | cse112_team15</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Necessary Packages for Development"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="cse112_team15"><meta property="twitter:description" content="Necessary Packages for Development"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nickkro25/cse112_team15"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#distraction">Distraction</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/DistractedByDevice.js~DistractedByDevice.html">DistractedByDevice</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Distraction/Distraction.js~Distraction.html">Distraction</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#misc">Misc</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-longBreakColors">longBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shortBreakColors">shortBreakColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeColors">workModeColors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-breakModeSound">breakModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeSound">changeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-workModeSound">workModeSound</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToString">timeToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-breakNames">breakNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-evenColor">evenColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fontColor">fontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-headerColor">headerColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalBGColor">modalBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modalFontColor">modalFontColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pageBGColor">pageBGColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tableBG">tableBG</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toothpaste">toothpaste</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#statistics">Statistics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Statistics/Statistics.js~Statistics.html">Statistics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-storageItemNames">storageItemNames</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#timer">Timer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/Timer/Timer.js~Timer.html">Timer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-buttonText">buttonText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-distractionMessage">distractionMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-longBreakMode">longBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sessionStartName">sessionStartName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-shortBreakMode">shortBreakMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-workMode">workMode</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todolist">ToDoList</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/Task.js~Task.html">Task</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/ToDoList.js~ToDoList.html">ToDoList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/ToDoList/TodoListDom.js~TodoListDom.html">TodoListDom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-classNames">classNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-svg">svg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HTMLAttributes">HTMLAttributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TaskStorage">TaskStorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/Timer/Timer.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  sessionStartName, distractionMessage, workMode, shortBreakMode, longBreakMode, buttonText,
+} from &apos;./TimerVariables.js&apos;;
+import { workModeColors } from &apos;../Misc/ChangeColors.js&apos;;
+
+import { timeToString } from &apos;../Misc/UtilityFunctions.js&apos;;
+/**
+ * A class for the Timer object. Has functions to start the timer,
+ * display the current mode of the timer and display the time remaining
+ * Class throws the &apos;timer-complete&apos; event
+ */
+class Timer extends HTMLElement {
+  /**
+   * Constructor of Time Object. Takes the HTML element of where
+   * you want the time and the status of the timer to be implemented.
+   * HTML Elements must have the &apos;textElement&apos; attribute.
+   * @param {HTMLButtonElement} startButton - button that starts the button
+   * @param {HTMLParagraphElement} timeDisplay - area to display the time remaining
+   * @param {HTMLParagraphElement} displayStatus - area to display the status of the timer
+   */
+  constructor(startButton, timeDisplay, displayStatus) {
+    super();
+    /**
+     * State of the timer (the current mode)
+     * @type {String}
+     */
+    this.state = &apos;&apos;;
+    /**
+     * Queue that stores the Session objects. Rotates to provide
+     * rotation functionality for the timer
+     * @type {Object[]}
+     * @property {String} object.name name of the session
+     * @property {Number} object.duration duration of the session
+     */
+    this.stateQueue = [];
+    /**
+     * HTML Tag that is reponsible for controlling the timer
+     * @type {HTMLElement}
+     */
+    this.startButton = startButton;
+    /**
+     * HTML Tag that is reponsible for displaying the time remaining
+     * @type {HTMLElement}
+     */
+    this.timeDisplay = timeDisplay;
+    /**
+     * HTML Tag that is reponsible for displaying the mode of the timer
+     * @type {HTMLElement}
+     */
+    this.displayStatus = displayStatus;
+    /**
+     * HTML tag for controlling the focus timer length
+     * @type {HTMLElement}
+     */
+    this.focusTime = document.getElementById(&apos;focusTime&apos;);
+    /**
+     * HTML tag for controlling the short break timer length
+     * @type {HTMLElement}
+     */
+    this.shortBreakTime = document.getElementById(&apos;shortBreakTime&apos;);
+    /**
+     * HTML tag for controlling the long break timer length
+     * @type {HTMLElement}
+     */
+    this.longBreakTime = document.getElementById(&apos;longBreakTime&apos;);
+    /**
+     * auto start switch element
+     * @type {HTMLInputElement}
+     */
+    this.autoStart = document.getElementById(&apos;autoStartSwitch&apos;);
+    /**
+     * Web worker responsible for count down timer
+     * @type {Worker}
+     */
+    this.timerWorker = new Worker(&apos;./js/Timer/TimerWorker.js&apos;);
+    // Recieve message from web worker and update display
+    this.timerWorker.onmessage = (e) =&gt; {
+      if (e.data !== -1) {
+        this.timeDisplay.textContent = e.data;
+        document.title = `${e.data} ${this.state}`;
+      } else {
+        this.onTimerComplete();
+      }
+    };
+    /**
+     * The sessionId. Increments on each working session. Stored in
+     * local storage to keep track of id on multiple sessions every day
+     * @type {Number}
+     */
+    this.sessionId = localStorage.getItem(&apos;pomoSessionId&apos;);
+    this.sessionId = ((this.sessionId === null) ? 0 : parseInt(this.sessionId, 10) + 1);
+
+    // this is the order for the timer. It will loop in this order.
+    const workOrder = [workMode, shortBreakMode, workMode,
+      shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
+    // for (let i = 0; i &lt; workOrder.length; i += 1) {
+    //   this.stateQueue.push(workOrder[i]);
+    // }
+    this.stateQueue = workOrder;
+
+    // #6 get previous time durations from localStorage on refresh
+    if (localStorage.getItem(&apos;workModeTime&apos;) !== null) {
+      // ...
+      workMode.duration = localStorage.getItem(&apos;workModeTime&apos;);
+    }
+    if (localStorage.getItem(&apos;shortBreakTime&apos;) !== null) {
+      // ...
+      shortBreakMode.duration = localStorage.getItem(&apos;shortBreakTime&apos;);
+    }
+    if (localStorage.getItem(&apos;longBreakTime&apos;) !== null) {
+      // ...
+      longBreakMode.duration = localStorage.getItem(&apos;longBreakTime&apos;);
+    }
+
+    // #6 We can do this with &quot;this&quot; as shown above, just did it this way as a test
+    if (this.focusTime !== null) {
+      this.focusTime.value = workMode.duration;
+      this.shortBreakTime.value = shortBreakMode.duration;
+      this.longBreakTime.value = longBreakMode.duration;
+    }
+    if (this.timeDisplay !== null) {
+      this.timeDisplay.textContent = timeToString(workMode.duration * 60);
+    }
+    this.addEventListeners();
+  }
+
+  /**
+   * Function that resets the pomo session id and stores it in local storage
+   */
+  resetPomoSessionId() {
+    this.sessionId = 0;
+    localStorage.setItem(&apos;pomoSessionId&apos;, this.sessionId);
+  }
+
+  /**
+   * Function that fires when the timer runs out of time.
+   * Moves on to start the timer again at the end of the function.
+   */
+  onTimerComplete() {
+    const completedSession = this.stateQueue.shift();
+
+    // Gets current state to determine which notification to give.
+    const currentState = this.stateQueue[0].name;
+    const iconUrl = &apos;./assets/img/webicon.png&apos;;
+    /* istanbul ignore next */
+    if (&apos;Notification&apos; in window &amp;&amp; Notification.permission === &apos;granted&apos;) {
+      if (currentState === &apos;Short Break&apos;) {
+        new Notification(&apos;Pomo XV&apos;, {
+          body: &apos;Time for a short break!&apos;,
+          icon: iconUrl,
+        });
+      } else if (currentState === &apos;Working Time&apos;) {
+        new Notification(&apos;Pomo XV&apos;, {
+          body: &apos;Time to work!&apos;,
+          icon: iconUrl,
+        });
+      } else if (currentState === &apos;Long Break&apos;) {
+        new Notification(&apos;Pomo XV&apos;, {
+          body: &apos;Time for a long break!&apos;,
+          icon: iconUrl,
+        });
+      }
+    }
+
+    this.stateQueue.push(completedSession);
+    const event = new CustomEvent(&apos;timer-complete&apos;, {
+      detail: {
+        sessionName: completedSession.name,
+        duration: completedSession.duration,
+        sessionIsWork: completedSession.isWork,
+        sessionId: this.sessionId,
+        nextSessionName: this.stateQueue[0].name,
+        longBreakLocation: this.stateQueue.findIndex((el) =&gt; el === longBreakMode),
+      },
+    });
+
+    this.dispatchEvent(event);
+    if (!completedSession.isWork) {
+      this.sessionId += 1;
+      localStorage.setItem(&apos;pomoSessionId&apos;, this.sessionId);
+    }
+
+    if (this.autoStart.checked === false) {
+      // check whether auto start break option is checked
+      // update the display if the option is not checked, but don&apos;t start the timer yet
+      this.state = this.stateQueue[0].name;
+      this.updateDisplay();
+    } else {
+      // start the timer automatically if option is checked
+      this.startTimer();
+    }
+  }
+
+  /**
+   * Starts the timer for the session at the top of the queue.
+   * Updates the display for the status.
+   */
+  startTimer() {
+    // Edgar: StateQueue is set right after line 62, we get our timee duration
+    // from TimerVariables.js, we want to change this to user set duration
+    const session = this.stateQueue[0];
+    this.state = session.name;
+    this.displayStatus.textContent = this.state;
+    const event = new CustomEvent(&apos;timer-start&apos;, {
+      detail: {
+        sessionName: this.state,
+        sessionIsWork: session.isWork,
+      },
+    });
+
+    this.dispatchEvent(event);
+    this.timerWorker.postMessage(session.duration * 60);
+  }
+
+  /**
+   * Ends the timer.
+   * Updates the display for the status.
+   */
+  endTimer() {
+    this.timerWorker.postMessage(-1);
+    this.displayStatus.textContent = sessionStartName;
+    // #6: only works with whole numbers
+    this.timeDisplay.textContent = timeToString(workMode.duration * 60);
+    document.title = &apos;PomoXV&apos;;
+    this.stateQueue = [];
+    const workOrder = [workMode, shortBreakMode, workMode,
+      shortBreakMode, workMode, shortBreakMode, workMode, longBreakMode];
+    for (let i = 0; i &lt; workOrder.length; i += 1) {
+      this.stateQueue.push(workOrder[i]);
+    }
+    const event = new CustomEvent(&apos;timer-end&apos;);
+    this.dispatchEvent(event);
+    // When ending the timer, reset all indicators
+    const indicators = document.querySelectorAll(&apos;.indicator&apos;);
+    for (let i = 0; i &lt; indicators.length; i += 1) {
+      indicators[i].textContent = &apos;trip_origin&apos;;
+    }
+    // Show focus time
+    this.timeDisplay.className = &apos;show-focus-time&apos;;
+  }
+
+  /**
+   * Reset the current work session, used for distraction
+   */
+  resetSession() {
+    this.timerWorker.postMessage(-1);
+    this.updateDisplay();
+    this.displayStatus.textContent = distractionMessage;
+    document.title = &apos;Distracted&apos;;
+  }
+
+  /**
+   * Change and save timer length when changed.
+   */
+  // Issue #6: only works with whole numbers
+  changeTime(e) {
+    // Does not allow user to input 0 or numbers over 99
+    if (e.target.value === 0) { e.target.value = 1; }
+    if (e.target.value &gt; 99) { e.target.value = 99; }
+    if (e.target.id === &apos;focusTime&apos;) {
+      if (this.timeDisplay.className === &apos;show-focus-time&apos;) {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
+      workMode.duration = e.target.value;
+      localStorage.setItem(&apos;workModeTime&apos;, e.target.value);
+    } else if (e.target.id === &apos;shortBreakTime&apos;) {
+      // document.getElementById(&quot;timeDisplay&quot;).textContent = &quot; &quot; + e.target.value + &quot;:00&quot; + &quot; &quot;;
+      if (this.timeDisplay.className === &apos;show-short-break-time&apos;) {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
+      shortBreakMode.duration = e.target.value;
+      localStorage.setItem(&apos;shortBreakTime&apos;, e.target.value);
+    } else if (e.target.id === &apos;longBreakTime&apos;) {
+      // document.getElementById(&quot;timeDisplay&quot;).textContent = &quot; &quot; + e.target.value + &quot;:00&quot; + &quot; &quot;;
+      if (this.timeDisplay.className === &apos;show-long-break-time&apos;) {
+        this.timeDisplay.textContent = `${e.target.value}:00`;
+      }
+      longBreakMode.duration = e.target.value;
+      localStorage.setItem(&apos;longBreakTime&apos;, e.target.value);
+    }
+  }
+
+  /**
+   * Adds event listener to the start button that was added
+   * Add event listeners to change timer length
+   */
+  addEventListeners() {
+    this.startButton.addEventListener(&apos;click&apos;, () =&gt; {
+      if (this.startButton.textContent.indexOf(buttonText.startTimerText) &gt; -1) {
+        this.startTimer();
+        this.startButton.childNodes[0].nodeValue = buttonText.stopTimerText;
+      } else {
+        this.endTimer();
+        this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+        workModeColors();
+      }
+    });
+
+    this.focusTime.addEventListener(&apos;change&apos;, (event) =&gt; { this.changeTime(event); });
+    this.shortBreakTime.addEventListener(&apos;change&apos;, (event) =&gt; { this.changeTime(event); });
+    this.longBreakTime.addEventListener(&apos;change&apos;, (event) =&gt; { this.changeTime(event); });
+  }
+
+  /**
+   * Updates the text elements on screen based on
+   * this.state and stateQueue[0] when the timer pauses
+   */
+  updateDisplay() {
+    this.startButton.childNodes[0].nodeValue = buttonText.startTimerText;
+    const session = this.stateQueue[0];
+    this.displayStatus.textContent = this.state;
+    this.timeDisplay.textContent = timeToString(session.duration * 60);
+    if (session.name === &apos;Working Time&apos;) {
+      this.timeDisplay.className = &apos;show-focus-time&apos;;
+    } else if (session.name === &apos;Short Break&apos;) {
+      this.timeDisplay.className = &apos;show-short-break-time&apos;;
+    } else if (session.name === &apos;Long Break&apos;) {
+      this.timeDisplay.className = &apos;show-long-break-time&apos;;
+    }
+    document.title = session.name;
+    const distractionOffEvent = new CustomEvent(&apos;timer-end&apos;);
+    this.dispatchEvent(distractionOffEvent);
+  }
+}
+
+customElements.define(&apos;custom-timer&apos;, Timer);
+export { Timer };
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
