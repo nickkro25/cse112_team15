@@ -371,9 +371,9 @@
   const noSleep = new NoSleep();
   document.addEventListener('click', function() {
     if (localStorage.getItem('timer-running') === 'true'){
-      noSleep.enable();
+      noSleep.enable(); // keep the screen on!
     } else {
-      noSleep.disable();
+      noSleep.disable(); // let the screen turn off.
     }
   }, false);
 </script>
