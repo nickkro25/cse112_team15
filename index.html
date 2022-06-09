@@ -326,6 +326,7 @@
       </div>
     </section>
 </section>
+<input type="button" id="toggle" value="Wake Lock" style='display: none'/>
 <script>
   if (Notification.permission !== 'denied'){
     Notification.requestPermission().then(permission => {});
@@ -368,8 +369,9 @@
   // set the transition back to 2s after dark theme is painted
   document.querySelector('body').style.transitionDuration = '0.2s';
 
-  const noSleep = new NoSleep();
-  document.addEventListener('click', function() {
+	const noSleep = new NoSleep();
+  const toggleEl = document.getElementById('toggle');
+  toggleEl.addEventListener('click', function() {
     if (localStorage.getItem('timer-running') === 'true'){
       noSleep.enable(); // keep the screen on!
     } else {
