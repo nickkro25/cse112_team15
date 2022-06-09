@@ -365,7 +365,8 @@
 <script>
   // set the transition back to 2s after dark theme is painted
   document.querySelector('body').style.transitionDuration = '0.2s';
-
+	
+	localStorage.setItem('timer-running', false);
   const noSleep = new NoSleep();
   document.addEventListener('click', function() {
     if (localStorage.getItem('timer-running') === 'true'){
