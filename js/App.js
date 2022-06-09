@@ -244,6 +244,9 @@ TimerObj.addEventListener('timer-complete', (e) => {
     workModeSound();
   }
   updateSessionIndicators(e.detail.longBreakLocation);
+  localStorage.setItem('timer-running', false);
+  // Click an arbitrary element to remind the event listener in index.html
+  timeDisplay.click();
 });
 
 /**
@@ -315,6 +318,9 @@ TimerObj.addEventListener('timer-start', (e) => {
     });
     exitFocusMode();
   }
+  localStorage.setItem('timer-running', true);
+  // Click an arbitrary element to remind the event listener in index.html
+  timeDisplay.click();
 });
 
 /**
@@ -331,6 +337,9 @@ TimerObj.addEventListener('timer-end', () => {
     element.style.pointerEvents = 'auto';
   });
   exitFocusMode();
+  localStorage.setItem('timer-running', false);
+  // Click an arbitrary element to remind the event listener in index.html
+  timeDisplay.click();
 });
 
 document.body.addEventListener('task-up', (e) => {
